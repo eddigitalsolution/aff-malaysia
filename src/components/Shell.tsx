@@ -205,6 +205,33 @@ export function Shell({ children }: { children: React.ReactNode }) {
         {/* Content Panel */}
         <main className="flex-1 p-4 lg:p-8 overflow-y-auto max-w-350 mx-auto w-full">
           {children}
+
+          {/* Marketing/Development CTA Banner */}
+          <div className="mt-12 mb-4 p-6 md:p-8 rounded-2xl bg-zinc-900/90 border border-zinc-800/80 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative overflow-hidden shadow-lg">
+            <div className="absolute -right-20 -bottom-20 w-60 h-60 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
+            
+            <div className="space-y-2.5 max-w-3xl z-10">
+              <div className="flex items-center gap-2 text-[10px] sm:text-xs font-bold text-emerald-500 tracking-widest uppercase">
+                <span>💡</span>
+                <span>Servis Pembangunan & Pemasaran</span>
+              </div>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-black text-white tracking-wide uppercase">
+                Perlukan Bantuan Website Atau Pemasaran Digital? 🚀
+              </h3>
+              <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                Hubungi kami jika anda memerlukan bantuan mengenai pembangunan laman web (website), sistem perkhidmatan custom, pemasaran digital (marketing), atau penjenamaan perniagaan pop-up anda.
+              </p>
+            </div>
+            
+            <a 
+              href="https://wa.me/601130719502" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-full md:w-auto px-6 py-3.5 bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-black text-xs sm:text-sm tracking-wider uppercase rounded-xl transition-all duration-200 shadow-md hover:shadow-emerald-500/20 flex items-center justify-center gap-2 shrink-0 z-10 active:scale-[0.98]"
+            >
+              Hubungi WhatsApp (+60 11-3071 9502)
+            </a>
+          </div>
         </main>
       </div>
 
