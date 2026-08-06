@@ -52,9 +52,17 @@ export function Shell({ children }: { children: React.ReactNode }) {
     }
     const query = searchQuery.toLowerCase();
     
-    const filteredPlayers = players.filter(p => p.name.toLowerCase().includes(query) || p.position.toLowerCase().includes(query));
-    const filteredTeams = teams.filter(t => t.name.toLowerCase().includes(query) || t.code.toLowerCase().includes(query));
+    const filteredPlayers = players.filter(p => 
+      p.teamId === 'malaysia' && 
+      (p.name.toLowerCase().includes(query) || p.position.toLowerCase().includes(query))
+    );
+    const filteredTeams = teams.filter(t => 
+      t.id === 'malaysia' && 
+      (t.name.toLowerCase().includes(query) || t.code.toLowerCase().includes(query))
+    );
     const filteredFixtures = fixtures.filter(f => {
+      const isMalaysiaGame = f.homeTeamId === 'malaysia' || f.awayTeamId === 'malaysia';
+      if (!isMalaysiaGame) return false;
       const homeName = teams.find(t => t.id === f.homeTeamId)?.name.toLowerCase() || '';
       const awayName = teams.find(t => t.id === f.awayTeamId)?.name.toLowerCase() || '';
       return homeName.includes(query) || awayName.includes(query) || f.stage.toLowerCase().includes(query);
@@ -109,17 +117,14 @@ export function Shell({ children }: { children: React.ReactNode }) {
               type="text"
               placeholder="Search players, teams, matches..."
               value={searchQuery}
-              onChange={(e) => {
-                setSearchQuery(e.target.value);
-                setShowDropdown(true);
-              }}
+              onChange={e => setSearchQuery(e.target.value)}
               onFocus={() => setShowDropdown(true)}
-              className="w-full bg-zinc-900/60 border border-zinc-800 rounded-lg py-2 pl-9 pr-4 text-sm text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-primary/50 transition-colors"
+              className="w-full bg-zinc-900/60 border border-zinc-850 rounded-xl pl-9 pr-4 py-2 text-xs text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-primary focus:bg-zinc-900 transition-all"
             />
             {searchQuery && (
               <button 
                 onClick={() => setSearchQuery('')}
-                className="absolute right-3 top-2.5 text-zinc-500 hover:text-zinc-300"
+                className="absolute right-3 top-2.5 text-zinc-500 hover:text-white"
               >
                 <X className="h-4 w-4" />
               </button>
@@ -170,7 +175,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
                             onClick={() => handleSearchSelect(`/teams/${t.id}`)}
                             className="w-full text-left px-2 py-1.5 rounded-md hover:bg-zinc-800/80 text-xs flex justify-between items-center transition-colors"
                           >
-                            <span>{t.flag} {t.name}</span>
+                            <span>{t.name}</span>
                             <span className="text-zinc-500 text-[10px]">Rank {t.fifaRanking}</span>
                           </button>
                         ))}
