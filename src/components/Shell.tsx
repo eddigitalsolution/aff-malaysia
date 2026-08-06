@@ -219,7 +219,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
                 Perlukan Bantuan Website Atau Pemasaran Digital? 🚀
               </h3>
               <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
-                Hubungi kami jika anda memerlukan bantuan mengenai pembangunan laman web (website), sistem perkhidmatan custom, pemasaran digital (marketing), atau penjenamaan perniagaan pop-up anda.
+                Hubungi kami jika anda memerlukan bantuan mengenai pembangunan laman web (website), sistem perkhidmatan custom, atau pemasaran digital (marketing).
               </p>
             </div>
             
