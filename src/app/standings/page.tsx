@@ -81,7 +81,6 @@ export default function StandingsPage() {
                     <td className="py-4 px-4 text-center font-bold text-zinc-300">{row.position}</td>
                     <td className="py-4 px-4">
                       <div className="flex items-center gap-2 sm:gap-3">
-                        <span className="text-xl shrink-0">{team?.flag}</span>
                         <div className="min-w-0">
                           <div className="font-extrabold text-zinc-100 flex items-center gap-1.5 truncate">
                             {team?.name}
