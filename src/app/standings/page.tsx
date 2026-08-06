@@ -91,7 +91,6 @@ export default function StandingsPage() {
                               </span>
                             )}
                           </div>
-                          <div className="text-[10px] text-zinc-500 truncate">Coach: {team?.coach}</div>
                         </div>
                       </div>
                     </td>
