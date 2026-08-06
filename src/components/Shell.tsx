@@ -224,7 +224,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
             </div>
             
             <a 
-              href="https://wa.me/601130719502" 
+              href="https://wa.me/601130719502?text=Hai%20Ed%20Digital%2C%20saya%20berminat%20untuk%20bertanya%20mengenai%20servis%20pembangunan%20website%20dan%20pemasaran%20digital." 
               target="_blank" 
               rel="noopener noreferrer"
               className="w-full md:w-auto px-6 py-3.5 bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-black text-xs sm:text-sm tracking-wider uppercase rounded-xl transition-all duration-200 shadow-md hover:shadow-emerald-500/20 flex items-center justify-center gap-2 shrink-0 z-10 active:scale-[0.98]"
