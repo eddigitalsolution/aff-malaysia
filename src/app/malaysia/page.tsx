@@ -861,6 +861,12 @@ export default function MalaysiaPage() {
                   <p>
                     <strong>Inside Cuts:</strong> Left Winger (<strong>{pitchPlayers.find(p => ['LW', 'LM'].includes(p.role))?.name || 'Pavithran'}</strong>) cuts inside aggressively to join Paulo Josué in the box, opening up space for the overlapping LB.
                   </p>
+                  <p>
+                    <strong>Through Ball:</strong> Central midfielders use vertical through balls to split the opponent's center-backs, releasing striker <strong>{pitchPlayers.find(p => p.role === 'ST')?.name || 'Paulo Josué'}</strong> in behind.
+                  </p>
+                  <p>
+                    <strong>Set Piece:</strong> Target high outswinging corners aimed at center-backs like <strong>{pitchPlayers.find(p => p.role === 'CB')?.name || 'Rodney Celvin'}</strong> at the far post, using blocks to isolate matching defenders.
+                  </p>
                 </>
               )}
               {formation === '4-4-2' && (
@@ -870,6 +876,12 @@ export default function MalaysiaPage() {
                   </p>
                   <p>
                     <strong>Inside Cuts:</strong> Left Midfielder (<strong>{pitchPlayers.find(p => ['LW', 'LM'].includes(p.role))?.name || 'Pavithran'}</strong>) drifts inside to combine directly with strikers, pulling the opponent fullback inside and opening crossing lanes for LB overlaps.
+                  </p>
+                  <p>
+                    <strong>Through Ball:</strong> Wingers feed diagonal through balls behind opposing fullbacks to match the runs of underlapping CMs or dynamic strikers.
+                  </p>
+                  <p>
+                    <strong>Set Piece:</strong> Utilize low, whipped wide free-kicks aimed at the near post, looking for flicks from the two target forwards.
                   </p>
                 </>
               )}
@@ -881,6 +893,12 @@ export default function MalaysiaPage() {
                   <p>
                     <strong>Inside Cuts:</strong> Left Winger (<strong>{pitchPlayers.find(p => ['LW', 'LM'].includes(p.role))?.name || 'Pavithran'}</strong>) cuts inside to function as a second playmaker in zone 14, combining with CAM <strong>Wan Kuzain</strong> to unlock central channels.
                   </p>
+                  <p>
+                    <strong>Through Ball:</strong> Playmaker <strong>Wan Kuzain</strong> slips central through balls between defensive lines to release striker <strong>{pitchPlayers.find(p => p.role === 'ST')?.name || 'Paulo Josué'}</strong>.
+                  </p>
+                  <p>
+                    <strong>Set Piece:</strong> Direct free-kicks are lined up for central playmakers to shoot, or to deliver inswingers targeted at the penalty spot.
+                  </p>
                 </>
               )}
               {formation === '3-5-2' && (
@@ -891,6 +909,12 @@ export default function MalaysiaPage() {
                   <p>
                     <strong>Inside Cuts:</strong> Left Wingback (<strong>{pitchPlayers.find(p => ['LB', 'LWB'].includes(p.role))?.name || 'Ruventhiran'}</strong>) cuts inside to join central midfield overloads, combining with CMs to exploit space in half-spaces.
                   </p>
+                  <p>
+                    <strong>Through Ball:</strong> Central midfielders use rapid wall-pass combinations to setup clean vertical through balls into half-spaces for the strikers.
+                  </p>
+                  <p>
+                    <strong>Set Piece:</strong> Wingbacks stand over wide free-kicks to deliver cross-field floaters, targeting the physical height advantage of the center-backs.
+                  </p>
                 </>
               )}
               {formation === '3-1-5-1' && (
@@ -900,6 +924,12 @@ export default function MalaysiaPage() {
                   </p>
                   <p>
                     <strong>Inside Cuts:</strong> Left attacking midfielder (<strong>{pitchPlayers.find(p => ['LW', 'LM'].includes(p.role))?.name || 'Pavithran'}</strong>) drifts inside to join the central passing web, combining with <strong>Wan Kuzain</strong> to release the lone striker.
+                  </p>
+                  <p>
+                    <strong>Through Ball:</strong> High-possession five-midfielder passing webs wait for opposition displacement to trigger direct, incisive through balls to striker <strong>{pitchPlayers.find(p => p.role === 'ST')?.name || 'Paulo Josué'}</strong>.
+                  </p>
+                  <p>
+                    <strong>Set Piece:</strong> Short-corner variations are prioritized to create a 3v2 overload on the flank before crossing to the back post.
                   </p>
                 </>
               )}
@@ -924,6 +954,12 @@ export default function MalaysiaPage() {
                   <p>
                     <strong>CB Lateral Shift:</strong> Left CB (<strong>{pitchPlayers.find(p => p.role === 'CB')?.name || 'Rodney Celvin'}</strong>) shifts wide to support the CM, checking the run of the opposing winger and forcing them to cycle the ball backwards.
                   </p>
+                  <p>
+                    <strong>Pressure High:</strong> The front three triggers intensive high pressure inside the opponent's penalty box during goal-kicks, squeezing options.
+                  </p>
+                  <p>
+                    <strong>Mark Man-to-Man:</strong> Central midfielders lock onto opposition playmakers man-to-man to prevent clean pivot turn operations.
+                  </p>
                 </>
               )}
               {formation === '4-4-2' && (
@@ -933,6 +969,12 @@ export default function MalaysiaPage() {
                   </p>
                   <p>
                     <strong>CB Lateral Shift:</strong> Left CB (<strong>{pitchPlayers.find(p => p.role === 'CB')?.name || 'Rodney Celvin'}</strong>) drops deeper to sweep behind the Left Back, maintaining central cover against diagonal crosses.
+                  </p>
+                  <p>
+                    <strong>Pressure High:</strong> Maintain standard two-bank high pressure lines, forcing opponent build-up to execute riskier long balls over midlines.
+                  </p>
+                  <p>
+                    <strong>Mark Man-to-Man:</strong> Center-backs tightly mark the two opposing forwards man-to-man, blocking physical post-up turns.
                   </p>
                 </>
               )}
@@ -944,6 +986,12 @@ export default function MalaysiaPage() {
                   <p>
                     <strong>CB Lateral Shift:</strong> Left CB (<strong>{pitchPlayers.find(p => p.role === 'CB')?.name || 'Rodney Celvin'}</strong>) steps up to press inside-drifting forwards, backed by the double pivot screening the zone.
                   </p>
+                  <p>
+                    <strong>Pressure High:</strong> Squeeze passing paths using high pressure led by the attacking mid CAM and wide wingers, trapping the ball in wide corridors.
+                  </p>
+                  <p>
+                    <strong>Mark Man-to-Man:</strong> The double CDMs lock onto the main attacking midfielders man-to-man, suffocating zone 14 combination spaces.
+                  </p>
                 </>
               )}
               {formation === '3-5-2' && (
@@ -954,6 +1002,12 @@ export default function MalaysiaPage() {
                   <p>
                     <strong>CB Lateral Shift:</strong> Left CB (<strong>{pitchPlayers.find(p => p.role === 'CB')?.name || 'Rodney Celvin'}</strong>) shifts wide to cover the flank, functioning as a fullback while the wingback recovers.
                   </p>
+                  <p>
+                    <strong>Pressure High:</strong> Wingbacks push high to pressure opposing fullbacks immediately, backed by CM shifts to seal inner channels.
+                  </p>
+                  <p>
+                    <strong>Mark Man-to-Man:</strong> Three center-backs match and mark opposing strikers man-to-man, with the central CB operating as a sweeper.
+                  </p>
                 </>
               )}
               {formation === '3-1-5-1' && (
@@ -963,6 +1017,12 @@ export default function MalaysiaPage() {
                   </p>
                   <p>
                     <strong>CB Lateral Shift:</strong> Left CB (<strong>{pitchPlayers.find(p => p.role === 'CB')?.name || 'Rodney Celvin'}</strong>) moves wide to cover the half-space, while central CB stays deep to protect the center.
+                  </p>
+                  <p>
+                    <strong>Pressure High:</strong> Five midfielders compress vertical lines with coordinated high pressure, trapping back passes to the keeper.
+                  </p>
+                  <p>
+                    <strong>Mark Man-to-Man:</strong> Left and right CBs lock onto wingers man-to-man, while CDM <strong>Ibrahim Manusi</strong> monitors central zone runners.
                   </p>
                 </>
               )}
