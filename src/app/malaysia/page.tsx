@@ -54,7 +54,7 @@ const FORMATIONS: Record<string, { label: string; positions: { x: number; y: num
     positions: [
       { x: 50, y: 90, role: 'GK' },
       { x: 25, y: 72, role: 'CB' }, { x: 50, y: 74, role: 'CB' }, { x: 75, y: 72, role: 'CB' },
-      { x: 10, y: 48, role: 'LWB' }, { x: 30, y: 50, role: 'CM' }, { x: 50, y: 46, role: 'CM' }, { x: 70, y: 50, role: 'CM' }, { x: 90, y: 48, role: 'RWB' },
+      { x: 12, y: 48, role: 'LWB' }, { x: 30, y: 50, role: 'CM' }, { x: 50, y: 46, role: 'CM' }, { x: 70, y: 50, role: 'CM' }, { x: 88, y: 48, role: 'RWB' },
       { x: 35, y: 18, role: 'ST' }, { x: 65, y: 18, role: 'ST' },
     ],
   },
@@ -64,7 +64,7 @@ const FORMATIONS: Record<string, { label: string; positions: { x: number; y: num
       { x: 50, y: 90, role: 'GK' },
       { x: 22, y: 72, role: 'CB' }, { x: 50, y: 74, role: 'CB' }, { x: 78, y: 72, role: 'CB' },
       { x: 50, y: 58, role: 'CDM' },
-      { x: 8, y: 40, role: 'LWB' }, { x: 28, y: 36, role: 'CM' }, { x: 50, y: 33, role: 'CAM' }, { x: 72, y: 36, role: 'CM' }, { x: 92, y: 40, role: 'RWB' },
+      { x: 12, y: 40, role: 'LWB' }, { x: 28, y: 36, role: 'CM' }, { x: 50, y: 33, role: 'CAM' }, { x: 72, y: 36, role: 'CM' }, { x: 88, y: 40, role: 'RWB' },
       { x: 50, y: 12, role: 'ST' },
     ],
   },
@@ -325,8 +325,8 @@ export default function MalaysiaPage() {
   const handleMouseMove = useCallback((e: React.MouseEvent) => {
     if (!dragging || !pitchRef.current) return;
     const rect = pitchRef.current.getBoundingClientRect();
-    const x = Math.max(3, Math.min(97, ((e.clientX - rect.left - dragOffset.x) / rect.width) * 100));
-    const y = Math.max(2, Math.min(97, ((e.clientY - rect.top - dragOffset.y) / rect.height) * 100));
+    const x = Math.max(7, Math.min(93, ((e.clientX - rect.left - dragOffset.x) / rect.width) * 100));
+    const y = Math.max(5, Math.min(92, ((e.clientY - rect.top - dragOffset.y) / rect.height) * 100));
 
     // Find player category to decide valid roles
     const dbPlayer = players.find(p => p.id === dragging);
@@ -363,8 +363,8 @@ export default function MalaysiaPage() {
     }
     const rect = pitchRef.current.getBoundingClientRect();
     const touch = e.touches[0];
-    const x = Math.max(3, Math.min(97, ((touch.clientX - rect.left - dragOffset.x) / rect.width) * 100));
-    const y = Math.max(2, Math.min(97, ((touch.clientY - rect.top - dragOffset.y) / rect.height) * 100));
+    const x = Math.max(7, Math.min(93, ((touch.clientX - rect.left - dragOffset.x) / rect.width) * 100));
+    const y = Math.max(5, Math.min(92, ((touch.clientY - rect.top - dragOffset.y) / rect.height) * 100));
 
     // Find player category to decide valid roles
     const dbPlayer = players.find(p => p.id === dragging);
