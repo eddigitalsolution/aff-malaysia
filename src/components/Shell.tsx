@@ -91,10 +91,10 @@ export function Shell({ children }: { children: React.ReactNode }) {
           <Link href="/" className="flex items-center gap-2.5">
             <img src="/malaysia-logo.png" alt="Harimau Malaya Logo" className="w-8 h-8 object-contain shrink-0" />
             <div className="flex flex-col">
-              <span className="bg-linear-to-r from-primary to-amber-500 bg-clip-text text-transparent font-extrabold text-sm lg:text-base tracking-wider uppercase leading-none">
+              <span className="bg-linear-to-r from-primary to-amber-500 bg-clip-text text-transparent font-extrabold text-xs sm:text-sm lg:text-base tracking-wider uppercase leading-none">
                 Harimau Malaya
               </span>
-              <span className="text-[10px] text-zinc-500 font-bold uppercase tracking-widest mt-0.5 leading-none">
+              <span className="text-[8px] sm:text-[10px] text-zinc-500 font-bold uppercase tracking-widest mt-0.5 leading-none">
                 Analytics Hub
               </span>
             </div>

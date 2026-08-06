@@ -52,7 +52,7 @@ export default function StandingsPage() {
         <div className="overflow-x-auto">
           <table className="w-full text-sm text-left border-collapse">
             <thead>
-              <tr className="bg-zinc-900/40 border-b border-zinc-800/80 text-zinc-400 text-xs font-bold uppercase">
+              <tr className="bg-zinc-900/40 border-b border-zinc-800/80 text-zinc-400 text-xs font-bold uppercase whitespace-nowrap">
                 <th className="py-4 px-4 text-center w-12">Pos</th>
                 <th className="py-4 px-4">Team</th>
                 <th className="py-4 px-3 text-center">P</th>
@@ -60,11 +60,11 @@ export default function StandingsPage() {
                 <th className="py-4 px-3 text-center">D</th>
                 <th className="py-4 px-3 text-center">L</th>
                 <th className="py-4 px-3 text-center">GF</th>
-                <th className="py-4 px-3 text-center">GA</th>
-                <th className="py-4 px-3 text-center">GD</th>
+                <th className="py-4 px-3 text-center hidden sm:table-cell">GA</th>
+                <th className="py-4 px-3 text-center hidden sm:table-cell">GD</th>
                 <th className="py-4 px-4 text-center">Pts</th>
-                <th className="py-4 px-4 text-center w-36">Form</th>
-                <th className="py-4 px-4 text-center">Status</th>
+                <th className="py-4 px-4 text-center w-36 hidden md:table-cell">Form</th>
+                <th className="py-4 px-4 text-center hidden md:table-cell">Status</th>
               </tr>
             </thead>
             <tbody>
@@ -74,24 +74,24 @@ export default function StandingsPage() {
                 return (
                   <tr 
                     key={row.teamId}
-                    className={`border-b border-zinc-900/60 hover:bg-zinc-900/20 transition-colors ${
+                    className={`border-b border-zinc-900/60 hover:bg-zinc-900/20 transition-colors whitespace-nowrap ${
                       isFeatured ? 'bg-primary/5 hover:bg-primary/10 border-l-4 border-l-primary' : ''
                     }`}
                   >
                     <td className="py-4 px-4 text-center font-bold text-zinc-300">{row.position}</td>
                     <td className="py-4 px-4">
-                      <div className="flex items-center gap-3">
-                        <span className="text-xl">{team?.flag}</span>
-                        <div>
-                          <div className="font-extrabold text-zinc-100 flex items-center gap-1.5">
+                      <div className="flex items-center gap-2 sm:gap-3">
+                        <span className="text-xl shrink-0">{team?.flag}</span>
+                        <div className="min-w-0">
+                          <div className="font-extrabold text-zinc-100 flex items-center gap-1.5 truncate">
                             {team?.name}
                             {isFeatured && (
-                              <span className="bg-primary/20 text-primary text-[8px] font-black px-1.5 py-0.5 rounded uppercase tracking-wider">
+                              <span className="bg-primary/20 text-primary text-[8px] font-black px-1.5 py-0.5 rounded uppercase tracking-wider shrink-0">
                                 FOCUS
                               </span>
                             )}
                           </div>
-                          <div className="text-[10px] text-zinc-500">Coach: {team?.coach}</div>
+                          <div className="text-[10px] text-zinc-500 truncate">Coach: {team?.coach}</div>
                         </div>
                       </div>
                     </td>
@@ -100,17 +100,17 @@ export default function StandingsPage() {
                     <td className="py-4 px-3 text-center text-zinc-400">{row.draws}</td>
                     <td className="py-4 px-3 text-center text-zinc-400">{row.losses}</td>
                     <td className="py-4 px-3 text-center text-zinc-500">{row.goalsFor}</td>
-                    <td className="py-4 px-3 text-center text-zinc-500">{row.goalsAgainst}</td>
-                    <td className="py-4 px-3 text-center text-zinc-300 font-bold">{row.goalDifference > 0 ? `+${row.goalDifference}` : row.goalDifference}</td>
+                    <td className="py-4 px-3 text-center text-zinc-500 hidden sm:table-cell">{row.goalsAgainst}</td>
+                    <td className="py-4 px-3 text-center text-zinc-300 font-bold hidden sm:table-cell">{row.goalDifference > 0 ? `+${row.goalDifference}` : row.goalDifference}</td>
                     <td className="py-4 px-4 text-center font-black text-primary text-base">{row.points}</td>
-                    <td className="py-4 px-4">
+                    <td className="py-4 px-4 hidden md:table-cell">
                       <div className="flex justify-center items-center gap-1.5">
                         {row.recentForm.map((outcome: string, idx: number) => (
                           <span key={idx}>{renderFormCircle(outcome)}</span>
                         ))}
                       </div>
                     </td>
-                    <td className="py-4 px-4 text-center">
+                    <td className="py-4 px-4 text-center hidden md:table-cell">
                       <span className={`text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider ${
                         row.qualificationStatus === 'Qualified'
                           ? 'bg-emerald-500/10 border border-emerald-500/20 text-emerald-400'
@@ -128,12 +128,12 @@ export default function StandingsPage() {
           </table>
         </div>
       </div>
-
+ 
       {/* Below standings: Last Matches + Semifinal Scenarios */}
       <div className="space-y-4">
-
+ 
         {/* Last Match Results */}
-        <div className="glass-card rounded-2xl border border-zinc-800 p-5 space-y-3">
+        <div className="glass-card rounded-2xl border border-zinc-800 p-4 sm:p-5 space-y-3">
           <h2 className="text-sm font-black text-zinc-300 uppercase tracking-wider flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-zinc-500 inline-block" /> Last Matchday Results
           </h2>
@@ -146,12 +146,12 @@ export default function StandingsPage() {
               { date: 'Jul 28, 2026', home: '🇲🇾 Malaysia', score: '4 – 0', away: '🇱🇦 Laos', homeWin: true },
               { date: 'Jul 25, 2026', home: '🇲🇲 Myanmar', score: '1 – 2', away: '🇲🇾 Malaysia', homeWin: false },
             ].map((m, i) => (
-              <div key={i} className="flex items-center justify-between text-xs bg-zinc-900/40 rounded-xl px-4 py-2.5 border border-zinc-800/60">
-                <span className="text-zinc-500 w-28 shrink-0">{m.date}</span>
-                <div className="flex items-center gap-3 flex-1 justify-center">
-                  <span className={`font-bold ${m.homeWin ? 'text-zinc-100' : 'text-zinc-400'}`}>{m.home}</span>
-                  <span className="font-black text-primary bg-zinc-950 border border-zinc-800 px-3 py-0.5 rounded-lg tabular-nums">{m.score}</span>
-                  <span className={`font-bold ${!m.homeWin ? 'text-zinc-100' : 'text-zinc-400'}`}>{m.away}</span>
+              <div key={i} className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between text-xs bg-zinc-900/40 rounded-xl px-4 py-2.5 border border-zinc-800/60 gap-2">
+                <span className="text-zinc-500 w-28 shrink-0 text-center sm:text-left">{m.date}</span>
+                <div className="flex items-center justify-between flex-1 gap-2">
+                  <span className={`font-bold flex-1 text-right truncate ${m.homeWin ? 'text-zinc-100' : 'text-zinc-400'}`}>{m.home}</span>
+                  <span className="font-black text-primary bg-zinc-950 border border-zinc-800 px-3 py-0.5 rounded-lg shrink-0 tabular-nums">{m.score}</span>
+                  <span className={`font-bold flex-1 text-left truncate ${!m.homeWin ? 'text-zinc-100' : 'text-zinc-400'}`}>{m.away}</span>
                 </div>
               </div>
             ))}
