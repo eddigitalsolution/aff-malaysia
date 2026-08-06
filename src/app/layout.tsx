@@ -31,7 +31,10 @@ export const metadata: Metadata = {
     images: ["/malaysia-logo.png"],
   },
   icons: {
-    icon: "/icon.png",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", type: "image/png" }
+    ],
     apple: "/icon.png",
   },
 };
