@@ -1,0 +1,32 @@
+[
+  {
+    "matchId": "match-09",
+    "homeTeamId": "malaysia",
+    "awayTeamId": "thailand",
+    "winnerProbabilityHome": 42.0,
+    "winnerProbabilityAway": 35.0,
+    "drawProbability": 23.0,
+    "scorePrediction": "2 - 1",
+    "firstGoalScorer": "Arif Aiman Hanapi",
+    "mostLikelyAssist": "Faisal Halim",
+    "expectedGoalsHome": 1.65,
+    "expectedGoalsAway": 1.35,
+    "confidenceScore": 82.0,
+    "aiExplanation": "Malaysia playing at Bukit Jalil under Pau Martí Vicente has shown extreme high-pressing intensity and rapid wing transitions. Thailand, led by Masatada Ishii, has stellar midfield control but has recently looked vulnerable in wide channels against pace. The prediction highly favors a narrow Malaysian victory (2-1) driven by Arif Aiman's dynamic cuts on the right wing."
+  },
+  {
+    "matchId": "match-11",
+    "homeTeamId": "vietnam",
+    "awayTeamId": "indonesia",
+    "winnerProbabilityHome": 38.0,
+    "winnerProbabilityAway": 36.0,
+    "drawProbability": 26.0,
+    "scorePrediction": "1 - 1",
+    "firstGoalScorer": "Nguyen Tien Linh",
+    "mostLikelyAssist": "Witan Sulaeman",
+    "expectedGoalsHome": 1.10,
+    "expectedGoalsAway": 1.05,
+    "confidenceScore": 75.0,
+    "aiExplanation": "Vietnam and Indonesia matches are historically tight and physical. Shin Tae-yong's young Indonesian squad will run direct counters, while Kim Sang-sik's Vietnam relies on structured defense and direct balls to Tien Linh. A high-intensity draw (1-1) is the most probable outcome."
+  }
+]

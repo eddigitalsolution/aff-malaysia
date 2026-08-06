@@ -1,0 +1,105 @@
+[
+  {
+    "matchId": "match-19",
+    "status": "LIVE",
+    "minute": 72,
+    "homeScore": 1,
+    "awayScore": 0,
+    "homeTeamId": "malaysia",
+    "awayTeamId": "philippines",
+    "timeline": [
+      { "minute": 34, "type": "GOAL", "teamId": "malaysia", "playerName": "Arif Aiman Hanapi", "detail": "Assisted by Faisal Halim" },
+      { "minute": 50, "type": "CARD_YELLOW", "teamId": "philippines", "playerName": "Jefferson Tabinas", "detail": "Foul on Arif Aiman" },
+      { "minute": 62, "type": "SUBSTITUTION", "teamId": "malaysia", "playerNameIn": "Paulo Josue", "playerNameOut": "Nooa Laine", "detail": "Tactical change" }
+    ],
+    "statistics": {
+      "possession": [58, 42],
+      "shots": [14, 6],
+      "shotsOnTarget": [6, 2],
+      "expectedGoals": [1.82, 0.54],
+      "passes": [410, 320],
+      "passAccuracy": [87, 78],
+      "corners": [7, 3],
+      "offsides": [1, 2],
+      "crosses": [20, 10],
+      "tackles": [12, 18],
+      "recoveries": [38, 30]
+    },
+    "formations": {
+      "home": "4-3-3",
+      "away": "4-2-3-1",
+      "homeStartingXI": [
+        { "id": "syihan-hazmi", "name": "Syihan Hazmi", "number": 16, "rating": 7.2, "position": "GK", "coords": [10, 50] },
+        { "id": "matthew-davies", "name": "M. Davies", "number": 2, "rating": 7.3, "position": "RB", "coords": [30, 85] },
+        { "id": "dion-cools", "name": "Dion Cools", "number": 21, "rating": 7.4, "position": "CB", "coords": [25, 60] },
+        { "id": "dominic-tan", "name": "Dominic Tan", "number": 6, "rating": 7.1, "position": "CB", "coords": [25, 40] },
+        { "id": "daniel-ting", "name": "Daniel Ting", "number": 22, "rating": 7.0, "position": "LB", "coords": [30, 15] },
+        { "id": "stuart-wilkin", "name": "S. Wilkin", "number": 8, "rating": 7.5, "position": "CM", "coords": [50, 65] },
+        { "id": "nooa-laine", "name": "Nooa Laine", "number": 14, "rating": 6.9, "position": "DM", "coords": [45, 50] },
+        { "id": "paulo-josue", "name": "Paulo Josue", "number": 10, "rating": 7.4, "position": "AM", "coords": [55, 35] },
+        { "id": "arif-aiman", "name": "Arif Aiman", "number": 7, "rating": 8.5, "position": "RW", "coords": [75, 80] },
+        { "id": "romel-morales", "name": "R. Morales", "number": 9, "rating": 7.2, "position": "ST", "coords": [80, 50] },
+        { "id": "faisal-halim", "name": "Faisal Halim", "number": 70, "rating": 7.9, "position": "LW", "coords": [75, 20] }
+      ],
+      "awayStartingXI": []
+    },
+    "pressureChart": [
+      { "minute": 10, "value": 20 },
+      { "minute": 20, "value": 15 },
+      { "minute": 30, "value": 45 },
+      { "minute": 40, "value": 30 },
+      { "minute": 50, "value": 10 },
+      { "minute": 60, "value": 25 },
+      { "minute": 70, "value": 35 }
+    ],
+    "aiSummary": "Malaysia controls the match against Philippines. A brilliant play in the 34th minute allowed Arif Aiman to strike the opener. Harimau Malaya's wing play has kept the visitors pinned deep in their defensive third.",
+    "manOfTheMatch": "Arif Aiman Hanapi"
+  },
+  {
+    "matchId": "match-07",
+    "status": "COMPLETED",
+    "minute": 90,
+    "homeScore": 4,
+    "awayScore": 0,
+    "homeTeamId": "malaysia",
+    "awayTeamId": "laos",
+    "timeline": [
+      { "minute": 18, "type": "GOAL", "teamId": "malaysia", "playerName": "Arif Aiman Hanapi", "detail": "Assisted by Nooa Laine" },
+      { "minute": 39, "type": "GOAL", "teamId": "malaysia", "playerName": "Romel Morales", "detail": "Assisted by Faisal Halim" },
+      { "minute": 65, "type": "GOAL", "teamId": "malaysia", "playerName": "Arif Aiman Hanapi", "detail": "Goal" },
+      { "minute": 81, "type": "GOAL", "teamId": "malaysia", "playerName": "Darren Lok", "detail": "Assisted by Dion Cools" }
+    ],
+    "statistics": {
+      "possession": [65, 35],
+      "shots": [21, 4],
+      "shotsOnTarget": [11, 0],
+      "expectedGoals": [3.12, 0.21],
+      "passes": [510, 240],
+      "passAccuracy": [90, 71],
+      "corners": [9, 1],
+      "offsides": [2, 0],
+      "crosses": [25, 6],
+      "tackles": [10, 19],
+      "recoveries": [46, 28]
+    },
+    "formations": {
+      "home": "4-3-3",
+      "away": "4-5-1",
+      "homeStartingXI": [],
+      "awayStartingXI": []
+    },
+    "pressureChart": [
+      { "minute": 10, "value": 40 },
+      { "minute": 20, "value": 65 },
+      { "minute": 30, "value": 30 },
+      { "minute": 40, "value": 50 },
+      { "minute": 50, "value": 60 },
+      { "minute": 60, "value": 75 },
+      { "minute": 70, "value": 40 },
+      { "minute": 80, "value": 55 },
+      { "minute": 90, "value": 30 }
+    ],
+    "aiSummary": "A dominant display by Harimau Malaya, defeating Laos 4-0. Arif Aiman bagged a brace, while Romel Morales and Darren Lok contributed goals to complete the rout at Bukit Jalil.",
+    "manOfTheMatch": "Arif Aiman Hanapi"
+  }
+]

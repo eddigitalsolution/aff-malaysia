@@ -1,0 +1,42 @@
+[
+  {
+    "id": "stadium-bukit-jalil",
+    "name": "Bukit Jalil National Stadium",
+    "city": "Kuala Lumpur",
+    "country": "Malaysia",
+    "capacity": 85500,
+    "image": "/venues/bukit-jalil.png"
+  },
+  {
+    "id": "stadium-rajamangala",
+    "name": "Rajamangala National Stadium",
+    "city": "Bangkok",
+    "country": "Thailand",
+    "capacity": 51500,
+    "image": "/venues/rajamangala.png"
+  },
+  {
+    "id": "stadium-my-dinh",
+    "name": "My Dinh National Stadium",
+    "city": "Hanoi",
+    "country": "Vietnam",
+    "capacity": 40190,
+    "image": "/venues/my-dinh.png"
+  },
+  {
+    "id": "stadium-gelora-bung-karno",
+    "name": "Gelora Bung Karno Stadium",
+    "city": "Jakarta",
+    "country": "Indonesia",
+    "capacity": 77193,
+    "image": "/venues/gbk.png"
+  },
+  {
+    "id": "stadium-national",
+    "name": "National Stadium",
+    "city": "Kallang",
+    "country": "Singapore",
+    "capacity": 55000,
+    "image": "/venues/national-singapore.png"
+  }
+]

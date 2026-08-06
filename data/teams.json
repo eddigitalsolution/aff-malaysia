@@ -1,0 +1,192 @@
+[
+  {
+    "id": "malaysia",
+    "name": "Malaysia",
+    "code": "MAS",
+    "group": "B",
+    "flag": "🇲🇾",
+    "coach": "Pau Martí Vicente",
+    "captain": "Dion Cools",
+    "fifaRanking": 132,
+    "ratings": {
+      "attack": 85,
+      "midfield": 82,
+      "defense": 81
+    },
+    "averageAge": 25.8,
+    "squadValue": "€6.85M",
+    "formation": "4-3-3",
+    "recentForm": ["W", "W", "L"]
+  },
+  {
+    "id": "thailand",
+    "name": "Thailand",
+    "code": "THA",
+    "group": "B",
+    "flag": "🇹🇭",
+    "coach": "Masatada Ishii",
+    "captain": "Theerathon Bunmathan",
+    "fifaRanking": 101,
+    "ratings": {
+      "attack": 84,
+      "midfield": 84,
+      "defense": 82
+    },
+    "averageAge": 27.2,
+    "squadValue": "€8.50M",
+    "formation": "4-2-3-1",
+    "recentForm": ["W", "W", "D"]
+  },
+  {
+    "id": "vietnam",
+    "name": "Vietnam",
+    "code": "VIE",
+    "group": "A",
+    "flag": "🇻🇳",
+    "coach": "Kim Sang-sik",
+    "captain": "Do Hung Dung",
+    "fifaRanking": 116,
+    "ratings": {
+      "attack": 80,
+      "midfield": 81,
+      "defense": 83
+    },
+    "averageAge": 26.5,
+    "squadValue": "€5.90M",
+    "formation": "3-4-3",
+    "recentForm": ["W", "W", "D"]
+  },
+  {
+    "id": "indonesia",
+    "name": "Indonesia",
+    "code": "IDN",
+    "group": "A",
+    "flag": "🇮🇩",
+    "coach": "Shin Tae-yong",
+    "captain": "Asnawi Mangkualam",
+    "fifaRanking": 129,
+    "ratings": {
+      "attack": 83,
+      "midfield": 83,
+      "defense": 84
+    },
+    "averageAge": 23.8,
+    "squadValue": "€9.20M",
+    "formation": "3-4-2-1",
+    "recentForm": ["W", "L", "W"]
+  },
+  {
+    "id": "singapore",
+    "name": "Singapore",
+    "code": "SGP",
+    "group": "A",
+    "flag": "🇸🇬",
+    "coach": "Tsutomu Ogura",
+    "captain": "Hariss Harun",
+    "fifaRanking": 161,
+    "ratings": {
+      "attack": 74,
+      "midfield": 75,
+      "defense": 76
+    },
+    "averageAge": 28.1,
+    "squadValue": "€3.20M",
+    "formation": "4-1-4-1",
+    "recentForm": ["W", "W", "D"]
+  },
+  {
+    "id": "philippines",
+    "name": "Philippines",
+    "code": "PHI",
+    "group": "B",
+    "flag": "🇵🇭",
+    "coach": "Albert Capellas",
+    "captain": "Neil Etheridge",
+    "fifaRanking": 147,
+    "ratings": {
+      "attack": 76,
+      "midfield": 76,
+      "defense": 75
+    },
+    "averageAge": 27.8,
+    "squadValue": "€4.10M",
+    "formation": "4-3-3",
+    "recentForm": ["L", "L", "W"]
+  },
+  {
+    "id": "myanmar",
+    "name": "Myanmar",
+    "code": "MYA",
+    "group": "B",
+    "flag": "🇲🇲",
+    "coach": "Myo Hlaing Win",
+    "captain": "Maung Maung Lwin",
+    "fifaRanking": 167,
+    "ratings": {
+      "attack": 72,
+      "midfield": 71,
+      "defense": 70
+    },
+    "averageAge": 24.5,
+    "squadValue": "€2.10M",
+    "formation": "4-4-2",
+    "recentForm": ["L", "L", "W"]
+  },
+  {
+    "id": "cambodia",
+    "name": "Cambodia",
+    "code": "CAM",
+    "group": "A",
+    "flag": "🇰🇭",
+    "coach": "Koji Gyotoku",
+    "captain": "Soeuy Visal",
+    "fifaRanking": 180,
+    "ratings": {
+      "attack": 70,
+      "midfield": 69,
+      "defense": 68
+    },
+    "averageAge": 23.4,
+    "squadValue": "€1.80M",
+    "formation": "4-2-3-1",
+    "recentForm": ["L", "W", "L"]
+  },
+  {
+    "id": "laos",
+    "name": "Laos",
+    "code": "LAO",
+    "group": "B",
+    "flag": "🇱🇦",
+    "coach": "Ha Hyeok-jun",
+    "captain": "Soukaphone Vongchiengkham",
+    "fifaRanking": 190,
+    "ratings": {
+      "attack": 66,
+      "midfield": 67,
+      "defense": 65
+    },
+    "averageAge": 22.9,
+    "squadValue": "€1.10M",
+    "formation": "4-5-1",
+    "recentForm": ["L", "L", "L", "L"]
+  },
+  {
+    "id": "timor-leste",
+    "name": "Timor-Leste",
+    "code": "TLS",
+    "group": "A",
+    "flag": "🇹🇱",
+    "coach": "Simon Elissetche",
+    "captain": "Joao Pedro",
+    "fifaRanking": 196,
+    "ratings": {
+      "attack": 65,
+      "midfield": 64,
+      "defense": 63
+    },
+    "averageAge": 22.1,
+    "squadValue": "€0.95M",
+    "formation": "5-4-1",
+    "recentForm": ["L", "L", "L", "L"]
+  }
+]

@@ -1,0 +1,1404 @@
+[
+  {
+    "id": "paulo-josue",
+    "name": "Paulo Josué",
+    "teamId": "malaysia",
+    "photo": "/players/paulo-josue.png",
+    "club": "Kuala Lumpur City FC",
+    "age": 37,
+    "height": 184,
+    "weight": 80,
+    "nationality": "Malaysia",
+    "position": "Forward",
+    "number": 17,
+    "appearances": 3,
+    "minutes": 259,
+    "goals": 3,
+    "assists": 0,
+    "shots": 8,
+    "expectedGoals": 1.45,
+    "expectedAssists": 1.85,
+    "passingAccuracy": 71,
+    "tackles": 1,
+    "interceptions": 1,
+    "recoveries": 8,
+    "averageRating": 7.95,
+    "sprintSpeed": 26.5,
+    "distanceCovered": 28.1,
+    "touches": 175,
+    "radar": {
+      "pace": 62,
+      "shooting": 83,
+      "passing": 85,
+      "dribbling": 78,
+      "defending": 50,
+      "physical": 76
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Set-piece delivery",
+        "Tactical vision",
+        "Finishing outside box",
+        "Leadership"
+      ],
+      "weaknesses": [
+        "Pace over long distances",
+        "Defensive tracking volume"
+      ],
+      "playingStyle": "Advanced Playmaker / Second Striker. Commands the attacking third, dangerous with late runs."
+    },
+    "injuryStatus": "Healthy"
+  },
+  {
+    "id": "sumareh",
+    "name": "Mohamadou Sumareh",
+    "teamId": "malaysia",
+    "photo": "/players/sumareh.png",
+    "club": "Johor Darul Ta'zim",
+    "age": 31,
+    "height": 179,
+    "weight": 75,
+    "nationality": "Malaysia",
+    "position": "Forward",
+    "number": 13,
+    "appearances": 3,
+    "minutes": 206,
+    "goals": 0,
+    "assists": 0,
+    "shots": 6,
+    "expectedGoals": 0.85,
+    "expectedAssists": 0.75,
+    "passingAccuracy": 78,
+    "tackles": 6,
+    "interceptions": 1,
+    "recoveries": 7,
+    "averageRating": 7.42,
+    "sprintSpeed": 33.2,
+    "distanceCovered": 22.4,
+    "touches": 115,
+    "radar": {
+      "pace": 88,
+      "shooting": 75,
+      "passing": 72,
+      "dribbling": 83,
+      "defending": 42,
+      "physical": 80
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Sprint acceleration",
+        "Dribbling directness",
+        "Physical strength on wings"
+      ],
+      "weaknesses": [
+        "Defensive work rate when shape drops"
+      ],
+      "playingStyle": "Traditional Winger. Relies on speed down the channels and cross-delivery."
+    },
+    "injuryStatus": "Healthy"
+  },
+  {
+    "id": "g-pavithran",
+    "name": "G. Pavithran",
+    "teamId": "malaysia",
+    "photo": "/players/g-pavithran.png",
+    "club": "Johor Darul Ta'zim U23",
+    "age": 21,
+    "height": 180,
+    "weight": 65,
+    "nationality": "Malaysia",
+    "position": "Forward",
+    "number": 21,
+    "appearances": 3,
+    "minutes": 270,
+    "goals": 0,
+    "assists": 2,
+    "shots": 5,
+    "expectedGoals": 0.55,
+    "expectedAssists": 0.15,
+    "passingAccuracy": 83,
+    "tackles": 5,
+    "interceptions": 0,
+    "recoveries": 4,
+    "averageRating": 7.3,
+    "sprintSpeed": 32.5,
+    "distanceCovered": 11.2,
+    "touches": 55,
+    "radar": {
+      "pace": 85,
+      "shooting": 73,
+      "passing": 70,
+      "dribbling": 80,
+      "defending": 45,
+      "physical": 62
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Pace",
+        "Energy",
+        "1v1 dribbles"
+      ],
+      "weaknesses": [
+        "Experience at senior levels"
+      ],
+      "playingStyle": "Agile Inside Forward. Thrives on late substitute runs to stretch tired defenders."
+    },
+    "injuryStatus": "Healthy"
+  },
+  {
+    "id": "hadi-fayyadh",
+    "name": "Hadi Fayyadh Abd Razak",
+    "teamId": "malaysia",
+    "photo": "/players/hadi-fayyadh.png",
+    "club": "No team",
+    "age": 25,
+    "height": 186,
+    "weight": 81,
+    "nationality": "Malaysia",
+    "position": "Forward",
+    "number": 9,
+    "appearances": 0,
+    "minutes": 0,
+    "goals": 0,
+    "assists": 0,
+    "shots": 0,
+    "expectedGoals": 0,
+    "expectedAssists": 0,
+    "passingAccuracy": 0,
+    "tackles": 0,
+    "interceptions": 0,
+    "recoveries": 0,
+    "averageRating": 0,
+    "sprintSpeed": 30.8,
+    "distanceCovered": 19.3,
+    "touches": 104,
+    "radar": {
+      "pace": 84,
+      "shooting": 78,
+      "passing": 71,
+      "dribbling": 74,
+      "defending": 59,
+      "physical": 74
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Off-the-ball runs",
+        "Pace",
+        "Shot power"
+      ],
+      "weaknesses": [
+        "Defensive contribution"
+      ],
+      "playingStyle": "Direct forward looking to exploit space behind the defence."
+    },
+    "injuryStatus": "Healthy"
+  },
+  {
+    "id": "endrick",
+    "name": "Endrick Dos Santos",
+    "teamId": "malaysia",
+    "photo": "/players/endrick.png",
+    "club": "Star City FC",
+    "age": 31,
+    "height": 182,
+    "weight": 76,
+    "nationality": "Malaysia",
+    "position": "Midfielder",
+    "number": 10,
+    "appearances": 2,
+    "minutes": 145,
+    "goals": 1,
+    "assists": 0,
+    "shots": 5,
+    "expectedGoals": 0.65,
+    "expectedAssists": 0.35,
+    "passingAccuracy": 63,
+    "tackles": 1,
+    "interceptions": 2,
+    "recoveries": 11,
+    "averageRating": 7.5,
+    "sprintSpeed": 30.2,
+    "distanceCovered": 26.8,
+    "touches": 160,
+    "radar": {
+      "pace": 75,
+      "shooting": 76,
+      "passing": 80,
+      "dribbling": 78,
+      "defending": 71,
+      "physical": 82
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Physical strength",
+        "Ball shielding",
+        "Long range shots",
+        "Interceptions"
+      ],
+      "weaknesses": [
+        "Stamina in high pressing phases"
+      ],
+      "playingStyle": "Box-to-box Midfielder. Focuses on physical duels and quick transitions."
+    },
+    "injuryStatus": "Injured"
+  },
+  {
+    "id": "sergio-aguero",
+    "name": "Sergio Aguero",
+    "teamId": "malaysia",
+    "photo": "/players/sergio-aguero.png",
+    "club": "No team",
+    "age": 32,
+    "height": 175,
+    "weight": 70,
+    "nationality": "Malaysia",
+    "position": "Midfielder",
+    "number": 8,
+    "appearances": 3,
+    "minutes": 215,
+    "goals": 0,
+    "assists": 0,
+    "shots": 4,
+    "expectedGoals": 0.85,
+    "expectedAssists": 1.65,
+    "passingAccuracy": 91,
+    "tackles": 4,
+    "interceptions": 3,
+    "recoveries": 12,
+    "averageRating": 7.85,
+    "sprintSpeed": 29.8,
+    "distanceCovered": 33.5,
+    "touches": 210,
+    "radar": {
+      "pace": 72,
+      "shooting": 78,
+      "passing": 84,
+      "dribbling": 81,
+      "defending": 60,
+      "physical": 70
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Dribbling in tight spaces",
+        "Final third combinations",
+        "Key passes",
+        "Off-the-ball movement"
+      ],
+      "weaknesses": [
+        "Aerial duels",
+        "Tackle strength"
+      ],
+      "playingStyle": "Creative Attacking Midfielder. Connects midfield lines to dynamic wing runs."
+    },
+    "injuryStatus": "Healthy"
+  },
+  {
+    "id": "wan-kuzain",
+    "name": "Wan Kuzain",
+    "teamId": "malaysia",
+    "photo": "/players/wan-kuzain.png",
+    "club": "SC Jacksonville",
+    "age": 27,
+    "height": 178,
+    "weight": 72,
+    "nationality": "Malaysia",
+    "position": "Midfielder",
+    "number": 7,
+    "appearances": 3,
+    "minutes": 63,
+    "goals": 1,
+    "assists": 0,
+    "shots": 1,
+    "expectedGoals": 0.12,
+    "expectedAssists": 0.85,
+    "passingAccuracy": 91,
+    "tackles": 1,
+    "interceptions": 2,
+    "recoveries": 9,
+    "averageRating": 7.6,
+    "sprintSpeed": 28.5,
+    "distanceCovered": 18.2,
+    "touches": 120,
+    "radar": {
+      "pace": 70,
+      "shooting": 64,
+      "passing": 86,
+      "dribbling": 79,
+      "defending": 68,
+      "physical": 72
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Short combination passes",
+        "Retaining possession",
+        "Vision",
+        "Set-pieces"
+      ],
+      "weaknesses": [
+        "Defensive speed over long stretches"
+      ],
+      "playingStyle": "Deep Lying Playmaker. Commands possession tempo, distributes cleanly out of backline."
+    },
+    "injuryStatus": "Healthy"
+  },
+  {
+    "id": "syafiq-ahmad",
+    "name": "Muhd Syafiq Ahmad",
+    "teamId": "malaysia",
+    "photo": "/players/syafiq-ahmad.png",
+    "club": "No team",
+    "age": 31,
+    "height": 174,
+    "weight": 79,
+    "nationality": "Malaysia",
+    "position": "Forward",
+    "number": 20,
+    "appearances": 3,
+    "minutes": 207,
+    "goals": 0,
+    "assists": 0,
+    "shots": 0,
+    "expectedGoals": 0.18,
+    "expectedAssists": 0.15,
+    "passingAccuracy": 82,
+    "tackles": 0,
+    "interceptions": 1,
+    "recoveries": 5,
+    "averageRating": 7.22,
+    "sprintSpeed": 30.1,
+    "distanceCovered": 11.5,
+    "touches": 58,
+    "radar": {
+      "pace": 72,
+      "shooting": 70,
+      "passing": 78,
+      "dribbling": 78,
+      "defending": 67,
+      "physical": 75
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Passing accuracy",
+        "Interceptions",
+        "Tactical awareness"
+      ],
+      "weaknesses": [
+        "Direct goal threat"
+      ],
+      "playingStyle": "Connecting midfielder who maintains team shape and possession."
+    },
+    "injuryStatus": "Healthy"
+  },
+  {
+    "id": "haqimi-azim",
+    "name": "Haqimi Azim",
+    "teamId": "malaysia",
+    "photo": "/players/haqimi-azim.png",
+    "club": "Penang",
+    "age": 23,
+    "height": 184,
+    "weight": 74,
+    "nationality": "Malaysia",
+    "position": "Midfielder",
+    "number": 19,
+    "appearances": 2,
+    "minutes": 38,
+    "goals": 0,
+    "assists": 0,
+    "shots": 0,
+    "expectedGoals": 0.16,
+    "expectedAssists": 0.12,
+    "passingAccuracy": 67,
+    "tackles": 2,
+    "interceptions": 2,
+    "recoveries": 10,
+    "averageRating": 6.82,
+    "sprintSpeed": 24.9,
+    "distanceCovered": 19.5,
+    "touches": 101,
+    "radar": {
+      "pace": 72,
+      "shooting": 76,
+      "passing": 77,
+      "dribbling": 72,
+      "defending": 59,
+      "physical": 75
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Passing accuracy",
+        "Interceptions",
+        "Tactical awareness"
+      ],
+      "weaknesses": [
+        "Direct goal threat"
+      ],
+      "playingStyle": "Connecting midfielder who maintains team shape and possession."
+    },
+    "injuryStatus": "Healthy"
+  },
+  {
+    "id": "daryl-sham",
+    "name": "Daryl Sham",
+    "teamId": "malaysia",
+    "photo": "/players/daryl-sham.png",
+    "club": "Johor Darul Ta'zim U23",
+    "age": 23,
+    "height": 171,
+    "weight": 79,
+    "nationality": "Malaysia",
+    "position": "Midfielder",
+    "number": 22,
+    "appearances": 3,
+    "minutes": 44,
+    "goals": 0,
+    "assists": 0,
+    "shots": 1,
+    "expectedGoals": 0.03,
+    "expectedAssists": 0.15,
+    "passingAccuracy": 78,
+    "tackles": 1,
+    "interceptions": 0,
+    "recoveries": 4,
+    "averageRating": 7.22,
+    "sprintSpeed": 26.1,
+    "distanceCovered": 10.9,
+    "touches": 65,
+    "radar": {
+      "pace": 76,
+      "shooting": 62,
+      "passing": 65,
+      "dribbling": 85,
+      "defending": 64,
+      "physical": 72
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Passing accuracy",
+        "Interceptions",
+        "Tactical awareness"
+      ],
+      "weaknesses": [
+        "Direct goal threat"
+      ],
+      "playingStyle": "Connecting midfielder who maintains team shape and possession."
+    },
+    "injuryStatus": "Healthy"
+  },
+  {
+    "id": "fazrul-amir",
+    "name": "Fazrul Amir Zaman",
+    "teamId": "malaysia",
+    "photo": "/players/fazrul-amir.png",
+    "club": "Kuala Lumpur City FC",
+    "age": 26,
+    "height": 163,
+    "weight": 77,
+    "nationality": "Malaysia",
+    "position": "Midfielder",
+    "number": 11,
+    "appearances": 0,
+    "minutes": 0,
+    "goals": 0,
+    "assists": 0,
+    "shots": 0,
+    "expectedGoals": 0,
+    "expectedAssists": 0,
+    "passingAccuracy": 0,
+    "tackles": 0,
+    "interceptions": 0,
+    "recoveries": 0,
+    "averageRating": 0,
+    "sprintSpeed": 28.6,
+    "distanceCovered": 19.2,
+    "touches": 116,
+    "radar": {
+      "pace": 69,
+      "shooting": 76,
+      "passing": 77,
+      "dribbling": 88,
+      "defending": 50,
+      "physical": 69
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Passing accuracy",
+        "Interceptions",
+        "Tactical awareness"
+      ],
+      "weaknesses": [
+        "Direct goal threat"
+      ],
+      "playingStyle": "Connecting midfielder who maintains team shape and possession."
+    },
+    "injuryStatus": "Healthy"
+  },
+  {
+    "id": "ibrahim-manusi",
+    "name": "Ibrahim Manusi",
+    "teamId": "malaysia",
+    "photo": "/players/ibrahim-manusi.png",
+    "club": "Johor Darul Ta'zim",
+    "age": 24,
+    "height": 181,
+    "weight": 80,
+    "nationality": "Malaysia",
+    "position": "Midfielder",
+    "number": 15,
+    "appearances": 0,
+    "minutes": 0,
+    "goals": 0,
+    "assists": 0,
+    "shots": 0,
+    "expectedGoals": 0,
+    "expectedAssists": 0,
+    "passingAccuracy": 0,
+    "tackles": 0,
+    "interceptions": 0,
+    "recoveries": 0,
+    "averageRating": 0,
+    "sprintSpeed": 29.2,
+    "distanceCovered": 18.9,
+    "touches": 119,
+    "radar": {
+      "pace": 78,
+      "shooting": 74,
+      "passing": 71,
+      "dribbling": 70,
+      "defending": 61,
+      "physical": 80
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Passing accuracy",
+        "Interceptions",
+        "Tactical awareness"
+      ],
+      "weaknesses": [
+        "Direct goal threat"
+      ],
+      "playingStyle": "Connecting midfielder who maintains team shape and possession."
+    },
+    "injuryStatus": "Healthy"
+  },
+  {
+    "id": "aliff-haiqal",
+    "name": "Aliff Haiqal",
+    "teamId": "malaysia",
+    "photo": "/players/aliff-haiqal.png",
+    "club": "Penang",
+    "age": 26,
+    "height": 168,
+    "weight": 78,
+    "nationality": "Malaysia",
+    "position": "Midfielder",
+    "number": 12,
+    "appearances": 3,
+    "minutes": 136,
+    "goals": 0,
+    "assists": 0,
+    "shots": 0,
+    "expectedGoals": 0.15,
+    "expectedAssists": 0.17,
+    "passingAccuracy": 91,
+    "tackles": 1,
+    "interceptions": 2,
+    "recoveries": 9,
+    "averageRating": 7.27,
+    "sprintSpeed": 27.4,
+    "distanceCovered": 19.2,
+    "touches": 118,
+    "radar": {
+      "pace": 71,
+      "shooting": 67,
+      "passing": 69,
+      "dribbling": 84,
+      "defending": 56,
+      "physical": 75
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Passing accuracy",
+        "Interceptions",
+        "Tactical awareness"
+      ],
+      "weaknesses": [
+        "Direct goal threat"
+      ],
+      "playingStyle": "Connecting midfielder who maintains team shape and possession."
+    },
+    "injuryStatus": "Healthy"
+  },
+  {
+    "id": "engku-nur-shakir",
+    "name": "Engku Nur Shakir",
+    "teamId": "malaysia",
+    "photo": "/players/engku-nur-shakir.png",
+    "club": "Star City FC",
+    "age": 27,
+    "height": 175,
+    "weight": 71,
+    "nationality": "Malaysia",
+    "position": "Midfielder",
+    "number": 14,
+    "appearances": 3,
+    "minutes": 48,
+    "goals": 0,
+    "assists": 0,
+    "shots": 0,
+    "expectedGoals": 0.17,
+    "expectedAssists": 0.14,
+    "passingAccuracy": 81,
+    "tackles": 0,
+    "interceptions": 2,
+    "recoveries": 7,
+    "averageRating": 7.02,
+    "sprintSpeed": 31.9,
+    "distanceCovered": 20.4,
+    "touches": 120,
+    "radar": {
+      "pace": 79,
+      "shooting": 74,
+      "passing": 74,
+      "dribbling": 78,
+      "defending": 64,
+      "physical": 71
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Passing accuracy",
+        "Interceptions",
+        "Tactical awareness"
+      ],
+      "weaknesses": [
+        "Direct goal threat"
+      ],
+      "playingStyle": "Connecting midfielder who maintains team shape and possession."
+    },
+    "injuryStatus": "Healthy"
+  },
+  {
+    "id": "ziad-el-basheer",
+    "name": "Ziad El Basheer",
+    "teamId": "malaysia",
+    "photo": "/players/ziad-el-basheer.png",
+    "club": "Johor Darul Ta'zim U23",
+    "age": 22,
+    "height": 174,
+    "weight": 81,
+    "nationality": "Malaysia",
+    "position": "Midfielder",
+    "number": 26,
+    "appearances": 0,
+    "minutes": 0,
+    "goals": 0,
+    "assists": 0,
+    "shots": 0,
+    "expectedGoals": 0,
+    "expectedAssists": 0,
+    "passingAccuracy": 0,
+    "tackles": 0,
+    "interceptions": 0,
+    "recoveries": 0,
+    "averageRating": 0,
+    "sprintSpeed": 23.5,
+    "distanceCovered": 10,
+    "touches": 60,
+    "radar": {
+      "pace": 66,
+      "shooting": 61,
+      "passing": 73,
+      "dribbling": 73,
+      "defending": 57,
+      "physical": 74
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Passing accuracy",
+        "Interceptions",
+        "Tactical awareness"
+      ],
+      "weaknesses": [
+        "Direct goal threat"
+      ],
+      "playingStyle": "Connecting midfielder who maintains team shape and possession."
+    },
+    "injuryStatus": "Healthy"
+  },
+  {
+    "id": "ubaidullah-shamsul",
+    "name": "Ubaidullah Shamsul",
+    "teamId": "malaysia",
+    "photo": "/players/ubaidullah-shamsul.png",
+    "club": "Terengganu",
+    "age": 22,
+    "height": 182,
+    "weight": 71,
+    "nationality": "Malaysia",
+    "position": "Defender",
+    "number": 3,
+    "appearances": 3,
+    "minutes": 270,
+    "goals": 0,
+    "assists": 0,
+    "shots": 0,
+    "expectedGoals": 0.08,
+    "expectedAssists": 0.06,
+    "passingAccuracy": 93,
+    "tackles": 3,
+    "interceptions": 3,
+    "recoveries": 11,
+    "averageRating": 6.86,
+    "sprintSpeed": 31.5,
+    "distanceCovered": 19.8,
+    "touches": 117,
+    "radar": {
+      "pace": 73,
+      "shooting": 52,
+      "passing": 69,
+      "dribbling": 53,
+      "defending": 83,
+      "physical": 70
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Tackling",
+        "Defensive positioning",
+        "Aerial duels"
+      ],
+      "weaknesses": [
+        "Acceleration on transitions"
+      ],
+      "playingStyle": "Reliable defensive player with disciplined positioning."
+    },
+    "injuryStatus": "Healthy"
+  },
+  {
+    "id": "jimmy-raymond",
+    "name": "Jimmy Raymond",
+    "teamId": "malaysia",
+    "photo": "/players/jimmy-raymond.png",
+    "club": "Kuching City",
+    "age": 30,
+    "height": 165,
+    "weight": 79,
+    "nationality": "Malaysia",
+    "position": "Defender",
+    "number": 2,
+    "appearances": 2,
+    "minutes": 147,
+    "goals": 0,
+    "assists": 0,
+    "shots": 1,
+    "expectedGoals": 0.2,
+    "expectedAssists": 0.37,
+    "passingAccuracy": 84,
+    "tackles": 0,
+    "interceptions": 2,
+    "recoveries": 9,
+    "averageRating": 7.41,
+    "sprintSpeed": 23,
+    "distanceCovered": 19.1,
+    "touches": 117,
+    "radar": {
+      "pace": 80,
+      "shooting": 52,
+      "passing": 65,
+      "dribbling": 61,
+      "defending": 79,
+      "physical": 71
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Tackling",
+        "Defensive positioning",
+        "Aerial duels"
+      ],
+      "weaknesses": [
+        "Acceleration on transitions"
+      ],
+      "playingStyle": "Reliable defensive player with disciplined positioning."
+    },
+    "injuryStatus": "Injured"
+  },
+  {
+    "id": "rodney-celvin",
+    "name": "Rodney Celvin Akwensivie",
+    "teamId": "malaysia",
+    "photo": "/players/rodney-celvin.png",
+    "club": "Kuching City",
+    "age": 29,
+    "height": 181,
+    "weight": 78,
+    "nationality": "Malaysia",
+    "position": "Defender",
+    "number": 5,
+    "appearances": 3,
+    "minutes": 270,
+    "goals": 0,
+    "assists": 0,
+    "shots": 0,
+    "expectedGoals": 0.1,
+    "expectedAssists": 0.17,
+    "passingAccuracy": 90,
+    "tackles": 1,
+    "interceptions": 4,
+    "recoveries": 13,
+    "averageRating": 7.59,
+    "sprintSpeed": 26.1,
+    "distanceCovered": 20.6,
+    "touches": 117,
+    "radar": {
+      "pace": 75,
+      "shooting": 50,
+      "passing": 67,
+      "dribbling": 59,
+      "defending": 76,
+      "physical": 83
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Tackling",
+        "Defensive positioning",
+        "Aerial duels"
+      ],
+      "weaknesses": [
+        "Acceleration on transitions"
+      ],
+      "playingStyle": "Reliable defensive player with disciplined positioning."
+    },
+    "injuryStatus": "Healthy"
+  },
+  {
+    "id": "aysar-hadi",
+    "name": "Aysar Hadi",
+    "teamId": "malaysia",
+    "photo": "/players/aysar-hadi.png",
+    "club": "Johor Darul Ta'zim U23",
+    "age": 22,
+    "height": 172,
+    "weight": 79,
+    "nationality": "Malaysia",
+    "position": "Defender",
+    "number": 6,
+    "appearances": 0,
+    "minutes": 0,
+    "goals": 0,
+    "assists": 0,
+    "shots": 0,
+    "expectedGoals": 0,
+    "expectedAssists": 0,
+    "passingAccuracy": 0,
+    "tackles": 0,
+    "interceptions": 0,
+    "recoveries": 0,
+    "averageRating": 0,
+    "sprintSpeed": 28.2,
+    "distanceCovered": 18.9,
+    "touches": 111,
+    "radar": {
+      "pace": 77,
+      "shooting": 45,
+      "passing": 75,
+      "dribbling": 63,
+      "defending": 79,
+      "physical": 80
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Tackling",
+        "Defensive positioning",
+        "Aerial duels"
+      ],
+      "weaknesses": [
+        "Acceleration on transitions"
+      ],
+      "playingStyle": "Reliable defensive player with disciplined positioning."
+    },
+    "injuryStatus": "Healthy"
+  },
+  {
+    "id": "ruventhiran",
+    "name": "Ruventhiran Vengadesan",
+    "teamId": "malaysia",
+    "photo": "/players/ruventhiran.png",
+    "club": "Melaka FC",
+    "age": 24,
+    "height": 175,
+    "weight": 80,
+    "nationality": "Malaysia",
+    "position": "Defender",
+    "number": 24,
+    "appearances": 3,
+    "minutes": 225,
+    "goals": 0,
+    "assists": 0,
+    "shots": 0,
+    "expectedGoals": 0.14,
+    "expectedAssists": 0.16,
+    "passingAccuracy": 88,
+    "tackles": 4,
+    "interceptions": 3,
+    "recoveries": 10,
+    "averageRating": 7.57,
+    "sprintSpeed": 29.1,
+    "distanceCovered": 19.8,
+    "touches": 124,
+    "radar": {
+      "pace": 82,
+      "shooting": 39,
+      "passing": 84,
+      "dribbling": 58,
+      "defending": 82,
+      "physical": 81
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Pace down the left flank",
+        "Overlapping runs",
+        "Tackling and defensive positioning",
+        "High stamina — covers full left channel"
+      ],
+      "weaknesses": [
+        "Final ball delivery",
+        "Shooting"
+      ],
+      "playingStyle": "Left Back / Left Winger. A dynamic, pacey defender who doubles as a wide attacker. Excels at overlapping runs down the left flank, delivering crosses and providing width to Malaysia's build-up play."
+    },
+    "injuryStatus": "Healthy"
+  },
+  {
+    "id": "alif-ahmad",
+    "name": "Alif Ahmad",
+    "teamId": "malaysia",
+    "photo": "/players/alif-ahmad.png",
+    "club": "Johor Darul Ta'zim U23",
+    "age": 23,
+    "height": 178,
+    "weight": 74,
+    "nationality": "Malaysia",
+    "position": "Defender",
+    "number": 4,
+    "appearances": 2,
+    "minutes": 118,
+    "goals": 0,
+    "assists": 0,
+    "shots": 0,
+    "expectedGoals": 0,
+    "expectedAssists": 0.18,
+    "passingAccuracy": 90,
+    "tackles": 3,
+    "interceptions": 1,
+    "recoveries": 4,
+    "averageRating": 7.19,
+    "sprintSpeed": 26.5,
+    "distanceCovered": 10.4,
+    "touches": 63,
+    "radar": {
+      "pace": 83,
+      "shooting": 41,
+      "passing": 68,
+      "dribbling": 60,
+      "defending": 82,
+      "physical": 75
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Tackling",
+        "Defensive positioning",
+        "Aerial duels"
+      ],
+      "weaknesses": [
+        "Acceleration on transitions"
+      ],
+      "playingStyle": "Reliable defensive player with disciplined positioning."
+    },
+    "injuryStatus": "Healthy"
+  },
+  {
+    "id": "faris-danish",
+    "name": "Faris Danish",
+    "teamId": "malaysia",
+    "photo": "/players/faris-danish.png",
+    "club": "Johor Darul Ta'zim U23",
+    "age": 20,
+    "height": 174,
+    "weight": 76,
+    "nationality": "Malaysia",
+    "position": "Defender",
+    "number": 25,
+    "appearances": 1,
+    "minutes": 45,
+    "goals": 0,
+    "assists": 0,
+    "shots": 0,
+    "expectedGoals": 0.09,
+    "expectedAssists": 0.09,
+    "passingAccuracy": 85,
+    "tackles": 0,
+    "interceptions": 2,
+    "recoveries": 9,
+    "averageRating": 7.48,
+    "sprintSpeed": 23.9,
+    "distanceCovered": 19.8,
+    "touches": 110,
+    "radar": {
+      "pace": 68,
+      "shooting": 50,
+      "passing": 66,
+      "dribbling": 63,
+      "defending": 79,
+      "physical": 80
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Tackling",
+        "Defensive positioning",
+        "Aerial duels"
+      ],
+      "weaknesses": [
+        "Acceleration on transitions"
+      ],
+      "playingStyle": "Attack-minded Left Back. Overlaps effectively down the left flank, combining defensive solidity with ability to support attacks."
+    },
+    "injuryStatus": "Healthy"
+  },
+  {
+    "id": "azri-ghani",
+    "name": "Azri Ghani",
+    "teamId": "malaysia",
+    "photo": "/players/azri-ghani.png",
+    "club": "Negeri Sembilan FC",
+    "age": 27,
+    "height": 177,
+    "weight": 75,
+    "nationality": "Malaysia",
+    "position": "Goalkeeper",
+    "number": 1,
+    "appearances": 3,
+    "minutes": 270,
+    "goals": 0,
+    "assists": 0,
+    "shots": 0,
+    "expectedGoals": 0,
+    "expectedAssists": 0,
+    "passingAccuracy": 78,
+    "tackles": 0,
+    "interceptions": 0,
+    "recoveries": 5,
+    "averageRating": 7.45,
+    "sprintSpeed": 23.5,
+    "distanceCovered": 14.5,
+    "touches": 90,
+    "radar": {
+      "pace": 48,
+      "shooting": 25,
+      "passing": 72,
+      "dribbling": 40,
+      "defending": 80,
+      "physical": 76
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Reflex shot-stopping",
+        "Agility on line",
+        "Distribution launch"
+      ],
+      "weaknesses": [
+        "Commanding high crosses under heavy traffic"
+      ],
+      "playingStyle": "Line-based Goalkeeper. Relies on quick reaction speeds and diagonal launches."
+    },
+    "injuryStatus": "Healthy"
+  },
+  {
+    "id": "rahadiazli",
+    "name": "Rahadiazli Rahalim",
+    "teamId": "malaysia",
+    "photo": "/players/rahadiazli.png",
+    "club": "Terengganu",
+    "age": 25,
+    "height": 192,
+    "weight": 80,
+    "nationality": "Malaysia",
+    "position": "Goalkeeper",
+    "number": 23,
+    "appearances": 0,
+    "minutes": 0,
+    "goals": 0,
+    "assists": 0,
+    "shots": 0,
+    "expectedGoals": 0,
+    "expectedAssists": 0,
+    "passingAccuracy": 0,
+    "tackles": 0,
+    "interceptions": 0,
+    "recoveries": 0,
+    "averageRating": 0,
+    "sprintSpeed": 30.1,
+    "distanceCovered": 9.9,
+    "touches": 71,
+    "radar": {
+      "pace": 45,
+      "shooting": 20,
+      "passing": 60,
+      "dribbling": 35,
+      "defending": 75,
+      "physical": 70
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Shot stopping",
+        "Positioning"
+      ],
+      "weaknesses": [
+        "Command of penalty area"
+      ],
+      "playingStyle": "Traditional goalkeeper focusing on solid fundamentals."
+    },
+    "injuryStatus": "Healthy"
+  },
+  {
+    "id": "haziq-aiman",
+    "name": "Haziq Aiman",
+    "teamId": "malaysia",
+    "photo": "/players/haziq-aiman.png",
+    "club": "Johor Darul Ta'zim U23",
+    "age": 21,
+    "height": 185,
+    "weight": 80,
+    "nationality": "Malaysia",
+    "position": "Goalkeeper",
+    "number": 16,
+    "appearances": 0,
+    "minutes": 0,
+    "goals": 0,
+    "assists": 0,
+    "shots": 0,
+    "expectedGoals": 0,
+    "expectedAssists": 0,
+    "passingAccuracy": 0,
+    "tackles": 0,
+    "interceptions": 0,
+    "recoveries": 0,
+    "averageRating": 0,
+    "sprintSpeed": 22.7,
+    "distanceCovered": 19.1,
+    "touches": 105,
+    "radar": {
+      "pace": 45,
+      "shooting": 20,
+      "passing": 60,
+      "dribbling": 35,
+      "defending": 75,
+      "physical": 83
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Shot stopping",
+        "Positioning"
+      ],
+      "weaknesses": [
+        "Command of penalty area"
+      ],
+      "playingStyle": "Traditional goalkeeper focusing on solid fundamentals."
+    },
+    "injuryStatus": "Healthy"
+  },
+  {
+    "id": "chanathip",
+    "name": "Chanathip Songkrasin",
+    "teamId": "thailand",
+    "photo": "/players/chanathip.png",
+    "club": "BG Pathum United",
+    "age": 32,
+    "height": 158,
+    "weight": 56,
+    "nationality": "Thailand",
+    "position": "Midfielder",
+    "number": 18,
+    "appearances": 4,
+    "minutes": 320,
+    "goals": 2,
+    "assists": 3,
+    "shots": 9,
+    "expectedGoals": 1.45,
+    "expectedAssists": 2.25,
+    "passingAccuracy": 89.5,
+    "tackles": 4,
+    "interceptions": 3,
+    "recoveries": 12,
+    "averageRating": 8.05,
+    "sprintSpeed": 31.8,
+    "distanceCovered": 39.5,
+    "touches": 270,
+    "radar": {
+      "pace": 85,
+      "shooting": 75,
+      "passing": 90,
+      "dribbling": 91,
+      "defending": 40,
+      "physical": 55
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Agility and turns",
+        "Vision",
+        "Passing weight",
+        "Escape from compact areas"
+      ],
+      "weaknesses": [
+        "Aerial duels",
+        "Physical shoulder-to-shoulder tackles"
+      ],
+      "playingStyle": "Advanced Playmaker. Dictates tempo in attacking third. Orchestrates Thailand's transitions."
+    }
+  },
+  {
+    "id": "supachai",
+    "name": "Supachai Chaided",
+    "teamId": "thailand",
+    "photo": "/players/supachai.png",
+    "club": "Buriram United",
+    "age": 27,
+    "height": 183,
+    "weight": 75,
+    "nationality": "Thailand",
+    "position": "Forward",
+    "number": 9,
+    "appearances": 4,
+    "minutes": 340,
+    "goals": 4,
+    "assists": 1,
+    "shots": 15,
+    "expectedGoals": 3.1,
+    "expectedAssists": 0.95,
+    "passingAccuracy": 81,
+    "tackles": 2,
+    "interceptions": 1,
+    "recoveries": 8,
+    "averageRating": 7.95,
+    "sprintSpeed": 31.5,
+    "distanceCovered": 37.8,
+    "touches": 190,
+    "radar": {
+      "pace": 80,
+      "shooting": 86,
+      "passing": 74,
+      "dribbling": 80,
+      "defending": 35,
+      "physical": 78
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Clinical inside area",
+        "Runs off defender shoulder",
+        "Heading accuracy",
+        "Double movement"
+      ],
+      "weaknesses": [
+        "Creative contributions outside box",
+        "Defensive pressing output"
+      ],
+      "playingStyle": "Poacher / Striker. Focuses heavily on box entries and finishing off crosses from wingers."
+    }
+  },
+  {
+    "id": "witan",
+    "name": "Witan Sulaeman",
+    "teamId": "indonesia",
+    "photo": "/players/witan.png",
+    "club": "Persija Jakarta",
+    "age": 24,
+    "height": 170,
+    "weight": 63,
+    "nationality": "Indonesia",
+    "position": "Forward",
+    "number": 8,
+    "appearances": 4,
+    "minutes": 310,
+    "goals": 2,
+    "assists": 2,
+    "shots": 8,
+    "expectedGoals": 1.65,
+    "expectedAssists": 1.35,
+    "passingAccuracy": 83.2,
+    "tackles": 6,
+    "interceptions": 4,
+    "recoveries": 14,
+    "averageRating": 7.72,
+    "sprintSpeed": 32.5,
+    "distanceCovered": 41.2,
+    "touches": 215,
+    "radar": {
+      "pace": 89,
+      "shooting": 78,
+      "passing": 80,
+      "dribbling": 84,
+      "defending": 52,
+      "physical": 64
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Speed in counters",
+        "Off-the-ball runs",
+        "Linkups",
+        "Finishing inside area"
+      ],
+      "weaknesses": [
+        "Physical strength in possession hold",
+        "Long crosses"
+      ],
+      "playingStyle": "Inside Forward who thrives on diagonal runs behind defensive lines. Counter-attack threat."
+    }
+  },
+  {
+    "id": "nguyen-tien-linh",
+    "name": "Nguyen Tien Linh",
+    "teamId": "vietnam",
+    "photo": "/players/tien-linh.png",
+    "club": "Binh Duong FC",
+    "age": 28,
+    "height": 180,
+    "weight": 76,
+    "nationality": "Vietnam",
+    "position": "Forward",
+    "number": 22,
+    "appearances": 4,
+    "minutes": 330,
+    "goals": 3,
+    "assists": 1,
+    "shots": 11,
+    "expectedGoals": 2.2,
+    "expectedAssists": 0.6,
+    "passingAccuracy": 77.5,
+    "tackles": 3,
+    "interceptions": 2,
+    "recoveries": 6,
+    "averageRating": 7.8,
+    "sprintSpeed": 30.5,
+    "distanceCovered": 36.8,
+    "touches": 150,
+    "radar": {
+      "pace": 77,
+      "shooting": 85,
+      "passing": 70,
+      "dribbling": 75,
+      "defending": 42,
+      "physical": 82
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Heading ability",
+        "Positioning",
+        "First-time finishing",
+        "Physical duel holding"
+      ],
+      "weaknesses": [
+        "Speed over distance",
+        "1v1 dribbles outside area"
+      ],
+      "playingStyle": "Traditional Number 9. Lethal when supplied with crosses. Strong aerial presence."
+    }
+  }
+]
