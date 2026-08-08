@@ -38,5 +38,13 @@
     "country": "Singapore",
     "capacity": 55000,
     "image": "/venues/national-singapore.png"
+  },
+  {
+    "id": "stadium-cheras",
+    "name": "KL City Cheras Stadium",
+    "city": "Kuala Lumpur",
+    "country": "Malaysia",
+    "capacity": 18000,
+    "image": "/venues/cheras.png"
   }
 ]

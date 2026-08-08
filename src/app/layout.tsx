@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Harimau Malaya Analytics Hub - ASEAN Hyundai Cup 2026",
   description: "Premium tactical analysis, interactive starting lineups, and dynamic matchday statistics for the Malaysian National Football Team in the ASEAN Hyundai Cup 2026.",
   metadataBase: new URL("https://aff-malaysia.vercel.app"),
-  keywords: ["Harimau Malaya", "Malaysia Football", "AFF Cup 2026", "Tactical Planner", "ASEAN Football", "Pau Marti Vicente", "Tan Cheng Hoe"],
+  keywords: ["Harimau Malaya", "Malaysia Football", "AFF Cup 2026", "Tactical Planner", "ASEAN Football", "Tan Cheng Hoe"],
   authors: [{ name: "Antigravity Team" }],
   openGraph: {
     title: "Harimau Malaya Analytics Hub - ASEAN Hyundai Cup 2026",

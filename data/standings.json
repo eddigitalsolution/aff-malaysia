@@ -11,7 +11,11 @@
       "goalsAgainst": 0,
       "goalDifference": 10,
       "points": 7,
-      "recentForm": ["W", "W", "D"],
+      "recentForm": [
+        "W",
+        "W",
+        "D"
+      ],
       "qualificationStatus": "Qualified"
     },
     {
@@ -25,7 +29,11 @@
       "goalsAgainst": 1,
       "goalDifference": 3,
       "points": 7,
-      "recentForm": ["W", "W", "D"],
+      "recentForm": [
+        "W",
+        "W",
+        "D"
+      ],
       "qualificationStatus": "Qualified"
     },
     {
@@ -39,7 +47,11 @@
       "goalsAgainst": 4,
       "goalDifference": 4,
       "points": 6,
-      "recentForm": ["W", "L", "W"],
+      "recentForm": [
+        "W",
+        "L",
+        "W"
+      ],
       "qualificationStatus": "Qualified"
     },
     {
@@ -53,7 +65,11 @@
       "goalsAgainst": 7,
       "goalDifference": -2,
       "points": 3,
-      "recentForm": ["L", "W", "L"],
+      "recentForm": [
+        "L",
+        "W",
+        "L"
+      ],
       "qualificationStatus": "Eliminated"
     },
     {
@@ -67,7 +83,12 @@
       "goalsAgainst": 15,
       "goalDifference": -15,
       "points": 0,
-      "recentForm": ["L", "L", "L", "L"],
+      "recentForm": [
+        "L",
+        "L",
+        "L",
+        "L"
+      ],
       "qualificationStatus": "Eliminated"
     }
   ],
@@ -75,58 +96,78 @@
     {
       "position": 1,
       "teamId": "thailand",
-      "played": 3,
-      "wins": 3,
+      "played": 4,
+      "wins": 4,
       "draws": 0,
       "losses": 0,
-      "goalsFor": 8,
+      "goalsFor": 10,
       "goalsAgainst": 0,
-      "goalDifference": 8,
-      "points": 9,
-      "recentForm": ["W", "W", "W"],
+      "goalDifference": 10,
+      "points": 12,
+      "recentForm": [
+        "W",
+        "W",
+        "W",
+        "W"
+      ],
       "qualificationStatus": "Qualified"
     },
     {
       "position": 2,
       "teamId": "malaysia",
-      "played": 3,
-      "wins": 2,
+      "played": 4,
+      "wins": 3,
       "draws": 0,
       "losses": 1,
-      "goalsFor": 6,
+      "goalsFor": 7,
       "goalsAgainst": 3,
-      "goalDifference": 3,
-      "points": 6,
-      "recentForm": ["L", "W", "W"],
-      "qualificationStatus": "TBD"
+      "goalDifference": 4,
+      "points": 9,
+      "recentForm": [
+        "W",
+        "W",
+        "L",
+        "W"
+      ],
+      "qualificationStatus": "Qualified"
     },
     {
       "position": 3,
       "teamId": "myanmar",
-      "played": 3,
+      "played": 4,
       "wins": 2,
       "draws": 0,
-      "losses": 1,
+      "losses": 2,
       "goalsFor": 12,
-      "goalsAgainst": 5,
-      "goalDifference": 7,
+      "goalsAgainst": 7,
+      "goalDifference": 5,
       "points": 6,
-      "recentForm": ["W", "W", "L"],
-      "qualificationStatus": "TBD"
+      "recentForm": [
+        "L",
+        "W",
+        "W",
+        "L"
+      ],
+      "qualificationStatus": "Eliminated"
     },
     {
       "position": 4,
       "teamId": "philippines",
-      "played": 3,
+      "played": 4,
       "wins": 1,
       "draws": 0,
-      "losses": 2,
+      "losses": 3,
       "goalsFor": 5,
-      "goalsAgainst": 6,
-      "goalDifference": -1,
+      "goalsAgainst": 7,
+      "goalDifference": -2,
       "points": 3,
-      "recentForm": ["W", "L", "L"],
-      "qualificationStatus": "TBD"
+      "recentForm": [
+        "L",
+        "W",
+        "L",
+        "L"
+      ],
+      "qualificationStatus": "Eliminated"
     },
     {
       "position": 5,
@@ -139,7 +180,12 @@
       "goalsAgainst": 20,
       "goalDifference": -17,
       "points": 0,
-      "recentForm": ["L", "L", "L", "L"],
+      "recentForm": [
+        "L",
+        "L",
+        "L",
+        "L"
+      ],
       "qualificationStatus": "Eliminated"
     }
   ]

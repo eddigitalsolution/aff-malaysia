@@ -147,8 +147,8 @@ export default function MalaysiaPage() {
       'azri-ghani':       ['GK'],
       'hadi-fayyadh':     ['ST', 'LW', 'RW'],
       'haqimi-azim':      ['ST', 'LW', 'RW'],
-      'daryl-sham':       ['CDM', 'CM'],
-      // aliff-haiqal intentionally excluded from preferred roles — bench player, Daryl Sham preferred
+      'daryl-sham':       ['CM'],
+      'aliff-haiqal':     ['CDM', 'CM'],
       'engku-nur-shakir': ['RW', 'RM', 'LW'],
       'jimmy-raymond':    ['RB', 'RWB', 'CB'],
       'endrick':          ['CDM', 'CM'],
@@ -423,9 +423,16 @@ export default function MalaysiaPage() {
       {/* TACTICAL PLANNER ONLY */}
       <section className="space-y-3">
         <div className="flex items-center justify-between flex-wrap gap-3">
-          <div>
-            <h2 className="text-xl font-black flex items-center gap-2"><Users className="h-5 w-5 text-primary" /> TACTICAL PLANNER</h2>
-            <p className="text-[11px] text-zinc-500 mt-0.5">Drag players to reposition · Click player then bench to swap · Change formation to rearrange</p>
+          <div className="flex items-center gap-3.5">
+            <div>
+              <div className="flex items-center gap-2 flex-wrap">
+                <h2 className="text-xl font-black flex items-center gap-2"><Users className="h-5 w-5 text-primary" /> TACTICAL PLANNER</h2>
+                <span className="bg-primary/10 border border-primary/25 text-primary text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider animate-pulse shrink-0">
+                  Next: Semifinal vs Vietnam 🇻🇳 (Aug 16)
+                </span>
+              </div>
+              <p className="text-[11px] text-zinc-500 mt-0.5">Drag players to reposition · Click player then bench to swap · Change formation to rearrange</p>
+            </div>
           </div>
           <div className="flex items-center gap-2">
             <div className="relative">
@@ -800,10 +807,10 @@ export default function MalaysiaPage() {
               </p>
               <div className="space-y-1.5 max-h-47.5 overflow-y-auto pr-1">
                 {[
-                  { id: 'faris-danish', name: 'Faris Danish', role: 'LB/LWB Cover', rating: 7.48, photo: '/players/faris-danish.png' },
-                  { id: 'sumareh', name: 'M. Sumareh', role: 'RW/RM Winger', rating: 7.42, photo: '/players/sumareh.png' },
-                  { id: 'aliff-haiqal', name: 'Aliff Haiqal', role: 'CM/CDM Midfield', rating: 7.27, photo: '/players/aliff-haiqal.png' },
-                  { id: 'haqimi-azim', name: 'Haqimi Azim', role: 'ST/CF Striker', rating: 7.22, photo: '/players/haqimi-azim.png' },
+                  { id: 'faris-danish', name: 'Faris Danish', role: 'LB/LWB Cover', rating: 7.69, photo: '/players/faris-danish.png' },
+                  { id: 'sumareh', name: 'M. Sumareh', role: 'RW/RM Winger', rating: 7.24, photo: '/players/sumareh.png' },
+                  { id: 'daryl-sham', name: 'Daryl Sham', role: 'CM/CDM Cover', rating: 6.97, photo: '/players/daryl-sham.png' },
+                  { id: 'haqimi-azim', name: 'Haqimi Azim', role: 'ST/CF Striker', rating: 6.55, photo: '/players/haqimi-azim.png' },
                   { id: 'engku-nur-shakir', name: 'Engku Shakir', role: 'RB/RWB Cover', rating: 7.02, photo: '/players/engku-nur-shakir.png' }
                 ].map(sp => {
                   const playerObj = players.find(p => p.id === sp.id);
@@ -1027,6 +1034,78 @@ export default function MalaysiaPage() {
                 </>
               )}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* OPPONENT SCOUT REPORT */}
+      <section className="glass-card rounded-2xl border border-zinc-800 p-5 space-y-4">
+        <div>
+          <h3 className="text-sm font-black text-zinc-200 uppercase tracking-wider flex items-center gap-2">
+            <span className="w-2.5 h-2.5 rounded-full bg-red-500 inline-block shrink-0" />
+            Opponent Scout Report: Vietnam 🇻🇳 (3-4-3)
+          </h3>
+          <p className="text-[10px] text-zinc-500 mt-1">
+            Tactical breakdown of Vietnam's playstyle under head coach Kim Sang-sik.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+          {/* Strengths */}
+          <div className="bg-zinc-900/40 border border-zinc-800/80 rounded-xl p-4 space-y-3">
+            <div className="text-[10.5px] font-black text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
+              <span>📈 Key Tactical Strengths</span>
+            </div>
+            <ul className="text-[11px] text-zinc-400 space-y-2.5 list-disc pl-4">
+              <li>
+                <strong className="text-zinc-200">High-Intensity Wingback Overloads:</strong> Wingbacks push aggressively high in possession, supporting inverted forwards to create 2v1 overloads on the flanks.
+              </li>
+              <li>
+                <strong className="text-zinc-200">Resilient Central Block (Back-3):</strong> Their 3-CB configuration protects the penalty box exceptionally well against direct crosses and long balls (only 1 goal conceded in group stage).
+              </li>
+              <li>
+                <strong className="text-zinc-200">Midfield Pivot Press:</strong> Do Hung Dung and Nguyen Hoang Duc coordinate a quick, aggressive central press to disrupt opponent build-up in early phases.
+              </li>
+            </ul>
+          </div>
+
+          {/* Weaknesses */}
+          <div className="bg-zinc-900/40 border border-zinc-800/80 rounded-xl p-4 space-y-3">
+            <div className="text-[10.5px] font-black text-red-400 uppercase tracking-wider flex items-center gap-1.5">
+              <span>📉 Exploitable Weaknesses</span>
+            </div>
+            <ul className="text-[11px] text-zinc-400 space-y-2.5 list-disc pl-4">
+              <li>
+                <strong className="text-zinc-200">Vulnerable Flanks on Transition:</strong> Since their wingbacks play very high, quick counter-attacks down the wings immediately expose the space behind them before their back-3 can shift wide.
+              </li>
+              <li>
+                <strong className="text-zinc-200">Midfield Pivot Numerical Underload:</strong> Their 2-man midfield pivot can be overrun and bypassed centrally by a 3-man midfield setup (e.g., Malaysia's 4-2-3-1 or 4-3-3).
+              </li>
+              <li>
+                <strong className="text-zinc-200">Outer Center-Back Dislocation:</strong> Pulling the wide center-backs out of the defensive block with wide wing play creates central gaps between the remaining center-backs.
+              </li>
+            </ul>
+          </div>
+
+          {/* Action Plan */}
+          <div className="bg-zinc-900/40 border border-primary/20 rounded-xl p-4 space-y-3">
+            <div className="text-[10.5px] font-black text-primary uppercase tracking-wider flex items-center gap-1.5">
+              <span>🎯 Strategy to Overcome Vietnam</span>
+            </div>
+            <ul className="text-[11px] text-zinc-400 space-y-2.5 list-disc pl-4">
+              <li>
+                <strong className="text-zinc-200">Central Overload (3v2):</strong> Force a central numerical advantage with a 3-man midfield pivot (Kuzain, Haiqal, Josué) to dominate possession and isolate their 2-man pivot.
+              </li>
+              <li>
+                <strong className="text-zinc-200">Fast Transition Outlets:</strong> Hit the empty spaces behind Vietnam's advanced wingbacks by releasing Pavithran and Sumareh on quick counter-runs.
+              </li>
+              <li>
+                <strong className="text-zinc-200">Inverted Winger Cuts:</strong> Instruct wide forwards to cut inside, dragging outer center-backs away and opening central channels for Sergio Aguero's vertical runs.
+              </li>
+              <li>
+                <strong className="text-zinc-200">Lateral Coverage:</strong> Fullbacks maintain a compact shape, supported by defensive midfielders shifting laterally to contain wide overloads.
+              </li>
+            </ul>
           </div>
         </div>
       </section>

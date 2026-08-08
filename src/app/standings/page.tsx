@@ -137,6 +137,8 @@ export default function StandingsPage() {
           </h2>
           <div className="space-y-2">
             {[
+              { date: 'Aug 8, 2026', home: '🇲🇾 Malaysia', score: '1 – 0', away: '🇵🇭 Philippines', homeWin: true },
+              { date: 'Aug 8, 2026', home: '🇹🇭 Thailand', score: '2 – 0', away: '🇲🇲 Myanmar', homeWin: true },
               { date: 'Aug 4, 2026', home: '🇲🇲 Myanmar', score: '7 – 2', away: '🇱🇦 Laos', homeWin: true },
               { date: 'Aug 4, 2026', home: '🇵🇭 Philippines', score: '0 – 1', away: '🇹🇭 Thailand', homeWin: false },
               { date: 'Aug 1, 2026', home: '🇹🇭 Thailand', score: '2 – 0', away: '🇲🇾 Malaysia', homeWin: true },
@@ -156,79 +158,56 @@ export default function StandingsPage() {
           </div>
         </div>
 
-        {/* Semifinal Qualification Scenarios */}
+        {/* Semifinal Qualification Summary */}
         <div className="glass-card rounded-2xl border border-zinc-800 p-5 space-y-4">
           <div>
             <h2 className="text-sm font-black text-zinc-300 uppercase tracking-wider flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-primary inline-block" /> Semifinal Qualification Scenarios
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block animate-pulse" /> Semifinals Confirmed
             </h2>
-            <p className="text-[11px] text-zinc-500 mt-1">Matchday 5 — Aug 8, 2026 · Top 2 teams qualify for semi-finals</p>
+            <p className="text-[11px] text-zinc-500 mt-1">Group Stage Concluded · Top 2 teams advance to the next round</p>
           </div>
 
-          {/* Upcoming Matches MD5 */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {[
-              { home: '🇲🇾 Malaysia', away: '🇵🇭 Philippines', venue: 'KL City Cheras Stadium' },
-              { home: '🇹🇭 Thailand', away: '🇲🇲 Myanmar', venue: 'Bangkok' },
-            ].map((m, i) => (
-              <div key={i} className="bg-zinc-900/50 border border-zinc-800 rounded-xl px-4 py-3 text-center space-y-1">
-                <div className="text-[9px] text-zinc-500 font-bold uppercase tracking-wider">{m.venue}</div>
-                <div className="text-xs font-black text-zinc-200">{m.home} <span className="text-zinc-600">vs</span> {m.away}</div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="rounded-xl border border-emerald-500/35 bg-emerald-500/5 p-4 space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="text-sm font-black text-zinc-100">🇹🇭 Thailand</span>
+                <span className="text-[10px] font-black px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">1st Place · 12 pts</span>
               </div>
-            ))}
+              <p className="text-[11.5px] text-zinc-400 leading-normal">
+                Advanced as Group B winners. They will face Group A runners-up **Singapore**.
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-primary/35 bg-primary/5 p-4 space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="text-sm font-black text-zinc-100">🇲🇾 Malaysia</span>
+                <span className="text-[10px] font-black px-2 py-0.5 rounded-full bg-primary/10 border border-primary/30 text-primary">2nd Place · 9 pts</span>
+              </div>
+              <p className="text-[11.5px] text-zinc-400 leading-normal">
+                Advanced as Group B runners-up. They will face Group A winners **Vietnam**.
+              </p>
+            </div>
           </div>
 
-          {/* Scenarios */}
-          <div className="space-y-2">
-            {[
-              {
-                team: '🇲🇾 Malaysia',
-                pts: '6 pts',
-                color: 'primary',
-                badge: 'bg-primary/10 border-primary/30 text-primary',
-                scenarios: [
-                  { result: 'WIN', detail: 'Qualifies if Myanmar draws or loses vs Thailand. 3-way 9-pt tie if Myanmar wins — needs large margin.', color: 'text-emerald-400' },
-                  { result: 'DRAW', detail: 'Qualifies ONLY if Myanmar loses to Thailand.', color: 'text-yellow-400' },
-                  { result: 'LOSE', detail: 'Virtually eliminated. Would need massive goal swing.', color: 'text-red-400' },
-                ],
-              },
-              {
-                team: '🇹🇭 Thailand',
-                pts: '9 pts',
-                color: 'emerald',
-                badge: 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400',
-                scenarios: [
-                  { result: 'WIN or DRAW', detail: 'Qualifies as Group B winners — already effectively through.', color: 'text-emerald-400' },
-                  { result: 'LOSE', detail: 'Stays qualified unless massive 3-way scenario (very unlikely).', color: 'text-yellow-400' },
-                ],
-              },
-              {
-                team: '🇲🇲 Myanmar',
-                pts: '6 pts',
-                color: 'blue',
-                badge: 'bg-blue-500/10 border-blue-500/30 text-blue-400',
-                scenarios: [
-                  { result: 'WIN vs Thailand', detail: 'Reaches 9 pts. Qualifies if Malaysia doesn\'t win by a large margin.', color: 'text-emerald-400' },
-                  { result: 'DRAW', detail: 'Reaches 7 pts. Qualifies ONLY if Malaysia loses.', color: 'text-yellow-400' },
-                  { result: 'LOSE', detail: 'Falls to 6 pts, 3rd at best on head-to-head. Eliminated.', color: 'text-red-400' },
-                ],
-              },
-            ].map((team, i) => (
-              <div key={i} className={`rounded-xl border p-4 space-y-2 ${team.badge} bg-opacity-10`} style={{ borderColor: undefined }}>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm font-black text-zinc-100">{team.team}</span>
-                  <span className={`text-[10px] font-black px-2 py-0.5 rounded-full border ${team.badge}`}>{team.pts}</span>
-                </div>
-                <div className="space-y-1">
-                  {team.scenarios.map((s, j) => (
-                    <div key={j} className="flex items-start gap-2 text-[11px]">
-                      <span className={`font-black shrink-0 w-20 ${s.color}`}>{s.result}</span>
-                      <span className="text-zinc-400">{s.detail}</span>
-                    </div>
-                  ))}
-                </div>
+          {/* Semifinal Matchups */}
+          <div className="mt-3 pt-3 border-t border-zinc-800/80 space-y-2.5">
+            <div className="text-[9px] font-black text-primary uppercase tracking-wider">🗓️ Upcoming Semifinals — 1st Leg</div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="bg-zinc-950/60 border border-zinc-850 rounded-xl px-4 py-3 text-center space-y-1">
+                <div className="text-[8px] text-zinc-500 font-bold uppercase tracking-wider">Aug 15, 2026 · Singapore National Stadium</div>
+                <div className="text-xs font-black text-zinc-200">🇸🇬 Singapore <span className="text-zinc-600">vs</span> 🇹🇭 Thailand</div>
               </div>
-            ))}
+              <div className="bg-zinc-950/60 border border-zinc-850 rounded-xl px-4 py-3 text-center space-y-1">
+                <div className="text-[8px] text-zinc-500 font-bold uppercase tracking-wider">Aug 16, 2026 · KL City Cheras Stadium</div>
+                <div className="text-xs font-black text-zinc-200">🇲🇾 Malaysia <span className="text-zinc-600">vs</span> 🇻🇳 Vietnam</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-zinc-900/40 rounded-xl p-3 border border-zinc-800/60 text-center">
+            <p className="text-xs text-zinc-400">
+              ❌ <strong className="text-zinc-300">Eliminated:</strong> Myanmar (6 pts), Philippines (3 pts), Laos (0 pts)
+            </p>
           </div>
 
           <p className="text-[10px] text-zinc-600 text-center">* Tie-breaker order: 1. Head-to-Head record · 2. Goal Difference · 3. Goals Scored</p>

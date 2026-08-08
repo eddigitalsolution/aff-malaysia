@@ -42,22 +42,24 @@ export default function PlayersPage() {
         <div className="flex items-center gap-3 mt-1 flex-wrap">
           <p className="text-xs text-zinc-400">Search and filter through the complete roster of the Malaysia national team.</p>
           <span className="inline-flex items-center gap-1.5 bg-primary/10 border border-primary/20 text-primary text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider">
-            📊 Stats: AFF ASEAN Cup 2026 — Group Stage (3 Matches)
+            📊 Stats: AFF ASEAN Cup 2026 — Group Stage Concluded
           </span>
         </div>
       </div>
 
       {/* Match context strip */}
-      <div className="grid grid-cols-3 gap-2 text-[10px]">
+      <div className="grid grid-cols-5 gap-2 text-[10px]">
         {[
           { match: 'MYA vs MYS', result: 'W 2–1', date: 'Jul 25' },
           { match: 'MYS vs LAO', result: 'W 4–0', date: 'Jul 28' },
           { match: 'THA vs MYS', result: 'L 0–2', date: 'Aug 1' },
+          { match: 'MYS vs PHI', result: 'W 1–0', date: 'Aug 8' },
+          { match: 'MYS vs VIE', result: 'Semifinal', date: 'Aug 16', upcoming: true },
         ].map((m) => (
-          <div key={m.match} className="glass-card rounded-xl border border-zinc-800 px-3 py-2 text-center">
+          <div key={m.match} className={`glass-card rounded-xl border px-3 py-2 text-center ${m.upcoming ? 'border-primary/30 bg-primary/5' : 'border-zinc-850'}`}>
             <div className="font-black text-zinc-200">{m.match}</div>
-            <div className={`font-black ${m.result.startsWith('W') ? 'text-emerald-400' : 'text-red-400'}`}>{m.result}</div>
-            <div className="text-zinc-600">{m.date}</div>
+            <div className={`font-black ${m.upcoming ? 'text-primary' : m.result.startsWith('W') ? 'text-emerald-400' : 'text-red-400'}`}>{m.result}</div>
+            <div className="text-zinc-500">{m.date}</div>
           </div>
         ))}
       </div>
