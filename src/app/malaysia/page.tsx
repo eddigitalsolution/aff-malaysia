@@ -103,6 +103,31 @@ const ROLE_COLOR: Record<string, string> = {
 const OPP_FLAGS: Record<string, string> = { myanmar: '🇲🇲', laos: '🇱🇦', thailand: '🇹🇭', philippines: '🇵🇭', cambodia: '🇰🇭', singapore: '🇸🇬', indonesia: '🇮🇩', vietnam: '🇻🇳' };
 const OPP_NAMES: Record<string, string> = { myanmar: 'Myanmar', laos: 'Laos', thailand: 'Thailand', philippines: 'Philippines', cambodia: 'Cambodia', singapore: 'Singapore', indonesia: 'Indonesia', vietnam: 'Vietnam' };
 
+const PLAYER_PREFERRED_ROLES: Record<string, string[]> = {
+  'paulo-josue':      ['ST', 'CAM'],
+  'sergio-aguero':    ['CDM', 'CAM', 'CM'],
+  'wan-kuzain':       ['CAM', 'CDM', 'CM'],
+  'aysar-hadi':       ['CB'],
+  'sumareh':          ['RM', 'RW', 'LM', 'LW'],
+  'g-pavithran':      ['LW'],
+  'ruventhiran':      ['LB', 'LWB', 'LM', 'LW'],
+  'rodney-celvin':    ['CB'],
+  'ubaidullah-shamsul': ['CB'],
+  'faris-danish':     ['LB', 'LWB'],
+  'alif-ahmad':       ['RB', 'RWB'],
+  'azri-ghani':       ['GK'],
+  'hadi-fayyadh':     ['ST'],
+  'haqimi-azim':      ['ST', 'LW', 'RW'],
+  'daryl-sham':       ['CM'],
+  'aliff-haiqal':     ['CDM', 'CM'],
+  'engku-nur-shakir': ['RW', 'RM', 'LW'],
+  'jimmy-raymond':    ['RB', 'RWB', 'CB'],
+  'endrick':          ['CDM', 'CM'],
+  'syafiq-ahmad':     ['ST', 'LW', 'RW'],
+  'ibrahim-manusi':   ['CDM', 'CM'],
+  'ziad-el-basheer':  ['CDM', 'CM'],
+};
+
 export default function MalaysiaPage() {
   const [team, setTeam] = useState<Team | null>(null);
   const [players, setPlayers] = useState<Player[]>([]);
@@ -132,30 +157,6 @@ export default function MalaysiaPage() {
   const applyFormation = useCallback((fm: string, allPlayers: Player[]) => {
     const positions = FORMATIONS[fm]?.positions ?? [];
 
-    const PLAYER_PREFERRED_ROLES: Record<string, string[]> = {
-      'paulo-josue':      ['ST', 'CAM'],
-      'sergio-aguero':    ['CDM', 'CAM', 'CM'],
-      'wan-kuzain':       ['CAM', 'CDM', 'CM'],
-      'aysar-hadi':       ['CB'],
-      'sumareh':          ['RM', 'RW', 'LM', 'LW'],
-      'g-pavithran':      ['LW'],
-      'ruventhiran':      ['LB', 'LWB', 'LM', 'LW'],
-      'rodney-celvin':    ['CB'],
-      'ubaidullah-shamsul': ['CB'],
-      'faris-danish':     ['LB', 'LWB'],
-      'alif-ahmad':       ['RB', 'RWB'],
-      'azri-ghani':       ['GK'],
-      'hadi-fayyadh':     ['ST'],
-      'haqimi-azim':      ['ST', 'LW', 'RW'],
-      'daryl-sham':       ['CM'],
-      'aliff-haiqal':     ['CDM', 'CM'],
-      'engku-nur-shakir': ['RW', 'RM', 'LW'],
-      'jimmy-raymond':    ['RB', 'RWB', 'CB'],
-      'endrick':          ['CDM', 'CM'],
-      'syafiq-ahmad':     ['ST', 'LW', 'RW'],
-      'ibrahim-manusi':   ['CDM', 'CM'],
-      'ziad-el-basheer':  ['CDM', 'CM'],
-    };
 
     const roleToCategory = (role: string): string => {
       if (role === 'GK') return 'Goalkeeper';
@@ -428,6 +429,53 @@ export default function MalaysiaPage() {
   const assists = players.reduce((s, p) => s + p.assists, 0);
   const totalXG = players.reduce((s, p) => s + p.expectedGoals, 0).toFixed(2);
   const avgPassing = players.length ? (players.reduce((s, p) => s + p.passingAccuracy, 0) / players.length).toFixed(1) : '0';
+  const dynamicSuggestions = (() => {
+    const sugList: { id: string; name: string; role: string; rating: number; photo: string }[] = [];
+    const sugIds = new Set<string>();
+
+    const addSug = (roleLabel: string, roleType: 'LB_LWB' | 'WINGER' | 'CM_CDM' | 'ST' | 'RB_RWB') => {
+      const candidates = benchPlayers.filter(p => p.injuryStatus !== 'Injured' && p.injuryStatus !== 'Returned to Club' && !sugIds.has(p.id));
+      
+      let filtered = candidates;
+      if (roleType === 'LB_LWB') {
+        filtered = candidates.filter(p => p.position === 'Defender' && (PLAYER_PREFERRED_ROLES[p.id]?.includes('LB') || PLAYER_PREFERRED_ROLES[p.id]?.includes('LWB')));
+        if (filtered.length === 0) filtered = candidates.filter(p => p.position === 'Defender');
+      } else if (roleType === 'RB_RWB') {
+        filtered = candidates.filter(p => p.position === 'Defender' && (PLAYER_PREFERRED_ROLES[p.id]?.includes('RB') || PLAYER_PREFERRED_ROLES[p.id]?.includes('RWB')));
+        if (filtered.length === 0) filtered = candidates.filter(p => p.position === 'Defender');
+      } else if (roleType === 'WINGER') {
+        filtered = candidates.filter(p => p.position === 'Forward' && (PLAYER_PREFERRED_ROLES[p.id]?.some(r => ['RW', 'RM', 'LW', 'LM'].includes(r))));
+        if (filtered.length === 0) filtered = candidates.filter(p => p.position === 'Forward');
+      } else if (roleType === 'ST') {
+        filtered = candidates.filter(p => p.position === 'Forward' && (PLAYER_PREFERRED_ROLES[p.id]?.includes('ST') || PLAYER_PREFERRED_ROLES[p.id]?.includes('CF')));
+        if (filtered.length === 0) filtered = candidates.filter(p => p.position === 'Forward');
+      } else if (roleType === 'CM_CDM') {
+        filtered = candidates.filter(p => p.position === 'Midfielder');
+      }
+
+      filtered.sort((a, b) => b.averageRating - a.averageRating);
+      const picked = filtered[0];
+      if (picked) {
+        sugIds.add(picked.id);
+        sugList.push({
+          id: picked.id,
+          name: picked.name,
+          role: roleLabel,
+          rating: picked.averageRating,
+          photo: picked.photo
+        });
+      }
+    };
+
+    addSug('LB/LWB Cover', 'LB_LWB');
+    addSug('RW/RM Winger', 'WINGER');
+    addSug('CM/CDM Cover', 'CM_CDM');
+    addSug('ST/CF Striker', 'ST');
+    addSug('RB/RWB Cover', 'RB_RWB');
+
+    return sugList;
+  })();
+
   const selectedPitch = pitchPlayers.find(p => p.id === selectedId);
 
   return (
@@ -823,13 +871,7 @@ export default function MalaysiaPage() {
                 Select a pitch player first, then tap a choice below to substitute and maintain pressure:
               </p>
               <div className="space-y-1.5 max-h-47.5 overflow-y-auto pr-1">
-                {[
-                  { id: 'faris-danish', name: 'Faris Danish', role: 'LB/LWB Cover', rating: 7.69, photo: '/players/faris-danish.png' },
-                  { id: 'syafiq-ahmad', name: 'Syafiq Ahmad', role: 'RW/LW/ST Cover', rating: 7.24, photo: '/players/syafiq-ahmad.png' },
-                  { id: 'daryl-sham', name: 'Daryl Sham', role: 'CM/CDM Cover', rating: 6.97, photo: '/players/daryl-sham.png' },
-                  { id: 'haqimi-azim', name: 'Haqimi Azim', role: 'ST/CF Striker', rating: 6.55, photo: '/players/haqimi-azim.png' },
-                  { id: 'engku-nur-shakir', name: 'Engku Shakir', role: 'RB/RWB Cover', rating: 7.02, photo: '/players/engku-nur-shakir.png' }
-                ].map(sp => {
+                {dynamicSuggestions.map(sp => {
                   const playerObj = players.find(p => p.id === sp.id);
                   const isAlreadyOnPitch = pitchPlayers.some(p => p.id === sp.id);
 
