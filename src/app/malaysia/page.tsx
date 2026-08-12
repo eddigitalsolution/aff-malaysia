@@ -1111,7 +1111,7 @@ export default function MalaysiaPage() {
             </div>
             <ul className="text-[11px] text-zinc-400 space-y-2.5 list-disc pl-4">
               <li>
-                <strong className="text-zinc-200">Central Overload (3v2):</strong> Force a central numerical advantage with a 3-man midfield pivot (Aguero, Haiqal, Josué) to dominate possession and isolate their 2-man pivot.
+                <strong className="text-zinc-200">Central Overload (3v2):</strong> Force a central numerical advantage with a 3-man midfield pivot (Aguero, Daryl Sham, Josué) to dominate possession and isolate their 2-man pivot.
               </li>
               <li>
                 <strong className="text-zinc-200">Fast Transition Outlets:</strong> Hit the empty spaces behind Vietnam's advanced wingbacks by releasing Pavithran and Engku Nur Shakir on quick counter-runs.
