@@ -138,14 +138,14 @@ export default function MalaysiaPage() {
       'wan-kuzain':       ['CAM', 'CDM', 'CM'],
       'aysar-hadi':       ['CB'],
       'sumareh':          ['RM', 'RW', 'LM', 'LW'],
-      'g-pavithran':      ['LW', 'LM', 'RW'],
+      'g-pavithran':      ['LW'],
       'ruventhiran':      ['LB', 'LWB', 'LM', 'LW'],
       'rodney-celvin':    ['CB'],
       'ubaidullah-shamsul': ['CB'],
       'faris-danish':     ['LB', 'LWB'],
       'alif-ahmad':       ['RB', 'RWB'],
       'azri-ghani':       ['GK'],
-      'hadi-fayyadh':     ['ST', 'LW', 'RW'],
+      'hadi-fayyadh':     ['ST'],
       'haqimi-azim':      ['ST', 'LW', 'RW'],
       'daryl-sham':       ['CM'],
       'aliff-haiqal':     ['CDM', 'CM'],
@@ -179,7 +179,7 @@ export default function MalaysiaPage() {
 
     const usedIds = new Set<string>();
     // Include ALL healthy squad players — zero-rated get base score 6.0 so natural position fits still work
-    const healthyPlayers = allPlayers.filter(p => p.injuryStatus !== 'Injured');
+    const healthyPlayers = allPlayers.filter(p => p.injuryStatus !== 'Injured' && p.injuryStatus !== 'Returned to Club');
     const assignedSlots: { pp: PitchPlayer; originalIndex: number }[] = [];
 
     // For 3-1-5-1: pre-assign Ibrahim Manusi to CDM BEFORE the main loop
@@ -212,7 +212,7 @@ export default function MalaysiaPage() {
       const slotCategory = roleToCategory(pos.role);
 
       const candidates = [...healthyPlayers]
-        .filter(p => !usedIds.has(p.id))
+        .filter(p => !usedIds.has(p.id) && !(p.id === 'g-pavithran' && pos.role !== 'LW') && !(p.id === 'hadi-fayyadh' && pos.role !== 'ST'))
         .map(p => {
           // Zero-rated players (no appearances) get base score 6.0
           let score = p.averageRating > 0 ? p.averageRating : 6.0;
@@ -348,9 +348,15 @@ export default function MalaysiaPage() {
       else if (y > 60) role = 'CDM';
       else role = 'CM';
     } else if (category === 'Forward') {
-      if (x < 33) role = 'LW';
-      else if (x > 67) role = 'RW';
-      else role = 'ST';
+      if (dragging === 'g-pavithran') {
+        role = 'LW';
+      } else if (dragging === 'hadi-fayyadh') {
+        role = 'ST';
+      } else {
+        if (x < 33) role = 'LW';
+        else if (x > 67) role = 'RW';
+        else role = 'ST';
+      }
     }
 
     setPitchPlayers(prev => prev.map(p => p.id === dragging ? { ...p, x, y, role } : p));
@@ -386,9 +392,15 @@ export default function MalaysiaPage() {
       else if (y > 60) role = 'CDM';
       else role = 'CM';
     } else if (category === 'Forward') {
-      if (x < 33) role = 'LW';
-      else if (x > 67) role = 'RW';
-      else role = 'ST';
+      if (dragging === 'g-pavithran') {
+        role = 'LW';
+      } else if (dragging === 'hadi-fayyadh') {
+        role = 'ST';
+      } else {
+        if (x < 33) role = 'LW';
+        else if (x > 67) role = 'RW';
+        else role = 'ST';
+      }
     }
 
     setPitchPlayers(prev => prev.map(p => p.id === dragging ? { ...p, x, y, role } : p));
@@ -750,6 +762,11 @@ export default function MalaysiaPage() {
                             INJ
                           </span>
                         )}
+                        {bp.injuryStatus === 'Returned to Club' && (
+                          <span className="bg-yellow-500/20 text-yellow-400 text-[6.5px] font-black px-1 py-0.2 rounded uppercase shrink-0">
+                            CLUB
+                          </span>
+                        )}
                       </div>
                       <div className="text-[8px] text-zinc-500">{bp.position} · #{bp.number}</div>
                     </div>
@@ -808,7 +825,7 @@ export default function MalaysiaPage() {
               <div className="space-y-1.5 max-h-47.5 overflow-y-auto pr-1">
                 {[
                   { id: 'faris-danish', name: 'Faris Danish', role: 'LB/LWB Cover', rating: 7.69, photo: '/players/faris-danish.png' },
-                  { id: 'sumareh', name: 'M. Sumareh', role: 'RW/RM Winger', rating: 7.24, photo: '/players/sumareh.png' },
+                  { id: 'syafiq-ahmad', name: 'Syafiq Ahmad', role: 'RW/LW/ST Cover', rating: 7.24, photo: '/players/syafiq-ahmad.png' },
                   { id: 'daryl-sham', name: 'Daryl Sham', role: 'CM/CDM Cover', rating: 6.97, photo: '/players/daryl-sham.png' },
                   { id: 'haqimi-azim', name: 'Haqimi Azim', role: 'ST/CF Striker', rating: 6.55, photo: '/players/haqimi-azim.png' },
                   { id: 'engku-nur-shakir', name: 'Engku Shakir', role: 'RB/RWB Cover', rating: 7.02, photo: '/players/engku-nur-shakir.png' }
@@ -898,10 +915,10 @@ export default function MalaysiaPage() {
                     <strong>Left Flank Overloads:</strong> Left Back (<strong>{pitchPlayers.find(p => ['LB', 'LWB'].includes(p.role))?.name || 'Ruventhiran'}</strong>) makes overlapping runs past LW (<strong>{pitchPlayers.find(p => ['LW', 'LM'].includes(p.role))?.name || 'Pavithran'}</strong>) to cross from the touchline, feeding the lone striker.
                   </p>
                   <p>
-                    <strong>Inside Cuts:</strong> Left Winger (<strong>{pitchPlayers.find(p => ['LW', 'LM'].includes(p.role))?.name || 'Pavithran'}</strong>) cuts inside to function as a second playmaker in zone 14, combining with CAM <strong>Wan Kuzain</strong> to unlock central channels.
+                    <strong>Inside Cuts:</strong> Left Winger (<strong>{pitchPlayers.find(p => ['LW', 'LM'].includes(p.role))?.name || 'Pavithran'}</strong>) cuts inside to function as a second playmaker in zone 14, combining with CAM <strong>Sergio Aguero</strong> to unlock central channels.
                   </p>
                   <p>
-                    <strong>Through Ball:</strong> Playmaker <strong>Wan Kuzain</strong> slips central through balls between defensive lines to release striker <strong>{pitchPlayers.find(p => p.role === 'ST')?.name || 'Paulo Josué'}</strong>.
+                    <strong>Through Ball:</strong> Playmaker <strong>Sergio Aguero</strong> slips central through balls between defensive lines to release striker <strong>{pitchPlayers.find(p => p.role === 'ST')?.name || 'Paulo Josué'}</strong>.
                   </p>
                   <p>
                     <strong>Set Piece:</strong> Direct free-kicks are lined up for central playmakers to shoot, or to deliver inswingers targeted at the penalty spot.
@@ -930,7 +947,7 @@ export default function MalaysiaPage() {
                     <strong>Left Flank Overloads:</strong> Left Wingback (<strong>{pitchPlayers.find(p => ['LB', 'LWB'].includes(p.role))?.name || 'Ruventhiran'}</strong>) coordinates high-intensity overlaps with the left attacking midfielder to overload wide defensive lines.
                   </p>
                   <p>
-                    <strong>Inside Cuts:</strong> Left attacking midfielder (<strong>{pitchPlayers.find(p => ['LW', 'LM'].includes(p.role))?.name || 'Pavithran'}</strong>) drifts inside to join the central passing web, combining with <strong>Wan Kuzain</strong> to release the lone striker.
+                    <strong>Inside Cuts:</strong> Left attacking midfielder (<strong>{pitchPlayers.find(p => ['LW', 'LM'].includes(p.role))?.name || 'Pavithran'}</strong>) drifts inside to join the central passing web, combining with <strong>Sergio Aguero</strong> to release the lone striker.
                   </p>
                   <p>
                     <strong>Through Ball:</strong> High-possession five-midfielder passing webs wait for opposition displacement to trigger direct, incisive through balls to striker <strong>{pitchPlayers.find(p => p.role === 'ST')?.name || 'Paulo Josué'}</strong>.
@@ -1094,10 +1111,10 @@ export default function MalaysiaPage() {
             </div>
             <ul className="text-[11px] text-zinc-400 space-y-2.5 list-disc pl-4">
               <li>
-                <strong className="text-zinc-200">Central Overload (3v2):</strong> Force a central numerical advantage with a 3-man midfield pivot (Kuzain, Haiqal, Josué) to dominate possession and isolate their 2-man pivot.
+                <strong className="text-zinc-200">Central Overload (3v2):</strong> Force a central numerical advantage with a 3-man midfield pivot (Aguero, Haiqal, Josué) to dominate possession and isolate their 2-man pivot.
               </li>
               <li>
-                <strong className="text-zinc-200">Fast Transition Outlets:</strong> Hit the empty spaces behind Vietnam's advanced wingbacks by releasing Pavithran and Sumareh on quick counter-runs.
+                <strong className="text-zinc-200">Fast Transition Outlets:</strong> Hit the empty spaces behind Vietnam's advanced wingbacks by releasing Pavithran and Engku Nur Shakir on quick counter-runs.
               </li>
               <li>
                 <strong className="text-zinc-200">Inverted Winger Cuts:</strong> Instruct wide forwards to cut inside, dragging outer center-backs away and opening central channels for Sergio Aguero's vertical runs.

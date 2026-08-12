@@ -88,6 +88,16 @@ export default function PlayerProfilePage({ params }: { params: Promise<{ id: st
                 #{player.number}
               </span>
               <span>{player.name}</span>
+              {player.injuryStatus === 'Injured' && (
+                <span className="bg-red-500/20 text-red-400 text-xs font-black px-2 py-0.5 rounded uppercase">
+                  🔴 INJURED
+                </span>
+              )}
+              {player.injuryStatus === 'Returned to Club' && (
+                <span className="bg-yellow-500/20 text-yellow-400 text-xs font-black px-2 py-0.5 rounded uppercase">
+                  🏠 CLUB
+                </span>
+              )}
             </h1>
             <p className="text-xs text-zinc-400">
               {player.position} • {team?.flag} {team?.name} • {player.club}

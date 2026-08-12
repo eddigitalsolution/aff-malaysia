@@ -337,12 +337,17 @@ export default function PlayersPage() {
                                 🔴 INJURED
                               </span>
                             )}
+                            {p.injuryStatus === 'Returned to Club' && (
+                              <span className="bg-yellow-500/20 text-yellow-400 text-[8px] font-black px-1.5 py-0.5 rounded uppercase">
+                                🏠 CLUB
+                              </span>
+                            )}
                             {p.appearances === 0 && (
                               <span className="bg-zinc-800 text-zinc-500 text-[8px] font-black px-1.5 py-0.5 rounded uppercase">
                                 DNP
                               </span>
                             )}
-                            {isFeatured && p.injuryStatus !== 'Injured' && p.appearances > 0 && (
+                            {isFeatured && p.injuryStatus !== 'Injured' && p.injuryStatus !== 'Returned to Club' && p.appearances > 0 && (
                               <span className="bg-primary/20 text-primary text-[8px] font-black px-1.5 py-0.5 rounded uppercase">
                                 FOCUS
                               </span>

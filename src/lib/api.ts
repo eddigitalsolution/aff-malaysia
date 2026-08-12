@@ -69,7 +69,7 @@ export interface Player {
     weaknesses: string[];
     playingStyle: string;
   };
-  injuryStatus?: 'Injured' | 'Doubtful' | 'Healthy';
+  injuryStatus?: 'Injured' | 'Doubtful' | 'Healthy' | 'Returned to Club';
 }
 
 export interface Fixture {
