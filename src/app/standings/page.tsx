@@ -137,6 +137,8 @@ export default function StandingsPage() {
           </h2>
           <div className="space-y-2">
             {[
+              { date: 'Aug 16, 2026', home: '🇲🇾 Malaysia', score: '0 – 2', away: '🇻🇳 Vietnam', homeWin: false },
+              { date: 'Aug 15, 2026', home: '🇸🇬 Singapore', score: '1 – 3', away: '🇹🇭 Thailand', homeWin: false },
               { date: 'Aug 8, 2026', home: '🇲🇾 Malaysia', score: '1 – 0', away: '🇵🇭 Philippines', homeWin: true },
               { date: 'Aug 8, 2026', home: '🇹🇭 Thailand', score: '2 – 0', away: '🇲🇲 Myanmar', homeWin: true },
               { date: 'Aug 4, 2026', home: '🇲🇲 Myanmar', score: '7 – 2', away: '🇱🇦 Laos', homeWin: true },
@@ -191,15 +193,27 @@ export default function StandingsPage() {
 
           {/* Semifinal Matchups */}
           <div className="mt-3 pt-3 border-t border-zinc-800/80 space-y-2.5">
-            <div className="text-[9px] font-black text-primary uppercase tracking-wider">🗓️ Upcoming Semifinals — 1st Leg</div>
+            <div className="text-[9px] font-black text-primary uppercase tracking-wider">🗓️ Semifinals — Leg 1 Results</div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div className="bg-zinc-950/60 border border-zinc-850 rounded-xl px-4 py-3 text-center space-y-1">
-                <div className="text-[8px] text-zinc-500 font-bold uppercase tracking-wider">Aug 15, 2026 · Singapore National Stadium</div>
-                <div className="text-xs font-black text-zinc-200">🇸🇬 Singapore <span className="text-zinc-600">vs</span> 🇹🇭 Thailand</div>
+                <div className="text-[8px] text-zinc-550 font-bold uppercase tracking-wider">Aug 15, 2026 · Singapore National Stadium</div>
+                <div className="text-xs font-black text-zinc-200">🇸🇬 Singapore <span className="text-primary font-black mx-1.5">1 – 3</span> 🇹🇭 Thailand</div>
               </div>
               <div className="bg-zinc-950/60 border border-zinc-850 rounded-xl px-4 py-3 text-center space-y-1">
-                <div className="text-[8px] text-zinc-500 font-bold uppercase tracking-wider">Aug 16, 2026 · KL City Cheras Stadium</div>
-                <div className="text-xs font-black text-zinc-200">🇲🇾 Malaysia <span className="text-zinc-600">vs</span> 🇻🇳 Vietnam</div>
+                <div className="text-[8px] text-zinc-550 font-bold uppercase tracking-wider">Aug 16, 2026 · KL City Cheras Stadium</div>
+                <div className="text-xs font-black text-zinc-200">🇲🇾 Malaysia <span className="text-primary font-black mx-1.5">0 – 2</span> 🇻🇳 Vietnam</div>
+              </div>
+            </div>
+            
+            <div className="text-[9px] font-black text-primary uppercase tracking-wider pt-2">🗓️ Semifinals — Leg 2 Schedule</div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="bg-zinc-950/60 border border-zinc-850 rounded-xl px-4 py-3 text-center space-y-1">
+                <div className="text-[8px] text-zinc-500 font-bold uppercase tracking-wider">Aug 19, 2026 · Rajamangala Stadium</div>
+                <div className="text-xs font-black text-zinc-200">🇹🇭 Thailand <span className="text-zinc-650">vs</span> 🇸🇬 Singapore</div>
+              </div>
+              <div className="bg-zinc-950/60 border border-zinc-850 rounded-xl px-4 py-3 text-center space-y-1">
+                <div className="text-[8px] text-zinc-500 font-bold uppercase tracking-wider">Aug 20, 2026 · My Dinh National Stadium</div>
+                <div className="text-xs font-black text-zinc-200">🇻🇳 Vietnam <span className="text-zinc-650">vs</span> 🇲🇾 Malaysia</div>
               </div>
             </div>
           </div>

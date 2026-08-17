@@ -109,11 +109,11 @@ const PLAYER_PREFERRED_ROLES: Record<string, string[]> = {
   'wan-kuzain':       ['CAM', 'CDM', 'CM'],
   'aysar-hadi':       ['CB'],
   'sumareh':          ['RM', 'RW', 'LM', 'LW'],
-  'g-pavithran':      ['LW'],
+  'g-pavithran':      ['LW', 'LM'],
   'ruventhiran':      ['LB', 'LWB', 'LM', 'LW'],
   'rodney-celvin':    ['CB'],
   'ubaidullah-shamsul': ['CB'],
-  'faris-danish':     ['LB', 'LWB'],
+  'faris-danish':     ['LB'],
   'alif-ahmad':       ['RB', 'RWB'],
   'azri-ghani':       ['GK'],
   'hadi-fayyadh':     ['ST'],
@@ -123,7 +123,7 @@ const PLAYER_PREFERRED_ROLES: Record<string, string[]> = {
   'engku-nur-shakir': ['RW', 'RM', 'LW'],
   'jimmy-raymond':    ['RB', 'RWB', 'CB'],
   'endrick':          ['CDM', 'CM'],
-  'syafiq-ahmad':     ['ST', 'LW', 'RW'],
+  'syafiq-ahmad':     ['ST', 'CAM'],
   'ibrahim-manusi':   ['CDM', 'CM'],
   'ziad-el-basheer':  ['CDM', 'CM'],
 };
@@ -213,7 +213,14 @@ export default function MalaysiaPage() {
       const slotCategory = roleToCategory(pos.role);
 
       const candidates = [...healthyPlayers]
-        .filter(p => !usedIds.has(p.id) && !(p.id === 'g-pavithran' && pos.role !== 'LW') && !(p.id === 'hadi-fayyadh' && pos.role !== 'ST'))
+        .filter(p => !usedIds.has(p.id) && 
+                     !(p.id === 'aysar-hadi' && pos.role === 'CB' && pos.x < 45) &&
+                     !(p.id === 'faris-danish' && pos.role !== 'LB') &&
+                     !(p.id === 'syafiq-ahmad' && !['ST', 'CAM'].includes(pos.role)) &&
+                     !(p.id === 'g-pavithran' && !['LW', 'LM'].includes(pos.role)) && 
+                     !(p.id === 'hadi-fayyadh' && pos.role !== 'ST') &&
+                     !(p.id === 'ruventhiran' && !['LB', 'LWB', 'LM', 'LW'].includes(pos.role)) &&
+                     (p.position === 'Goalkeeper') === (pos.role === 'GK'))
         .map(p => {
           // Zero-rated players (no appearances) get base score 6.0
           let score = p.averageRating > 0 ? p.averageRating : 6.0;
@@ -339,7 +346,9 @@ export default function MalaysiaPage() {
     if (category === 'Goalkeeper') {
       role = 'GK';
     } else if (category === 'Defender') {
-      if (x < 28) role = prevRole.includes('WB') ? 'LWB' : 'LB';
+      if (dragging === 'faris-danish') {
+        role = 'LB';
+      } else if (x < 28) role = prevRole.includes('WB') ? 'LWB' : 'LB';
       else if (x > 72) role = prevRole.includes('WB') ? 'RWB' : 'RB';
       else role = 'CB';
     } else if (category === 'Midfielder') {
@@ -350,7 +359,9 @@ export default function MalaysiaPage() {
       else role = 'CM';
     } else if (category === 'Forward') {
       if (dragging === 'g-pavithran') {
-        role = 'LW';
+        role = x < 50 ? 'LW' : 'LM';
+      } else if (dragging === 'syafiq-ahmad') {
+        role = y < 20 ? 'ST' : 'CAM';
       } else if (dragging === 'hadi-fayyadh') {
         role = 'ST';
       } else {
@@ -383,7 +394,9 @@ export default function MalaysiaPage() {
     if (category === 'Goalkeeper') {
       role = 'GK';
     } else if (category === 'Defender') {
-      if (x < 28) role = prevRole.includes('WB') ? 'LWB' : 'LB';
+      if (dragging === 'faris-danish') {
+        role = 'LB';
+      } else if (x < 28) role = prevRole.includes('WB') ? 'LWB' : 'LB';
       else if (x > 72) role = prevRole.includes('WB') ? 'RWB' : 'RB';
       else role = 'CB';
     } else if (category === 'Midfielder') {
@@ -394,7 +407,9 @@ export default function MalaysiaPage() {
       else role = 'CM';
     } else if (category === 'Forward') {
       if (dragging === 'g-pavithran') {
-        role = 'LW';
+        role = x < 50 ? 'LW' : 'LM';
+      } else if (dragging === 'syafiq-ahmad') {
+        role = y < 20 ? 'ST' : 'CAM';
       } else if (dragging === 'hadi-fayyadh') {
         role = 'ST';
       } else {
@@ -488,7 +503,7 @@ export default function MalaysiaPage() {
               <div className="flex items-center gap-2 flex-wrap">
                 <h2 className="text-xl font-black flex items-center gap-2"><Users className="h-5 w-5 text-primary" /> TACTICAL PLANNER</h2>
                 <span className="bg-primary/10 border border-primary/25 text-primary text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider animate-pulse shrink-0">
-                  Next: Semifinal vs Vietnam 🇻🇳 (Aug 16)
+                  Next: Semifinal Leg 2 vs Vietnam 🇻🇳 (Aug 20)
                 </span>
               </div>
               <p className="text-[11px] text-zinc-500 mt-0.5">Drag players to reposition · Click player then bench to swap · Change formation to rearrange</p>
@@ -528,6 +543,22 @@ export default function MalaysiaPage() {
               <RotateCcw className="h-3 w-3" /> Reset
             </button>
           </div>
+        </div>
+        
+        {/* Comeback Strategy Alert */}
+        <div className="bg-primary/10 border border-primary/25 rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="space-y-1">
+            <div className="text-xs font-black text-primary uppercase tracking-wider">🔥 Leg 2 Comeback Plan (Aggregate: 0 - 2)</div>
+            <p className="text-[11px] text-zinc-300 leading-normal max-w-2xl">
+              To overturn Vietnam's 2-0 advantage, we must adopt an aggressive strategy. Recommending a switch to a **3-5-2** or **3-1-5-1** formation to overload their 2-man midfield. **Aysar Hadi** is slated to start at CB due to Rodney's injury.
+            </p>
+          </div>
+          <button 
+            onClick={() => { setFormation('3-5-2'); applyFormation('3-5-2', players); }}
+            className="bg-primary text-zinc-950 font-black text-[10px] uppercase tracking-wider px-3.5 py-2 rounded-xl hover:bg-primary/90 transition-colors shrink-0"
+          >
+            Deploy 3-5-2 Comeback
+          </button>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
@@ -970,32 +1001,26 @@ export default function MalaysiaPage() {
               {formation === '3-5-2' && (
                 <>
                   <p>
-                    <strong>Left Flank Overloads:</strong> Left Wingback (<strong>{pitchPlayers.find(p => ['LB', 'LWB'].includes(p.role))?.name || 'Ruventhiran'}</strong>) covers the entire left flank, charging forward to provide crossing width and combine with the two strikers.
+                    <strong>Flank Transitions:</strong> Wingbacks push aggressively high into the spaces behind Vietnam's advanced wingbacks, stretching their back-3 and creating width.
                   </p>
                   <p>
-                    <strong>Inside Cuts:</strong> Left Wingback (<strong>{pitchPlayers.find(p => ['LB', 'LWB'].includes(p.role))?.name || 'Ruventhiran'}</strong>) cuts inside to join central midfield overloads, combining with CMs to exploit space in half-spaces.
+                    <strong>Midfield Overload (3v2):</strong> The three central midfielders (Sergio Aguero, Daryl Sham, Paulo Josué) must overload Vietnam's 2-man pivot to dominate possession and thread passes into the half-spaces.
                   </p>
                   <p>
-                    <strong>Through Ball:</strong> Central midfielders use rapid wall-pass combinations to setup clean vertical through balls into half-spaces for the strikers.
-                  </p>
-                  <p>
-                    <strong>Set Piece:</strong> Wingbacks stand over wide free-kicks to deliver cross-field floaters, targeting the physical height advantage of the center-backs.
+                    <strong>Striker Split Runs:</strong> The two strikers (Muhd Syafiq Ahmad and Haqimi Azim/Morales) make opposing vertical runs to drag Vietnam's outer center-backs away, opening central lanes.
                   </p>
                 </>
               )}
               {formation === '3-1-5-1' && (
                 <>
                   <p>
-                    <strong>Left Flank Overloads:</strong> Left Wingback (<strong>{pitchPlayers.find(p => ['LB', 'LWB'].includes(p.role))?.name || 'Ruventhiran'}</strong>) coordinates high-intensity overlaps with the left attacking midfielder to overload wide defensive lines.
+                    <strong>5-Man Passing Web:</strong> Overload the central third with 5 midfielders to completely bypass Vietnam's midfield press and control transition tempo.
                   </p>
                   <p>
-                    <strong>Inside Cuts:</strong> Left attacking midfielder (<strong>{pitchPlayers.find(p => ['LW', 'LM'].includes(p.role))?.name || 'Pavithran'}</strong>) drifts inside to join the central passing web, combining with <strong>Sergio Aguero</strong> to release the lone striker.
+                    <strong>Inverted Runs:</strong> Attacking midfielders run into half-spaces to drag Vietnam's outer CBs out, creating central pathways for the lone striker.
                   </p>
                   <p>
-                    <strong>Through Ball:</strong> High-possession five-midfielder passing webs wait for opposition displacement to trigger direct, incisive through balls to striker <strong>{pitchPlayers.find(p => p.role === 'ST')?.name || 'Paulo Josué'}</strong>.
-                  </p>
-                  <p>
-                    <strong>Set Piece:</strong> Short-corner variations are prioritized to create a 3v2 overload on the flank before crossing to the back post.
+                    <strong>High Counter-Press:</strong> Squeeze Vietnam's back-3 immediately upon losing possession, forcing turnovers deep in their half to keep pressure sustained.
                   </p>
                 </>
               )}
@@ -1063,32 +1088,23 @@ export default function MalaysiaPage() {
               {formation === '3-5-2' && (
                 <>
                   <p>
-                    <strong>Left Channel Cover:</strong> Left-sided CM (<strong>{pitchPlayers.find(p => ['CM', 'CDM'].includes(p.role))?.name || 'Daryl Sham'}</strong>) slides wide to support the wingback, delaying transitions and sealing the sideline.
+                    <strong>Contain Xuan Son & Tien Linh:</strong> Central CB Ubaidullah and stopper <strong>Aysar Hadi</strong> must tightly mark Vietnam's dual striker threat, preventing them from turning in the box.
                   </p>
                   <p>
-                    <strong>CB Lateral Shift:</strong> Left CB (<strong>{pitchPlayers.find(p => p.role === 'CB')?.name || 'Rodney Celvin'}</strong>) shifts wide to cover the flank, functioning as a fullback while the wingback recovers.
+                    <strong>Flank Cover Shift:</strong> The left CB (<strong>{pitchPlayers.find(p => p.role === 'CB' && p.x < 50)?.name || 'Aysar Hadi'}</strong>) shifts wide to support the wingback, delaying wide transitions.
                   </p>
                   <p>
-                    <strong>Pressure High:</strong> Wingbacks push high to pressure opposing fullbacks immediately, backed by CM shifts to seal inner channels.
-                  </p>
-                  <p>
-                    <strong>Mark Man-to-Man:</strong> Three center-backs match and mark opposing strikers man-to-man, with the central CB operating as a sweeper.
+                    <strong>Midfield Shield:</strong> The double pivots drop deep to form a screen in front of the back-3, neutralizing Vietnam's edge-of-the-box shooting opportunities.
                   </p>
                 </>
               )}
               {formation === '3-1-5-1' && (
                 <>
                   <p>
-                    <strong>Left Channel Cover:</strong> Sole CDM (<strong>{pitchPlayers.find(p => ['CDM'].includes(p.role))?.name || 'Ibrahim Manusi'}</strong>) shifts wide left to cover the flank, breaking up transition play.
+                    <strong>Ibrahim Manusi Screen:</strong> Ibrahim Manusi sits as a dedicated anchor to break up counters centrally, acting as a buffer ahead of Ubaidullah and Aysar.
                   </p>
                   <p>
-                    <strong>CB Lateral Shift:</strong> Left CB (<strong>{pitchPlayers.find(p => p.role === 'CB')?.name || 'Rodney Celvin'}</strong>) moves wide to cover the half-space, while central CB stays deep to protect the center.
-                  </p>
-                  <p>
-                    <strong>Pressure High:</strong> Five midfielders compress vertical lines with coordinated high pressure, trapping back passes to the keeper.
-                  </p>
-                  <p>
-                    <strong>Mark Man-to-Man:</strong> Left and right CBs lock onto wingers man-to-man, while CDM <strong>Ibrahim Manusi</strong> monitors central zone runners.
+                    <strong>Wingback Recovery:</strong> Wingbacks track back aggressively to form a temporary 5-man backline, neutralizing Vietnam's overlapping wingback crosses.
                   </p>
                 </>
               )}
@@ -1149,20 +1165,23 @@ export default function MalaysiaPage() {
           {/* Action Plan */}
           <div className="bg-zinc-900/40 border border-primary/20 rounded-xl p-4 space-y-3">
             <div className="text-[10.5px] font-black text-primary uppercase tracking-wider flex items-center gap-1.5">
-              <span>🎯 Strategy to Overcome Vietnam</span>
+              <span>🎯 Leg 2 Strategy (Away in Hanoi)</span>
             </div>
-            <ul className="text-[11px] text-zinc-400 space-y-2.5 list-disc pl-4">
+            <div className="bg-red-550/15 border border-red-500/30 rounded-xl p-2.5 text-[10px] text-red-400 font-bold space-y-1">
+              <div className="flex items-center gap-1.5">⚠️ SQUAD ALERT: Rodney Celvin Injured</div>
+              <p className="font-normal text-zinc-400 text-[9.5px] leading-relaxed">
+                Rodney Celvin suffered a hamstring strain in Leg 1. <strong>Aysar Hadi</strong> is the recommended CB replacement to start alongside Ubaidullah Shamsul.
+              </p>
+            </div>
+            <ul className="text-[11px] text-zinc-400 space-y-2 list-disc pl-4">
               <li>
-                <strong className="text-zinc-200">Central Overload (3v2):</strong> Force a central numerical advantage with a 3-man midfield pivot (Aguero, Daryl Sham, Josué) to dominate possession and isolate their 2-man pivot.
+                <strong className="text-zinc-200">Solidify CB (Aysar Hadi):</strong> Fill Rodney's void with Aysar Hadi. Maintain compact spacing with Ubaidullah to contain Tien Linh.
               </li>
               <li>
-                <strong className="text-zinc-200">Fast Transition Outlets:</strong> Hit the empty spaces behind Vietnam's advanced wingbacks by releasing Pavithran and Engku Nur Shakir on quick counter-runs.
+                <strong className="text-zinc-200">Double Pivot Shield:</strong> Play a compact 4-2-3-1 or 3-5-2. Sergio Aguero and Daryl Sham should sit deep to absorb Vietnam's home pressure.
               </li>
               <li>
-                <strong className="text-zinc-200">Inverted Winger Cuts:</strong> Instruct wide forwards to cut inside, dragging outer center-backs away and opening central channels for Sergio Aguero's vertical runs.
-              </li>
-              <li>
-                <strong className="text-zinc-200">Lateral Coverage:</strong> Fullbacks maintain a compact shape, supported by defensive midfielders shifting laterally to contain wide overloads.
+                <strong className="text-zinc-200">Chasing 2 Goals:</strong> Since we lost Leg 1 by 0-2, we must score at least twice to level the aggregate. An early away goal is critical to build pressure.
               </li>
             </ul>
           </div>

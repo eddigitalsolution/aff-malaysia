@@ -28,5 +28,20 @@
     "expectedGoalsAway": 1.05,
     "confidenceScore": 75.0,
     "aiExplanation": "Vietnam and Indonesia matches are historically tight and physical. Shin Tae-yong's young Indonesian squad will run direct counters, while Kim Sang-sik's Vietnam relies on structured defense and direct balls to Tien Linh. A high-intensity draw (1-1) is the most probable outcome."
+  },
+  {
+    "matchId": "match-22",
+    "homeTeamId": "vietnam",
+    "awayTeamId": "malaysia",
+    "winnerProbabilityHome": 38.0,
+    "winnerProbabilityAway": 34.0,
+    "drawProbability": 28.0,
+    "scorePrediction": "1 - 1",
+    "firstGoalScorer": "Nguyen Tien Linh",
+    "mostLikelyAssist": "Paulo Josué",
+    "expectedGoalsHome": 1.15,
+    "expectedGoalsAway": 1.05,
+    "confidenceScore": 70.0,
+    "aiExplanation": "Following a 2-0 defeat in the 1st leg, Malaysia faces a massive uphill battle in Hanoi. They will be missing injured center-back Rodney Celvin, with Aysar Hadi expected to start. To secure a comeback, Malaysia must overload the midfield and play an aggressive transitional game to break Vietnam's rigid block while preventing counter-attacks. A high-scoring game or a narrow Vietnam victory/draw is anticipated."
   }
 ]

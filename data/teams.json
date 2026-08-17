@@ -16,7 +16,7 @@
     "averageAge": 25.8,
     "squadValue": "€6.85M",
     "formation": "4-3-3",
-    "recentForm": ["W", "W", "L"]
+    "recentForm": ["W", "W", "L", "W", "L"]
   },
   {
     "id": "thailand",
@@ -35,7 +35,7 @@
     "averageAge": 27.2,
     "squadValue": "€8.50M",
     "formation": "4-2-3-1",
-    "recentForm": ["W", "W", "D"]
+    "recentForm": ["W", "W", "W", "W", "W"]
   },
   {
     "id": "vietnam",
@@ -54,7 +54,7 @@
     "averageAge": 26.5,
     "squadValue": "€5.90M",
     "formation": "3-4-3",
-    "recentForm": ["W", "W", "D"]
+    "recentForm": ["W", "D", "W", "D", "W"]
   },
   {
     "id": "indonesia",
@@ -92,7 +92,7 @@
     "averageAge": 28.1,
     "squadValue": "€3.20M",
     "formation": "4-1-4-1",
-    "recentForm": ["W", "W", "D"]
+    "recentForm": ["W", "W", "D", "D", "L"]
   },
   {
     "id": "philippines",

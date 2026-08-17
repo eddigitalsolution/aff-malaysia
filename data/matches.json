@@ -516,5 +516,407 @@
     ],
     "aiSummary": "A dominant display by Harimau Malaya, defeating Laos 4-0. Arif Aiman bagged a brace, while Romel Morales and Darren Lok contributed goals to complete the rout at Bukit Jalil.",
     "manOfTheMatch": "Arif Aiman Hanapi"
+  },
+  {
+    "matchId": "match-21",
+    "status": "COMPLETED",
+    "minute": 90,
+    "homeScore": 0,
+    "awayScore": 2,
+    "homeTeamId": "malaysia",
+    "awayTeamId": "vietnam",
+    "timeline": [
+      {
+        "minute": 16,
+        "type": "SUBSTITUTION",
+        "teamId": "malaysia",
+        "playerNameIn": "Aysar Hadi",
+        "playerNameOut": "Rodney Celvin",
+        "detail": "Injury: Rodney Celvin hamstring strain"
+      },
+      {
+        "minute": 44,
+        "type": "CARD_YELLOW",
+        "teamId": "malaysia",
+        "playerName": "Faris Danish",
+        "detail": "Tactical foul to stop counter-attack"
+      },
+      {
+        "minute": 65,
+        "type": "SUBSTITUTION",
+        "teamId": "malaysia",
+        "playerNameIn": "Haqimi Azim",
+        "playerNameOut": "Muhd Syafiq Ahmad",
+        "detail": "Tactical change"
+      },
+      {
+        "minute": 65,
+        "type": "SUBSTITUTION",
+        "teamId": "malaysia",
+        "playerNameIn": "Ibrahim Manusi",
+        "playerNameOut": "Mohamadou Sumareh",
+        "detail": "Tactical change"
+      },
+      {
+        "minute": 50,
+        "type": "GOAL",
+        "teamId": "vietnam",
+        "playerName": "Nguyễn Xuân Son",
+        "detail": "Goal! Assisted by Nguyen Hoang Duc"
+      },
+      {
+        "minute": 79,
+        "type": "SUBSTITUTION",
+        "teamId": "malaysia",
+        "playerNameIn": "Ziad El Basheer",
+        "playerNameOut": "Sergio Aguero",
+        "detail": "Tactical change"
+      },
+      {
+        "minute": 86,
+        "type": "GOAL",
+        "teamId": "vietnam",
+        "playerName": "Faris Danish",
+        "detail": "Own Goal (OG)"
+      }
+    ],
+    "statistics": {
+      "possession": [
+        52,
+        48
+      ],
+      "shots": [
+        9,
+        7
+      ],
+      "shotsOnTarget": [
+        3,
+        2
+      ],
+      "expectedGoals": [
+        0.85,
+        1.45
+      ],
+      "passes": [
+        420,
+        395
+      ],
+      "passAccuracy": [
+        82,
+        79
+      ],
+      "corners": [
+        4,
+        3
+      ],
+      "offsides": [
+        1,
+        2
+      ],
+      "crosses": [
+        15,
+        12
+      ],
+      "tackles": [
+        10,
+        14
+      ],
+      "recoveries": [
+        35,
+        38
+      ]
+    },
+    "formations": {
+      "home": "4-2-3-1",
+      "away": "3-4-3",
+      "homeStartingXI": [
+        {
+          "id": "azri-ghani",
+          "name": "Azri Ghani",
+          "number": 1,
+          "rating": 7.5,
+          "position": "GK",
+          "coords": [
+            10,
+            50
+          ]
+        },
+        {
+          "id": "alif-ahmad",
+          "name": "Alif Ahmad",
+          "number": 4,
+          "rating": 7.2,
+          "position": "RB",
+          "coords": [
+            30,
+            85
+          ]
+        },
+        {
+          "id": "rodney-celvin",
+          "name": "Rodney Celvin",
+          "number": 5,
+          "rating": 6.2,
+          "position": "CB",
+          "coords": [
+            25,
+            60
+          ]
+        },
+        {
+          "id": "ubaidullah-shamsul",
+          "name": "U. Shamsul",
+          "number": 3,
+          "rating": 7.8,
+          "position": "CB",
+          "coords": [
+            25,
+            40
+          ]
+        },
+        {
+          "id": "faris-danish",
+          "name": "Faris Danish",
+          "number": 25,
+          "rating": 7.4,
+          "position": "LB",
+          "coords": [
+            30,
+            15
+          ]
+        },
+        {
+          "id": "daryl-sham",
+          "name": "Daryl Sham",
+          "number": 22,
+          "rating": 6.9,
+          "position": "CM",
+          "coords": [
+            50,
+            65
+          ]
+        },
+        {
+          "id": "sergio-aguero",
+          "name": "S. Aguero",
+          "number": 8,
+          "rating": 7.6,
+          "position": "DM",
+          "coords": [
+            45,
+            50
+          ]
+        },
+        {
+          "id": "paulo-josue",
+          "name": "Paulo Josué",
+          "number": 17,
+          "rating": 7.0,
+          "position": "AM",
+          "coords": [
+            55,
+            35
+          ]
+        },
+        {
+          "id": "sumareh",
+          "name": "M. Sumareh",
+          "number": 13,
+          "rating": 6.8,
+          "position": "RW",
+          "coords": [
+            75,
+            80
+          ]
+        },
+        {
+          "id": "g-pavithran",
+          "name": "G. Pavithran",
+          "number": 21,
+          "rating": 7.3,
+          "position": "LW",
+          "coords": [
+            75,
+            20
+          ]
+        },
+        {
+          "id": "syafiq-ahmad",
+          "name": "Syafiq Ahmad",
+          "number": 9,
+          "rating": 6.9,
+          "position": "ST",
+          "coords": [
+            80,
+            50
+          ]
+        }
+      ],
+      "awayStartingXI": []
+    },
+    "pressureChart": [
+      {
+        "minute": 10,
+        "value": 10
+      },
+      {
+        "minute": 20,
+        "value": -15
+      },
+      {
+        "minute": 30,
+        "value": 20
+      },
+      {
+        "minute": 40,
+        "value": 5
+      },
+      {
+        "minute": 50,
+        "value": 30
+      },
+      {
+        "minute": 60,
+        "value": -10
+      },
+      {
+        "minute": 70,
+        "value": 15
+      },
+      {
+        "minute": 80,
+        "value": 25
+      },
+      {
+        "minute": 90,
+        "value": 0
+      }
+    ],
+    "aiSummary": "Vietnam took a significant step towards the final with a 2-0 victory over Malaysia in the Semifinal 1st Leg at KL City Cheras Stadium. Harimau Malaya suffered a major blow early on when key center-back Rodney Celvin went off injured. Vietnam broke the deadlock in first-half stoppage time through Nguyễn Xuân Son. An unfortunate own goal from Faris Danish in the 86th minute sealed a 2-0 win for the visitors, leaving Malaysia with a mountain to climb in Hanoi.",
+    "manOfTheMatch": "Nguyễn Xuân Son",
+    "homeStartingXI": [
+      {
+        "id": "azri-ghani",
+        "name": "Azri Ghani",
+        "number": 1,
+        "rating": 7.5,
+        "position": "GK",
+        "coords": [
+          10,
+          50
+        ]
+      },
+      {
+        "id": "alif-ahmad",
+        "name": "Alif Ahmad",
+        "number": 4,
+        "rating": 7.2,
+        "position": "RB",
+        "coords": [
+          30,
+          85
+        ]
+      },
+      {
+        "id": "rodney-celvin",
+        "name": "Rodney Celvin",
+        "number": 5,
+        "rating": 6.2,
+        "position": "CB",
+        "coords": [
+          25,
+          60
+        ]
+      },
+      {
+        "id": "ubaidullah-shamsul",
+        "name": "U. Shamsul",
+        "number": 3,
+        "rating": 7.8,
+        "position": "CB",
+        "coords": [
+          25,
+          40
+        ]
+      },
+      {
+        "id": "faris-danish",
+        "name": "Faris Danish",
+        "number": 25,
+        "rating": 7.4,
+        "position": "LB",
+        "coords": [
+          30,
+          15
+        ]
+      },
+      {
+        "id": "daryl-sham",
+        "name": "Daryl Sham",
+        "number": 22,
+        "rating": 6.9,
+        "position": "CM",
+        "coords": [
+          50,
+          65
+        ]
+      },
+      {
+        "id": "sergio-aguero",
+        "name": "S. Aguero",
+        "number": 8,
+        "rating": 7.6,
+        "position": "DM",
+        "coords": [
+          45,
+          50
+        ]
+      },
+      {
+        "id": "paulo-josue",
+        "name": "Paulo Josué",
+        "number": 17,
+        "rating": 7.0,
+        "position": "AM",
+        "coords": [
+          55,
+          35
+        ]
+      },
+      {
+        "id": "sumareh",
+        "name": "M. Sumareh",
+        "number": 13,
+        "rating": 6.8,
+        "position": "RW",
+        "coords": [
+          75,
+          80
+        ]
+      },
+      {
+        "id": "g-pavithran",
+        "name": "G. Pavithran",
+        "number": 21,
+        "rating": 7.3,
+        "position": "LW",
+        "coords": [
+          75,
+          20
+        ]
+      },
+      {
+        "id": "syafiq-ahmad",
+        "name": "Syafiq Ahmad",
+        "number": 9,
+        "rating": 6.9,
+        "position": "ST",
+        "coords": [
+          80,
+          50
+        ]
+      }
+    ],
+    "awayStartingXI": []
   }
 ]
