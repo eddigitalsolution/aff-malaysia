@@ -63,7 +63,7 @@ export default function PlayersPage() {
         <div className="flex items-center gap-3 mt-1 flex-wrap">
           <p className="text-xs text-zinc-400">Search and filter through the complete roster of the Malaysia national team.</p>
           <span className="inline-flex items-center gap-1.5 bg-primary/10 border border-primary/20 text-primary text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider">
-            📊 Stats: AFF ASEAN Cup 2026 — Group Stage Concluded
+            📊 Stats: AFF ASEAN Cup 2026 — Semifinals Concluded
           </span>
         </div>
       </div>
@@ -71,11 +71,11 @@ export default function PlayersPage() {
       {/* Match context strip */}
       <div className="grid grid-cols-5 gap-2 text-[10px]">
         {[
-          { match: 'MYA vs MYS', result: 'W 2–1', date: 'Jul 25', upcoming: false },
           { match: 'MYS vs LAO', result: 'W 4–0', date: 'Jul 28', upcoming: false },
           { match: 'THA vs MYS', result: 'L 0–2', date: 'Aug 1', upcoming: false },
           { match: 'MYS vs PHI', result: 'W 1–0', date: 'Aug 8', upcoming: false },
           { match: 'MYS vs VIE', result: 'L 0–2', date: 'Aug 16', upcoming: false },
+          { match: 'VIE vs MYS', result: 'L 0–2', date: 'Aug 20', upcoming: false },
         ].map((m) => (
           <div key={m.match} className={`glass-card rounded-xl border px-3 py-2 text-center ${m.upcoming ? 'border-primary/30 bg-primary/5' : 'border-zinc-850'}`}>
             <div className="font-black text-zinc-200">{m.match}</div>

@@ -49,6 +49,16 @@
       "goals": 2,
       "assists": 3,
       "matches": 3
+    },
+    {
+      "playerId": "nguyen-xuan-son",
+      "name": "Nguyễn Xuân Son",
+      "teamId": "vietnam",
+      "teamName": "Vietnam",
+      "value": 3,
+      "goals": 3,
+      "assists": 1,
+      "matches": 4
     }
   ],
   "topAssists": [
@@ -94,8 +104,8 @@
       "name": "Dang Van Lam",
       "teamId": "vietnam",
       "teamName": "Vietnam",
-      "value": 4,
-      "matches": 4
+      "value": 5,
+      "matches": 5
     },
     {
       "playerId": "syihan-hazmi",
@@ -168,13 +178,13 @@
     }
   ],
   "tournamentStats": {
-    "totalMatches": 22,
-    "totalGoals": 55,
-    "avgGoalsPerMatch": 2.50,
+    "totalMatches": 24,
+    "totalGoals": 60,
+    "avgGoalsPerMatch": 2.5,
     "yellowCards": 49,
     "redCards": 2,
     "penalties": 5,
-    "ownGoals": 2,
-    "cleanSheets": 9
+    "ownGoals": 3,
+    "cleanSheets": 10
   }
 }

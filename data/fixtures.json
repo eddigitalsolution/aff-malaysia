@@ -374,13 +374,13 @@
     "group": "Knockout",
     "homeTeamId": "vietnam",
     "awayTeamId": "malaysia",
-    "homeScore": 0,
+    "homeScore": 2,
     "awayScore": 0,
     "date": "2026-08-20",
     "time": "20:00",
-    "status": "UPCOMING",
+    "status": "COMPLETED",
     "venueId": "stadium-my-dinh",
-    "referee": "TBD",
-    "weather": "TBD"
+    "referee": "Kim Hee-gon (South Korea)",
+    "weather": "25°C, Humid"
   }
 ]

@@ -14,6 +14,7 @@ const NAV_ITEMS = [
   { href: '/malaysia', label: 'Tactical Planner', icon: Star, highlight: true },
   { href: '/standings', label: 'Standings', icon: Trophy },
   { href: '/players', label: 'Players', icon: User },
+  { href: '/squad-selection', label: 'Squad Selection', icon: Users },
 ];
 
 export function Shell({ children }: { children: React.ReactNode }) {

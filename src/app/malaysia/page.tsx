@@ -121,7 +121,7 @@ const PLAYER_PREFERRED_ROLES: Record<string, string[]> = {
   'daryl-sham':       ['CM'],
   'aliff-haiqal':     ['CDM', 'CM'],
   'engku-nur-shakir': ['RW', 'RM', 'LW'],
-  'jimmy-raymond':    ['RB', 'RWB', 'CB'],
+  'jimmy-raymond':    ['RB', 'RWB'],
   'endrick':          ['CDM', 'CM'],
   'syafiq-ahmad':     ['ST', 'CAM'],
   'ibrahim-manusi':   ['CDM', 'CM'],
@@ -502,8 +502,8 @@ export default function MalaysiaPage() {
             <div>
               <div className="flex items-center gap-2 flex-wrap">
                 <h2 className="text-xl font-black flex items-center gap-2"><Users className="h-5 w-5 text-primary" /> TACTICAL PLANNER</h2>
-                <span className="bg-primary/10 border border-primary/25 text-primary text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider animate-pulse shrink-0">
-                  Next: Semifinal Leg 2 vs Vietnam 🇻🇳 (Aug 20)
+                <span className="bg-red-500/10 border border-red-500/25 text-red-500 text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider shrink-0">
+                  Semifinals Concluded (Eliminated vs Vietnam 🇻🇳)
                 </span>
               </div>
               <p className="text-[11px] text-zinc-500 mt-0.5">Drag players to reposition · Click player then bench to swap · Change formation to rearrange</p>
@@ -545,20 +545,17 @@ export default function MalaysiaPage() {
           </div>
         </div>
         
-        {/* Comeback Strategy Alert */}
-        <div className="bg-primary/10 border border-primary/25 rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        {/* Post-Match Analysis Alert */}
+        <div className="bg-red-500/10 border border-red-500/25 rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="space-y-1">
-            <div className="text-xs font-black text-primary uppercase tracking-wider">🔥 Leg 2 Comeback Plan (Aggregate: 0 - 2)</div>
+            <div className="text-xs font-black text-red-500 uppercase tracking-wider">🚫 Semifinals Concluded (Final Aggregate: 0 - 4)</div>
             <p className="text-[11px] text-zinc-300 leading-normal max-w-2xl">
-              To overturn Vietnam's 2-0 advantage, we must adopt an aggressive strategy. Recommending a switch to a **3-5-2** or **3-1-5-1** formation to overload their 2-man midfield. **Aysar Hadi** is slated to start at CB due to Rodney's injury.
+              Malaysia was eliminated after a 2-0 defeat in Hanoi. Despite deploying Aysar Hadi as a starter due to Rodney Celvin's injury and attempting tactical overloads, Harimau Malaya could not breach Vietnam's defense, conceding twice to Nguyễn Xuân Son.
             </p>
           </div>
-          <button 
-            onClick={() => { setFormation('3-5-2'); applyFormation('3-5-2', players); }}
-            className="bg-primary text-zinc-950 font-black text-[10px] uppercase tracking-wider px-3.5 py-2 rounded-xl hover:bg-primary/90 transition-colors shrink-0"
-          >
-            Deploy 3-5-2 Comeback
-          </button>
+          <div className="bg-red-500/20 text-red-400 font-black text-[10px] uppercase tracking-wider px-3.5 py-2 rounded-xl shrink-0 border border-red-500/30 text-center">
+            Campaign Ended
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">

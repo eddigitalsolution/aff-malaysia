@@ -137,6 +137,8 @@ export default function StandingsPage() {
           </h2>
           <div className="space-y-2">
             {[
+              { date: 'Aug 20, 2026', home: '🇻🇳 Vietnam', score: '2 – 0', away: '🇲🇾 Malaysia', homeWin: true },
+              { date: 'Aug 19, 2026', home: '🇹🇭 Thailand', score: '1 – 2', away: '🇸🇬 Singapore', homeWin: false },
               { date: 'Aug 16, 2026', home: '🇲🇾 Malaysia', score: '0 – 2', away: '🇻🇳 Vietnam', homeWin: false },
               { date: 'Aug 15, 2026', home: '🇸🇬 Singapore', score: '1 – 3', away: '🇹🇭 Thailand', homeWin: false },
               { date: 'Aug 8, 2026', home: '🇲🇾 Malaysia', score: '1 – 0', away: '🇵🇭 Philippines', homeWin: true },
@@ -145,8 +147,6 @@ export default function StandingsPage() {
               { date: 'Aug 4, 2026', home: '🇵🇭 Philippines', score: '0 – 1', away: '🇹🇭 Thailand', homeWin: false },
               { date: 'Aug 1, 2026', home: '🇹🇭 Thailand', score: '2 – 0', away: '🇲🇾 Malaysia', homeWin: true },
               { date: 'Aug 1, 2026', home: '🇱🇦 Laos', score: '1 – 4', away: '🇵🇭 Philippines', homeWin: false },
-              { date: 'Jul 28, 2026', home: '🇲🇾 Malaysia', score: '4 – 0', away: '🇱🇦 Laos', homeWin: true },
-              { date: 'Jul 25, 2026', home: '🇲🇲 Myanmar', score: '1 – 2', away: '🇲🇾 Malaysia', homeWin: false },
             ].map((m, i) => (
               <div key={i} className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between text-xs bg-zinc-900/40 rounded-xl px-4 py-2.5 border border-zinc-800/60 gap-2">
                 <span className="text-zinc-500 w-28 shrink-0 text-center sm:text-left">{m.date}</span>
@@ -164,29 +164,29 @@ export default function StandingsPage() {
         <div className="glass-card rounded-2xl border border-zinc-800 p-5 space-y-4">
           <div>
             <h2 className="text-sm font-black text-zinc-300 uppercase tracking-wider flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block animate-pulse" /> Semifinals Confirmed
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block animate-pulse" /> Semifinals Concluded
             </h2>
-            <p className="text-[11px] text-zinc-500 mt-1">Group Stage Concluded · Top 2 teams advance to the next round</p>
+            <p className="text-[11px] text-zinc-500 mt-1">Semifinals Concluded · Vietnam and Thailand advance to the final</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="rounded-xl border border-emerald-500/35 bg-emerald-500/5 p-4 space-y-2">
               <div className="flex items-center justify-between">
                 <span className="text-sm font-black text-zinc-100">🇹🇭 Thailand</span>
-                <span className="text-[10px] font-black px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">1st Place · 12 pts</span>
+                <span className="text-[10px] font-black px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">Advanced · Agg: 4-3</span>
               </div>
               <p className="text-[11.5px] text-zinc-400 leading-normal">
-                Advanced as Group B winners. They will face Group A runners-up **Singapore**.
+                Defeated Singapore 4-3 on aggregate (3-1 away, 1-2 home) to secure their spot in the final.
               </p>
             </div>
 
-            <div className="rounded-xl border border-primary/35 bg-primary/5 p-4 space-y-2">
+            <div className="rounded-xl border border-emerald-500/35 bg-emerald-500/5 p-4 space-y-2">
               <div className="flex items-center justify-between">
-                <span className="text-sm font-black text-zinc-100">🇲🇾 Malaysia</span>
-                <span className="text-[10px] font-black px-2 py-0.5 rounded-full bg-primary/10 border border-primary/30 text-primary">2nd Place · 9 pts</span>
+                <span className="text-sm font-black text-zinc-100">🇻🇳 Vietnam</span>
+                <span className="text-[10px] font-black px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">Advanced · Agg: 4-0</span>
               </div>
               <p className="text-[11.5px] text-zinc-400 leading-normal">
-                Advanced as Group B runners-up. They will face Group A winners **Vietnam**.
+                Defeated Malaysia 2-0 in both legs to secure a spot in the final.
               </p>
             </div>
           </div>
@@ -205,15 +205,15 @@ export default function StandingsPage() {
               </div>
             </div>
             
-            <div className="text-[9px] font-black text-primary uppercase tracking-wider pt-2">🗓️ Semifinals — Leg 2 Schedule</div>
+            <div className="text-[9px] font-black text-primary uppercase tracking-wider pt-2">🗓️ Semifinals — Leg 2 Results</div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div className="bg-zinc-950/60 border border-zinc-850 rounded-xl px-4 py-3 text-center space-y-1">
-                <div className="text-[8px] text-zinc-500 font-bold uppercase tracking-wider">Aug 19, 2026 · Rajamangala Stadium</div>
-                <div className="text-xs font-black text-zinc-200">🇹🇭 Thailand <span className="text-zinc-650">vs</span> 🇸🇬 Singapore</div>
+                <div className="text-[8px] text-zinc-550 font-bold uppercase tracking-wider">Aug 19, 2026 · Rajamangala Stadium</div>
+                <div className="text-xs font-black text-zinc-200">🇹🇭 Thailand <span className="text-primary font-black mx-1.5">1 – 2</span> 🇸🇬 Singapore</div>
               </div>
               <div className="bg-zinc-950/60 border border-zinc-850 rounded-xl px-4 py-3 text-center space-y-1">
-                <div className="text-[8px] text-zinc-500 font-bold uppercase tracking-wider">Aug 20, 2026 · My Dinh National Stadium</div>
-                <div className="text-xs font-black text-zinc-200">🇻🇳 Vietnam <span className="text-zinc-650">vs</span> 🇲🇾 Malaysia</div>
+                <div className="text-[8px] text-zinc-550 font-bold uppercase tracking-wider">Aug 20, 2026 · My Dinh National Stadium</div>
+                <div className="text-xs font-black text-zinc-200">🇻🇳 Vietnam <span className="text-primary font-black mx-1.5">2 – 0</span> 🇲🇾 Malaysia</div>
               </div>
             </div>
           </div>

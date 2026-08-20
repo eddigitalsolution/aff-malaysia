@@ -711,7 +711,7 @@
           "id": "paulo-josue",
           "name": "Paulo Josué",
           "number": 17,
-          "rating": 7.0,
+          "rating": 7,
           "position": "AM",
           "coords": [
             55,
@@ -876,7 +876,7 @@
         "id": "paulo-josue",
         "name": "Paulo Josué",
         "number": 17,
-        "rating": 7.0,
+        "rating": 7,
         "position": "AM",
         "coords": [
           55,
@@ -918,5 +918,278 @@
       }
     ],
     "awayStartingXI": []
+  },
+  {
+    "matchId": "match-22",
+    "status": "COMPLETED",
+    "minute": 90,
+    "homeScore": 2,
+    "awayScore": 0,
+    "homeTeamId": "vietnam",
+    "awayTeamId": "malaysia",
+    "timeline": [
+      {
+        "minute": 55,
+        "type": "SUBSTITUTION",
+        "teamId": "malaysia",
+        "playerNameIn": "Sergio Aguero",
+        "playerNameOut": "Muhd Syafiq Ahmad",
+        "detail": "Tactical change"
+      },
+      {
+        "minute": 62,
+        "type": "GOAL",
+        "teamId": "vietnam",
+        "playerName": "Nguyễn Xuân Son",
+        "detail": "Goal! Assisted by Nguyen Tien Linh"
+      },
+      {
+        "minute": 79,
+        "type": "SUBSTITUTION",
+        "teamId": "malaysia",
+        "playerNameIn": "Haqimi Azim",
+        "playerNameOut": "Paulo Josué",
+        "detail": "Tactical change"
+      },
+      {
+        "minute": 79,
+        "type": "SUBSTITUTION",
+        "teamId": "malaysia",
+        "playerNameIn": "Hadi Fayyadh",
+        "playerNameOut": "Mohamadou Sumareh",
+        "detail": "Tactical change"
+      },
+      {
+        "minute": 89,
+        "type": "SUBSTITUTION",
+        "teamId": "malaysia",
+        "playerNameIn": "Engku Nur Shakir",
+        "playerNameOut": "Ziad El Basheer",
+        "detail": "Tactical change"
+      },
+      {
+        "minute": 89,
+        "type": "GOAL",
+        "teamId": "vietnam",
+        "playerName": "Nguyễn Xuân Son",
+        "detail": "Goal! Clinical finish on counter-attack"
+      }
+    ],
+    "statistics": {
+      "possession": [
+        45,
+        55
+      ],
+      "shots": [
+        12,
+        8
+      ],
+      "shotsOnTarget": [
+        5,
+        2
+      ],
+      "expectedGoals": [
+        1.62,
+        0.78
+      ],
+      "passes": [
+        380,
+        480
+      ],
+      "passAccuracy": [
+        81,
+        88
+      ],
+      "corners": [
+        4,
+        6
+      ],
+      "offsides": [
+        2,
+        1
+      ],
+      "crosses": [
+        12,
+        18
+      ],
+      "tackles": [
+        16,
+        26
+      ],
+      "recoveries": [
+        32,
+        36
+      ]
+    },
+    "formations": {
+      "home": "3-4-3",
+      "away": "4-2-3-1",
+      "homeStartingXI": [],
+      "awayStartingXI": [
+        {
+          "id": "azri-ghani",
+          "name": "Azri Ghani",
+          "number": 1,
+          "rating": 6.8,
+          "position": "GK",
+          "coords": [
+            10,
+            50
+          ]
+        },
+        {
+          "id": "alif-ahmad",
+          "name": "Alif Ahmad",
+          "number": 4,
+          "rating": 7.4,
+          "position": "RB",
+          "coords": [
+            30,
+            85
+          ]
+        },
+        {
+          "id": "ubaidullah-shamsul",
+          "name": "U. Shamsul",
+          "number": 3,
+          "rating": 7.6,
+          "position": "CB",
+          "coords": [
+            25,
+            40
+          ]
+        },
+        {
+          "id": "aysar-hadi",
+          "name": "Aysar Hadi",
+          "number": 12,
+          "rating": 7.2,
+          "position": "CB",
+          "coords": [
+            25,
+            60
+          ]
+        },
+        {
+          "id": "faris-danish",
+          "name": "Faris Danish",
+          "number": 25,
+          "rating": 7.1,
+          "position": "LB",
+          "coords": [
+            30,
+            15
+          ]
+        },
+        {
+          "id": "ziad-el-basheer",
+          "name": "Ziad El Basheer",
+          "number": 18,
+          "rating": 7,
+          "position": "CDM",
+          "coords": [
+            50,
+            65
+          ]
+        },
+        {
+          "id": "daryl-sham",
+          "name": "Daryl Sham",
+          "number": 22,
+          "rating": 6.9,
+          "position": "CM",
+          "coords": [
+            50,
+            35
+          ]
+        },
+        {
+          "id": "sumareh",
+          "name": "M. Sumareh",
+          "number": 13,
+          "rating": 6.8,
+          "position": "RW",
+          "coords": [
+            75,
+            80
+          ]
+        },
+        {
+          "id": "paulo-josue",
+          "name": "Paulo Josué",
+          "number": 17,
+          "rating": 6.9,
+          "position": "AM",
+          "coords": [
+            55,
+            50
+          ]
+        },
+        {
+          "id": "g-pavithran",
+          "name": "G. Pavithran",
+          "number": 21,
+          "rating": 7.3,
+          "position": "LW",
+          "coords": [
+            75,
+            20
+          ]
+        },
+        {
+          "id": "syafiq-ahmad",
+          "name": "Syafiq Ahmad",
+          "number": 9,
+          "rating": 6.6,
+          "position": "ST",
+          "coords": [
+            80,
+            50
+          ]
+        }
+      ]
+    },
+    "pressureChart": [
+      {
+        "minute": 10,
+        "value": -10
+      },
+      {
+        "minute": 20,
+        "value": 5
+      },
+      {
+        "minute": 30,
+        "value": 15
+      },
+      {
+        "minute": 40,
+        "value": -20
+      },
+      {
+        "minute": 50,
+        "value": -5
+      },
+      {
+        "minute": 60,
+        "value": 30
+      },
+      {
+        "minute": 70,
+        "value": -15
+      },
+      {
+        "minute": 80,
+        "value": 10
+      },
+      {
+        "minute": 90,
+        "value": 40
+      }
+    ],
+    "aiSummary": "Vietnam secured their place in the final with a 2-0 win over Malaysia in Hanoi (4-0 aggregate). Nguyễn Xuân Son was the hero again, scoring twice (62' and 89') to dash Malaysia's hopes of a comeback. Malaysia dominated possession but struggled to penetrate Vietnam's solid defensive line.",
+    "manOfTheMatch": "Nguyễn Xuân Son",
+    "referee": "Kim Hee-gon (South Korea)",
+    "weather": "25°C, Humid"
   }
 ]

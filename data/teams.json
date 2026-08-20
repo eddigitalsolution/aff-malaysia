@@ -16,7 +16,13 @@
     "averageAge": 25.8,
     "squadValue": "€6.85M",
     "formation": "4-3-3",
-    "recentForm": ["W", "W", "L", "W", "L"]
+    "recentForm": [
+      "W",
+      "L",
+      "W",
+      "L",
+      "L"
+    ]
   },
   {
     "id": "thailand",
@@ -35,7 +41,13 @@
     "averageAge": 27.2,
     "squadValue": "€8.50M",
     "formation": "4-2-3-1",
-    "recentForm": ["W", "W", "W", "W", "W"]
+    "recentForm": [
+      "W",
+      "W",
+      "W",
+      "W",
+      "L"
+    ]
   },
   {
     "id": "vietnam",
@@ -54,7 +66,13 @@
     "averageAge": 26.5,
     "squadValue": "€5.90M",
     "formation": "3-4-3",
-    "recentForm": ["W", "D", "W", "D", "W"]
+    "recentForm": [
+      "D",
+      "W",
+      "D",
+      "W",
+      "W"
+    ]
   },
   {
     "id": "indonesia",
@@ -73,7 +91,11 @@
     "averageAge": 23.8,
     "squadValue": "€9.20M",
     "formation": "3-4-2-1",
-    "recentForm": ["W", "L", "W"]
+    "recentForm": [
+      "W",
+      "L",
+      "W"
+    ]
   },
   {
     "id": "singapore",
@@ -92,7 +114,13 @@
     "averageAge": 28.1,
     "squadValue": "€3.20M",
     "formation": "4-1-4-1",
-    "recentForm": ["W", "W", "D", "D", "L"]
+    "recentForm": [
+      "W",
+      "D",
+      "D",
+      "L",
+      "W"
+    ]
   },
   {
     "id": "philippines",
@@ -111,7 +139,11 @@
     "averageAge": 27.8,
     "squadValue": "€4.10M",
     "formation": "4-3-3",
-    "recentForm": ["L", "L", "W"]
+    "recentForm": [
+      "L",
+      "L",
+      "W"
+    ]
   },
   {
     "id": "myanmar",
@@ -130,7 +162,11 @@
     "averageAge": 24.5,
     "squadValue": "€2.10M",
     "formation": "4-4-2",
-    "recentForm": ["L", "L", "W"]
+    "recentForm": [
+      "L",
+      "L",
+      "W"
+    ]
   },
   {
     "id": "cambodia",
@@ -149,7 +185,11 @@
     "averageAge": 23.4,
     "squadValue": "€1.80M",
     "formation": "4-2-3-1",
-    "recentForm": ["L", "W", "L"]
+    "recentForm": [
+      "L",
+      "W",
+      "L"
+    ]
   },
   {
     "id": "laos",
@@ -168,7 +208,12 @@
     "averageAge": 22.9,
     "squadValue": "€1.10M",
     "formation": "4-5-1",
-    "recentForm": ["L", "L", "L", "L"]
+    "recentForm": [
+      "L",
+      "L",
+      "L",
+      "L"
+    ]
   },
   {
     "id": "timor-leste",
@@ -187,6 +232,11 @@
     "averageAge": 22.1,
     "squadValue": "€0.95M",
     "formation": "5-4-1",
-    "recentForm": ["L", "L", "L", "L"]
+    "recentForm": [
+      "L",
+      "L",
+      "L",
+      "L"
+    ]
   }
 ]
