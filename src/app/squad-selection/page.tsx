@@ -92,7 +92,6 @@ export default function SquadSelectionPage() {
     { id: 'g-pavithran',       verdict: 'MUST CALL', reason: 'Most minutes (540), 1G 2A, age 21 — future cornerstone', color: 'emerald' },
     { id: 'ubaidullah-shamsul',verdict: 'MUST CALL', reason: 'Played every minute (540) at CB, age 22 — solid foundation', color: 'emerald' },
     { id: 'faris-danish',      verdict: 'MUST CALL', reason: '315 mins, regular LB starter, age 20 — key future left back', color: 'emerald' },
-    { id: 'aysar-hadi',        verdict: 'MUST CALL', reason: 'High-rated CB cover (7.3), age 22 — ready for starting role', color: 'emerald' },
     { id: 'wan-kuzain',        verdict: 'MUST CALL', reason: 'Highest mid rating (7.62), 1G 1A in limited minutes, age 27', color: 'emerald' },
     { id: 'alif-ahmad',        verdict: 'MUST CALL', reason: '388 mins at RB, consistent performer, age 23', color: 'emerald' },
     // KEEP - proven regulars
