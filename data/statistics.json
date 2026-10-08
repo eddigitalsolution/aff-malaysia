@@ -1,190 +1,460 @@
 {
-  "topScorers": [
-    {
-      "playerId": "supachai",
-      "name": "Supachai Chaided",
-      "teamId": "thailand",
-      "teamName": "Thailand",
-      "value": 4,
-      "goals": 4,
-      "assists": 1,
-      "matches": 3
-    },
-    {
-      "playerId": "arif-aiman",
-      "name": "Arif Aiman Hanapi",
-      "teamId": "malaysia",
+  "fifa-asean-cup-2026": {
+    "topScorers": [
+      {
+        "playerId": "bergson",
+        "name": "Bergson da Silva",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Johor Darul Ta'zim",
+        "position": "Forward",
+        "value": 4,
+        "goals": 4,
+        "assists": 1,
+        "matches": 4
+      },
+      {
+        "playerId": "arif-aiman",
+        "name": "Arif Aiman Hanapi",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Johor Darul Ta'zim",
+        "position": "Forward",
+        "value": 2,
+        "goals": 2,
+        "assists": 2,
+        "matches": 3
+      },
+      {
+        "playerId": "stuart-wilkin",
+        "name": "Stuart Wilkin",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Sabah FC",
+        "position": "Midfielder",
+        "value": 1,
+        "goals": 1,
+        "assists": 1,
+        "matches": 4
+      },
+      {
+        "playerId": "paulo-josue",
+        "name": "Paulo Josué",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Kuala Lumpur City FC",
+        "position": "Forward",
+        "value": 1,
+        "goals": 1,
+        "assists": 1,
+        "matches": 4
+      },
+      {
+        "playerId": "syahir-bashah",
+        "name": "Syahir Bashah",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Selangor FC",
+        "position": "Midfielder",
+        "value": 1,
+        "goals": 1,
+        "assists": 0,
+        "matches": 2
+      },
+      {
+        "playerId": "fergus-tierney",
+        "name": "Fergus Tierney",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Chonburi FC",
+        "position": "Forward",
+        "value": 1,
+        "goals": 1,
+        "assists": 0,
+        "matches": 4
+      }
+    ],
+    "topAssists": [
+      {
+        "playerId": "arif-aiman",
+        "name": "Arif Aiman Hanapi",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Johor Darul Ta'zim",
+        "position": "Forward",
+        "value": 2
+      },
+      {
+        "playerId": "nooa-laine",
+        "name": "Nooa Laine",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Selangor FC",
+        "position": "Midfielder",
+        "value": 1
+      },
+      {
+        "playerId": "stuart-wilkin",
+        "name": "Stuart Wilkin",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Sabah FC",
+        "position": "Midfielder",
+        "value": 1
+      },
+      {
+        "playerId": "manuel-hidalgo",
+        "name": "Manuel Hidalgo",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Johor Darul Ta'zim",
+        "position": "Midfielder",
+        "value": 3
+      },
+      {
+        "playerId": "corbin-ong",
+        "name": "La'Vere Corbin-Ong",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Johor Darul Ta'zim",
+        "position": "Defender",
+        "value": 1
+      },
+      {
+        "playerId": "daniel-ting",
+        "name": "Daniel Ting",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Sabah FC",
+        "position": "Defender",
+        "value": 1
+      },
+      {
+        "playerId": "hong-wan",
+        "name": "Hong Wan",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Johor Darul Ta'zim",
+        "position": "Midfielder",
+        "value": 2
+      },
+      {
+        "playerId": "paulo-josue",
+        "name": "Paulo Josué",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Kuala Lumpur City FC",
+        "position": "Forward",
+        "value": 1
+      },
+      {
+        "playerId": "bergson",
+        "name": "Bergson da Silva",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Johor Darul Ta'zim",
+        "position": "Forward",
+        "value": 1
+      },
+      {
+        "playerId": "harith-haikal",
+        "name": "Harith Haikal",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Selangor FC",
+        "position": "Defender",
+        "value": 1
+      }
+    ],
+    "cleanSheets": [
+      {
+        "playerId": "syihan-hazmi",
+        "name": "Ahmad Syihan Hazmi",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Johor Darul Ta'zim",
+        "value": 3,
+        "matches": 3,
+        "goalsConceded": 0,
+        "saveRate": "100%"
+      },
+      {
+        "playerId": "haziq-nadzli",
+        "name": "Haziq Nadzli",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Perak FC",
+        "value": 1,
+        "matches": 1,
+        "goalsConceded": 0,
+        "saveRate": "100%"
+      }
+    ],
+    "passAccuracy": [
+      {
+        "playerId": "nooa-laine",
+        "name": "Nooa Laine",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Selangor FC",
+        "position": "Midfielder",
+        "value": 95.2
+      },
+      {
+        "playerId": "brad-tapp",
+        "name": "Brad Tapp",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Johor Darul Ta'zim",
+        "position": "Defender",
+        "value": 94.2
+      },
+      {
+        "playerId": "dion-cools",
+        "name": "Dion Cools",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Buriram United",
+        "position": "Defender",
+        "value": 93.5
+      },
+      {
+        "playerId": "stuart-wilkin",
+        "name": "Stuart Wilkin",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Sabah FC",
+        "position": "Midfielder",
+        "value": 90.4
+      },
+      {
+        "playerId": "corbin-ong",
+        "name": "La'Vere Corbin-Ong",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Johor Darul Ta'zim",
+        "position": "Defender",
+        "value": 89.8
+      },
+      {
+        "playerId": "manuel-hidalgo",
+        "name": "Manuel Hidalgo",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Johor Darul Ta'zim",
+        "position": "Midfielder",
+        "value": 87.3
+      },
+      {
+        "playerId": "quentin-cheng",
+        "name": "Quentin Cheng",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Selangor FC",
+        "position": "Defender",
+        "value": 85.2
+      }
+    ],
+    "tournamentStats": {
+      "tournamentName": "2026 FIFA ASEAN Cup (Harimau Malaya Campaign)",
       "teamName": "Malaysia",
-      "value": 3,
-      "goals": 3,
-      "assists": 2,
-      "matches": 3
-    },
-    {
-      "playerId": "nguyen-tien-linh",
-      "name": "Nguyen Tien Linh",
-      "teamId": "vietnam",
-      "teamName": "Vietnam",
-      "value": 3,
-      "goals": 3,
-      "assists": 1,
-      "matches": 3
-    },
-    {
-      "playerId": "romel-morales",
-      "name": "Romel Morales",
-      "teamId": "malaysia",
-      "teamName": "Malaysia",
-      "value": 2,
-      "goals": 2,
-      "assists": 1,
-      "matches": 3
-    },
-    {
-      "playerId": "chanathip",
-      "name": "Chanathip Songkrasin",
-      "teamId": "thailand",
-      "teamName": "Thailand",
-      "value": 2,
-      "goals": 2,
-      "assists": 3,
-      "matches": 3
-    },
-    {
-      "playerId": "nguyen-xuan-son",
-      "name": "Nguyễn Xuân Son",
-      "teamId": "vietnam",
-      "teamName": "Vietnam",
-      "value": 3,
-      "goals": 3,
-      "assists": 1,
-      "matches": 4
+      "totalMatches": 4,
+      "totalWins": 3,
+      "totalDraws": 1,
+      "totalLosses": 0,
+      "totalGoals": 10,
+      "goalsConceded": 0,
+      "goalDifference": 10,
+      "avgGoalsPerMatch": 2.5,
+      "cleanSheets": 4,
+      "cleanSheetRate": "100%",
+      "points": 10,
+      "campaignFinish": "Bronze Medal 🥉 (Defeated Vietnam 1-0 in 3rd-Place Playoff)"
     }
-  ],
-  "topAssists": [
-    {
-      "playerId": "chanathip",
-      "name": "Chanathip Songkrasin",
-      "teamId": "thailand",
-      "teamName": "Thailand",
-      "value": 3
-    },
-    {
-      "playerId": "faisal-halim",
-      "name": "Faisal Halim",
-      "teamId": "malaysia",
+  },
+  "aff-cup-2026": {
+    "topScorers": [
+      {
+        "playerId": "paulo-josue",
+        "name": "Paulo Josué",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Kuala Lumpur City FC",
+        "position": "Forward",
+        "value": 3,
+        "goals": 3,
+        "assists": 0,
+        "matches": 6
+      },
+      {
+        "playerId": "g-pavithran",
+        "name": "G. Pavithran",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Johor Darul Ta'zim U23",
+        "position": "Forward",
+        "value": 1,
+        "goals": 1,
+        "assists": 2,
+        "matches": 6
+      },
+      {
+        "playerId": "wan-kuzain",
+        "name": "Wan Kuzain",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "SC Jacksonville",
+        "position": "Midfielder",
+        "value": 1,
+        "goals": 1,
+        "assists": 1,
+        "matches": 4
+      },
+      {
+        "playerId": "endrick",
+        "name": "Endrick Dos Santos",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Star City FC",
+        "position": "Midfielder",
+        "value": 1,
+        "goals": 1,
+        "assists": 0,
+        "matches": 2
+      }
+    ],
+    "topAssists": [
+      {
+        "playerId": "g-pavithran",
+        "name": "Pavithran Gunalan",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Johor Darul Ta'zim U23",
+        "position": "Forward",
+        "value": 2
+      },
+      {
+        "playerId": "wan-kuzain",
+        "name": "Wan Kuzain",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "SC Jacksonville",
+        "position": "Midfielder",
+        "value": 2
+      },
+      {
+        "playerId": "paulo-josue",
+        "name": "Paulo Josué",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Kuala Lumpur City FC",
+        "position": "Forward",
+        "value": 1
+      },
+      {
+        "playerId": "sergio-aguero",
+        "name": "Sergio Aguero",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Pahang FC",
+        "position": "Midfielder",
+        "value": 1
+      }
+    ],
+    "cleanSheets": [
+      {
+        "playerId": "azri-ghani",
+        "name": "Azri Ghani",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Kuala Lumpur City FC",
+        "value": 2,
+        "matches": 6,
+        "goalsConceded": 7,
+        "saveRate": "72%"
+      }
+    ],
+    "passAccuracy": [
+      {
+        "playerId": "ubaidullah-shamsul",
+        "name": "Ubaidullah Shamsul",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Terengganu FC",
+        "position": "Defender",
+        "value": 91.2
+      },
+      {
+        "playerId": "rodney-celvin",
+        "name": "Rodney Celvin",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Kuching City",
+        "position": "Defender",
+        "value": 89.5
+      },
+      {
+        "playerId": "wan-kuzain",
+        "name": "Wan Kuzain",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "SC Jacksonville",
+        "position": "Midfielder",
+        "value": 89
+      },
+      {
+        "playerId": "sergio-aguero",
+        "name": "Sergio Aguero",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Pahang FC",
+        "position": "Midfielder",
+        "value": 88.5
+      },
+      {
+        "playerId": "muhd-syafiq-ahmad",
+        "name": "Muhd Syafiq Ahmad",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Kedah Darul Aman",
+        "position": "Forward",
+        "value": 86.8
+      },
+      {
+        "playerId": "ruventhiran",
+        "name": "Ruventhiran Vengadesan",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Selangor FC",
+        "position": "Defender",
+        "value": 85
+      },
+      {
+        "playerId": "g-pavithran",
+        "name": "Pavithran Gunalan",
+        "teamId": "malaysia",
+        "teamName": "Malaysia",
+        "club": "Johor Darul Ta'zim U23",
+        "position": "Forward",
+        "value": 82.5
+      }
+    ],
+    "tournamentStats": {
+      "tournamentName": "ASEAN Hyundai Cup 2026 (Harimau Malaya Campaign)",
       "teamName": "Malaysia",
-      "value": 3
-    },
-    {
-      "playerId": "arif-aiman",
-      "name": "Arif Aiman Hanapi",
-      "teamId": "malaysia",
-      "teamName": "Malaysia",
-      "value": 2
-    },
-    {
-      "playerId": "stuart-wilkin",
-      "name": "Stuart Wilkin",
-      "teamId": "malaysia",
-      "teamName": "Malaysia",
-      "value": 2
-    },
-    {
-      "playerId": "witan",
-      "name": "Witan Sulaeman",
-      "teamId": "indonesia",
-      "teamName": "Indonesia",
-      "value": 2
+      "totalMatches": 6,
+      "totalWins": 3,
+      "totalDraws": 0,
+      "totalLosses": 3,
+      "totalGoals": 7,
+      "goalsConceded": 7,
+      "goalDifference": 0,
+      "avgGoalsPerMatch": 1.17,
+      "cleanSheets": 2,
+      "cleanSheetRate": "33%",
+      "points": 9,
+      "groupFinish": "2nd in Group B (Qualified for Semi-Finals)",
+      "exitStage": "Semi-Finals (Agg. 0–4 vs Vietnam)"
     }
-  ],
-  "cleanSheets": [
-    {
-      "playerId": "gk-vietnam",
-      "name": "Dang Van Lam",
-      "teamId": "vietnam",
-      "teamName": "Vietnam",
-      "value": 5,
-      "matches": 5
-    },
-    {
-      "playerId": "syihan-hazmi",
-      "name": "Syihan Hazmi",
-      "teamId": "malaysia",
-      "teamName": "Malaysia",
-      "value": 1,
-      "matches": 3
-    },
-    {
-      "playerId": "gk-thailand",
-      "name": "P. Khammai",
-      "teamId": "thailand",
-      "teamName": "Thailand",
-      "value": 1,
-      "matches": 3
-    },
-    {
-      "playerId": "gk-indonesia",
-      "name": "Ernando Ari",
-      "teamId": "indonesia",
-      "teamName": "Indonesia",
-      "value": 1,
-      "matches": 3
-    },
-    {
-      "playerId": "azri-ghani",
-      "name": "Azri Ghani",
-      "teamId": "malaysia",
-      "teamName": "Malaysia",
-      "value": 1,
-      "matches": 1
-    }
-  ],
-  "passAccuracy": [
-    {
-      "playerId": "chanathip",
-      "name": "Chanathip Songkrasin",
-      "teamId": "thailand",
-      "teamName": "Thailand",
-      "value": 89.5
-    },
-    {
-      "playerId": "dion-cools",
-      "name": "Dion Cools",
-      "teamId": "malaysia",
-      "teamName": "Malaysia",
-      "value": 89.2
-    },
-    {
-      "playerId": "nooa-laine",
-      "name": "Nooa Laine",
-      "teamId": "malaysia",
-      "teamName": "Malaysia",
-      "value": 88.5
-    },
-    {
-      "playerId": "stuart-wilkin",
-      "name": "Stuart Wilkin",
-      "teamId": "malaysia",
-      "teamName": "Malaysia",
-      "value": 86.8
-    },
-    {
-      "playerId": "dominic-tan",
-      "name": "Dominic Tan",
-      "teamId": "malaysia",
-      "teamName": "Malaysia",
-      "value": 85.3
-    }
-  ],
-  "tournamentStats": {
-    "totalMatches": 24,
-    "totalGoals": 60,
-    "avgGoalsPerMatch": 2.5,
-    "yellowCards": 49,
-    "redCards": 2,
-    "penalties": 5,
-    "ownGoals": 3,
-    "cleanSheets": 10
   }
 }

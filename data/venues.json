@@ -1,5 +1,21 @@
 [
   {
+    "id": "stadium-gelora-bung-karno",
+    "name": "Gelora Bung Karno Stadium",
+    "city": "Jakarta",
+    "country": "Indonesia",
+    "capacity": 77193,
+    "image": "/venues/gbk.png"
+  },
+  {
+    "id": "stadium-si-jalak-harupat",
+    "name": "Si Jalak Harupat Stadium",
+    "city": "Bandung",
+    "country": "Indonesia",
+    "capacity": 30000,
+    "image": "/venues/si-jalak-harupat.png"
+  },
+  {
     "id": "stadium-bukit-jalil",
     "name": "Bukit Jalil National Stadium",
     "city": "Kuala Lumpur",
@@ -24,14 +40,6 @@
     "image": "/venues/my-dinh.png"
   },
   {
-    "id": "stadium-gelora-bung-karno",
-    "name": "Gelora Bung Karno Stadium",
-    "city": "Jakarta",
-    "country": "Indonesia",
-    "capacity": 77193,
-    "image": "/venues/gbk.png"
-  },
-  {
     "id": "stadium-national",
     "name": "National Stadium",
     "city": "Kallang",
@@ -40,11 +48,67 @@
     "image": "/venues/national-singapore.png"
   },
   {
-    "id": "stadium-cheras",
-    "name": "KL City Cheras Stadium",
+    "id": "stadium-morodok-techo",
+    "name": "Morodok Techo National Stadium",
+    "city": "Phnom Penh",
+    "country": "Cambodia",
+    "capacity": 60000,
+    "image": "/venues/morodok.png"
+  },
+  {
+    "id": "stadium-hang-jebat",
+    "name": "Hang Jebat Stadium",
+    "city": "Malacca",
+    "country": "Malaysia",
+    "capacity": 40000,
+    "image": "/venues/hang-jebat.png"
+  },
+  {
+    "id": "stadium-thuwunna",
+    "name": "Thuwunna Stadium",
+    "city": "Yangon",
+    "country": "Myanmar",
+    "capacity": 32000,
+    "image": "/venues/thuwunna.png"
+  },
+  {
+    "id": "stadium-new-laos",
+    "name": "New Laos National Stadium",
+    "city": "Vientiane",
+    "country": "Laos",
+    "capacity": 25000,
+    "image": "/venues/laos.png"
+  },
+  {
+    "id": "stadium-jalan-besar",
+    "name": "Jalan Besar Stadium",
+    "city": "Kallang",
+    "country": "Singapore",
+    "capacity": 6000,
+    "image": "/venues/jalan-besar.png"
+  },
+  {
+    "id": "stadium-rizal-memorial",
+    "name": "Rizal Memorial Stadium",
+    "city": "Manila",
+    "country": "Philippines",
+    "capacity": 12873,
+    "image": "/venues/rizal.png"
+  },
+  {
+    "id": "stadium-kl",
+    "name": "Kuala Lumpur Football Stadium",
     "city": "Kuala Lumpur",
     "country": "Malaysia",
     "capacity": 18000,
-    "image": "/venues/cheras.png"
+    "image": "/venues/kl-stadium.png"
+  },
+  {
+    "id": "stadium-tianhe-guangzhou",
+    "name": "Tianhe Stadium",
+    "city": "Guangzhou",
+    "country": "China",
+    "capacity": 54856,
+    "image": "/venues/tianhe.png"
   }
 ]

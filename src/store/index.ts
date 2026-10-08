@@ -1,6 +1,9 @@
 import { create } from 'zustand';
 
 interface AppState {
+  activeTournamentId: string;
+  setActiveTournamentId: (id: string) => void;
+
   searchQuery: string;
   setSearchQuery: (query: string) => void;
   
@@ -22,11 +25,14 @@ interface AppState {
 }
 
 export const useAppState = create<AppState>((set) => ({
+  activeTournamentId: 'fifa-asean-cup-2026',
+  setActiveTournamentId: (activeTournamentId) => set({ activeTournamentId }),
+
   searchQuery: '',
   setSearchQuery: (searchQuery) => set({ searchQuery }),
   
   compareTeamA: 'malaysia',
-  compareTeamB: 'thailand',
+  compareTeamB: 'indonesia',
   setCompareTeamA: (compareTeamA) => set({ compareTeamA }),
   setCompareTeamB: (compareTeamB) => set({ compareTeamB }),
   

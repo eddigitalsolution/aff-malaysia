@@ -1191,5 +1191,158 @@
     "manOfTheMatch": "Nguyễn Xuân Son",
     "referee": "Kim Hee-gon (South Korea)",
     "weather": "25°C, Humid"
+  },
+  {
+    "matchId": "match-fac-13",
+    "tournamentId": "fifa-asean-cup-2026",
+    "status": "COMPLETED",
+    "minute": 90,
+    "homeScore": 0,
+    "awayScore": 1,
+    "homeTeamId": "vietnam",
+    "awayTeamId": "malaysia",
+    "timeline": [
+      {
+        "minute": 40,
+        "type": "SUBSTITUTION",
+        "teamId": "malaysia",
+        "playerNameIn": "Syahir Bashah",
+        "playerNameOut": "Pavithran Gunalan",
+        "detail": "Tactical change"
+      },
+      {
+        "minute": 50,
+        "type": "SUBSTITUTION",
+        "teamId": "malaysia",
+        "playerNameIn": "Fergus Tierney",
+        "playerNameOut": "Syahmi Safari",
+        "detail": "Tactical change to inject attacking power"
+      },
+      {
+        "minute": 62,
+        "type": "GOAL",
+        "teamId": "malaysia",
+        "playerName": "Fergus Tierney",
+        "detail": "Goal! Clinical turn and finish into the bottom corner. Assisted by Manuel Hidalgo"
+      },
+      {
+        "minute": 62,
+        "type": "SUBSTITUTION",
+        "teamId": "malaysia",
+        "playerNameIn": "Quentin Cheng",
+        "playerNameOut": "Hong Wan",
+        "detail": "Tactical change"
+      },
+      {
+        "minute": 62,
+        "type": "SUBSTITUTION",
+        "teamId": "malaysia",
+        "playerNameIn": "Paulo Josué",
+        "playerNameOut": "Bergson da Silva",
+        "detail": "Tactical change"
+      },
+      {
+        "minute": 80,
+        "type": "SUBSTITUTION",
+        "teamId": "malaysia",
+        "playerNameIn": "Pavithran Gunalan",
+        "playerNameOut": "Harith Haikal",
+        "detail": "Tactical change"
+      },
+      {
+        "minute": 89,
+        "type": "SUBSTITUTION",
+        "teamId": "malaysia",
+        "playerNameIn": "Nazmi Faiz Mansor",
+        "playerNameOut": "Manuel Hidalgo",
+        "detail": "Late game management"
+      }
+    ],
+    "statistics": {
+      "possession": [
+        46,
+        54
+      ],
+      "shots": [
+        8,
+        11
+      ],
+      "shotsOnTarget": [
+        2,
+        5
+      ],
+      "expectedGoals": [
+        0.62,
+        1.48
+      ],
+      "passes": [
+        356,
+        438
+      ],
+      "passAccuracy": [
+        77,
+        85
+      ],
+      "corners": [
+        3,
+        6
+      ],
+      "offsides": [
+        2,
+        1
+      ],
+      "crosses": [
+        11,
+        17
+      ],
+      "tackles": [
+        14,
+        19
+      ],
+      "recoveries": [
+        42,
+        53
+      ]
+    },
+    "formations": {
+      "home": "4-3-3",
+      "away": "3-4-3",
+      "homeStartingXI": [],
+      "awayStartingXI": []
+    },
+    "pressureChart": [
+      {
+        "minute": 15,
+        "value": 45
+      },
+      {
+        "minute": 30,
+        "value": 50
+      },
+      {
+        "minute": 45,
+        "value": 55
+      },
+      {
+        "minute": 60,
+        "value": 65
+      },
+      {
+        "minute": 62,
+        "value": 85
+      },
+      {
+        "minute": 75,
+        "value": 60
+      },
+      {
+        "minute": 90,
+        "value": 70
+      }
+    ],
+    "aiSummary": "In the 3rd-Place Playoff of the 2026 FIFA ASEAN Cup at Gelora Bung Karno Stadium, Malaysia claimed a historic 1-0 victory over Vietnam to take home the Bronze Medal. Fergus Tierney scored the decisive goal in the 62nd minute off a pinpoint Manuel Hidalgo setup, sealing Malaysia's first victory over Vietnam in 12 years. Ahmad Syihan Hazmi and the backline kept a resilient clean sheet.",
+    "manOfTheMatch": "Fergus Tierney",
+    "referee": "Kim Hee-gon (South Korea)",
+    "weather": "28°C, Clear"
   }
 ]

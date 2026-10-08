@@ -2,8 +2,9 @@
 
 import React, { useEffect, useState, use } from 'react';
 import Link from 'next/link';
-import { getPlayer, getTeam, Player, Team } from '@/lib/api';
-import { ArrowLeft, User, Activity, ShieldAlert, Award } from 'lucide-react';
+import { getPlayer, getTeam, TOURNAMENTS, Player, Team } from '@/lib/api';
+import { useAppState } from '@/store';
+import { ArrowLeft, User, Activity, ShieldAlert, Award, Trophy } from 'lucide-react';
 import { 
   ResponsiveContainer, RadarChart, PolarGrid, 
   PolarAngleAxis, PolarRadiusAxis, Radar 
@@ -12,23 +13,26 @@ import {
 export default function PlayerProfilePage({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = use(params);
   const playerId = resolvedParams.id;
+  const { activeTournamentId } = useAppState();
 
   const [player, setPlayer] = useState<Player | null>(null);
   const [team, setTeam] = useState<Team | null>(null);
   const [loading, setLoading] = useState(true);
 
+  const currentTournament = TOURNAMENTS.find(t => t.id === (player?.tournamentId || activeTournamentId)) || TOURNAMENTS[0];
+
   useEffect(() => {
     async function loadData() {
-      const p = await getPlayer(playerId);
+      const p = await getPlayer(playerId, activeTournamentId);
       if (p) {
-        const t = await getTeam(p.teamId);
+        const t = await getTeam(p.teamId, activeTournamentId);
         setPlayer(p);
         setTeam(t);
       }
       setLoading(false);
     }
     loadData();
-  }, [playerId]);
+  }, [playerId, activeTournamentId]);
 
   if (loading) {
     return <div className="text-zinc-500 py-12 text-center">Loading player profile...</div>;
@@ -88,20 +92,15 @@ export default function PlayerProfilePage({ params }: { params: Promise<{ id: st
                 #{player.number}
               </span>
               <span>{player.name}</span>
-              {player.injuryStatus === 'Injured' && (
-                <span className="bg-red-500/20 text-red-400 text-xs font-black px-2 py-0.5 rounded uppercase">
-                  🔴 INJURED
-                </span>
-              )}
-              {player.injuryStatus === 'Returned to Club' && (
-                <span className="bg-yellow-500/20 text-yellow-400 text-xs font-black px-2 py-0.5 rounded uppercase">
-                  🏠 CLUB
-                </span>
-              )}
             </h1>
             <p className="text-xs text-zinc-400">
               {player.position} • {team?.flag} {team?.name} • {player.club}
             </p>
+            <div className="flex items-center gap-2 mt-1.5">
+              <span className="inline-flex items-center gap-1 bg-primary/10 border border-primary/25 text-primary text-[10px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider">
+                <Trophy className="h-3 w-3" /> {currentTournament.name}
+              </span>
+            </div>
           </div>
         </div>
         <div className="flex items-center gap-2 bg-zinc-900/60 p-4 rounded-xl border border-zinc-800/80 w-full md:w-auto justify-between">
@@ -124,7 +123,9 @@ export default function PlayerProfilePage({ params }: { params: Promise<{ id: st
       <section className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Detailed Stats */}
         <div className="lg:col-span-2 glass-card rounded-2xl p-5 border border-zinc-800 space-y-4">
-          <h3 className="font-bold text-sm text-zinc-300 border-b border-zinc-900 pb-2">TOURNAMENT STATISTICS</h3>
+          <h3 className="font-bold text-sm text-zinc-300 border-b border-zinc-900 pb-2">
+            {currentTournament.name.toUpperCase()} STATISTICS
+          </h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs">
             <div className="bg-zinc-900/50 p-3 rounded-xl border border-zinc-850">
               <span className="text-[9px] text-zinc-500 block uppercase font-bold">Goals</span>
@@ -205,7 +206,7 @@ export default function PlayerProfilePage({ params }: { params: Promise<{ id: st
         <section className="glass-card rounded-2xl p-6 border border-zinc-800 space-y-4">
           <h3 className="font-bold text-sm text-zinc-300 flex items-center gap-1.5">
             <Activity className="h-4.5 w-4.5 text-primary" />
-            <span>AI Performance Report</span>
+            <span>Scouting & Performance Report</span>
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
             <div className="space-y-3">

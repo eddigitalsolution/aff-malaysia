@@ -1,5 +1,432 @@
 [
   {
+    "id": "bergson",
+    "name": "Bergson da Silva",
+    "teamId": "malaysia",
+    "photo": "/players/bergson.png",
+    "club": "Johor Darul Ta'zim",
+    "age": 35,
+    "height": 181,
+    "weight": 78,
+    "nationality": "Malaysia",
+    "position": "Forward",
+    "number": 9,
+    "appearances": 4,
+    "minutes": 304,
+    "goals": 4,
+    "assists": 1,
+    "shots": 16,
+    "expectedGoals": 3.85,
+    "expectedAssists": 0.95,
+    "passingAccuracy": 78,
+    "tackles": 2,
+    "interceptions": 1,
+    "recoveries": 8,
+    "averageRating": 7.8,
+    "sprintSpeed": 31.8,
+    "distanceCovered": 26.4,
+    "touches": 118,
+    "radar": {
+      "pace": 80,
+      "shooting": 92,
+      "passing": 76,
+      "dribbling": 84,
+      "defending": 42,
+      "physical": 86
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Clinical finishing",
+        "Hat-trick specialist (3 vs SGP)",
+        "Aerial and box presence",
+        "Target forward link play"
+      ],
+      "weaknesses": [
+        "Pressing stamina over 90 mins"
+      ],
+      "playingStyle": "Complete Target Forward / Goal Poacher. Elite penalty-box instinct and clinical finishing."
+    },
+    "injuryStatus": "Healthy",
+    "tournamentId": "fifa-asean-cup-2026",
+    "isChinaCallUp": true,
+    "callUpRole": "Main Striker · 4 Goals (Hat-trick vs SGP), 1 Assist",
+    "tournamentProvenance": "FIFA ASEAN Cup 2026",
+    "tournamentHighlight": "FIFA ASEAN Cup: 4 Starts, 304 mins, 4 Goals (Hat-trick vs Singapore), 1 Assist · Clinical target forward"
+  },
+  {
+    "id": "brad-tapp",
+    "name": "Brad Tapp",
+    "teamId": "malaysia",
+    "photo": "/players/brad-tapp.png",
+    "club": "Johor Darul Ta'zim",
+    "age": 25,
+    "height": 188,
+    "weight": 83,
+    "nationality": "Malaysia",
+    "position": "Defender",
+    "number": 4,
+    "appearances": 3,
+    "minutes": 270,
+    "goals": 0,
+    "assists": 0,
+    "shots": 1,
+    "expectedGoals": 0.05,
+    "expectedAssists": 0.12,
+    "passingAccuracy": 95,
+    "tackles": 8,
+    "interceptions": 6,
+    "recoveries": 18,
+    "averageRating": 7.45,
+    "sprintSpeed": 30.5,
+    "distanceCovered": 28.9,
+    "touches": 248,
+    "radar": {
+      "pace": 76,
+      "shooting": 45,
+      "passing": 86,
+      "dribbling": 70,
+      "defending": 88,
+      "physical": 87
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Passing accuracy under pressure (94-96%)",
+        "Aerial duel dominance",
+        "Clean sheets in all 3 Group A matches"
+      ],
+      "weaknesses": [
+        "Recovery turn pace vs agile wingers"
+      ],
+      "playingStyle": "Dedicated Central Centre-Back (CB Only). Commands backline distribution with calm aerial authority and zero goals conceded."
+    },
+    "injuryStatus": "Healthy",
+    "tournamentId": "fifa-asean-cup-2026",
+    "isChinaCallUp": true,
+    "callUpRole": "Central Defender (CB Only) · 95% Pass Acc, 0 Goals Conceded",
+    "tournamentProvenance": "FIFA ASEAN Cup 2026",
+    "tournamentHighlight": "FIFA ASEAN Cup: 3 Starts, 270 mins, 95% Pass Acc · 0 Goals Conceded during entire group stage"
+  },
+  {
+    "id": "manuel-hidalgo",
+    "name": "Manuel Hidalgo",
+    "teamId": "malaysia",
+    "photo": "/players/manuel-hidalgo.png",
+    "club": "Johor Darul Ta'zim",
+    "age": 26,
+    "height": 170,
+    "weight": 68,
+    "nationality": "Malaysia",
+    "position": "Midfielder",
+    "number": 10,
+    "appearances": 4,
+    "minutes": 339,
+    "goals": 0,
+    "assists": 3,
+    "shots": 5,
+    "expectedGoals": 0.65,
+    "expectedAssists": 1.95,
+    "passingAccuracy": 86,
+    "tackles": 7,
+    "interceptions": 3,
+    "recoveries": 18,
+    "averageRating": 7.45,
+    "sprintSpeed": 32.1,
+    "distanceCovered": 29.5,
+    "touches": 184,
+    "radar": {
+      "pace": 84,
+      "shooting": 76,
+      "passing": 87,
+      "dribbling": 89,
+      "defending": 54,
+      "physical": 68
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Masterful playmaking vs Vietnam (2 assists, 6 duels won)",
+        "Playmaking vision & dribbling in half-spaces",
+        "Progressive line-breaking carries",
+        "Key pass generation"
+      ],
+      "weaknesses": [
+        "Physical aerial challenges"
+      ],
+      "playingStyle": "Advanced Playmaker / Inverted Winger. Unlocks compact defensive shapes."
+    },
+    "injuryStatus": "Healthy",
+    "tournamentId": "fifa-asean-cup-2026",
+    "isChinaCallUp": true,
+    "callUpRole": "Chief Playmaker · 3 Assists (Winner Provider), 10 Duels Won",
+    "tournamentProvenance": "FIFA ASEAN Cup 2026",
+    "tournamentHighlight": "FIFA ASEAN Cup: 4 Starts, 339 mins, 3 Assists (Tournament leader), 10 duels won · Created Vietnam winner"
+  },
+  {
+    "id": "quentin-cheng",
+    "name": "Quentin Cheng",
+    "teamId": "malaysia",
+    "photo": "/players/quentin-cheng.png",
+    "club": "Selangor FC",
+    "age": 26,
+    "height": 180,
+    "weight": 74,
+    "nationality": "Malaysia",
+    "position": "Defender",
+    "number": 2,
+    "appearances": 4,
+    "minutes": 296,
+    "goals": 0,
+    "assists": 0,
+    "shots": 2,
+    "expectedGoals": 0.12,
+    "expectedAssists": 0.85,
+    "passingAccuracy": 82,
+    "tackles": 12,
+    "interceptions": 5,
+    "recoveries": 19,
+    "averageRating": 7.2,
+    "sprintSpeed": 33.2,
+    "distanceCovered": 30.2,
+    "touches": 182,
+    "radar": {
+      "pace": 86,
+      "shooting": 55,
+      "passing": 78,
+      "dribbling": 76,
+      "defending": 80,
+      "physical": 81
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Stamina on the overlap",
+        "Defensive ground duels won",
+        "Crossing into the box"
+      ],
+      "weaknesses": [
+        "Positioning against diagonal back-post switches"
+      ],
+      "playingStyle": "Attacking Full-Back. Covers entire right flank with tireless high-intensity bursts."
+    },
+    "injuryStatus": "Healthy",
+    "tournamentId": "fifa-asean-cup-2026",
+    "isChinaCallUp": true,
+    "callUpRole": "Right-Wing Back · 296 Mins, 12 Tackles, 19 Recoveries",
+    "tournamentProvenance": "FIFA ASEAN Cup 2026",
+    "tournamentHighlight": "FIFA ASEAN Cup: 4 Starts, 296 mins, 12 Tackles, 19 Recoveries · Tireless right-wing high-intensity overlap"
+  },
+  {
+    "id": "daniel-ting",
+    "name": "Daniel Ting",
+    "teamId": "malaysia",
+    "photo": "/players/daniel-ting.png",
+    "club": "Sabah FC",
+    "age": 33,
+    "height": 182,
+    "weight": 77,
+    "nationality": "Malaysia",
+    "position": "Defender",
+    "number": 22,
+    "appearances": 2,
+    "minutes": 180,
+    "goals": 0,
+    "assists": 1,
+    "shots": 1,
+    "expectedGoals": 0.08,
+    "expectedAssists": 0.75,
+    "passingAccuracy": 91,
+    "tackles": 6,
+    "interceptions": 4,
+    "recoveries": 12,
+    "averageRating": 7.45,
+    "sprintSpeed": 31,
+    "distanceCovered": 10.4,
+    "touches": 72,
+    "radar": {
+      "pace": 78,
+      "shooting": 60,
+      "passing": 79,
+      "dribbling": 74,
+      "defending": 82,
+      "physical": 80
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "96% passing accuracy (49/51) vs Vietnam",
+        "Assist delivery vs Singapore",
+        "Tactical discipline on left flank",
+        "Aggressive ground duels"
+      ],
+      "weaknesses": [
+        "Pace recovery against younger wingers"
+      ],
+      "playingStyle": "Solid Left-Back Defender & Left-Centered Back (LCB). Balanced defensive discipline, physical strength in ground duels, and accurate passing out from defense."
+    },
+    "injuryStatus": "Healthy",
+    "tournamentId": "fifa-asean-cup-2026",
+    "isChinaCallUp": true,
+    "callUpRole": "Left-Back & LCB Defender · 96% Pass Acc vs Vietnam, 1 Assist",
+    "tournamentProvenance": "FIFA ASEAN Cup 2026",
+    "tournamentHighlight": "FIFA ASEAN Cup: 2 Starts, 180 mins, 96% Pass Acc (49/51) vs Vietnam, 1 Assist vs Singapore · Flawless LB"
+  },
+  {
+    "id": "syahir-bashah",
+    "name": "Syahir Bashah",
+    "teamId": "malaysia",
+    "photo": "/players/syahir-bashah.png",
+    "club": "Selangor FC",
+    "age": 24,
+    "height": 172,
+    "weight": 66,
+    "nationality": "Malaysia",
+    "position": "Midfielder",
+    "number": 19,
+    "appearances": 2,
+    "minutes": 58,
+    "goals": 1,
+    "assists": 0,
+    "shots": 2,
+    "expectedGoals": 0.45,
+    "expectedAssists": 0.1,
+    "passingAccuracy": 68,
+    "tackles": 1,
+    "interceptions": 1,
+    "recoveries": 2,
+    "averageRating": 7.2,
+    "sprintSpeed": 32,
+    "distanceCovered": 2.8,
+    "touches": 15,
+    "radar": {
+      "pace": 82,
+      "shooting": 78,
+      "passing": 74,
+      "dribbling": 80,
+      "defending": 48,
+      "physical": 65
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Immediate impact off the bench (goal vs Singapore)",
+        "Energetic high press",
+        "Quick turn of acceleration"
+      ],
+      "weaknesses": [
+        "Physical aerial battles"
+      ],
+      "playingStyle": "Impact Super-Sub. Energy-injection attacking midfielder."
+    },
+    "injuryStatus": "Healthy",
+    "tournamentId": "fifa-asean-cup-2026",
+    "isChinaCallUp": false,
+    "callUpRole": "Attacking Spark · 1 Goal vs SGP, 40 Mins vs Vietnam",
+    "tournamentProvenance": "FIFA ASEAN Cup 2026",
+    "tournamentHighlight": "FIFA ASEAN Cup: 2 Appearances, 58 mins, 1 Goal vs Singapore (6–0), 40 mins vs Vietnam · High-tempo spark"
+  },
+  {
+    "id": "hong-wan",
+    "name": "Hong Wan",
+    "teamId": "malaysia",
+    "photo": "/players/hong-wan.png",
+    "club": "Johor Darul Ta'zim",
+    "age": 25,
+    "height": 176,
+    "weight": 70,
+    "nationality": "Malaysia",
+    "position": "Midfielder",
+    "number": 6,
+    "appearances": 2,
+    "minutes": 85,
+    "goals": 0,
+    "assists": 2,
+    "shots": 0,
+    "expectedGoals": 0,
+    "expectedAssists": 0.65,
+    "passingAccuracy": 82,
+    "tackles": 4,
+    "interceptions": 4,
+    "recoveries": 8,
+    "averageRating": 7.3,
+    "sprintSpeed": 30.5,
+    "distanceCovered": 3.4,
+    "touches": 22,
+    "radar": {
+      "pace": 75,
+      "shooting": 62,
+      "passing": 82,
+      "dribbling": 77,
+      "defending": 78,
+      "physical": 75
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Assist provider vs Singapore",
+        "Deep pivot tactical discipline",
+        "Interception reading"
+      ],
+      "weaknesses": [
+        "Final third goal threat"
+      ],
+      "playingStyle": "Deep Defensive Midfielder. Shields backline and transitions play cleanly."
+    },
+    "injuryStatus": "Healthy",
+    "tournamentId": "fifa-asean-cup-2026",
+    "isChinaCallUp": true,
+    "callUpRole": "Ball-Winning Pivot · 2 Assists, 82% Pass Acc",
+    "tournamentProvenance": "FIFA ASEAN Cup 2026",
+    "tournamentHighlight": "FIFA ASEAN Cup: 2 Appearances, 85 mins, 2 Assists, 82% Pass Acc · Deep ball-winning defensive pivot"
+  },
+  {
+    "id": "haziq-nadzli",
+    "name": "Haziq Nadzli",
+    "teamId": "malaysia",
+    "photo": "/players/haziq-nadzli.png",
+    "club": "Perak FC",
+    "age": 28,
+    "height": 184,
+    "weight": 79,
+    "nationality": "Malaysia",
+    "position": "Goalkeeper",
+    "number": 23,
+    "appearances": 1,
+    "minutes": 90,
+    "goals": 0,
+    "assists": 0,
+    "shots": 0,
+    "expectedGoals": 0,
+    "expectedAssists": 0,
+    "passingAccuracy": 77,
+    "tackles": 0,
+    "interceptions": 1,
+    "recoveries": 7,
+    "averageRating": 7.2,
+    "sprintSpeed": 24.5,
+    "distanceCovered": 4.8,
+    "touches": 38,
+    "radar": {
+      "pace": 55,
+      "shooting": 20,
+      "passing": 75,
+      "dribbling": 40,
+      "defending": 84,
+      "physical": 82
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Clean sheet vs Bangladesh (3-0 win)",
+        "Reflex shot-stopping inside 6-yard box",
+        "Box claim authority"
+      ],
+      "weaknesses": [
+        "Long-range distribution consistency"
+      ],
+      "playingStyle": "Reflex Goalkeeper. Dependable shot-stopper."
+    },
+    "injuryStatus": "Healthy",
+    "tournamentId": "fifa-asean-cup-2026",
+    "isChinaCallUp": true,
+    "callUpRole": "Reflex Shot-Stopper · Clean Sheet vs BAN (3–0)",
+    "tournamentProvenance": "FIFA ASEAN Cup 2026",
+    "tournamentHighlight": "FIFA ASEAN Cup: 1 Start, 90 mins, Clean Sheet vs Bangladesh (3–0 win) · Dependable shot-stopping"
+  },
+  {
     "id": "paulo-josue",
     "name": "Paulo Josué",
     "teamId": "malaysia",
@@ -47,7 +474,12 @@
       ],
       "playingStyle": "Advanced Playmaker / Second Striker. Commands the attacking third, dangerous with late runs."
     },
-    "injuryStatus": "Healthy"
+    "injuryStatus": "Healthy",
+    "tournamentId": "aff-cup-2026",
+    "isChinaCallUp": false,
+    "tournamentProvenance": "ASEAN Hyundai Cup 2026",
+    "tournamentHighlight": "ASEAN Hyundai Cup: 6 Starts, 518 mins, 3 Goals, 8 set-piece deliveries · Clutch second striker",
+    "callUpRole": "Veteran Striker · 3 Goals, 518 Mins, Set-Piece Master"
   },
   {
     "id": "sumareh",
@@ -95,7 +527,9 @@
       ],
       "playingStyle": "Traditional Winger. Relies on speed down the channels and cross-delivery."
     },
-    "injuryStatus": "Healthy"
+    "injuryStatus": "Healthy",
+    "tournamentId": "aff-cup-2026",
+    "isChinaCallUp": false
   },
   {
     "id": "g-pavithran",
@@ -143,7 +577,12 @@
       ],
       "playingStyle": "Agile Inside Forward. Thrives on late substitute runs to stretch tired defenders."
     },
-    "injuryStatus": "Healthy"
+    "injuryStatus": "Healthy",
+    "tournamentId": "aff-cup-2026",
+    "isChinaCallUp": false,
+    "tournamentProvenance": "ASEAN Hyundai Cup 2026",
+    "tournamentHighlight": "ASEAN Hyundai Cup: 6 Starts, 540 mins, 1 Goal, 2 Assists, 83% Pass Acc, Rating 7.50 · Dynamic inside forward",
+    "callUpRole": "Inside Forward · 1 Goal, 2 Assists, 540 Mins"
   },
   {
     "id": "hadi-fayyadh",
@@ -191,7 +630,9 @@
       ],
       "playingStyle": "Direct forward looking to exploit space behind the defence."
     },
-    "injuryStatus": "Healthy"
+    "injuryStatus": "Healthy",
+    "tournamentId": "aff-cup-2026",
+    "isChinaCallUp": false
   },
   {
     "id": "endrick",
@@ -240,7 +681,12 @@
       ],
       "playingStyle": "Box-to-box Midfielder. Focuses on physical duels and quick transitions."
     },
-    "injuryStatus": "Injured"
+    "injuryStatus": "Healthy",
+    "tournamentId": "aff-cup-2026",
+    "isChinaCallUp": true,
+    "tournamentProvenance": "ASEAN Hyundai Cup 2026",
+    "callUpRole": "Box-to-Box Threat · 1 Goal, 82 Physical",
+    "tournamentHighlight": "ASEAN Hyundai Cup: 2 Starts, 145 mins, 1 Goal, 11 Recoveries, Rating 7.50 · Imposing physical presence"
   },
   {
     "id": "sergio-aguero",
@@ -290,7 +736,12 @@
       ],
       "playingStyle": "Creative Attacking Midfielder. Connects midfield lines to dynamic wing runs."
     },
-    "injuryStatus": "Healthy"
+    "injuryStatus": "Healthy",
+    "tournamentId": "aff-cup-2026",
+    "isChinaCallUp": true,
+    "callUpRole": "Midfield Workhorse · 425 Mins, 18 Recoveries",
+    "tournamentProvenance": "ASEAN Hyundai Cup 2026",
+    "tournamentHighlight": "ASEAN Hyundai Cup: 6 Starts, 425 mins, 85% Pass Acc, 18 Recoveries, Rating 7.56 · High-intensity engine"
   },
   {
     "id": "wan-kuzain",
@@ -339,7 +790,12 @@
       ],
       "playingStyle": "Deep Lying Playmaker. Commands possession tempo, distributes cleanly out of backline."
     },
-    "injuryStatus": "Returned to Club"
+    "injuryStatus": "Healthy",
+    "tournamentId": "aff-cup-2026",
+    "isChinaCallUp": true,
+    "callUpRole": "Progressive Maestro · 91% Pass Acc, 1G 1A",
+    "tournamentProvenance": "ASEAN Hyundai Cup 2026",
+    "tournamentHighlight": "ASEAN Hyundai Cup: 4 Apps, 141 mins, 1 Goal, 1 Assist, 91% Pass Acc, Rating 7.62 · Elite passing efficiency"
   },
   {
     "id": "syafiq-ahmad",
@@ -387,7 +843,9 @@
       ],
       "playingStyle": "Connecting midfielder who maintains team shape and possession."
     },
-    "injuryStatus": "Healthy"
+    "injuryStatus": "Healthy",
+    "tournamentId": "aff-cup-2026",
+    "isChinaCallUp": false
   },
   {
     "id": "haqimi-azim",
@@ -435,7 +893,9 @@
       ],
       "playingStyle": "Connecting midfielder who maintains team shape and possession."
     },
-    "injuryStatus": "Healthy"
+    "injuryStatus": "Healthy",
+    "tournamentId": "aff-cup-2026",
+    "isChinaCallUp": false
   },
   {
     "id": "daryl-sham",
@@ -483,7 +943,9 @@
       ],
       "playingStyle": "Connecting midfielder who maintains team shape and possession."
     },
-    "injuryStatus": "Healthy"
+    "injuryStatus": "Healthy",
+    "tournamentId": "aff-cup-2026",
+    "isChinaCallUp": false
   },
   {
     "id": "fazrul-amir",
@@ -531,7 +993,9 @@
       ],
       "playingStyle": "Connecting midfielder who maintains team shape and possession."
     },
-    "injuryStatus": "Injured"
+    "injuryStatus": "Healthy",
+    "tournamentId": "aff-cup-2026",
+    "isChinaCallUp": false
   },
   {
     "id": "ibrahim-manusi",
@@ -579,7 +1043,9 @@
       ],
       "playingStyle": "Connecting midfielder who maintains team shape and possession."
     },
-    "injuryStatus": "Healthy"
+    "injuryStatus": "Healthy",
+    "tournamentId": "aff-cup-2026",
+    "isChinaCallUp": false
   },
   {
     "id": "aliff-haiqal",
@@ -627,7 +1093,9 @@
       ],
       "playingStyle": "Connecting midfielder who maintains team shape and possession."
     },
-    "injuryStatus": "Injured"
+    "injuryStatus": "Healthy",
+    "tournamentId": "aff-cup-2026",
+    "isChinaCallUp": false
   },
   {
     "id": "engku-nur-shakir",
@@ -675,7 +1143,9 @@
       ],
       "playingStyle": "Connecting midfielder who maintains team shape and possession."
     },
-    "injuryStatus": "Injured"
+    "injuryStatus": "Healthy",
+    "tournamentId": "aff-cup-2026",
+    "isChinaCallUp": false
   },
   {
     "id": "ziad-el-basheer",
@@ -723,7 +1193,9 @@
       ],
       "playingStyle": "Connecting midfielder who maintains team shape and possession."
     },
-    "injuryStatus": "Healthy"
+    "injuryStatus": "Healthy",
+    "tournamentId": "aff-cup-2026",
+    "isChinaCallUp": false
   },
   {
     "id": "ubaidullah-shamsul",
@@ -771,7 +1243,9 @@
       ],
       "playingStyle": "Reliable defensive player with disciplined positioning."
     },
-    "injuryStatus": "Healthy"
+    "injuryStatus": "Healthy",
+    "tournamentId": "aff-cup-2026",
+    "isChinaCallUp": false
   },
   {
     "id": "jimmy-raymond",
@@ -819,7 +1293,9 @@
       ],
       "playingStyle": "Reliable defensive player with disciplined positioning."
     },
-    "injuryStatus": "Injured"
+    "injuryStatus": "Healthy",
+    "tournamentId": "aff-cup-2026",
+    "isChinaCallUp": false
   },
   {
     "id": "rodney-celvin",
@@ -867,7 +1343,9 @@
       ],
       "playingStyle": "Reliable defensive player with disciplined positioning."
     },
-    "injuryStatus": "Injured"
+    "injuryStatus": "Healthy",
+    "tournamentId": "aff-cup-2026",
+    "isChinaCallUp": false
   },
   {
     "id": "aysar-hadi",
@@ -915,7 +1393,9 @@
       ],
       "playingStyle": "Reliable defensive player with disciplined positioning."
     },
-    "injuryStatus": "Healthy"
+    "injuryStatus": "Healthy",
+    "tournamentId": "aff-cup-2026",
+    "isChinaCallUp": false
   },
   {
     "id": "ruventhiran",
@@ -965,7 +1445,12 @@
       ],
       "playingStyle": "Left Back / Left Winger. A dynamic, pacey defender who doubles as a wide attacker. Excels at overlapping runs down the left flank, delivering crosses and providing width to Malaysia's build-up play."
     },
-    "injuryStatus": "Healthy"
+    "injuryStatus": "Healthy",
+    "tournamentId": "aff-cup-2026",
+    "isChinaCallUp": true,
+    "tournamentProvenance": "ASEAN Hyundai Cup 2026",
+    "callUpRole": "Left Flank Dynamo · 88% Pass Acc, Rating 7.57",
+    "tournamentHighlight": "ASEAN Hyundai Cup: 3 Starts, 225 mins, 88% Pass Acc, 10 Recoveries, Rating 7.57 · Dynamic left wing-back"
   },
   {
     "id": "alif-ahmad",
@@ -1013,7 +1498,9 @@
       ],
       "playingStyle": "Reliable defensive player with disciplined positioning."
     },
-    "injuryStatus": "Healthy"
+    "injuryStatus": "Healthy",
+    "tournamentId": "aff-cup-2026",
+    "isChinaCallUp": false
   },
   {
     "id": "faris-danish",
@@ -1061,7 +1548,9 @@
       ],
       "playingStyle": "Attack-minded Left Back. Overlaps effectively down the left flank, combining defensive solidity with ability to support attacks."
     },
-    "injuryStatus": "Healthy"
+    "injuryStatus": "Healthy",
+    "tournamentId": "aff-cup-2026",
+    "isChinaCallUp": false
   },
   {
     "id": "azri-ghani",
@@ -1109,7 +1598,12 @@
       ],
       "playingStyle": "Line-based Goalkeeper. Relies on quick reaction speeds and diagonal launches."
     },
-    "injuryStatus": "Healthy"
+    "injuryStatus": "Healthy",
+    "tournamentId": "fifa-asean-cup-2026",
+    "isChinaCallUp": true,
+    "callUpRole": "Goalkeeper Core · 6 Starts, 540 Mins, 18 Saves",
+    "tournamentProvenance": "ASEAN Hyundai Cup 2026",
+    "tournamentHighlight": "ASEAN Hyundai Cup: 6 Starts, 540 mins, 18 Saves, 83% Pass Acc, Rating 7.31 · Primary keeper in AFF campaign"
   },
   {
     "id": "rahadiazli",
@@ -1156,7 +1650,9 @@
       ],
       "playingStyle": "Traditional goalkeeper focusing on solid fundamentals."
     },
-    "injuryStatus": "Healthy"
+    "injuryStatus": "Healthy",
+    "tournamentId": "aff-cup-2026",
+    "isChinaCallUp": false
   },
   {
     "id": "haziq-aiman",
@@ -1203,7 +1699,9 @@
       ],
       "playingStyle": "Traditional goalkeeper focusing on solid fundamentals."
     },
-    "injuryStatus": "Healthy"
+    "injuryStatus": "Healthy",
+    "tournamentId": "aff-cup-2026",
+    "isChinaCallUp": false
   },
   {
     "id": "chanathip",
@@ -1252,7 +1750,9 @@
         "Physical shoulder-to-shoulder tackles"
       ],
       "playingStyle": "Advanced Playmaker. Dictates tempo in attacking third. Orchestrates Thailand's transitions."
-    }
+    },
+    "tournamentId": "aff-cup-2026",
+    "isChinaCallUp": false
   },
   {
     "id": "supachai",
@@ -1301,7 +1801,9 @@
         "Defensive pressing output"
       ],
       "playingStyle": "Poacher / Striker. Focuses heavily on box entries and finishing off crosses from wingers."
-    }
+    },
+    "tournamentId": "aff-cup-2026",
+    "isChinaCallUp": false
   },
   {
     "id": "witan",
@@ -1350,7 +1852,9 @@
         "Long crosses"
       ],
       "playingStyle": "Inside Forward who thrives on diagonal runs behind defensive lines. Counter-attack threat."
-    }
+    },
+    "tournamentId": "aff-cup-2026",
+    "isChinaCallUp": false
   },
   {
     "id": "nguyen-tien-linh",
@@ -1399,6 +1903,753 @@
         "1v1 dribbles outside area"
       ],
       "playingStyle": "Traditional Number 9. Lethal when supplied with crosses. Strong aerial presence."
-    }
+    },
+    "tournamentId": "aff-cup-2026",
+    "isChinaCallUp": false
+  },
+  {
+    "id": "arif-aiman",
+    "name": "Arif Aiman Hanapi",
+    "teamId": "malaysia",
+    "photo": "/players/arif-aiman.png",
+    "club": "Johor Darul Ta'zim",
+    "age": 24,
+    "height": 174,
+    "weight": 65,
+    "nationality": "Malaysia",
+    "position": "Forward",
+    "number": 7,
+    "appearances": 3,
+    "minutes": 237,
+    "goals": 2,
+    "assists": 2,
+    "shots": 11,
+    "expectedGoals": 1.85,
+    "expectedAssists": 1.95,
+    "passingAccuracy": 81,
+    "tackles": 4,
+    "interceptions": 2,
+    "recoveries": 8,
+    "averageRating": 7.8,
+    "sprintSpeed": 33.6,
+    "distanceCovered": 27.8,
+    "touches": 165,
+    "radar": {
+      "pace": 93,
+      "shooting": 84,
+      "passing": 83,
+      "dribbling": 94,
+      "defending": 46,
+      "physical": 68
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "2 goals vs Bangladesh",
+        "2 assists vs Singapore",
+        "1v1 dribble success (22 duels vs SGP)",
+        "Dynamic attacking acceleration"
+      ],
+      "weaknesses": [
+        "Physical aerial challenges"
+      ],
+      "playingStyle": "Elite Inverted Winger. Unlocks compact defences with electric pace and pinpoint delivery."
+    },
+    "injuryStatus": "Healthy",
+    "tournamentId": "fifa-asean-cup-2026",
+    "isChinaCallUp": true,
+    "callUpRole": "Star Winger · 2 Goals, 2 Assists, Elite 1v1",
+    "tournamentProvenance": "FIFA ASEAN Cup 2026",
+    "tournamentHighlight": "FIFA ASEAN Cup: 3 Starts, 237 mins, 2 Goals, 2 Assists · Elite 1v1 dribbler and creative threat"
+  },
+  {
+    "id": "dion-cools",
+    "name": "Dion Cools",
+    "teamId": "malaysia",
+    "photo": "/players/dion-cools.png",
+    "club": "Buriram United",
+    "age": 30,
+    "height": 185,
+    "weight": 77,
+    "nationality": "Malaysia",
+    "position": "Defender",
+    "number": 21,
+    "appearances": 3,
+    "minutes": 270,
+    "goals": 0,
+    "assists": 0,
+    "shots": 2,
+    "expectedGoals": 0.15,
+    "expectedAssists": 0.35,
+    "passingAccuracy": 93,
+    "tackles": 14,
+    "interceptions": 9,
+    "recoveries": 23,
+    "averageRating": 8.2,
+    "sprintSpeed": 31.8,
+    "distanceCovered": 28.9,
+    "touches": 260,
+    "radar": {
+      "pace": 80,
+      "shooting": 60,
+      "passing": 88,
+      "dribbling": 76,
+      "defending": 92,
+      "physical": 86
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Sofascore 8.9 MVP vs Indonesia",
+        "94/99 (95%) passes completed in Jakarta",
+        "Aerial dominance & defensive leadership",
+        "3 clean sheets"
+      ],
+      "weaknesses": [
+        "Over-committing on advanced set pieces"
+      ],
+      "playingStyle": "Elite Modern Right-Centered Back (RCB) & Right Back (RB). Flawless anticipation, composure under hostile crowds, and world-class distribution out from the right half-space."
+    },
+    "injuryStatus": "Healthy",
+    "tournamentId": "fifa-asean-cup-2026",
+    "isChinaCallUp": true,
+    "callUpRole": "Team Captain & Tactical Anchor · Dedicated Right-Centered Back (RCB) & Right Back (RB)",
+    "tournamentProvenance": "FIFA ASEAN Cup 2026",
+    "tournamentHighlight": "FIFA ASEAN Cup: 3 Starts, 270 mins, 93% Pass Acc, Rating 8.20 · Team Captain & Bronze Medal winning leader"
+  },
+  {
+    "id": "nooa-laine",
+    "name": "Nooa Laine",
+    "teamId": "malaysia",
+    "photo": "/players/nooa-laine.png",
+    "club": "Selangor FC",
+    "age": 23,
+    "height": 178,
+    "weight": 72,
+    "nationality": "Malaysia",
+    "position": "Midfielder",
+    "number": 14,
+    "appearances": 4,
+    "minutes": 360,
+    "goals": 0,
+    "assists": 1,
+    "shots": 3,
+    "expectedGoals": 0.25,
+    "expectedAssists": 1.45,
+    "passingAccuracy": 89,
+    "tackles": 8,
+    "interceptions": 8,
+    "recoveries": 25,
+    "averageRating": 7.65,
+    "sprintSpeed": 31.2,
+    "distanceCovered": 32.1,
+    "touches": 228,
+    "radar": {
+      "pace": 78,
+      "shooting": 68,
+      "passing": 91,
+      "dribbling": 82,
+      "defending": 79,
+      "physical": 77
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "60/63 (95%) passes vs Indonesia",
+        "71/73 (97%) passes + assist vs Bangladesh",
+        "Press resistance in double pivot",
+        "32.1km total distance"
+      ],
+      "weaknesses": [
+        "Long-range shooting volume"
+      ],
+      "playingStyle": "Deep-Lying Midfield Controller. Dictates rhythm with metronomic pass precision and tactical positioning."
+    },
+    "injuryStatus": "Healthy",
+    "tournamentId": "fifa-asean-cup-2026",
+    "isChinaCallUp": true,
+    "callUpRole": "Midfield Conductor · 360 Mins (Ever-present), 89% Pass Acc",
+    "tournamentProvenance": "FIFA ASEAN Cup 2026",
+    "tournamentHighlight": "FIFA ASEAN Cup: 4 Starts, 360 mins (played every single minute), 89% Pass Acc · Unrivalled midfield control"
+  },
+  {
+    "id": "stuart-wilkin",
+    "name": "Stuart Wilkin",
+    "teamId": "malaysia",
+    "photo": "/players/stuart-wilkin.png",
+    "club": "Sabah FC",
+    "age": 28,
+    "height": 180,
+    "weight": 75,
+    "nationality": "Malaysia",
+    "position": "Midfielder",
+    "number": 8,
+    "appearances": 4,
+    "minutes": 335,
+    "goals": 1,
+    "assists": 1,
+    "shots": 6,
+    "expectedGoals": 0.95,
+    "expectedAssists": 1.15,
+    "passingAccuracy": 88,
+    "tackles": 9,
+    "interceptions": 7,
+    "recoveries": 24,
+    "averageRating": 7.6,
+    "sprintSpeed": 31.5,
+    "distanceCovered": 29.8,
+    "touches": 205,
+    "radar": {
+      "pace": 79,
+      "shooting": 78,
+      "passing": 86,
+      "dribbling": 78,
+      "defending": 81,
+      "physical": 83
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Goal vs Singapore",
+        "Assist vs Bangladesh",
+        "Relentless box-to-box ground duels (21 vs SGP)",
+        "38/41 (93%) passes vs BAN"
+      ],
+      "weaknesses": [
+        "Late match fatigue under equatorial heat"
+      ],
+      "playingStyle": "All-Action Box-to-Box Midfielder. Combines scoring threat from edge of the box with aggressive defensive tracking."
+    },
+    "injuryStatus": "Healthy",
+    "tournamentId": "fifa-asean-cup-2026",
+    "isChinaCallUp": true,
+    "callUpRole": "Box-to-Box Threat · 1 Goal, 1 Assist, 10 Tackles",
+    "tournamentProvenance": "FIFA ASEAN Cup 2026",
+    "tournamentHighlight": "FIFA ASEAN Cup: 4 Starts, 335 mins, 1 Goal, 1 Assist, 10 Tackles, 24 Recoveries · Complete box-to-box engine"
+  },
+  {
+    "id": "corbin-ong",
+    "name": "La'Vere Corbin-Ong",
+    "teamId": "malaysia",
+    "photo": "/players/corbin-ong.png",
+    "club": "Johor Darul Ta'zim",
+    "age": 35,
+    "height": 184,
+    "weight": 80,
+    "nationality": "Malaysia",
+    "position": "Defender",
+    "number": 22,
+    "appearances": 3,
+    "minutes": 270,
+    "goals": 0,
+    "assists": 1,
+    "shots": 2,
+    "expectedGoals": 0.12,
+    "expectedAssists": 0.85,
+    "passingAccuracy": 88,
+    "tackles": 7,
+    "interceptions": 6,
+    "recoveries": 16,
+    "averageRating": 7.3,
+    "sprintSpeed": 31.4,
+    "distanceCovered": 20.6,
+    "touches": 172,
+    "radar": {
+      "pace": 79,
+      "shooting": 62,
+      "passing": 83,
+      "dribbling": 75,
+      "defending": 87,
+      "physical": 89
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Assist vs Bangladesh (60/64 94% passes)",
+        "70/79 (89%) passes vs Indonesia in Jakarta",
+        "15 duels won, physical presence"
+      ],
+      "weaknesses": [
+        "Recovery pace against 18-year-old wingers"
+      ],
+      "playingStyle": "Powerhouse Attacking Left-Back. Overlaps with physical authority, provides dangerous curling deliveries."
+    },
+    "injuryStatus": "Healthy",
+    "tournamentId": "fifa-asean-cup-2026",
+    "isChinaCallUp": true,
+    "callUpRole": "Left-Wing Back · 270 Mins, 88% Pass Acc, 7 Tackles",
+    "tournamentProvenance": "FIFA ASEAN Cup 2026",
+    "tournamentHighlight": "FIFA ASEAN Cup: 3 Starts, 270 mins, 88% Pass Acc, 7 Tackles · Dominant physical presence on left flank"
+  },
+  {
+    "id": "syihan-hazmi",
+    "name": "Ahmad Syihan Hazmi",
+    "teamId": "malaysia",
+    "photo": "/players/syihan-hazmi.png",
+    "club": "Johor Darul Ta'zim",
+    "age": 30,
+    "height": 186,
+    "weight": 82,
+    "nationality": "Malaysia",
+    "position": "Goalkeeper",
+    "number": 16,
+    "appearances": 3,
+    "minutes": 270,
+    "goals": 0,
+    "assists": 0,
+    "shots": 0,
+    "expectedGoals": 0,
+    "expectedAssists": 0,
+    "passingAccuracy": 86,
+    "tackles": 0,
+    "interceptions": 2,
+    "recoveries": 17,
+    "averageRating": 7.4,
+    "sprintSpeed": 25,
+    "distanceCovered": 8.9,
+    "touches": 65,
+    "radar": {
+      "pace": 58,
+      "shooting": 20,
+      "passing": 82,
+      "dribbling": 42,
+      "defending": 89,
+      "physical": 86
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Clean sheet in 1-0 Bronze medal playoff vs Vietnam",
+        "100% clean sheet record (2 starts, 0 conceded)",
+        "100% pass completion (7/7) under heavy Jakarta press",
+        "Commanding aerial punch and commanding presence"
+      ],
+      "weaknesses": [
+        "Footwork when pressed from blind side"
+      ],
+      "playingStyle": "Commanding Sweeper-Keeper. Calm presence under high pressure atmospheres."
+    },
+    "injuryStatus": "Healthy",
+    "tournamentId": "fifa-asean-cup-2026",
+    "isChinaCallUp": true,
+    "callUpRole": "Starting GK · 3 Clean Sheets (100% Save Rate)",
+    "tournamentProvenance": "FIFA ASEAN Cup 2026",
+    "tournamentHighlight": "FIFA ASEAN Cup: 3 Starts, 270 mins, 3 Clean Sheets (100% save rate) · Clean sheets in all matches"
+  },
+  {
+    "id": "faisal-halim",
+    "name": "Faisal Halim",
+    "teamId": "malaysia",
+    "photo": "/players/faisal-halim.png",
+    "club": "Selangor FC",
+    "age": 28,
+    "height": 158,
+    "weight": 58,
+    "nationality": "Malaysia",
+    "position": "Forward",
+    "number": 11,
+    "appearances": 2,
+    "minutes": 136,
+    "goals": 0,
+    "assists": 0,
+    "shots": 4,
+    "expectedGoals": 0.45,
+    "expectedAssists": 0.65,
+    "passingAccuracy": 80,
+    "tackles": 3,
+    "interceptions": 1,
+    "recoveries": 6,
+    "averageRating": 6.85,
+    "sprintSpeed": 32.8,
+    "distanceCovered": 15.2,
+    "touches": 82,
+    "radar": {
+      "pace": 89,
+      "shooting": 75,
+      "passing": 77,
+      "dribbling": 87,
+      "defending": 48,
+      "physical": 60
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Relentless pressing on left channel",
+        "Low centre of gravity agility",
+        "Direct attacking runs behind backline"
+      ],
+      "weaknesses": [
+        "Physical aerial tussles"
+      ],
+      "playingStyle": "Dynamic Pressing Winger. High-tempo agitator who stretches defences horizontally."
+    },
+    "injuryStatus": "Healthy",
+    "tournamentId": "fifa-asean-cup-2026",
+    "isChinaCallUp": false,
+    "tournamentProvenance": "FIFA ASEAN Cup 2026",
+    "callUpRole": "Dynamic Pressing Winger · 136 Mins, 80% Pass Acc",
+    "tournamentHighlight": "FIFA ASEAN Cup: 2 Starts, 136 mins, 80% Pass Acc · Relentless pressing on left channel"
+  },
+  {
+    "id": "fergus-tierney",
+    "name": "Fergus Tierney",
+    "teamId": "malaysia",
+    "photo": "/players/fergus-tierney.png",
+    "club": "Chonburi FC",
+    "age": 23,
+    "height": 185,
+    "weight": 79,
+    "nationality": "Malaysia",
+    "position": "Forward",
+    "number": 20,
+    "appearances": 4,
+    "minutes": 169,
+    "goals": 1,
+    "assists": 0,
+    "shots": 5,
+    "expectedGoals": 0.9,
+    "expectedAssists": 0.25,
+    "passingAccuracy": 70,
+    "tackles": 6,
+    "interceptions": 2,
+    "recoveries": 9,
+    "averageRating": 7.25,
+    "sprintSpeed": 31,
+    "distanceCovered": 14.8,
+    "touches": 65,
+    "radar": {
+      "pace": 78,
+      "shooting": 72,
+      "passing": 70,
+      "dribbling": 72,
+      "defending": 62,
+      "physical": 84
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Clutch 62' match-winner vs Vietnam (Bronze Medal 🥉)",
+        "Physical target presence",
+        "Aggressive duel contesting in both halves",
+        "Aerial challenge disruption"
+      ],
+      "weaknesses": [
+        "Pass accuracy under tight man-marking"
+      ],
+      "playingStyle": "High-Workrate Pressing Forward / Target Option."
+    },
+    "injuryStatus": "Healthy",
+    "tournamentId": "fifa-asean-cup-2026",
+    "isChinaCallUp": true,
+    "callUpRole": "Pressing Forward · 62m Match-Winner vs Vietnam (Bronze Medal)",
+    "tournamentProvenance": "FIFA ASEAN Cup 2026",
+    "tournamentHighlight": "FIFA ASEAN Cup: 4 Apps, 169 mins, 1 Goal (Historic 62m winner vs Vietnam), 15 Duels · Impact forward"
+  },
+  {
+    "id": "harith-haikal",
+    "name": "Harith Haikal",
+    "teamId": "malaysia",
+    "photo": "/players/harith-haikal.png",
+    "club": "Selangor FC",
+    "age": 24,
+    "height": 183,
+    "weight": 78,
+    "nationality": "Malaysia",
+    "position": "Defender",
+    "number": 5,
+    "appearances": 2,
+    "minutes": 109,
+    "goals": 0,
+    "assists": 1,
+    "shots": 0,
+    "expectedGoals": 0,
+    "expectedAssists": 0,
+    "passingAccuracy": 82,
+    "tackles": 4,
+    "interceptions": 3,
+    "recoveries": 9,
+    "averageRating": 7.2,
+    "sprintSpeed": 30.2,
+    "distanceCovered": 3.5,
+    "touches": 18,
+    "radar": {
+      "pace": 74,
+      "shooting": 45,
+      "passing": 76,
+      "dribbling": 64,
+      "defending": 81,
+      "physical": 82
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Assist and 85% passing accuracy in bronze medal win",
+        "Reliable closing-out cover",
+        "Aerial clearance authority"
+      ],
+      "weaknesses": [
+        "Progressive line-breaking passes"
+      ],
+      "playingStyle": "Dedicated Central Centre-Back (CB Only). Pure stopper mentality, physical clearance authority, and compact penalty box marking."
+    },
+    "injuryStatus": "Healthy",
+    "tournamentId": "fifa-asean-cup-2026",
+    "isChinaCallUp": true,
+    "callUpRole": "Central Defender (CB Only) · 1 Assist vs Vietnam, 85% Pass Acc",
+    "tournamentProvenance": "FIFA ASEAN Cup 2026",
+    "tournamentHighlight": "FIFA ASEAN Cup: 109 mins, 1 Assist vs Vietnam in 1-0 win, 85% Pass Acc · Aerial & ground duel reliability"
+  },
+  {
+    "id": "syahmi-safari",
+    "name": "Syahmi Safari",
+    "teamId": "malaysia",
+    "photo": "/players/syahmi-safari.png",
+    "club": "Johor Darul Ta'zim",
+    "age": 28,
+    "height": 170,
+    "weight": 66,
+    "nationality": "Malaysia",
+    "position": "Defender",
+    "number": 12,
+    "appearances": 3,
+    "minutes": 72,
+    "goals": 0,
+    "assists": 0,
+    "shots": 0,
+    "expectedGoals": 0,
+    "expectedAssists": 0,
+    "passingAccuracy": 83,
+    "tackles": 3,
+    "interceptions": 1,
+    "recoveries": 6,
+    "averageRating": 6.7,
+    "sprintSpeed": 32.2,
+    "distanceCovered": 2.8,
+    "touches": 12,
+    "radar": {
+      "pace": 84,
+      "shooting": 60,
+      "passing": 77,
+      "dribbling": 78,
+      "defending": 74,
+      "physical": 70
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "100% pass completion in late cameos",
+        "Speed on the right flank"
+      ],
+      "weaknesses": [
+        "Limited minutes to impact attack"
+      ],
+      "playingStyle": "Versatile Wing-Back."
+    },
+    "injuryStatus": "Healthy",
+    "tournamentId": "fifa-asean-cup-2026",
+    "isChinaCallUp": false,
+    "callUpRole": "Wing-Back Utility · 83% Pass Acc across both flanks",
+    "tournamentProvenance": "FIFA ASEAN Cup 2026",
+    "tournamentHighlight": "FIFA ASEAN Cup: 3 Appearances, 72 mins, 83% Pass Acc · Tactical versatility across both fullback roles"
+  },
+  {
+    "id": "nazmi-faiz",
+    "name": "Nazmi Faiz Mansor",
+    "teamId": "malaysia",
+    "photo": "/players/nazmi-faiz.png",
+    "club": "Johor Darul Ta'zim",
+    "age": 31,
+    "height": 169,
+    "weight": 65,
+    "nationality": "Malaysia",
+    "position": "Midfielder",
+    "number": 18,
+    "appearances": 1,
+    "minutes": 19,
+    "goals": 0,
+    "assists": 0,
+    "shots": 1,
+    "expectedGoals": 0.08,
+    "expectedAssists": 0.25,
+    "passingAccuracy": 73,
+    "tackles": 1,
+    "interceptions": 1,
+    "recoveries": 3,
+    "averageRating": 6.7,
+    "sprintSpeed": 29.5,
+    "distanceCovered": 2.7,
+    "touches": 20,
+    "radar": {
+      "pace": 70,
+      "shooting": 74,
+      "passing": 83,
+      "dribbling": 78,
+      "defending": 65,
+      "physical": 68
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Composed passing tempo",
+        "Technical midfield control"
+      ],
+      "weaknesses": [
+        "Physical aerial presence"
+      ],
+      "playingStyle": "Technical Central Playmaker."
+    },
+    "injuryStatus": "Healthy",
+    "tournamentId": "fifa-asean-cup-2026",
+    "isChinaCallUp": false,
+    "tournamentProvenance": "FIFA ASEAN Cup 2026",
+    "callUpRole": "Technical Central Playmaker · Composed Tempo",
+    "tournamentHighlight": "FIFA ASEAN Cup: 1 App, 19 mins, 73% Pass Acc · Composed midfield tempo control"
+  },
+  {
+    "id": "paulo-josue-fifa",
+    "name": "Paulo Josué",
+    "teamId": "malaysia",
+    "photo": "/players/paulo-josue.png",
+    "club": "Kuala Lumpur City FC",
+    "age": 37,
+    "height": 184,
+    "weight": 80,
+    "nationality": "Malaysia",
+    "position": "Forward",
+    "number": 17,
+    "appearances": 4,
+    "minutes": 117,
+    "goals": 1,
+    "assists": 1,
+    "shots": 4,
+    "expectedGoals": 0.85,
+    "expectedAssists": 0.95,
+    "passingAccuracy": 78,
+    "tackles": 2,
+    "interceptions": 1,
+    "recoveries": 5,
+    "averageRating": 7.15,
+    "sprintSpeed": 26.5,
+    "distanceCovered": 11.8,
+    "touches": 58,
+    "radar": {
+      "pace": 62,
+      "shooting": 84,
+      "passing": 85,
+      "dribbling": 78,
+      "defending": 50,
+      "physical": 76
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Goal and assist vs Singapore in 29 mins",
+        "Elite set-piece conversion",
+        "Composed leadership off the bench"
+      ],
+      "weaknesses": [
+        "Stamina across 90 minutes"
+      ],
+      "playingStyle": "Clutch Veteran Second Striker / Set-Piece Specialist."
+    },
+    "injuryStatus": "Healthy",
+    "tournamentId": "fifa-asean-cup-2026",
+    "isChinaCallUp": true,
+    "tournamentProvenance": "Both Tournaments (FIFA & AFF)",
+    "callUpRole": "Dual-Tournament Veteran · 4 Goals Total (3 AFF + 1 FIFA)",
+    "tournamentHighlight": "Both Tournaments: 6 Starts, 518 mins, 3 Goals in AFF + 4 Apps, 117 mins, 1 Goal, 1 Assist in FIFA · 4 Goals across both cups"
+  },
+  {
+    "id": "ubaidullah-shamsul-fifa",
+    "name": "Ubaidullah Shamsul",
+    "teamId": "malaysia",
+    "photo": "/players/ubaidullah-shamsul.png",
+    "club": "Terengganu FC",
+    "age": 22,
+    "height": 182,
+    "weight": 75,
+    "nationality": "Malaysia",
+    "position": "Defender",
+    "number": 3,
+    "appearances": 2,
+    "minutes": 113,
+    "goals": 0,
+    "assists": 0,
+    "shots": 0,
+    "expectedGoals": 0,
+    "expectedAssists": 0,
+    "passingAccuracy": 88,
+    "tackles": 4,
+    "interceptions": 3,
+    "recoveries": 11,
+    "averageRating": 7.4,
+    "sprintSpeed": 30.5,
+    "distanceCovered": 3.1,
+    "touches": 14,
+    "radar": {
+      "pace": 76,
+      "shooting": 40,
+      "passing": 74,
+      "dribbling": 62,
+      "defending": 80,
+      "physical": 80
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Defensive colossus vs Vietnam: 71/78 passes (91%) & 9 duels won",
+        "Disciplined defensive closing vs Singapore",
+        "Young centre-back pedigree"
+      ],
+      "weaknesses": [
+        "Experience at senior international level"
+      ],
+      "playingStyle": "Aggressive Young Stopper."
+    },
+    "injuryStatus": "Healthy",
+    "tournamentId": "fifa-asean-cup-2026",
+    "isChinaCallUp": true,
+    "callUpRole": "Dual-Tournament Defender · 540m in AFF + 113m in FIFA",
+    "tournamentProvenance": "Both Tournaments (FIFA & AFF)",
+    "tournamentHighlight": "Both Tournaments: 540 mins in AFF (92% pass acc) + 113 mins in FIFA Bronze win vs Vietnam · 653 mins combined"
+  },
+  {
+    "id": "g-pavithran-fifa",
+    "name": "G. Pavithran",
+    "teamId": "malaysia",
+    "photo": "/players/g-pavithran.png",
+    "club": "Johor Darul Ta'zim U23",
+    "age": 21,
+    "height": 180,
+    "weight": 65,
+    "nationality": "Malaysia",
+    "position": "Forward",
+    "number": 27,
+    "appearances": 2,
+    "minutes": 41,
+    "goals": 0,
+    "assists": 0,
+    "shots": 1,
+    "expectedGoals": 0.1,
+    "expectedAssists": 0.1,
+    "passingAccuracy": 72,
+    "tackles": 1,
+    "interceptions": 0,
+    "recoveries": 2,
+    "averageRating": 6.55,
+    "sprintSpeed": 32.5,
+    "distanceCovered": 2.9,
+    "touches": 19,
+    "radar": {
+      "pace": 85,
+      "shooting": 72,
+      "passing": 70,
+      "dribbling": 79,
+      "defending": 45,
+      "physical": 62
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "11/14 (79%) passes vs Bangladesh in debut cameo",
+        "Direct pace on counter-attack"
+      ],
+      "weaknesses": [
+        "Physical aerial battles"
+      ],
+      "playingStyle": "Youth Inside Forward."
+    },
+    "injuryStatus": "Healthy",
+    "tournamentId": "fifa-asean-cup-2026",
+    "isChinaCallUp": true,
+    "tournamentProvenance": "Both Tournaments (FIFA & AFF)",
+    "callUpRole": "Dual-Tournament Prospect · 1G 2A in AFF + FIFA Cameo",
+    "tournamentHighlight": "Both Tournaments: 6 Starts, 540 mins, 1 Goal, 2 Assists in AFF (Rating 7.50) + 2 Appearances in FIFA · 581 mins combined"
   }
 ]

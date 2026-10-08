@@ -1,6 +1,14 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Shell } from "@/components/Shell";
 import "./globals.css";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  viewportFit: "cover",
+  themeColor: "#09090b",
+};
 
 export const metadata: Metadata = {
   title: "Harimau Malaya Analytics Hub - ASEAN Hyundai Cup 2026",
@@ -8,6 +16,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://aff-malaysia.vercel.app"),
   keywords: ["Harimau Malaya", "Malaysia Football", "AFF Cup 2026", "Tactical Planner", "ASEAN Football", "Tan Cheng Hoe"],
   authors: [{ name: "Antigravity Team" }],
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "Harimau Malaya",
+  },
   openGraph: {
     title: "Harimau Malaya Analytics Hub - ASEAN Hyundai Cup 2026",
     description: "Premium tactical analysis, interactive starting lineups, and dynamic matchday statistics for the Malaysian National Football Team.",
@@ -46,7 +59,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full antialiased dark">
-      <body className="min-h-full flex flex-col bg-zinc-950">
+      <body className="min-h-full flex flex-col bg-zinc-950 selection:bg-amber-400 selection:text-zinc-950">
         <Shell>{children}</Shell>
       </body>
     </html>

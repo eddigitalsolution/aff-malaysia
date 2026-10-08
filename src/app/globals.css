@@ -92,3 +92,25 @@ body {
 .glow-cyan {
   box-shadow: 0 0 20px rgba(6, 182, 212, 0.15);
 }
+
+/* Mobile iOS / Android Safe Area & Touch Ergonomics */
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button, a, input, select {
+  touch-action: manipulation;
+}
+
+.safe-top {
+  padding-top: max(0.75rem, env(safe-area-inset-top));
+}
+
+.safe-bottom {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
+.safe-drawer-bottom {
+  padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+}

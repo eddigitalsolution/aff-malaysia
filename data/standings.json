@@ -1,192 +1,208 @@
 {
-  "A": [
-    {
-      "position": 1,
-      "teamId": "vietnam",
-      "played": 3,
-      "wins": 2,
-      "draws": 1,
-      "losses": 0,
-      "goalsFor": 10,
-      "goalsAgainst": 0,
-      "goalDifference": 10,
-      "points": 7,
-      "recentForm": [
-        "W",
-        "W",
-        "D"
-      ],
-      "qualificationStatus": "Qualified"
-    },
-    {
-      "position": 2,
-      "teamId": "singapore",
-      "played": 3,
-      "wins": 2,
-      "draws": 1,
-      "losses": 0,
-      "goalsFor": 4,
-      "goalsAgainst": 1,
-      "goalDifference": 3,
-      "points": 7,
-      "recentForm": [
-        "W",
-        "W",
-        "D"
-      ],
-      "qualificationStatus": "Qualified"
-    },
-    {
-      "position": 3,
-      "teamId": "indonesia",
-      "played": 3,
-      "wins": 2,
-      "draws": 0,
-      "losses": 1,
-      "goalsFor": 8,
-      "goalsAgainst": 4,
-      "goalDifference": 4,
-      "points": 6,
-      "recentForm": [
-        "W",
-        "L",
-        "W"
-      ],
-      "qualificationStatus": "Qualified"
-    },
-    {
-      "position": 4,
-      "teamId": "cambodia",
-      "played": 3,
-      "wins": 1,
-      "draws": 0,
-      "losses": 2,
-      "goalsFor": 5,
-      "goalsAgainst": 7,
-      "goalDifference": -2,
-      "points": 3,
-      "recentForm": [
-        "L",
-        "W",
-        "L"
-      ],
-      "qualificationStatus": "Eliminated"
-    },
-    {
-      "position": 5,
-      "teamId": "timor-leste",
-      "played": 4,
-      "wins": 0,
-      "draws": 0,
-      "losses": 4,
-      "goalsFor": 0,
-      "goalsAgainst": 15,
-      "goalDifference": -15,
-      "points": 0,
-      "recentForm": [
-        "L",
-        "L",
-        "L",
-        "L"
-      ],
-      "qualificationStatus": "Eliminated"
-    }
-  ],
-  "B": [
-    {
-      "position": 1,
-      "teamId": "thailand",
-      "played": 4,
-      "wins": 4,
-      "draws": 0,
-      "losses": 0,
-      "goalsFor": 10,
-      "goalsAgainst": 0,
-      "goalDifference": 10,
-      "points": 12,
-      "recentForm": [
-        "W",
-        "W",
-        "W",
-        "W"
-      ],
-      "qualificationStatus": "Qualified"
-    },
-    {
-      "position": 2,
-      "teamId": "malaysia",
-      "played": 4,
-      "wins": 3,
-      "draws": 0,
-      "losses": 1,
-      "goalsFor": 7,
-      "goalsAgainst": 3,
-      "goalDifference": 4,
-      "points": 9,
-      "recentForm": [
-        "W",
-        "W",
-        "L",
-        "W"
-      ],
-      "qualificationStatus": "Qualified"
-    },
-    {
-      "position": 3,
-      "teamId": "myanmar",
-      "played": 4,
-      "wins": 2,
-      "draws": 0,
-      "losses": 2,
-      "goalsFor": 12,
-      "goalsAgainst": 7,
-      "goalDifference": 5,
-      "points": 6,
-      "recentForm": [
-        "L",
-        "W",
-        "W",
-        "L"
-      ],
-      "qualificationStatus": "Eliminated"
-    },
-    {
-      "position": 4,
-      "teamId": "philippines",
-      "played": 4,
-      "wins": 1,
-      "draws": 0,
-      "losses": 3,
-      "goalsFor": 5,
-      "goalsAgainst": 7,
-      "goalDifference": -2,
-      "points": 3,
-      "recentForm": [
-        "L",
-        "W",
-        "L",
-        "L"
-      ],
-      "qualificationStatus": "Eliminated"
-    },
-    {
-      "position": 5,
-      "teamId": "laos",
-      "played": 4,
-      "wins": 0,
-      "draws": 0,
-      "losses": 4,
-      "goalsFor": 3,
-      "goalsAgainst": 20,
-      "goalDifference": -17,
-      "points": 0,
-      "recentForm": [
-        "L",
-        "L",
-        "L",
-        "L"
-      ],
-      "qualificationStatus": "Eliminated"
-    }
-  ]
+  "fifa-asean-cup-2026": {
+    "A": [
+      {
+        "position": 1,
+        "teamId": "indonesia",
+        "played": 3,
+        "wins": 2,
+        "draws": 1,
+        "losses": 0,
+        "goalsFor": 11,
+        "goalsAgainst": 2,
+        "goalDifference": 9,
+        "points": 7,
+        "recentForm": ["W", "D", "W"],
+        "qualificationStatus": "Qualified"
+      },
+      {
+        "position": 2,
+        "teamId": "malaysia",
+        "played": 3,
+        "wins": 2,
+        "draws": 1,
+        "losses": 0,
+        "goalsFor": 9,
+        "goalsAgainst": 0,
+        "goalDifference": 9,
+        "points": 7,
+        "recentForm": ["W", "D", "W"],
+        "qualificationStatus": "Qualified"
+      },
+      {
+        "position": 3,
+        "teamId": "singapore",
+        "played": 3,
+        "wins": 1,
+        "draws": 0,
+        "losses": 2,
+        "goalsFor": 1,
+        "goalsAgainst": 8,
+        "goalDifference": -7,
+        "points": 3,
+        "recentForm": ["L", "W", "L"],
+        "qualificationStatus": "Eliminated"
+      },
+      {
+        "position": 4,
+        "teamId": "bangladesh",
+        "played": 3,
+        "wins": 0,
+        "draws": 0,
+        "losses": 3,
+        "goalsFor": 2,
+        "goalsAgainst": 13,
+        "goalDifference": -11,
+        "points": 0,
+        "recentForm": ["L", "L", "L"],
+        "qualificationStatus": "Eliminated"
+      }
+    ]
+  },
+  "aff-cup-2026": {
+    "A": [
+      {
+        "position": 1,
+        "teamId": "vietnam",
+        "played": 4,
+        "wins": 3,
+        "draws": 1,
+        "losses": 0,
+        "goalsFor": 11,
+        "goalsAgainst": 2,
+        "goalDifference": 9,
+        "points": 10,
+        "recentForm": ["W", "W", "D", "W"],
+        "qualificationStatus": "Qualified"
+      },
+      {
+        "position": 2,
+        "teamId": "indonesia",
+        "played": 4,
+        "wins": 2,
+        "draws": 1,
+        "losses": 1,
+        "goalsFor": 8,
+        "goalsAgainst": 4,
+        "goalDifference": 4,
+        "points": 7,
+        "recentForm": ["W", "D", "W", "L"],
+        "qualificationStatus": "Qualified"
+      },
+      {
+        "position": 3,
+        "teamId": "cambodia",
+        "played": 4,
+        "wins": 1,
+        "draws": 2,
+        "losses": 1,
+        "goalsFor": 5,
+        "goalsAgainst": 6,
+        "goalDifference": -1,
+        "points": 5,
+        "recentForm": ["D", "W", "L", "D"],
+        "qualificationStatus": "Eliminated"
+      },
+      {
+        "position": 4,
+        "teamId": "singapore",
+        "played": 4,
+        "wins": 1,
+        "draws": 1,
+        "losses": 2,
+        "goalsFor": 4,
+        "goalsAgainst": 7,
+        "goalDifference": -3,
+        "points": 4,
+        "recentForm": ["W", "L", "D", "L"],
+        "qualificationStatus": "Eliminated"
+      },
+      {
+        "position": 5,
+        "teamId": "timor-leste",
+        "played": 4,
+        "wins": 0,
+        "draws": 0,
+        "losses": 4,
+        "goalsFor": 1,
+        "goalsAgainst": 10,
+        "goalDifference": -9,
+        "points": 0,
+        "recentForm": ["L", "L", "L", "L"],
+        "qualificationStatus": "Eliminated"
+      }
+    ],
+    "B": [
+      {
+        "position": 1,
+        "teamId": "thailand",
+        "played": 4,
+        "wins": 4,
+        "draws": 0,
+        "losses": 0,
+        "goalsFor": 10,
+        "goalsAgainst": 0,
+        "goalDifference": 10,
+        "points": 12,
+        "recentForm": ["W", "W", "W", "W"],
+        "qualificationStatus": "Qualified"
+      },
+      {
+        "position": 2,
+        "teamId": "malaysia",
+        "played": 4,
+        "wins": 3,
+        "draws": 0,
+        "losses": 1,
+        "goalsFor": 7,
+        "goalsAgainst": 3,
+        "goalDifference": 4,
+        "points": 9,
+        "recentForm": ["W", "W", "L", "W"],
+        "qualificationStatus": "Qualified"
+      },
+      {
+        "position": 3,
+        "teamId": "myanmar",
+        "played": 4,
+        "wins": 2,
+        "draws": 0,
+        "losses": 2,
+        "goalsFor": 12,
+        "goalsAgainst": 7,
+        "goalDifference": 5,
+        "points": 6,
+        "recentForm": ["L", "W", "W", "L"],
+        "qualificationStatus": "Eliminated"
+      },
+      {
+        "position": 4,
+        "teamId": "philippines",
+        "played": 4,
+        "wins": 1,
+        "draws": 0,
+        "losses": 3,
+        "goalsFor": 5,
+        "goalsAgainst": 7,
+        "goalDifference": -2,
+        "points": 3,
+        "recentForm": ["L", "W", "L", "L"],
+        "qualificationStatus": "Eliminated"
+      },
+      {
+        "position": 5,
+        "teamId": "laos",
+        "played": 4,
+        "wins": 0,
+        "draws": 0,
+        "losses": 4,
+        "goalsFor": 3,
+        "goalsAgainst": 20,
+        "goalDifference": -17,
+        "points": 0,
+        "recentForm": ["L", "L", "L", "L"],
+        "qualificationStatus": "Eliminated"
+      }
+    ]
+  }
 }

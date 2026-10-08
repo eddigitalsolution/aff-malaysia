@@ -8,6 +8,40 @@ import newsData from '../../data/news.json';
 import venuesData from '../../data/venues.json';
 import statisticsData from '../../data/statistics.json';
 
+export interface Tournament {
+  id: string;
+  name: string;
+  shortName: string;
+  division: string;
+  host: string;
+  dates: string;
+  sanction: string;
+  featuredFocus: string;
+}
+
+export const TOURNAMENTS: Tournament[] = [
+  {
+    id: 'fifa-asean-cup-2026',
+    name: '2026 FIFA ASEAN Cup',
+    shortName: 'FIFA ASEAN Cup',
+    division: 'Division 1',
+    host: 'Indonesia (Jakarta & Bandung)',
+    dates: '24 Sep – 05 Oct 2026',
+    sanction: 'FIFA Sanctioned (MoU 47th ASEAN Summit)',
+    featuredFocus: 'Malaysia (Group A)'
+  },
+  {
+    id: 'aff-cup-2026',
+    name: 'ASEAN Hyundai Cup 2026',
+    shortName: 'Hyundai Cup',
+    division: 'Main Championship',
+    host: 'Multi-Nation (Home & Away)',
+    dates: '24 July – 26 August 2026',
+    sanction: 'AFF Championship',
+    featuredFocus: 'Malaysia (Group B)'
+  }
+];
+
 // Types defining the structure of the data for Type safety and clean API boundary
 export interface Team {
   id: string;
@@ -70,10 +104,16 @@ export interface Player {
     playingStyle: string;
   };
   injuryStatus?: 'Injured' | 'Doubtful' | 'Healthy' | 'Returned to Club';
+  tournamentId?: string;
+  isChinaCallUp?: boolean;
+  callUpRole?: string;
+  tournamentProvenance?: string;
+  tournamentHighlight?: string;
 }
 
 export interface Fixture {
   id: string;
+  tournamentId?: string;
   stage: string;
   matchday: number;
   group: string | null;
@@ -110,6 +150,7 @@ export interface StartingXIPlayer {
 
 export interface MatchDetails {
   matchId: string;
+  tournamentId?: string;
   status: 'COMPLETED' | 'LIVE' | 'UPCOMING';
   minute?: number;
   homeScore: number;
@@ -179,27 +220,62 @@ export interface Venue {
   image: string;
 }
 
-// API functions wrapping static data. Can easily be converted to fetch calls.
-export async function getTeams(): Promise<Team[]> {
-  return teamsData as Team[];
+export const TOURNAMENT_TEAMS: Record<string, { A: string[]; B: string[] }> = {
+  'fifa-asean-cup-2026': {
+    A: ['malaysia', 'indonesia', 'singapore', 'bangladesh'],
+    B: []
+  },
+  'aff-cup-2026': {
+    A: ['vietnam', 'indonesia', 'singapore', 'cambodia', 'timor-leste'],
+    B: ['thailand', 'malaysia', 'myanmar', 'philippines', 'laos']
+  }
+};
+
+// API functions wrapping static data.
+export async function getTeams(tournamentId?: string): Promise<Team[]> {
+  const allTeams = teamsData as Team[];
+  if (!tournamentId || !TOURNAMENT_TEAMS[tournamentId]) {
+    return allTeams;
+  }
+  const tournamentConfig = TOURNAMENT_TEAMS[tournamentId];
+  const groupAMap = new Set(tournamentConfig.A);
+  const groupBMap = new Set(tournamentConfig.B);
+
+  return allTeams
+    .filter(t => groupAMap.has(t.id) || groupBMap.has(t.id))
+    .map(t => ({
+      ...t,
+      group: groupAMap.has(t.id) ? 'A' : 'B'
+    }));
 }
 
-export async function getTeam(id: string): Promise<Team | null> {
-  const teams = await getTeams();
-  return teams.find(t => t.id === id) || null;
+export async function getTeam(id: string, tournamentId?: string): Promise<Team | null> {
+  const teams = await getTeams(tournamentId);
+  return teams.find(t => t.id === id) || (teamsData as Team[]).find(t => t.id === id) || null;
 }
 
-export async function getPlayers(): Promise<Player[]> {
-  return playersData as Player[];
+export async function getPlayers(teamId?: string, tournamentId?: string): Promise<Player[]> {
+  let allPlayers = playersData as Player[];
+  if (tournamentId) {
+    allPlayers = allPlayers.filter(p => !p.tournamentId || p.tournamentId === tournamentId);
+  }
+  if (teamId) {
+    allPlayers = allPlayers.filter(p => p.teamId === teamId);
+  }
+  return allPlayers;
 }
 
-export async function getPlayer(id: string): Promise<Player | null> {
-  const players = await getPlayers();
-  return players.find(p => p.id === id) || null;
+export async function getPlayer(id: string, tournamentId?: string): Promise<Player | null> {
+  const players = await getPlayers(undefined, tournamentId);
+  return players.find(p => p.id === id) || (playersData as Player[]).find(p => p.id === id) || null;
 }
 
-export async function getFixtures(): Promise<Fixture[]> {
-  return fixturesData as Fixture[];
+export async function getFixtures(tournamentId?: string): Promise<Fixture[]> {
+  const allFixtures = fixturesData as Fixture[];
+  if (!tournamentId) {
+    return allFixtures;
+  }
+  return allFixtures.filter(f => f.tournamentId === tournamentId);
 }
 
 export async function getMatches(): Promise<MatchDetails[]> {
@@ -211,8 +287,32 @@ export async function getMatch(id: string): Promise<MatchDetails | null> {
   return matches.find(m => m.matchId === id) || null;
 }
 
-export async function getStandings(): Promise<{ A: any[]; B: any[] }> {
-  return standingsData;
+export interface StandingRow {
+  position: number;
+  teamId: string;
+  played: number;
+  wins: number;
+  draws: number;
+  losses: number;
+  goalsFor: number;
+  goalsAgainst: number;
+  goalDifference: number;
+  points: number;
+  recentForm: string[];
+  qualificationStatus: string;
+}
+
+export interface TournamentStandings {
+  A: StandingRow[];
+  B?: StandingRow[];
+}
+
+export async function getStandings(tournamentId: string = 'fifa-asean-cup-2026'): Promise<TournamentStandings> {
+  const data = standingsData as Record<string, TournamentStandings>;
+  if (data[tournamentId]) {
+    return data[tournamentId];
+  }
+  return data['fifa-asean-cup-2026'] || (standingsData as unknown as TournamentStandings);
 }
 
 export async function getPredictions(): Promise<Prediction[]> {
@@ -237,6 +337,10 @@ export async function getVenues(): Promise<Venue[]> {
   return venuesData as Venue[];
 }
 
-export async function getStatistics(): Promise<any> {
-  return statisticsData;
+export async function getStatistics(tournamentId: string = 'fifa-asean-cup-2026'): Promise<any> {
+  const data = statisticsData as any;
+  if (data[tournamentId]) {
+    return data[tournamentId];
+  }
+  return data['fifa-asean-cup-2026'] || data;
 }

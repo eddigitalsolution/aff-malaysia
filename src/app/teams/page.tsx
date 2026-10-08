@@ -2,28 +2,72 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { getTeams, Team } from '@/lib/api';
-import { Shield, Users, Compass, Award } from 'lucide-react';
+import { getTeams, TOURNAMENTS, Team } from '@/lib/api';
+import { useAppState } from '@/store';
+import { Shield, Users, Compass, Award, Trophy, Globe } from 'lucide-react';
 
 export default function TeamsPage() {
+  const { activeTournamentId, setActiveTournamentId } = useAppState();
   const [teams, setTeams] = useState<Team[]>([]);
+
+  const currentTournament = TOURNAMENTS.find(t => t.id === activeTournamentId) || TOURNAMENTS[0];
+  const isFifa = activeTournamentId === 'fifa-asean-cup-2026';
 
   useEffect(() => {
     async function loadData() {
-      const data = await getTeams();
+      const data = await getTeams(activeTournamentId);
       setTeams(data);
     }
     loadData();
-  }, []);
+  }, [activeTournamentId]);
 
   return (
     <div className="space-y-6 animate-in fade-in duration-300">
+      {/* Tournament Selection Header Tabs */}
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 p-1.5 bg-zinc-900/90 border border-zinc-800 rounded-2xl">
+        <div className="flex items-center gap-1.5 p-1 bg-zinc-950 rounded-xl flex-1 sm:flex-initial">
+          {TOURNAMENTS.map(t => {
+            const active = t.id === activeTournamentId;
+            const isFifaTournament = t.id === 'fifa-asean-cup-2026';
+            return (
+              <button
+                key={t.id}
+                onClick={() => setActiveTournamentId(t.id)}
+                className={`flex-1 sm:flex-initial px-4 py-2.5 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-2 ${
+                  active
+                    ? isFifaTournament
+                      ? 'bg-amber-400 text-zinc-950 shadow-md font-black'
+                      : 'bg-emerald-400 text-zinc-950 shadow-md font-black'
+                    : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900'
+                }`}
+              >
+                <Trophy className="h-3.5 w-3.5" />
+                <span>{t.name}</span>
+                <span className={`text-[9px] px-1.5 py-0.2 rounded font-black uppercase ${
+                  active ? 'bg-zinc-950/20 text-zinc-950' : 'bg-zinc-800 text-zinc-400'
+                }`}>
+                  {isFifaTournament ? 'FIFA' : 'AFF'}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
+        <div className="px-3 py-1 text-xs text-zinc-400 font-medium">
+          {currentTournament.sanction}
+        </div>
+      </div>
+
       <div>
         <h1 className="text-2xl font-black flex items-center gap-2">
           <Shield className="h-6 w-6 text-primary" />
-          <span>Participating Teams</span>
+          <span>{currentTournament.name} Participating Teams</span>
         </h1>
-        <p className="text-xs text-zinc-400">Click on any team to view their tactics, full squad roster, and detailed analytics.</p>
+        <p className="text-xs text-zinc-400">
+          {isFifa 
+            ? '8 Division 1 nations competing in Jakarta & Bandung across Group A & Group B.' 
+            : '10 ASEAN nations competing across Group A & Group B in the Home & Away championship.'}
+        </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

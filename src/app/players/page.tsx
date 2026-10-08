@@ -2,38 +2,52 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { getPlayers, getTeams, Player, Team } from '@/lib/api';
-import { Search, UserCheck, ShieldAlert, Award, ArrowLeftRight, ChevronDown } from 'lucide-react';
+import { getPlayers, getTeams, TOURNAMENTS, Player, Team } from '@/lib/api';
+import { useAppState } from '@/store';
+import { Search, UserCheck, ShieldAlert, Award, ArrowLeftRight, ChevronDown, Trophy, Globe, Swords, ChevronRight, Star } from 'lucide-react';
 
 export default function PlayersPage() {
+  const { activeTournamentId, setActiveTournamentId } = useAppState();
   const [players, setPlayers] = useState<Player[]>([]);
   const [teams, setTeams] = useState<Team[]>([]);
   
   // Filter states
   const [searchTerm, setSearchTerm] = useState('');
   const [activeTab, setActiveTab] = useState<'All' | 'Goalkeeper' | 'Defender' | 'Midfielder' | 'Forward'>('All');
+  const [showOnlyCallUp, setShowOnlyCallUp] = useState(false);
   
   // Comparison states
   const [isComparing, setIsComparing] = useState(false);
   const [compareId1, setCompareId1] = useState<string>('g-pavithran');
   const [compareId2, setCompareId2] = useState<string>('sergio-aguero');
 
+  const currentTournament = TOURNAMENTS.find(t => t.id === activeTournamentId) || TOURNAMENTS[0];
+  const isFifa = activeTournamentId === 'fifa-asean-cup-2026';
+
   useEffect(() => {
     async function loadData() {
-      const p = await getPlayers();
-      const t = await getTeams();
+      const p = await getPlayers(undefined, activeTournamentId);
+      const t = await getTeams(activeTournamentId);
       setPlayers(p);
       setTeams(t);
+      if (activeTournamentId === 'fifa-asean-cup-2026') {
+        setCompareId1('bergson');
+        setCompareId2('arif-aiman');
+      } else {
+        setCompareId1('g-pavithran');
+        setCompareId2('sergio-aguero');
+      }
     }
     loadData();
-  }, []);
+  }, [activeTournamentId]);
 
   const filteredPlayers = players.filter((p) => {
     const matchesSearch = p.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
                           p.club.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesPosition = activeTab === 'All' || p.position === activeTab;
     const matchesTeam = p.teamId === 'malaysia';
-    return matchesSearch && matchesPosition && matchesTeam;
+    const matchesCallUp = !showOnlyCallUp || p.isChinaCallUp;
+    return matchesSearch && matchesPosition && matchesTeam && matchesCallUp;
   });
 
   const malaysiaPlayers = players.filter(p => p.teamId === 'malaysia');
@@ -55,6 +69,41 @@ export default function PlayersPage() {
 
   return (
     <div className="space-y-6 animate-in fade-in duration-300">
+      {/* Tournament Selection Header Tabs */}
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 p-1.5 bg-zinc-900/90 border border-zinc-800 rounded-2xl">
+        <div className="flex items-center gap-1.5 p-1 bg-zinc-950 rounded-xl flex-1 sm:flex-initial">
+          {TOURNAMENTS.map(t => {
+            const active = t.id === activeTournamentId;
+            const isFifaTournament = t.id === 'fifa-asean-cup-2026';
+            return (
+              <button
+                key={t.id}
+                onClick={() => setActiveTournamentId(t.id)}
+                className={`flex-1 sm:flex-initial px-4 py-2.5 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-2 ${
+                  active
+                    ? isFifaTournament
+                      ? 'bg-amber-400 text-zinc-950 shadow-md font-black'
+                      : 'bg-emerald-400 text-zinc-950 shadow-md font-black'
+                    : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900'
+                }`}
+              >
+                <Trophy className="h-3.5 w-3.5" />
+                <span>{t.name}</span>
+                <span className={`text-[9px] px-1.5 py-0.2 rounded font-black uppercase ${
+                  active ? 'bg-zinc-950/20 text-zinc-950' : 'bg-zinc-800 text-zinc-400'
+                }`}>
+                  {isFifaTournament ? 'FIFA' : 'AFF'}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
+        <div className="px-3 py-1 text-xs text-zinc-400 font-medium">
+          {currentTournament.sanction}
+        </div>
+      </div>
+
       <div>
         <h1 className="text-2xl font-black flex items-center gap-2">
           <UserCheck className="h-6 w-6 text-primary" />
@@ -63,26 +112,89 @@ export default function PlayersPage() {
         <div className="flex items-center gap-3 mt-1 flex-wrap">
           <p className="text-xs text-zinc-400">Search and filter through the complete roster of the Malaysia national team.</p>
           <span className="inline-flex items-center gap-1.5 bg-primary/10 border border-primary/20 text-primary text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider">
-            📊 Stats: AFF ASEAN Cup 2026 — Semifinals Concluded
+            📊 Stats Focus: {currentTournament.name}
           </span>
         </div>
       </div>
 
       {/* Match context strip */}
-      <div className="grid grid-cols-5 gap-2 text-[10px]">
-        {[
-          { match: 'MYS vs LAO', result: 'W 4–0', date: 'Jul 28', upcoming: false },
-          { match: 'THA vs MYS', result: 'L 0–2', date: 'Aug 1', upcoming: false },
-          { match: 'MYS vs PHI', result: 'W 1–0', date: 'Aug 8', upcoming: false },
-          { match: 'MYS vs VIE', result: 'L 0–2', date: 'Aug 16', upcoming: false },
-          { match: 'VIE vs MYS', result: 'L 0–2', date: 'Aug 20', upcoming: false },
-        ].map((m) => (
-          <div key={m.match} className={`glass-card rounded-xl border px-3 py-2 text-center ${m.upcoming ? 'border-primary/30 bg-primary/5' : 'border-zinc-850'}`}>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 text-[10px]">
+        {(isFifa ? [
+          { match: 'BAN vs MYS', result: 'W 3–0', date: '25 Sep 2026', type: 'win' },
+          { match: 'MYS vs IDN', result: 'D 0–0', date: '28 Sep 2026', type: 'draw' },
+          { match: 'MYS vs SGP', result: 'W 6–0', date: '01 Oct 2026', type: 'win' },
+          { match: 'VIE vs MYS (3rd)', result: 'W 1–0', date: '05 Oct 2026', type: 'win' },
+          { match: 'Campaign Finish', result: 'Bronze Medal 🥉', date: '3W 1D 0L • +10 GD', type: 'medal' },
+        ] : [
+          { match: 'MYA vs MYS', result: 'W 2–1', date: '25 Jul 2026', type: 'win' },
+          { match: 'MYS vs LAO', result: 'W 4–0', date: '28 Jul 2026', type: 'win' },
+          { match: 'THA vs MYS', result: 'L 0–2', date: '01 Aug 2026', type: 'loss' },
+          { match: 'MYS vs PHI', result: 'W 1–0', date: '08 Aug 2026', type: 'win' },
+          { match: 'Semi-Final vs VIE', result: 'L 0–4 agg', date: '16 & 19 Aug 2026', type: 'loss' },
+        ]).map((m) => (
+          <div key={m.match} className={`glass-card rounded-xl border px-3 py-2 text-center transition-all ${
+            m.type === 'win' 
+              ? 'border-emerald-500/30 bg-emerald-950/20' 
+              : m.type === 'draw' 
+              ? 'border-amber-500/30 bg-amber-950/20' 
+              : m.type === 'medal'
+              ? 'border-amber-400/40 bg-amber-400/10'
+              : 'border-zinc-800 bg-zinc-900/40'
+          }`}>
             <div className="font-black text-zinc-200">{m.match}</div>
-            <div className={`font-black ${m.upcoming ? 'text-primary' : m.result.startsWith('W') ? 'text-emerald-400' : 'text-red-400'}`}>{m.result}</div>
-            <div className="text-zinc-500">{m.date}</div>
+            <div className={`font-black text-xs ${
+              m.type === 'win'
+                ? 'text-emerald-400'
+                : m.type === 'draw'
+                ? 'text-amber-400'
+                : m.type === 'medal'
+                ? 'text-amber-300'
+                : 'text-zinc-400'
+            }`}>
+              {m.result}
+            </div>
+            <div className="text-zinc-500 text-[9px] mt-0.5">{m.date}</div>
           </div>
         ))}
+      </div>
+
+      {/* China Friendly 23-Player Call-Up Announcement Banner */}
+      <div className="bg-linear-to-r from-red-950/40 via-zinc-900 to-zinc-900 border border-red-500/30 rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-lg">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-red-500/20 border border-red-500/30 flex items-center justify-center shrink-0">
+            <Swords className="h-5 w-5 text-red-400" />
+          </div>
+          <div>
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="text-[10px] font-black uppercase tracking-wider text-red-400">Official Call-Up</span>
+              <span className="text-zinc-500 text-xs hidden sm:inline">•</span>
+              <span className="text-xs text-zinc-200 font-bold">China Tier 1 Friendly (14 & 17 Nov 2026, Guangzhou)</span>
+            </div>
+            <p className="text-xs text-zinc-400 mt-0.5">
+              23-player squad selected based on FIFA ASEAN Cup & AFF performance baseline.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-2 w-full sm:w-auto shrink-0">
+          <button
+            onClick={() => setShowOnlyCallUp(prev => !prev)}
+            className={`px-3 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer flex-1 sm:flex-initial justify-center ${
+              showOnlyCallUp
+                ? 'bg-amber-400 text-zinc-950 font-black shadow-md'
+                : 'bg-zinc-800 text-zinc-200 hover:bg-zinc-700'
+            }`}
+          >
+            <span>{showOnlyCallUp ? '✓ Showing 23 Call-Ups' : 'Filter 23 Call-Ups'}</span>
+          </button>
+          <Link
+            href="/friendly"
+            className="px-3.5 py-2 rounded-xl text-xs font-bold bg-red-500 hover:bg-red-400 text-white transition-all flex items-center gap-1 flex-1 sm:flex-initial justify-center"
+          >
+            <span>Tactics & H2H</span>
+            <ChevronRight className="h-3.5 w-3.5" />
+          </Link>
+        </div>
       </div>
 
       {/* Filters Bar */}
@@ -215,7 +327,7 @@ export default function PlayersPage() {
 
                     {/* Radar attributes comparison progress bars */}
                     <div className="py-4 border-b border-zinc-900 space-y-3">
-                      <div className="text-[10px] font-black text-zinc-500 uppercase tracking-wider">⚡ Attributes (Radar)</div>
+                      <div className="text-[10px] font-black text-zinc-500 uppercase tracking-wider">Attributes (Radar)</div>
                       <div className="space-y-2.5">
                         {p.radar && other.radar && Object.keys(p.radar).map((attr) => {
                           const val = p.radar![attr as keyof typeof p.radar] || 50;
@@ -239,10 +351,10 @@ export default function PlayersPage() {
                       </div>
                     </div>
 
-                    {/* AI Analysis */}
+                    {/* Scouting Report */}
                     {p.aiAnalysis && (
                       <div className="pt-4 space-y-3">
-                        <div className="text-[10px] font-black text-zinc-500 uppercase tracking-wider">🧠 AI Scout Notes</div>
+                        <div className="text-[10px] font-black text-zinc-500 uppercase tracking-wider">Tactical Scout Notes</div>
                         <div className="text-xs space-y-2">
                           <p className="text-zinc-400 leading-normal">
                             <strong className="text-zinc-200">Playing Style:</strong> {p.aiAnalysis.playingStyle}
@@ -275,19 +387,37 @@ export default function PlayersPage() {
       ) : (
         /* STANDARD PLAYERS LIST TAB */
         <>
-          {/* Position Filter Tabs */}
-          <div className="flex bg-zinc-900/60 p-1 rounded-xl border border-zinc-800/80 overflow-x-auto self-start">
-            {(['All', 'Goalkeeper', 'Defender', 'Midfielder', 'Forward'] as const).map((pos) => (
-              <button
-                key={pos}
-                onClick={() => setActiveTab(pos)}
-                className={`px-5 py-2 text-xs font-bold rounded-lg transition-colors whitespace-nowrap cursor-pointer ${
-                  activeTab === pos ? 'bg-primary text-zinc-950 font-black' : 'text-zinc-400 hover:text-zinc-200'
-                }`}
-              >
-                {pos === 'All' ? 'All Positions' : pos + 's'}
-              </button>
-            ))}
+          {/* Position Filter Tabs & Call-Up Toggle */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+            <div className="flex bg-zinc-900/60 p-1 rounded-xl border border-zinc-800/80 overflow-x-auto self-start">
+              {(['All', 'Goalkeeper', 'Defender', 'Midfielder', 'Forward'] as const).map((pos) => (
+                <button
+                  key={pos}
+                  onClick={() => setActiveTab(pos)}
+                  className={`px-5 py-2 text-xs font-bold rounded-lg transition-colors whitespace-nowrap cursor-pointer ${
+                    activeTab === pos ? 'bg-primary text-zinc-950 font-black' : 'text-zinc-400 hover:text-zinc-200'
+                  }`}
+                >
+                  {pos === 'All' ? 'All Positions' : pos + 's'}
+                </button>
+              ))}
+            </div>
+
+            <button
+              onClick={() => setShowOnlyCallUp(prev => !prev)}
+              className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 border cursor-pointer ${
+                showOnlyCallUp
+                  ? 'bg-amber-400 border-amber-400 text-zinc-950 font-black shadow-md'
+                  : 'bg-zinc-900 border-zinc-800 text-zinc-400 hover:text-zinc-200 hover:border-zinc-700'
+              }`}
+            >
+              <span>CN 23-Man China Call-Up Squad</span>
+              <span className={`text-[9px] px-1.5 py-0.2 rounded font-black ${
+                showOnlyCallUp ? 'bg-zinc-950/20 text-zinc-950' : 'bg-zinc-800 text-amber-400'
+              }`}>
+                23
+              </span>
+            </button>
           </div>
 
           {/* Grid */}
@@ -302,59 +432,81 @@ export default function PlayersPage() {
                   <Link
                     key={p.id}
                     href={`/players/${p.id}`}
-                    className={`block glass-card rounded-2xl p-5 border border-zinc-800 glass-card-hover ${
+                    className={`block glass-card rounded-2xl p-5 border border-zinc-800 glass-card-hover overflow-hidden ${
                       isFeatured ? 'border-primary/20 bg-primary/2' : ''
                     }`}
                   >
-                    <div className="flex justify-between items-start mb-4">
-                      <div className="flex items-center gap-3">
-                        <div className="relative bg-zinc-900 border border-zinc-800 w-12 h-12 rounded-full overflow-hidden flex items-center justify-center font-black text-primary text-sm shadow">
-                          {p.photo ? (
-                            <img 
-                              src={p.photo} 
-                              alt={p.name} 
-                              className="w-full h-full object-cover" 
-                              onError={(e) => { 
-                                e.currentTarget.style.display = 'none';
-                                const parent = e.currentTarget.parentElement;
-                                if (parent) {
-                                  const fallback = parent.querySelector('.fallback-number');
-                                  if (fallback) (fallback as HTMLElement).style.display = 'block';
-                                }
-                              }} 
-                            />
-                          ) : null}
-                          <span className={p.photo ? "fallback-number hidden" : "fallback-number"}>#{p.number}</span>
-                        </div>
-                        <div>
-                          <h3 className="font-extrabold text-sm sm:text-base flex items-center gap-1.5">
-                            <span className="bg-zinc-800 border border-zinc-700/80 text-zinc-300 text-[10px] px-1.5 py-0.5 rounded font-black">
-                              #{p.number}
-                            </span>
-                            <span>{p.name}</span>
-                            {p.injuryStatus === 'Injured' && (
-                              <span className="bg-red-500/20 text-red-400 text-[8px] font-black px-1.5 py-0.5 rounded uppercase">
-                                🔴 INJURED
-                              </span>
-                            )}
-                            {p.injuryStatus === 'Returned to Club' && (
-                              <span className="bg-yellow-500/20 text-yellow-400 text-[8px] font-black px-1.5 py-0.5 rounded uppercase">
-                                🏠 CLUB
-                              </span>
-                            )}
-                            {p.appearances === 0 && (
-                              <span className="bg-zinc-800 text-zinc-500 text-[8px] font-black px-1.5 py-0.5 rounded uppercase">
-                                DNP
-                              </span>
-                            )}
-                            {isFeatured && p.injuryStatus !== 'Injured' && p.injuryStatus !== 'Returned to Club' && p.appearances > 0 && (
-                              <span className="bg-primary/20 text-primary text-[8px] font-black px-1.5 py-0.5 rounded uppercase">
-                                FOCUS
-                              </span>
-                            )}
+                    <div className="flex items-start gap-3 mb-3.5">
+                      <div className="relative shrink-0 bg-zinc-900 border border-zinc-800 w-12 h-12 rounded-full overflow-hidden flex items-center justify-center font-black text-primary text-sm shadow">
+                        {p.photo ? (
+                          <img 
+                            src={p.photo} 
+                            alt={p.name} 
+                            className="w-full h-full object-cover" 
+                            onError={(e) => { 
+                              e.currentTarget.style.display = 'none';
+                              const parent = e.currentTarget.parentElement;
+                              if (parent) {
+                                const fallback = parent.querySelector('.fallback-number');
+                                if (fallback) (fallback as HTMLElement).style.display = 'block';
+                              }
+                            }} 
+                          />
+                        ) : null}
+                        <span className={p.photo ? "fallback-number hidden" : "fallback-number"}>#{p.number}</span>
+                      </div>
+
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center gap-1.5 flex-wrap">
+                          <span className="bg-zinc-800 border border-zinc-700/80 text-zinc-300 text-[10px] px-1.5 py-0.5 rounded font-black shrink-0">
+                            #{p.number}
+                          </span>
+                          <h3 className="font-extrabold text-sm sm:text-base text-zinc-100 truncate">
+                            {p.name}
                           </h3>
-                          <span className="text-zinc-500 text-[10px] uppercase font-bold tracking-wider">{p.position} • {team?.flag} {team?.name}</span>
                         </div>
+
+                        <div className="flex flex-wrap items-center gap-1 mt-1 mb-1">
+                          {p.appearances === 0 && (
+                            <span className="bg-zinc-800 text-zinc-500 text-[8px] font-black px-1.5 py-0.5 rounded uppercase shrink-0">
+                              DNP
+                            </span>
+                          )}
+                          {isFeatured && p.appearances > 0 && (
+                            <span className="bg-primary/20 text-primary text-[8px] font-black px-1.5 py-0.5 rounded uppercase shrink-0">
+                              FOCUS
+                            </span>
+                          )}
+                          {p.isChinaCallUp && (
+                            <span className="bg-red-500/20 border border-red-500/40 text-red-300 text-[8px] font-black px-1.5 py-0.5 rounded uppercase shrink-0">
+                              CN 23 CALL-UP
+                            </span>
+                          )}
+                        </div>
+
+                        <span className="text-zinc-500 text-[10px] uppercase font-bold tracking-wider block truncate">
+                          {p.position} • {team?.flag} {team?.name}
+                        </span>
+                        
+                        {p.tournamentProvenance && (
+                          <div className="mt-1 flex items-center gap-1 flex-wrap">
+                            <span className={`text-[8px] font-black px-1.5 py-0.5 rounded uppercase tracking-wider shrink-0 ${
+                              p.tournamentProvenance.includes('Both')
+                                ? 'bg-linear-to-r from-amber-500/20 to-emerald-500/20 border border-amber-500/30 text-amber-300'
+                                : p.tournamentProvenance.includes('FIFA')
+                                ? 'bg-amber-400/15 border border-amber-400/30 text-amber-400'
+                                : 'bg-emerald-400/15 border border-emerald-400/30 text-emerald-400'
+                            }`}>
+                              {p.tournamentProvenance.includes('Both') ? 'Both Tournaments (FIFA & AFF)' : p.tournamentProvenance}
+                            </span>
+                          </div>
+                        )}
+
+                        {p.callUpRole && (
+                          <div className="text-[9.5px] text-amber-400 font-semibold leading-snug mt-1 wrap-break-word line-clamp-2">
+                            {p.callUpRole}
+                          </div>
+                        )}
                       </div>
                     </div>
 
@@ -398,6 +550,16 @@ export default function PlayersPage() {
                       <span className="text-[10px] text-zinc-500 font-semibold">Minutes Played</span>
                       <span className="font-bold text-zinc-300">{p.appearances > 0 ? `${p.minutes} mins` : '—'}</span>
                     </div>
+
+                    {/* Tournament Selection Basis Highlight */}
+                    {p.tournamentHighlight && (
+                      <div className="mt-2.5 text-[9.5px] text-zinc-300 bg-zinc-900/80 p-2.5 rounded-xl border border-zinc-800 leading-relaxed wrap-break-word">
+                        <span className="text-[8.5px] text-amber-400 font-black block uppercase tracking-wider mb-0.5">
+                          Selection Basis:
+                        </span>
+                        {p.tournamentHighlight}
+                      </div>
+                    )}
 
                     {/* Rating Footer */}
                     <div className="mt-3 border-t border-zinc-900 pt-3 flex justify-between items-center text-xs">

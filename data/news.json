@@ -1,42 +1,32 @@
 [
   {
-    "id": "news-01",
-    "title": "Arif Aiman Inspires Harimau Malaya to 3-0 Victory Over Cambodia",
-    "summary": "Malaysia got their AFF Mitsubishi Electric Cup 2026 campaign off to a flying start with a dominant win.",
-    "content": "Arif Aiman Hanapi scored one and assisted another as Malaysia powered past Cambodia 3-0 at the National Stadium in Bukit Jalil. Tan Cheng Hoe's side looked sharp and high-pressing, restricting Cambodia to only one shot on target. Romel Morales and captain Dion Cools scored in the second half to seal the three points, putting Harimau Malaya at the top of Group A.",
-    "date": "2026-12-10",
-    "category": "Match Report",
-    "image": "/news/mal-cam.png",
-    "tags": ["Malaysia", "Cambodia", "Group A"]
+    "id": "news-fac-01",
+    "title": "Harimau Malaya Drawn in Group A for Inaugural 2026 FIFA ASEAN Cup Division 1",
+    "summary": "Malaysia will face hosts Indonesia, Singapore, and Bangladesh in Division 1 of the new FIFA-sanctioned Southeast Asian tournament.",
+    "content": "Malaysia has been drawn into Group A of Division 1 for the inaugural 2026 FIFA ASEAN Cup in Indonesia. Sanctioned directly by FIFA following the MoU signed at the 47th ASEAN Summit in Kuala Lumpur, the tournament will be held during an official FIFA international window from September 24 to October 5, 2026. Under interim head coach Tan Cheng Hoe, Harimau Malaya will kick off their campaign against Bangladesh at the Gelora Bung Karno Stadium in Jakarta on September 25.",
+    "date": "2026-09-24",
+    "category": "Tournament Announcement",
+    "image": "/news/fifa-asean-cup.png",
+    "tags": ["FIFA ASEAN Cup", "Malaysia", "Group A", "Division 1"]
   },
   {
-    "id": "news-02",
-    "title": "Tan Cheng Hoe Prepares for Crucial Clash Against Thailand",
-    "summary": "The Malaysian head coach shares insights on defensive tactics and neutralizing Thailand's Chanathip.",
-    "content": "In his latest press conference, Malaysia head coach Tan Cheng Hoe emphasized the need for disciplined positioning when they face Thailand at Bukit Jalil. 'Thailand is highly organized, and Chanathip can exploit any gap. We must remain compact in defense and use our pace in transitions,' Hoe stated. Harimau Malaya expects a full crowd at the stadium.",
-    "date": "2026-12-21",
-    "category": "Press Conference",
+    "id": "news-fac-02",
+    "title": "Tan Cheng Hoe Names 23-Man Harimau Malaya Squad for Division 1 Action in Jakarta",
+    "summary": "Dion Cools leads a strong Malaysian squad featuring Arif Aiman, Faisal Halim, and Romel Morales.",
+    "content": "Malaysia interim head coach Tan Cheng Hoe has announced his final 23-player squad traveling to Jakarta for Division 1 of the 2026 FIFA ASEAN Cup. Captain Dion Cools anchors the defense alongside Dominic Tan, while Johor Darul Ta'zim superstar Arif Aiman Hanapi and Faisal Halim lead a formidable attacking lineup. 'Playing inside Gelora Bung Karno will test our resilience, but our target is reaching the Division 1 final,' Hoe declared.",
+    "date": "2026-09-24",
+    "category": "Squad Announcement",
     "image": "/news/tan-cheng-hoe.png",
-    "tags": ["Malaysia", "Thailand", "Group A", "Coach"]
+    "tags": ["Malaysia", "Squad", "Tan Cheng Hoe", "Division 1"]
   },
   {
-    "id": "news-03",
-    "title": "Injury Update: Faisal Halim Cleared for High-Intensity Match against Thailand",
-    "summary": "Faisal Halim recovers from minor ankle strain and returns to starting lineup contentions.",
-    "content": "Malaysian medical staff have confirmed that star winger Faisal Halim has fully recovered from an ankle knock sustained in the match against Singapore. He trained fully with the main squad today and is set to feature in the starting XI against Thailand. His presence will add crucial agility and width to Harimau Malaya's attack.",
-    "date": "2026-12-21",
-    "category": "Player Injury",
-    "image": "/news/faisal-injury.png",
-    "tags": ["Malaysia", "Faisal Halim", "Injury"]
-  },
-  {
-    "id": "news-04",
-    "title": "Shin Tae-yong Demands Focus Ahead of Vietnam Showdown",
-    "summary": "Indonesia's head coach Shin Tae-yong calls for maximum concentration in the upcoming Group B finale.",
-    "content": "Speaking to reporters, Shin Tae-yong expressed confidence but warned his players against complacency. 'Vietnam has an incredibly solid defense under Kim Sang-sik. They haven't conceded a single goal yet. We need to be clinical with every chance,' Shin remarked. Indonesia needs at least a draw to guarantee their semi-final spot.",
-    "date": "2026-12-22",
-    "category": "Press Conference",
-    "image": "/news/shin-tae-yong.png",
-    "tags": ["Indonesia", "Vietnam", "Group B"]
+    "id": "news-fac-03",
+    "title": "Gelora Bung Karno & Si Jalak Harupat Ready for FIFA ASEAN Cup Division 1 Thrills",
+    "summary": "Indonesia prepares world-class venues in Jakarta and Bandung as Division 1 host.",
+    "content": "The Indonesian Football Association (PSSI) and FIFA match commissioners have confirmed that the 77,000-capacity Gelora Bung Karno Stadium in Jakarta and the 30,000-capacity Si Jalak Harupat Stadium in Bandung are in peak condition for Division 1. Group A features Indonesia, Malaysia, Singapore, and Bangladesh, while Group B includes Thailand, Vietnam, Philippines, and Australia.",
+    "date": "2026-09-23",
+    "category": "Venue & Host Update",
+    "image": "/news/gbk.png",
+    "tags": ["Indonesia", "Venues", "Jakarta", "Bandung"]
   }
 ]

@@ -4,7 +4,7 @@ import React, { useEffect, useState, use } from 'react';
 import Link from 'next/link';
 import { getMatch, getTeam, MatchDetails, Team, StartingXIPlayer } from '@/lib/api';
 import { useAppState } from '@/store';
-import { ArrowLeft, Clock, Activity, Zap, Play, CheckCircle, ShieldAlert } from 'lucide-react';
+import { ArrowLeft, Clock, Activity, Zap, Play, CheckCircle, ShieldAlert, Shield } from 'lucide-react';
 import { ResponsiveContainer, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 
 export default function MatchDetailPage({ params }: { params: Promise<{ id: string }> }) {
@@ -243,11 +243,11 @@ export default function MatchDetailPage({ params }: { params: Promise<{ id: stri
             )}
           </div>
 
-          {/* AI Tactical summary */}
+          {/* Tactical Match summary */}
           <div className="glass-card rounded-2xl p-5 border border-zinc-800 space-y-3">
             <h3 className="font-bold text-sm text-zinc-300 flex items-center gap-1.5">
-              <Zap className="h-4.5 w-4.5 text-primary" />
-              <span>AI MATCH SUMMARY</span>
+              <Shield className="h-4.5 w-4.5 text-primary" />
+              <span>TACTICAL MATCH SUMMARY</span>
             </h3>
             <p className="text-xs text-zinc-400 leading-relaxed">{match.aiSummary}</p>
             {match.manOfTheMatch && !isLive && (

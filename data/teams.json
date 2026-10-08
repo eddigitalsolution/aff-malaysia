@@ -3,7 +3,7 @@
     "id": "malaysia",
     "name": "Malaysia",
     "code": "MAS",
-    "group": "B",
+    "group": "A",
     "flag": "🇲🇾",
     "coach": "Tan Cheng Hoe",
     "captain": "Dion Cools",
@@ -22,6 +22,81 @@
       "W",
       "L",
       "L"
+    ]
+  },
+  {
+    "id": "indonesia",
+    "name": "Indonesia",
+    "code": "IDN",
+    "group": "A",
+    "flag": "🇮🇩",
+    "coach": "Shin Tae-yong",
+    "captain": "Asnawi Mangkualam",
+    "fifaRanking": 129,
+    "ratings": {
+      "attack": 83,
+      "midfield": 83,
+      "defense": 84
+    },
+    "averageAge": 23.8,
+    "squadValue": "€9.20M",
+    "formation": "3-4-2-1",
+    "recentForm": [
+      "W",
+      "L",
+      "W",
+      "D",
+      "W"
+    ]
+  },
+  {
+    "id": "singapore",
+    "name": "Singapore",
+    "code": "SGP",
+    "group": "A",
+    "flag": "🇸🇬",
+    "coach": "Tsutomu Ogura",
+    "captain": "Hariss Harun",
+    "fifaRanking": 161,
+    "ratings": {
+      "attack": 74,
+      "midfield": 75,
+      "defense": 76
+    },
+    "averageAge": 28.1,
+    "squadValue": "€3.20M",
+    "formation": "4-1-4-1",
+    "recentForm": [
+      "W",
+      "D",
+      "D",
+      "L",
+      "W"
+    ]
+  },
+  {
+    "id": "bangladesh",
+    "name": "Bangladesh",
+    "code": "BAN",
+    "group": "A",
+    "flag": "🇧🇩",
+    "coach": "Javier Cabrera",
+    "captain": "Jamal Bhuyan",
+    "fifaRanking": 184,
+    "ratings": {
+      "attack": 68,
+      "midfield": 70,
+      "defense": 71
+    },
+    "averageAge": 25.1,
+    "squadValue": "€1.65M",
+    "formation": "4-4-2",
+    "recentForm": [
+      "D",
+      "L",
+      "W",
+      "L",
+      "D"
     ]
   },
   {
@@ -53,7 +128,7 @@
     "id": "vietnam",
     "name": "Vietnam",
     "code": "VIE",
-    "group": "A",
+    "group": "B",
     "flag": "🇻🇳",
     "coach": "Kim Sang-sik",
     "captain": "Do Hung Dung",
@@ -71,54 +146,6 @@
       "W",
       "D",
       "W",
-      "W"
-    ]
-  },
-  {
-    "id": "indonesia",
-    "name": "Indonesia",
-    "code": "IDN",
-    "group": "A",
-    "flag": "🇮🇩",
-    "coach": "Shin Tae-yong",
-    "captain": "Asnawi Mangkualam",
-    "fifaRanking": 129,
-    "ratings": {
-      "attack": 83,
-      "midfield": 83,
-      "defense": 84
-    },
-    "averageAge": 23.8,
-    "squadValue": "€9.20M",
-    "formation": "3-4-2-1",
-    "recentForm": [
-      "W",
-      "L",
-      "W"
-    ]
-  },
-  {
-    "id": "singapore",
-    "name": "Singapore",
-    "code": "SGP",
-    "group": "A",
-    "flag": "🇸🇬",
-    "coach": "Tsutomu Ogura",
-    "captain": "Hariss Harun",
-    "fifaRanking": 161,
-    "ratings": {
-      "attack": 74,
-      "midfield": 75,
-      "defense": 76
-    },
-    "averageAge": 28.1,
-    "squadValue": "€3.20M",
-    "formation": "4-1-4-1",
-    "recentForm": [
-      "W",
-      "D",
-      "D",
-      "L",
       "W"
     ]
   },
@@ -142,6 +169,33 @@
     "recentForm": [
       "L",
       "L",
+      "W",
+      "D",
+      "L"
+    ]
+  },
+  {
+    "id": "australia",
+    "name": "Australia",
+    "code": "AUS",
+    "group": "B",
+    "flag": "🇦🇺",
+    "coach": "Tony Popovic",
+    "captain": "Mat Ryan",
+    "fifaRanking": 25,
+    "ratings": {
+      "attack": 88,
+      "midfield": 87,
+      "defense": 88
+    },
+    "averageAge": 27.6,
+    "squadValue": "€42.0M",
+    "formation": "4-2-3-1",
+    "recentForm": [
+      "W",
+      "W",
+      "D",
+      "W",
       "W"
     ]
   },
@@ -149,7 +203,7 @@
     "id": "myanmar",
     "name": "Myanmar",
     "code": "MYA",
-    "group": "B",
+    "group": "Div 2",
     "flag": "🇲🇲",
     "coach": "Myo Hlaing Win",
     "captain": "Maung Maung Lwin",
@@ -198,20 +252,19 @@
     "group": "B",
     "flag": "🇱🇦",
     "coach": "Ha Hyeok-jun",
-    "captain": "Soukaphone Vongchiengkham",
-    "fifaRanking": 190,
+    "captain": "Bounphachan Bounkong",
+    "fifaRanking": 187,
     "ratings": {
       "attack": 66,
-      "midfield": 67,
-      "defense": 65
+      "midfield": 65,
+      "defense": 67
     },
-    "averageAge": 22.9,
-    "squadValue": "€1.10M",
-    "formation": "4-5-1",
+    "averageAge": 22.8,
+    "squadValue": "€1.40M",
+    "formation": "4-4-2",
     "recentForm": [
       "L",
-      "L",
-      "L",
+      "D",
       "L"
     ]
   },
@@ -221,22 +274,46 @@
     "code": "TLS",
     "group": "A",
     "flag": "🇹🇱",
-    "coach": "Simon Elissetche",
-    "captain": "Joao Pedro",
+    "coach": "Simón Elissetche",
+    "captain": "Mouzinho",
     "fifaRanking": 196,
     "ratings": {
-      "attack": 65,
-      "midfield": 64,
-      "defense": 63
+      "attack": 64,
+      "midfield": 65,
+      "defense": 65
     },
     "averageAge": 22.1,
-    "squadValue": "€0.95M",
-    "formation": "5-4-1",
+    "squadValue": "€1.10M",
+    "formation": "5-3-2",
     "recentForm": [
       "L",
       "L",
+      "D"
+    ]
+  },
+  {
+    "id": "china",
+    "name": "China PR",
+    "code": "CHN",
+    "group": "Friendly",
+    "flag": "🇨🇳",
+    "coach": "Branko Ivanković",
+    "captain": "Wu Xi",
+    "fifaRanking": 88,
+    "ratings": {
+      "attack": 74,
+      "midfield": 73,
+      "defense": 75
+    },
+    "averageAge": 28.4,
+    "squadValue": "€12.5M",
+    "formation": "4-4-2",
+    "recentForm": [
+      "W",
+      "D",
       "L",
-      "L"
+      "W",
+      "D"
     ]
   }
 ]

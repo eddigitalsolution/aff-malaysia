@@ -2,8 +2,9 @@
 
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import Link from 'next/link';
-import { getPlayers, getTeam, getFixtures, Player, Team, Fixture } from '@/lib/api';
-import { Activity, Calendar, RotateCcw, Users, ChevronDown } from 'lucide-react';
+import { getPlayers, getTeam, getFixtures, TOURNAMENTS, Player, Team, Fixture } from '@/lib/api';
+import { useAppState } from '@/store';
+import { Activity, Calendar, RotateCcw, Users, ChevronDown, Trophy } from 'lucide-react';
 import {
   ResponsiveContainer, LineChart, Line, BarChart, Bar,
   XAxis, YAxis, CartesianGrid, Tooltip, Legend
@@ -100,19 +101,41 @@ const ROLE_COLOR: Record<string, string> = {
   LW: '#facc15', RW: '#facc15', ST: '#facc15',
 };
 
-const OPP_FLAGS: Record<string, string> = { myanmar: '🇲🇲', laos: '🇱🇦', thailand: '🇹🇭', philippines: '🇵🇭', cambodia: '🇰🇭', singapore: '🇸🇬', indonesia: '🇮🇩', vietnam: '🇻🇳' };
-const OPP_NAMES: Record<string, string> = { myanmar: 'Myanmar', laos: 'Laos', thailand: 'Thailand', philippines: 'Philippines', cambodia: 'Cambodia', singapore: 'Singapore', indonesia: 'Indonesia', vietnam: 'Vietnam' };
+const OPP_FLAGS: Record<string, string> = { bangladesh: '🇧🇩', indonesia: '🇮🇩', singapore: '🇸🇬', thailand: '🇹🇭', vietnam: '🇻🇳', australia: '🇦🇺', philippines: '🇵🇭', myanmar: '🇲🇲', cambodia: '🇰🇭', laos: '🇱🇦' };
+const OPP_NAMES: Record<string, string> = { bangladesh: 'Bangladesh', indonesia: 'Indonesia', singapore: 'Singapore', thailand: 'Thailand', vietnam: 'Vietnam', australia: 'Australia', philippines: 'Philippines', myanmar: 'Myanmar', cambodia: 'Cambodia', laos: 'Laos' };
 
 const PLAYER_PREFERRED_ROLES: Record<string, string[]> = {
+  'bergson':          ['ST'],
+  'arif-aiman':       ['RW', 'LW', 'RM'],
+  'dion-cools':       ['CB', 'RB'],
+  'brad-tapp':        ['CB'],
+  'nooa-laine':       ['CM', 'CDM'],
+  'stuart-wilkin':    ['CM', 'CAM'],
+  'manuel-hidalgo':   ['CAM', 'RW', 'CM'],
+  'corbin-ong':       ['LB', 'LWB'],
+  'quentin-cheng':    ['RB', 'RWB'],
+  'syihan-hazmi':     ['GK'],
+  'faisal-halim':     ['LW', 'LM'],
+  'daniel-ting':      ['LB'],
+  'syahir-bashah':    ['CAM', 'CM'],
+  'hong-wan':         ['CDM', 'CM'],
+  'haziq-nadzli':     ['GK'],
+  'fergus-tierney':   ['ST', 'CAM'],
+  'harith-haikal':    ['CB'],
+  'syahmi-safari':    ['RB', 'LB'],
+  'nazmi-faiz':       ['CM', 'CAM'],
   'paulo-josue':      ['ST', 'CAM'],
+  'paulo-josue-fifa': ['ST', 'CAM'],
   'sergio-aguero':    ['CDM', 'CAM', 'CM'],
   'wan-kuzain':       ['CAM', 'CDM', 'CM'],
   'aysar-hadi':       ['CB'],
   'sumareh':          ['RM', 'RW', 'LM', 'LW'],
   'g-pavithran':      ['LW', 'LM'],
+  'g-pavithran-fifa': ['LW', 'LM'],
   'ruventhiran':      ['LB', 'LWB', 'LM', 'LW'],
   'rodney-celvin':    ['CB'],
   'ubaidullah-shamsul': ['CB'],
+  'ubaidullah-shamsul-fifa': ['CB'],
   'faris-danish':     ['LB'],
   'alif-ahmad':       ['RB', 'RWB'],
   'azri-ghani':       ['GK'],
@@ -129,6 +152,7 @@ const PLAYER_PREFERRED_ROLES: Record<string, string[]> = {
 };
 
 export default function MalaysiaPage() {
+  const { activeTournamentId, setActiveTournamentId } = useAppState();
   const [team, setTeam] = useState<Team | null>(null);
   const [players, setPlayers] = useState<Player[]>([]);
   const [fixtures, setFixtures] = useState<Fixture[]>([]);
@@ -141,18 +165,21 @@ export default function MalaysiaPage() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const pitchRef = useRef<HTMLDivElement>(null);
 
+  const currentTournament = TOURNAMENTS.find(t => t.id === activeTournamentId) || TOURNAMENTS[0];
+  const isFifa = activeTournamentId === 'fifa-asean-cup-2026';
+
   useEffect(() => {
     async function loadData() {
-      const t = await getTeam('malaysia');
-      const p = await getPlayers();
-      const f = await getFixtures();
+      const t = await getTeam('malaysia', activeTournamentId);
+      const p = await getPlayers(undefined, activeTournamentId);
+      const f = await getFixtures(activeTournamentId);
       setTeam(t);
       const myPlayers = p.filter(pl => pl.teamId === 'malaysia');
       setPlayers(myPlayers);
       setFixtures(f.filter(fi => fi.homeTeamId === 'malaysia' || fi.awayTeamId === 'malaysia'));
     }
     loadData();
-  }, []);
+  }, [activeTournamentId]);
 
   const applyFormation = useCallback((fm: string, allPlayers: Player[]) => {
     const positions = FORMATIONS[fm]?.positions ?? [];
@@ -179,8 +206,8 @@ export default function MalaysiaPage() {
       });
 
     const usedIds = new Set<string>();
-    // Include ALL healthy squad players — zero-rated get base score 6.0 so natural position fits still work
-    const healthyPlayers = allPlayers.filter(p => p.injuryStatus !== 'Injured' && p.injuryStatus !== 'Returned to Club');
+    // Include ALL squad players — zero-rated get base score 6.0 so natural position fits still work
+    const healthyPlayers = allPlayers;
     const assignedSlots: { pp: PitchPlayer; originalIndex: number }[] = [];
 
     // For 3-1-5-1: pre-assign Ibrahim Manusi to CDM BEFORE the main loop
@@ -214,6 +241,10 @@ export default function MalaysiaPage() {
 
       const candidates = [...healthyPlayers]
         .filter(p => !usedIds.has(p.id) && 
+                     !(p.id === 'dion-cools' && pos.role !== 'RB' && !(pos.role === 'CB' && pos.x > 50)) &&
+                     !(p.id === 'harith-haikal' && pos.role !== 'CB') &&
+                     !(p.id === 'brad-tapp' && pos.role !== 'CB') &&
+                     !(p.id === 'daniel-ting' && !['LB', 'LCB', 'LWB'].includes(pos.role)) &&
                      !(p.id === 'aysar-hadi' && pos.role === 'CB' && pos.x < 45) &&
                      !(p.id === 'faris-danish' && pos.role !== 'LB') &&
                      !(p.id === 'syafiq-ahmad' && !['ST', 'CAM'].includes(pos.role)) &&
@@ -449,7 +480,7 @@ export default function MalaysiaPage() {
     const sugIds = new Set<string>();
 
     const addSug = (roleLabel: string, roleType: 'LB_LWB' | 'WINGER' | 'CM_CDM' | 'ST' | 'RB_RWB') => {
-      const candidates = benchPlayers.filter(p => p.injuryStatus !== 'Injured' && p.injuryStatus !== 'Returned to Club' && !sugIds.has(p.id));
+      const candidates = benchPlayers.filter(p => !sugIds.has(p.id));
       
       let filtered = candidates;
       if (roleType === 'LB_LWB') {
@@ -495,6 +526,41 @@ export default function MalaysiaPage() {
 
   return (
     <div className="space-y-4 animate-in fade-in duration-300">
+      {/* Tournament Selection Header Tabs */}
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 p-1.5 bg-zinc-900/90 border border-zinc-800 rounded-2xl">
+        <div className="flex items-center gap-1.5 p-1 bg-zinc-950 rounded-xl flex-1 sm:flex-initial">
+          {TOURNAMENTS.map(t => {
+            const active = t.id === activeTournamentId;
+            const isFifaTournament = t.id === 'fifa-asean-cup-2026';
+            return (
+              <button
+                key={t.id}
+                onClick={() => setActiveTournamentId(t.id)}
+                className={`flex-1 sm:flex-initial px-4 py-2.5 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-2 ${
+                  active
+                    ? isFifaTournament
+                      ? 'bg-amber-400 text-zinc-950 shadow-md font-black'
+                      : 'bg-emerald-400 text-zinc-950 shadow-md font-black'
+                    : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900'
+                }`}
+              >
+                <Trophy className="h-3.5 w-3.5" />
+                <span>{t.name}</span>
+                <span className={`text-[9px] px-1.5 py-0.2 rounded font-black uppercase ${
+                  active ? 'bg-zinc-950/20 text-zinc-950' : 'bg-zinc-800 text-zinc-400'
+                }`}>
+                  {isFifaTournament ? 'FIFA' : 'AFF'}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
+        <div className="px-3 py-1 text-xs text-zinc-400 font-medium">
+          {currentTournament.sanction}
+        </div>
+      </div>
+
       {/* TACTICAL PLANNER ONLY */}
       <section className="space-y-3">
         <div className="flex items-center justify-between flex-wrap gap-3">
@@ -502,14 +568,18 @@ export default function MalaysiaPage() {
             <div>
               <div className="flex items-center gap-2 flex-wrap">
                 <h2 className="text-xl font-black flex items-center gap-2"><Users className="h-5 w-5 text-primary" /> TACTICAL PLANNER</h2>
-                <span className="bg-red-500/10 border border-red-500/25 text-red-500 text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider shrink-0">
-                  Semifinals Concluded (Eliminated vs Vietnam 🇻🇳)
+                <span className={`text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider shrink-0 ${
+                  isFifa 
+                    ? 'bg-emerald-500/10 border border-emerald-500/25 text-emerald-400'
+                    : 'bg-red-500/10 border border-red-500/25 text-red-500'
+                }`}>
+                  {isFifa ? 'Tournament Completed: 3rd Place (3W 1D 0L · Undefeated)' : 'Semifinals Concluded (Eliminated vs Vietnam)'}
                 </span>
               </div>
               <p className="text-[11px] text-zinc-500 mt-0.5">Drag players to reposition · Click player then bench to swap · Change formation to rearrange</p>
             </div>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
             <div className="relative">
               <select
                 value={formation}
@@ -526,14 +596,14 @@ export default function MalaysiaPage() {
                 className={`px-3 py-1.5 text-[10px] font-black rounded-lg transition-colors ${flowMode === 'attacking' ? 'bg-primary text-zinc-950' : 'text-zinc-400 hover:text-zinc-200'
                   }`}
               >
-                ⚔️ Attacking Flow
+                Attacking Flow
               </button>
               <button
                 onClick={() => setFlowMode(prev => prev === 'defensive' ? 'none' : 'defensive')}
                 className={`px-3 py-1.5 text-[10px] font-black rounded-lg transition-colors ${flowMode === 'defensive' ? 'bg-red-500 text-white' : 'text-zinc-400 hover:text-zinc-200'
                   }`}
               >
-                🛡️ Defensive Flow
+                Defensive Flow
               </button>
             </div>
             <button
@@ -546,15 +616,27 @@ export default function MalaysiaPage() {
         </div>
         
         {/* Post-Match Analysis Alert */}
-        <div className="bg-red-500/10 border border-red-500/25 rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div className={`rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border ${
+          isFifa
+            ? 'bg-emerald-500/10 border-emerald-500/25'
+            : 'bg-red-500/10 border-red-500/25'
+        }`}>
           <div className="space-y-1">
-            <div className="text-xs font-black text-red-500 uppercase tracking-wider">🚫 Semifinals Concluded (Final Aggregate: 0 - 4)</div>
+            <div className={`text-xs font-black uppercase tracking-wider ${isFifa ? 'text-emerald-400' : 'text-red-500'}`}>
+              {isFifa ? 'Tournament Complete: 3rd Place Bronze Medal (3W 1D 0L · 10 Goals Scored, 0 Conceded)' : 'Semifinals Concluded (Final Aggregate: 0 - 4)'}
+            </div>
             <p className="text-[11px] text-zinc-300 leading-normal max-w-2xl">
-              Malaysia was eliminated after a 2-0 defeat in Hanoi. Despite deploying Aysar Hadi as a starter due to Rodney Celvin's injury and attempting tactical overloads, Harimau Malaya could not breach Vietnam's defense, conceding twice to Nguyễn Xuân Son.
+              {isFifa 
+                ? 'Malaysia completed an undefeated FIFA ASEAN Cup campaign (3 wins, 1 draw, 10 goals scored, 0 conceded across all 4 matches), capturing the Bronze Medal after beating Vietnam 1-0 at Gelora Bung Karno. Bergson (4 goals), Arif Aiman (2G 2A), Dion Cools (8.9 MVP), and Fergus Tierney (62\' winner) spearheaded Harimau Malaya.'
+                : "Malaysia was eliminated after a 2-0 defeat in Hanoi. Despite deploying tactical overloads and fresh squad rotations, Harimau Malaya could not breach Vietnam's defense, conceding twice to Nguyễn Xuân Son."}
             </p>
           </div>
-          <div className="bg-red-500/20 text-red-400 font-black text-[10px] uppercase tracking-wider px-3.5 py-2 rounded-xl shrink-0 border border-red-500/30 text-center">
-            Campaign Ended
+          <div className={`font-black text-[10px] uppercase tracking-wider px-3.5 py-2 rounded-xl shrink-0 border text-center ${
+            isFifa 
+              ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30' 
+              : 'bg-red-500/20 text-red-400 border-red-500/30'
+          }`}>
+            {isFifa ? 'Bronze Medalists (3rd Place)' : 'Campaign Ended'}
           </div>
         </div>
 
@@ -563,7 +645,7 @@ export default function MalaysiaPage() {
           <div className="lg:col-span-3 space-y-2">
             <div
               ref={pitchRef}
-              className="relative mx-auto w-full max-w-120 aspect-3/4 rounded-2xl overflow-hidden select-none border border-zinc-800"
+              className="relative mx-auto w-full max-w-120 aspect-3/4 rounded-2xl overflow-hidden select-none border border-zinc-800 touch-none"
               style={{ background: 'radial-gradient(ellipse at 50% 50%, #052e16 0%, #022c22 60%, #0a1f15 100%)', cursor: dragging ? 'grabbing' : 'default' }}
               onMouseMove={handleMouseMove}
               onMouseUp={handleMouseUp}
@@ -831,18 +913,8 @@ export default function MalaysiaPage() {
                       ) : bp.number}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="text-[10px] font-bold text-zinc-300 truncate flex items-center gap-1">
-                        <span>{bp.name}</span>
-                        {bp.injuryStatus === 'Injured' && (
-                          <span className="bg-red-500/20 text-red-400 text-[6.5px] font-black px-1 py-0.2 rounded uppercase shrink-0">
-                            INJ
-                          </span>
-                        )}
-                        {bp.injuryStatus === 'Returned to Club' && (
-                          <span className="bg-yellow-500/20 text-yellow-400 text-[6.5px] font-black px-1 py-0.2 rounded uppercase shrink-0">
-                            CLUB
-                          </span>
-                        )}
+                      <div className="text-[10px] font-bold text-zinc-300 truncate">
+                        {bp.name}
                       </div>
                       <div className="text-[8px] text-zinc-500">{bp.position} · #{bp.number}</div>
                     </div>
@@ -998,26 +1070,26 @@ export default function MalaysiaPage() {
               {formation === '3-5-2' && (
                 <>
                   <p>
-                    <strong>Flank Transitions:</strong> Wingbacks push aggressively high into the spaces behind Vietnam's advanced wingbacks, stretching their back-3 and creating width.
+                    <strong>Flank Transitions:</strong> Wingbacks push aggressively high into the spaces behind the opponent&apos;s advanced wingbacks, stretching their back-3 and creating maximum width.
                   </p>
                   <p>
-                    <strong>Midfield Overload (3v2):</strong> The three central midfielders (Sergio Aguero, Daryl Sham, Paulo Josué) must overload Vietnam's 2-man pivot to dominate possession and thread passes into the half-spaces.
+                    <strong>Midfield Overload (3v2):</strong> The three central midfielders ({isFifa ? 'Nooa Laine, Stuart Wilkin, Paulo Josué' : 'Sergio Aguero, Daryl Sham, Paulo Josué'}) overload the opponent&apos;s 2-man pivot to dominate possession and thread passes into the half-spaces.
                   </p>
                   <p>
-                    <strong>Striker Split Runs:</strong> The two strikers (Muhd Syafiq Ahmad and Haqimi Azim/Morales) make opposing vertical runs to drag Vietnam's outer center-backs away, opening central lanes.
+                    <strong>Striker Split Runs:</strong> The two strikers ({isFifa ? 'Bergson da Silva and Romel Morales' : 'Muhd Syafiq Ahmad and Haqimi Azim'}) make opposing vertical runs to drag outer center-backs away, opening central lanes.
                   </p>
                 </>
               )}
               {formation === '3-1-5-1' && (
                 <>
                   <p>
-                    <strong>5-Man Passing Web:</strong> Overload the central third with 5 midfielders to completely bypass Vietnam's midfield press and control transition tempo.
+                    <strong>5-Man Passing Web:</strong> Overload the central third with 5 midfielders to completely bypass the opponent&apos;s midfield press and control transition tempo.
                   </p>
                   <p>
-                    <strong>Inverted Runs:</strong> Attacking midfielders run into half-spaces to drag Vietnam's outer CBs out, creating central pathways for the lone striker.
+                    <strong>Inverted Runs:</strong> Attacking midfielders run into half-spaces to drag outer CBs out, creating central pathways for the lone striker ({isFifa ? 'Bergson da Silva' : 'Paulo Josué'}).
                   </p>
                   <p>
-                    <strong>High Counter-Press:</strong> Squeeze Vietnam's back-3 immediately upon losing possession, forcing turnovers deep in their half to keep pressure sustained.
+                    <strong>High Counter-Press:</strong> Squeeze the opposing backline immediately upon losing possession, forcing turnovers deep in their defensive third to keep pressure sustained.
                   </p>
                 </>
               )}
@@ -1164,15 +1236,9 @@ export default function MalaysiaPage() {
             <div className="text-[10.5px] font-black text-primary uppercase tracking-wider flex items-center gap-1.5">
               <span>🎯 Leg 2 Strategy (Away in Hanoi)</span>
             </div>
-            <div className="bg-red-550/15 border border-red-500/30 rounded-xl p-2.5 text-[10px] text-red-400 font-bold space-y-1">
-              <div className="flex items-center gap-1.5">⚠️ SQUAD ALERT: Rodney Celvin Injured</div>
-              <p className="font-normal text-zinc-400 text-[9.5px] leading-relaxed">
-                Rodney Celvin suffered a hamstring strain in Leg 1. <strong>Aysar Hadi</strong> is the recommended CB replacement to start alongside Ubaidullah Shamsul.
-              </p>
-            </div>
             <ul className="text-[11px] text-zinc-400 space-y-2 list-disc pl-4">
               <li>
-                <strong className="text-zinc-200">Solidify CB (Aysar Hadi):</strong> Fill Rodney's void with Aysar Hadi. Maintain compact spacing with Ubaidullah to contain Tien Linh.
+                <strong className="text-zinc-200">Compact Center-Back Pairing:</strong> Maintain tight coordination between center-backs to neutralize Nguyễn Tiến Linh and Nguyễn Xuân Son.
               </li>
               <li>
                 <strong className="text-zinc-200">Double Pivot Shield:</strong> Play a compact 4-2-3-1 or 3-5-2. Sergio Aguero and Daryl Sham should sit deep to absorb Vietnam's home pressure.
