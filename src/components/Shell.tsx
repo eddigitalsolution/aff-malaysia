@@ -85,7 +85,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
       <div className="absolute bottom-10 left-10 w-100 h-100 bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
 
       {/* Header */}
-      <header className="sticky top-0 z-40 w-full glass-card border-b border-zinc-800/80 px-4 lg:px-8 py-3 pt-[max(0.75rem,env(safe-area-inset-top))] flex items-center justify-between gap-3">
+      <header className="sticky top-0 z-40 w-full bg-zinc-950/98 backdrop-blur-xl border-b border-zinc-800/90 shadow-md px-4 lg:px-8 py-3 pt-[max(0.75rem,env(safe-area-inset-top))] flex items-center justify-between gap-3">
         <div className="flex items-center gap-3">
           <button 
             onClick={() => setMobileMenuOpen(true)}

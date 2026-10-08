@@ -90,16 +90,16 @@ const FORMATIONS: Record<string, FormationConfig> = {
     description: 'Primary attacking setup with Bergson & Arif Aiman exploiting China’s slow lateral recovery.',
     slots: [
       { slotId: 'gk',  x: 50, y: 90, role: 'GK',  defaultPlayerId: 'syihan-hazmi' },
-      { slotId: 'lcb', x: 25, y: 72, role: 'LCB', defaultPlayerId: 'daniel-ting' },
+      { slotId: 'lcb', x: 26, y: 72, role: 'LCB', defaultPlayerId: 'daniel-ting' },
       { slotId: 'cb',  x: 50, y: 74, role: 'CB',  defaultPlayerId: 'brad-tapp' },
-      { slotId: 'rcb', x: 75, y: 72, role: 'RCB', defaultPlayerId: 'dion-cools' },
-      { slotId: 'lwb', x: 12, y: 48, role: 'LWB', defaultPlayerId: 'corbin-ong' },
+      { slotId: 'rcb', x: 74, y: 72, role: 'RCB', defaultPlayerId: 'dion-cools' },
+      { slotId: 'lwb', x: 16, y: 48, role: 'LWB', defaultPlayerId: 'corbin-ong' },
       { slotId: 'lcm', x: 37, y: 48, role: 'CM',  defaultPlayerId: 'stuart-wilkin' },
       { slotId: 'rcm', x: 63, y: 48, role: 'CM',  defaultPlayerId: 'nooa-laine' },
-      { slotId: 'rwb', x: 88, y: 48, role: 'RWB', defaultPlayerId: 'quentin-cheng' },
-      { slotId: 'lw',  x: 20, y: 22, role: 'LW',  defaultPlayerId: 'manuel-hidalgo' },
+      { slotId: 'rwb', x: 84, y: 48, role: 'RWB', defaultPlayerId: 'quentin-cheng' },
+      { slotId: 'lw',  x: 22, y: 22, role: 'LW',  defaultPlayerId: 'manuel-hidalgo' },
       { slotId: 'st',  x: 50, y: 14, role: 'ST',  defaultPlayerId: 'bergson' },
-      { slotId: 'rw',  x: 80, y: 22, role: 'RW',  defaultPlayerId: 'arif-aiman' },
+      { slotId: 'rw',  x: 78, y: 22, role: 'RW',  defaultPlayerId: 'arif-aiman' },
     ],
     tactics: {
       inPossession: 'Arif Aiman & Hidalgo isolate China’s fullbacks in 1v1 duels. Corbin-Ong & Quentin Cheng overlap to provide crossing service for Bergson.',
@@ -112,16 +112,16 @@ const FORMATIONS: Record<string, FormationConfig> = {
     description: 'Midfield control shape with Hong Wan anchoring and Wan Kuzain distributing.',
     slots: [
       { slotId: 'gk',  x: 50, y: 90, role: 'GK',  defaultPlayerId: 'syihan-hazmi' },
-      { slotId: 'lb',  x: 15, y: 70, role: 'LB',  defaultPlayerId: 'daniel-ting' },
+      { slotId: 'lb',  x: 16, y: 70, role: 'LB',  defaultPlayerId: 'daniel-ting' },
       { slotId: 'lcb', x: 37, y: 72, role: 'CB',  defaultPlayerId: 'brad-tapp' },
       { slotId: 'rcb', x: 63, y: 72, role: 'RCB', defaultPlayerId: 'dion-cools' },
-      { slotId: 'rb',  x: 85, y: 70, role: 'RB',  defaultPlayerId: 'quentin-cheng' },
+      { slotId: 'rb',  x: 84, y: 70, role: 'RB',  defaultPlayerId: 'quentin-cheng' },
       { slotId: 'cdm', x: 50, y: 54, role: 'CDM', defaultPlayerId: 'hong-wan' },
       { slotId: 'lcm', x: 30, y: 40, role: 'CM',  defaultPlayerId: 'stuart-wilkin' },
       { slotId: 'rcm', x: 70, y: 40, role: 'CM',  defaultPlayerId: 'wan-kuzain' },
-      { slotId: 'lw',  x: 18, y: 22, role: 'LW',  defaultPlayerId: 'manuel-hidalgo' },
+      { slotId: 'lw',  x: 22, y: 22, role: 'LW',  defaultPlayerId: 'manuel-hidalgo' },
       { slotId: 'st',  x: 50, y: 14, role: 'ST',  defaultPlayerId: 'bergson' },
-      { slotId: 'rw',  x: 82, y: 22, role: 'RW',  defaultPlayerId: 'arif-aiman' },
+      { slotId: 'rw',  x: 78, y: 22, role: 'RW',  defaultPlayerId: 'arif-aiman' },
     ],
     tactics: {
       inPossession: 'Wan Kuzain and Wilkin cycle possession with 91%+ pass efficiency. Wingers pin China’s backline deep into Tianhe Stadium half.',
@@ -134,11 +134,11 @@ const FORMATIONS: Record<string, FormationConfig> = {
     description: 'Combined dual-tournament rotation structure featuring Fergus Tierney & Paulo Josué.',
     slots: [
       { slotId: 'gk',  x: 50, y: 90, role: 'GK',  defaultPlayerId: 'azri-ghani' },
-      { slotId: 'lwb', x: 12, y: 48, role: 'LWB', defaultPlayerId: 'ruventhiran' },
+      { slotId: 'lwb', x: 16, y: 48, role: 'LWB', defaultPlayerId: 'ruventhiran' },
       { slotId: 'lcb', x: 28, y: 72, role: 'LCB', defaultPlayerId: 'daniel-ting' },
       { slotId: 'cb',  x: 50, y: 74, role: 'CB',  defaultPlayerId: 'brad-tapp' },
       { slotId: 'rcb', x: 72, y: 72, role: 'RCB', defaultPlayerId: 'dion-cools' },
-      { slotId: 'rwb', x: 88, y: 48, role: 'RWB', defaultPlayerId: 'quentin-cheng' },
+      { slotId: 'rwb', x: 84, y: 48, role: 'RWB', defaultPlayerId: 'quentin-cheng' },
       { slotId: 'lcm', x: 30, y: 42, role: 'CM',  defaultPlayerId: 'wan-kuzain' },
       { slotId: 'cdm', x: 50, y: 52, role: 'CDM', defaultPlayerId: 'hong-wan' },
       { slotId: 'rcm', x: 70, y: 42, role: 'CM',  defaultPlayerId: 'sergio-aguero' },
@@ -156,15 +156,15 @@ const FORMATIONS: Record<string, FormationConfig> = {
     description: 'Disciplined midfield shield with Paulo Josué pulling strings behind Bergson.',
     slots: [
       { slotId: 'gk',  x: 50, y: 90, role: 'GK',  defaultPlayerId: 'syihan-hazmi' },
-      { slotId: 'lb',  x: 15, y: 70, role: 'LB',  defaultPlayerId: 'corbin-ong' },
+      { slotId: 'lb',  x: 16, y: 70, role: 'LB',  defaultPlayerId: 'corbin-ong' },
       { slotId: 'lcb', x: 37, y: 72, role: 'LCB', defaultPlayerId: 'daniel-ting' },
       { slotId: 'rcb', x: 63, y: 72, role: 'RCB', defaultPlayerId: 'dion-cools' },
-      { slotId: 'rb',  x: 85, y: 70, role: 'RB',  defaultPlayerId: 'quentin-cheng' },
+      { slotId: 'rb',  x: 84, y: 70, role: 'RB',  defaultPlayerId: 'quentin-cheng' },
       { slotId: 'ldm', x: 35, y: 54, role: 'CDM', defaultPlayerId: 'hong-wan' },
       { slotId: 'rdm', x: 65, y: 54, role: 'CDM', defaultPlayerId: 'nooa-laine' },
-      { slotId: 'lam', x: 18, y: 30, role: 'LW',  defaultPlayerId: 'manuel-hidalgo' },
+      { slotId: 'lam', x: 22, y: 30, role: 'LW',  defaultPlayerId: 'manuel-hidalgo' },
       { slotId: 'cam', x: 50, y: 30, role: 'CAM', defaultPlayerId: 'paulo-josue-fifa' },
-      { slotId: 'ram', x: 82, y: 30, role: 'RW',  defaultPlayerId: 'arif-aiman' },
+      { slotId: 'ram', x: 78, y: 30, role: 'RW',  defaultPlayerId: 'arif-aiman' },
       { slotId: 'st',  x: 50, y: 14, role: 'ST',  defaultPlayerId: 'bergson' },
     ],
     tactics: {
@@ -755,6 +755,10 @@ export default function FriendlyChinaPage() {
                   }
                 }
 
+                // Clamping to guarantee tokens never get clipped by pitch borders
+                rx = Math.max(16, Math.min(84, rx));
+                ry = Math.max(12, Math.min(90, ry));
+
                 return (
                   <div
                     key={slot.slotId}
@@ -805,14 +809,30 @@ export default function FriendlyChinaPage() {
                       </div>
 
                       {/* Player Surname */}
-                      <div className="text-[8px] md:text-[9px] font-bold text-white bg-black/70 rounded px-1 leading-tight mt-0.5 whitespace-nowrap">
+                      <div className="text-[8px] md:text-[9px] font-bold text-white bg-black/80 rounded px-1 leading-tight mt-0.5 max-w-[62px] truncate text-center">
                         {player 
-                          ? (player.name.includes('Nazmi') 
-                              ? 'Nazmi Faiz' 
+                          ? (player.name.includes('Ruventhiran') 
+                              ? 'Ruven' 
+                              : player.name.includes('Nazmi') 
+                              ? 'Nazmi' 
                               : player.name.includes('Josu')
                               ? 'Josué'
                               : player.name.includes('Corbin')
-                              ? 'Corbin-Ong'
+                              ? 'Corbin'
+                              : player.name.includes('Kuzain')
+                              ? 'Kuzain'
+                              : player.name.includes('Wilkin')
+                              ? 'Wilkin'
+                              : player.name.includes('Tierney')
+                              ? 'Tierney'
+                              : player.name.includes('Hidalgo')
+                              ? 'Hidalgo'
+                              : player.name.includes('Aiman')
+                              ? 'Arif'
+                              : player.name.includes('Ghani')
+                              ? 'Ghani'
+                              : player.name.includes('Hazmi')
+                              ? 'Hazmi'
                               : player.name.split(' ').slice(-1)[0]) 
                           : '—'}
                       </div>

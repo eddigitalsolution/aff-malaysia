@@ -26,17 +26,17 @@ const FORMATIONS: Record<string, { label: string; positions: { x: number; y: num
     label: '4-3-3',
     positions: [
       { x: 50, y: 90, role: 'GK' },
-      { x: 15, y: 70, role: 'LB' }, { x: 37, y: 72, role: 'CB' }, { x: 63, y: 72, role: 'CB' }, { x: 85, y: 70, role: 'RB' },
-      { x: 22, y: 48, role: 'CM' }, { x: 50, y: 44, role: 'CM' }, { x: 78, y: 48, role: 'CM' },
-      { x: 18, y: 22, role: 'LW' }, { x: 50, y: 16, role: 'ST' }, { x: 82, y: 22, role: 'RW' },
+      { x: 16, y: 70, role: 'LB' }, { x: 37, y: 72, role: 'CB' }, { x: 63, y: 72, role: 'CB' }, { x: 84, y: 70, role: 'RB' },
+      { x: 25, y: 48, role: 'CM' }, { x: 50, y: 44, role: 'CM' }, { x: 75, y: 48, role: 'CM' },
+      { x: 22, y: 22, role: 'LW' }, { x: 50, y: 16, role: 'ST' }, { x: 78, y: 22, role: 'RW' },
     ],
   },
   '4-4-2': {
     label: '4-4-2',
     positions: [
       { x: 50, y: 90, role: 'GK' },
-      { x: 12, y: 70, role: 'LB' }, { x: 35, y: 72, role: 'CB' }, { x: 65, y: 72, role: 'CB' }, { x: 88, y: 70, role: 'RB' },
-      { x: 12, y: 48, role: 'LM' }, { x: 35, y: 50, role: 'CM' }, { x: 65, y: 50, role: 'CM' }, { x: 88, y: 48, role: 'RM' },
+      { x: 16, y: 70, role: 'LB' }, { x: 35, y: 72, role: 'CB' }, { x: 65, y: 72, role: 'CB' }, { x: 84, y: 70, role: 'RB' },
+      { x: 16, y: 48, role: 'LM' }, { x: 35, y: 50, role: 'CM' }, { x: 65, y: 50, role: 'CM' }, { x: 84, y: 48, role: 'RM' },
       { x: 35, y: 18, role: 'ST' }, { x: 65, y: 18, role: 'ST' },
     ],
   },
@@ -44,9 +44,9 @@ const FORMATIONS: Record<string, { label: string; positions: { x: number; y: num
     label: '4-2-3-1',
     positions: [
       { x: 50, y: 90, role: 'GK' },
-      { x: 12, y: 70, role: 'LB' }, { x: 35, y: 72, role: 'CB' }, { x: 65, y: 72, role: 'CB' }, { x: 88, y: 70, role: 'RB' },
+      { x: 16, y: 70, role: 'LB' }, { x: 35, y: 72, role: 'CB' }, { x: 65, y: 72, role: 'CB' }, { x: 84, y: 70, role: 'RB' },
       { x: 33, y: 55, role: 'CDM' }, { x: 67, y: 55, role: 'CDM' },
-      { x: 15, y: 32, role: 'LW' }, { x: 50, y: 30, role: 'CAM' }, { x: 85, y: 32, role: 'RW' },
+      { x: 22, y: 32, role: 'LW' }, { x: 50, y: 30, role: 'CAM' }, { x: 78, y: 32, role: 'RW' },
       { x: 50, y: 12, role: 'ST' },
     ],
   },
@@ -55,7 +55,7 @@ const FORMATIONS: Record<string, { label: string; positions: { x: number; y: num
     positions: [
       { x: 50, y: 90, role: 'GK' },
       { x: 25, y: 72, role: 'CB' }, { x: 50, y: 74, role: 'CB' }, { x: 75, y: 72, role: 'CB' },
-      { x: 12, y: 48, role: 'LWB' }, { x: 30, y: 50, role: 'CM' }, { x: 50, y: 46, role: 'CM' }, { x: 70, y: 50, role: 'CM' }, { x: 88, y: 48, role: 'RWB' },
+      { x: 16, y: 48, role: 'LWB' }, { x: 30, y: 50, role: 'CM' }, { x: 50, y: 46, role: 'CM' }, { x: 70, y: 50, role: 'CM' }, { x: 84, y: 48, role: 'RWB' },
       { x: 35, y: 18, role: 'ST' }, { x: 65, y: 18, role: 'ST' },
     ],
   },
@@ -65,7 +65,7 @@ const FORMATIONS: Record<string, { label: string; positions: { x: number; y: num
       { x: 50, y: 90, role: 'GK' },
       { x: 22, y: 72, role: 'CB' }, { x: 50, y: 74, role: 'CB' }, { x: 78, y: 72, role: 'CB' },
       { x: 50, y: 58, role: 'CDM' },
-      { x: 12, y: 40, role: 'LWB' }, { x: 28, y: 36, role: 'CM' }, { x: 50, y: 33, role: 'CAM' }, { x: 72, y: 36, role: 'CM' }, { x: 88, y: 40, role: 'RWB' },
+      { x: 16, y: 40, role: 'LWB' }, { x: 28, y: 36, role: 'CM' }, { x: 50, y: 33, role: 'CAM' }, { x: 72, y: 36, role: 'CM' }, { x: 84, y: 40, role: 'RWB' },
       { x: 50, y: 12, role: 'ST' },
     ],
   },
@@ -793,6 +793,10 @@ export default function MalaysiaPage() {
                   }
                 }
 
+                // Clamping to guarantee tokens never get clipped by pitch borders
+                rx = Math.max(16, Math.min(84, rx));
+                ry = Math.max(12, Math.min(90, ry));
+
                 return (
                   <div
                     key={pp.id}
@@ -830,8 +834,26 @@ export default function MalaysiaPage() {
                       {/* Role chip */}
                       <div className="text-[6px] md:text-[7px] font-black px-1 rounded-sm mt-0.5" style={{ background: color, color: '#000' }}>{pp.role}</div>
                       {/* Name */}
-                      <div className="text-[8px] md:text-[9px] font-bold text-white bg-black/70 rounded px-1 leading-tight mt-0.5 whitespace-nowrap">
-                        {pp.name !== '—' ? pp.name.split(' ').slice(-1)[0] : '—'}
+                      <div className="text-[8px] md:text-[9px] font-bold text-white bg-black/80 rounded px-1 leading-tight mt-0.5 max-w-[62px] truncate text-center">
+                        {pp.name !== '—' 
+                          ? (pp.name.includes('Ruventhiran') 
+                              ? 'Ruven' 
+                              : pp.name.includes('Corbin') 
+                              ? 'Corbin' 
+                              : pp.name.includes('Nazmi') 
+                              ? 'Nazmi' 
+                              : pp.name.includes('Josu') 
+                              ? 'Josué' 
+                              : pp.name.includes('Tierney')
+                              ? 'Tierney'
+                              : pp.name.includes('Kuzain')
+                              ? 'Kuzain'
+                              : pp.name.includes('Wilkin')
+                              ? 'Wilkin'
+                              : pp.name.includes('Aiman')
+                              ? 'Arif'
+                              : pp.name.split(' ').slice(-1)[0]) 
+                          : '—'}
                       </div>
                       {pp.averageRating > 0 && (
                         <div className="text-[7px] md:text-[8px] font-black" style={{ color }}>{pp.averageRating}</div>
