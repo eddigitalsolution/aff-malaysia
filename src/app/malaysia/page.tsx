@@ -834,7 +834,7 @@ export default function MalaysiaPage() {
                       {/* Role chip */}
                       <div className="text-[6px] md:text-[7px] font-black px-1 rounded-sm mt-0.5" style={{ background: color, color: '#000' }}>{pp.role}</div>
                       {/* Name */}
-                      <div className="text-[8px] md:text-[9px] font-bold text-white bg-black/80 rounded px-1 leading-tight mt-0.5 max-w-[62px] truncate text-center">
+                      <div className="text-[8px] md:text-[9px] font-bold text-white bg-black/80 rounded px-1 leading-tight mt-0.5 max-w-15.5 truncate text-center">
                         {pp.name !== '—' 
                           ? (pp.name.includes('Ruventhiran') 
                               ? 'Ruven' 

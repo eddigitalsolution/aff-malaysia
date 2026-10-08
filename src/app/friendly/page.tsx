@@ -809,7 +809,7 @@ export default function FriendlyChinaPage() {
                       </div>
 
                       {/* Player Surname */}
-                      <div className="text-[8px] md:text-[9px] font-bold text-white bg-black/80 rounded px-1 leading-tight mt-0.5 max-w-[62px] truncate text-center">
+                      <div className="text-[8px] md:text-[9px] font-bold text-white bg-black/80 rounded px-1 leading-tight mt-0.5 max-w-15.5 truncate text-center">
                         {player 
                           ? (player.name.includes('Ruventhiran') 
                               ? 'Ruven' 
