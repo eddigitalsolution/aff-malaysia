@@ -1,14 +1,14 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { useAppState } from '@/store';
 import { 
-  Home, Trophy, Calendar, Users, User, ArrowLeftRight, BarChart2, 
-  Newspaper, Search, Menu, X, Star, Zap, Globe, ChevronDown, Swords
+  Trophy, Calendar, Users, User, BarChart2, 
+  Menu, X, Star, Globe, ChevronDown, Swords, Zap
 } from 'lucide-react';
-import { getPlayers, getTeams, getFixtures, TOURNAMENTS, Player, Team, Fixture } from '@/lib/api';
+import { TOURNAMENTS } from '@/lib/api';
 
 const NAV_ITEMS = [
   { href: '/malaysia', label: 'Tactical Planner', icon: Star, highlight: true },
@@ -22,61 +22,10 @@ const NAV_ITEMS = [
 
 export function Shell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { searchQuery, setSearchQuery, activeTournamentId, setActiveTournamentId } = useAppState();
-  
-  // Search data states
-  const [players, setPlayers] = useState<Player[]>([]);
-  const [teams, setTeams] = useState<Team[]>([]);
-  const [fixtures, setFixtures] = useState<Fixture[]>([]);
-  const [searchResults, setSearchResults] = useState<{
-    players: Player[];
-    teams: Team[];
-    fixtures: Fixture[];
-  }>({ players: [], teams: [], fixtures: [] });
-  const [showDropdown, setShowDropdown] = useState(false);
+  const { activeTournamentId, setActiveTournamentId } = useAppState();
 
   const activeTournament = TOURNAMENTS.find(t => t.id === activeTournamentId) || TOURNAMENTS[0];
-
-  useEffect(() => {
-    async function loadData() {
-      const p = await getPlayers();
-      const t = await getTeams();
-      const f = await getFixtures();
-      setPlayers(p);
-      setTeams(t);
-      setFixtures(f);
-    }
-    loadData();
-  }, []);
-
-  useEffect(() => {
-    if (!searchQuery.trim()) {
-      setSearchResults({ players: [], teams: [], fixtures: [] });
-      return;
-    }
-    const query = searchQuery.toLowerCase();
-    
-    const filteredPlayers = players.filter(p => 
-      p.teamId === 'malaysia' && 
-      (p.name.toLowerCase().includes(query) || p.position.toLowerCase().includes(query))
-    );
-    const filteredTeams = teams.filter(t => 
-      (t.name.toLowerCase().includes(query) || t.code.toLowerCase().includes(query))
-    );
-    const filteredFixtures = fixtures.filter(f => {
-      const homeName = teams.find(t => t.id === f.homeTeamId)?.name.toLowerCase() || '';
-      const awayName = teams.find(t => t.id === f.awayTeamId)?.name.toLowerCase() || '';
-      return homeName.includes(query) || awayName.includes(query) || f.stage.toLowerCase().includes(query);
-    });
-
-    setSearchResults({
-      players: filteredPlayers.slice(0, 4),
-      teams: filteredTeams.slice(0, 3),
-      fixtures: filteredFixtures.slice(0, 3),
-    });
-  }, [searchQuery, players, teams, fixtures]);
 
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100 flex flex-col relative">

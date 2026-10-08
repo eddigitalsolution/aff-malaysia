@@ -204,7 +204,11 @@ export default function PlayersPage() {
           <div className="relative flex-1">
             <Search className="absolute left-3 top-2.5 h-4 w-4 text-zinc-500" />
             <input
-              type="text"
+              id="player-search"
+              name="playerSearch"
+              type="search"
+              autoComplete="off"
+              aria-label="Search players by name or club"
               placeholder="Search players by name or club..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
