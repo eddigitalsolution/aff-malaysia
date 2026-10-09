@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { getPlayers, getTeams, TOURNAMENTS, Player, Team } from '@/lib/api';
 import { useAppState } from '@/store';
-import { Search, UserCheck, ShieldAlert, Award, ArrowLeftRight, ChevronDown, Trophy, Globe, Swords, ChevronRight, Star } from 'lucide-react';
+import { Search, UserCheck, ShieldAlert, Award, ArrowLeftRight, ChevronDown, Trophy, Globe, Swords, ChevronRight, Star, Sparkles } from 'lucide-react';
 
 export default function PlayersPage() {
   const { activeTournamentId, setActiveTournamentId } = useAppState();
@@ -71,7 +71,7 @@ export default function PlayersPage() {
     <div className="space-y-6 animate-in fade-in duration-300">
       {/* Tournament Selection Header Tabs */}
       <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 p-1.5 bg-zinc-900/90 border border-zinc-800 rounded-2xl">
-        <div className="flex items-center gap-1.5 p-1 bg-zinc-950 rounded-xl flex-1 sm:flex-initial">
+        <div className="flex flex-wrap items-center gap-1.5 p-1 bg-zinc-950 rounded-xl flex-1 sm:flex-initial">
           {TOURNAMENTS.map(t => {
             const active = t.id === activeTournamentId;
             const isFifaTournament = t.id === 'fifa-asean-cup-2026';
@@ -79,7 +79,7 @@ export default function PlayersPage() {
               <button
                 key={t.id}
                 onClick={() => setActiveTournamentId(t.id)}
-                className={`flex-1 sm:flex-initial px-4 py-2.5 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-2 ${
+                className={`flex-1 sm:flex-initial px-4 py-2.5 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-2 cursor-pointer ${
                   active
                     ? isFifaTournament
                       ? 'bg-amber-400 text-zinc-950 shadow-md font-black'
@@ -97,6 +97,17 @@ export default function PlayersPage() {
               </button>
             );
           })}
+
+          <Link
+            href="/potential-players"
+            className="flex-1 sm:flex-initial px-4 py-2.5 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-2 text-zinc-400 hover:text-amber-400 hover:bg-zinc-900 border border-transparent hover:border-amber-400/30"
+          >
+            <Sparkles className="h-3.5 w-3.5 text-amber-400" />
+            <span>Potential Players</span>
+            <span className="text-[9px] px-1.5 py-0.2 rounded font-black uppercase bg-amber-400/20 text-amber-400">
+              U23 SCOUTING
+            </span>
+          </Link>
         </div>
 
         <div className="px-3 py-1 text-xs text-zinc-400 font-medium">

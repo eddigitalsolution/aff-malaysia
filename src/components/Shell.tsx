@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 import { useAppState } from '@/store';
 import { 
   Trophy, Calendar, Users, User, BarChart2, 
-  Menu, X, Star, Globe, ChevronDown, Swords, Zap
+  Menu, X, Star, Globe, ChevronDown, Swords, Zap, Sparkles
 } from 'lucide-react';
 import { TOURNAMENTS } from '@/lib/api';
 
@@ -15,6 +15,7 @@ const NAV_ITEMS = [
   { href: '/friendly', label: 'China Friendly (Tier 1)', icon: Swords, highlight: true, badge: 'NOV 14 & 17' },
   { href: '/standings', label: 'Standings', icon: Trophy },
   { href: '/players', label: 'Players', icon: User },
+  { href: '/potential-players', label: 'Potential Players', icon: Sparkles, badge: 'SCOUTING' },
   { href: '/squad-selection', label: 'Squad Selection', icon: Users },
   { href: '/fixtures', label: 'Fixtures & Results', icon: Calendar },
   { href: '/stats', label: 'Team Stats & Analytics', icon: BarChart2 },
