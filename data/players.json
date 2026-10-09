@@ -2670,13 +2670,13 @@
     "nationality": "Malaysia",
     "position": "Forward",
     "number": 40,
-    "appearances": 2,
-    "minutes": 115,
-    "goals": 4,
-    "assists": 1,
-    "shots": 8,
-    "expectedGoals": 2.85,
-    "expectedAssists": 0.95,
+    "appearances": 0,
+    "minutes": 0,
+    "goals": 0,
+    "assists": 0,
+    "shots": 0,
+    "expectedGoals": 0,
+    "expectedAssists": 0,
     "passingAccuracy": 84,
     "tackles": 3,
     "interceptions": 2,
@@ -2696,19 +2696,19 @@
     "aiAnalysis": {
       "strengths": [
         "Explosive pace on the left flank & counter-attacks",
-        "Clinical finishing inside penalty box (brace on JDT debut & Shopee Cup)",
+        "Clinical finishing inside penalty box (4 goals in debut spells at JDT)",
         "Aggressive 1v1 take-ons & cut-ins"
       ],
       "weaknesses": [
         "Defensive tracking discipline against overlapping full-backs"
       ],
-      "playingStyle": "Dynamic Inverted Winger & Forward. Blistering acceleration, fearless 1v1 dribbling, and decisive finishing instinct in the final third."
+      "playingStyle": "Dynamic Inverted Winger & Forward. Pure prospective talent called up on domestic & Shopee Cup breakout form (uncapped at FIFA/AFF tournament level)."
     },
     "injuryStatus": "Healthy",
-    "tournamentId": "fifa-asean-cup-2026",
+    "tournamentId": "friendly-china-2026",
     "isChinaCallUp": true,
-    "callUpRole": "Explosive Winger & Clinical Finisher · JDT Breakthrough Star",
-    "tournamentProvenance": "FIFA ASEAN Cup 2026",
-    "tournamentHighlight": "JDT Breakthrough 2026: 4 Goals in senior appearances including Shopee Cup double · Lethal young winger"
+    "callUpRole": "Potential Call-Up · JDT Breakthrough Star",
+    "tournamentProvenance": "Potential Call-Up (Domestic / JDT Form)",
+    "tournamentHighlight": "Potential Call-Up: Uncapped (Did not attend FIFA ASEAN Cup or AFF Hyundai Cup) · Selected solely on explosive JDT breakout form (4 goals in FA Cup & Shopee Cup)"
   }
 ]

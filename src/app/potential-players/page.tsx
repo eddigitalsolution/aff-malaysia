@@ -62,8 +62,8 @@ const POTENTIAL_PLAYERS: PotentialPlayerMeta[] = [
     defending: 48,
     physical: 74,
     scoutVerdict: 'Generational Talent',
-    highlightText: 'Scored 4 goals in senior debut campaign: FA Cup brace vs UM Damansara (9.2 rating) and Shopee Cup double vs Svay Rieng (9.7 rating).',
-    recentForm: '4 Goals · 1 Assist in 115 Senior Mins · Sofascore 9.7 Peak Rating',
+    highlightText: 'Uncapped prospective talent (did not attend FIFA ASEAN Cup or AFF Hyundai Cup). Earned potential call-up strictly through 4 goals in senior JDT breakthrough matches (FA Cup & Shopee Cup).',
+    recentForm: '4 Goals · 1 Assist in 115 Senior Mins · Uncapped at FIFA/AFF · 9.7 Peak Rating',
     seniorCallUp: true,
     strengths: ['Explosive acceleration on left flank', 'Fearless 1v1 direct dribbling', 'Clinical inside-the-box finishing', 'High transition sprint speed (33.6 km/h)'],
     weaknesses: ['Defensive tracking back against overlapping fullbacks', 'Aerial duels against tall defenders'],
@@ -385,179 +385,235 @@ export default function PotentialPlayersPage() {
       </div>
 
       {/* =========================================================
+      {/* =========================================================
           FEATURED WONDERKID SPOTLIGHT: DANIESH AMIRRUDDIN
       ========================================================= */}
-      <div className="relative overflow-hidden rounded-3xl bg-linear-to-br from-red-950/40 via-zinc-900 to-zinc-950 border border-red-500/30 p-6 lg:p-8 shadow-2xl">
+      <div className="relative overflow-hidden rounded-3xl bg-linear-to-br from-red-950/40 via-zinc-900 to-zinc-950 border border-red-500/30 p-5 sm:p-7 shadow-2xl space-y-5">
         {/* Ambient Glow */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-red-500/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          {/* Left: Player Profile & Headshot */}
-          <div className="lg:col-span-5 flex flex-col sm:flex-row items-center sm:items-start gap-6">
-            <div className="relative group shrink-0">
-              <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-2xl bg-linear-to-b from-red-500/20 to-zinc-900 border-2 border-red-500/40 overflow-hidden shadow-xl flex items-center justify-center relative">
+        {/* Top Header Row: Headshot + Name + Status Badges */}
+        <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-4 border-b border-zinc-800/80">
+          <div className="flex items-center gap-4">
+            <div className="relative shrink-0">
+              <div className="w-20 h-20 sm:w-22 sm:h-22 rounded-2xl bg-linear-to-b from-red-500/20 to-zinc-900 border-2 border-red-500/40 overflow-hidden shadow-xl flex items-center justify-center">
                 <img
                   src={wonderkid.photo}
                   alt={wonderkid.name}
-                  className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-full object-cover object-top"
                   onError={(e) => {
-                    // Fallback to silhouette if needed
                     e.currentTarget.src = '/players/bergson.png';
                   }}
                 />
-                <span className="absolute bottom-1 right-1 bg-zinc-950/90 text-amber-400 text-[10px] font-black px-1.5 py-0.5 rounded border border-zinc-800">
-                  #40 JDT
-                </span>
               </div>
-              <div className="mt-2 text-center sm:text-left">
-                <span className="inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-wider text-red-400 bg-red-500/10 border border-red-500/20 px-2 py-0.5 rounded-full">
-                  <Flame className="h-3 w-3" />
-                  Breakout Star 2026
-                </span>
-              </div>
+              <span className="absolute -bottom-1 -right-1 bg-zinc-950 text-amber-400 text-[9px] font-black px-1.5 py-0.5 rounded border border-zinc-800 shadow">
+                #40 JDT
+              </span>
             </div>
 
-            <div className="text-center sm:text-left space-y-2">
-              <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+            <div>
+              <div className="flex flex-wrap items-center gap-1.5 mb-1">
                 <span className="bg-amber-400 text-zinc-950 text-[10px] font-black px-2 py-0.5 rounded-full uppercase">
                   ⭐ Potential 92/100
                 </span>
-                <span className="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-[10px] font-black px-2 py-0.5 rounded-full uppercase">
-                  Senior Call-Up (China PR)
+                <span className="bg-red-500/20 text-red-300 border border-red-500/30 text-[10px] font-black px-2 py-0.5 rounded-full uppercase">
+                  Breakout Star 2026
                 </span>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-black text-white">
+              <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
                 {wonderkid.name}
               </h2>
               
-              <p className="text-xs text-amber-300 font-bold">
+              <p className="text-xs text-amber-300 font-bold mt-0.5">
                 {wonderkid.club} • {wonderkid.subRole}
               </p>
-
-              <div className="grid grid-cols-3 gap-2 pt-1 text-center">
-                <div className="bg-zinc-900/80 border border-zinc-800 p-2 rounded-xl">
-                  <span className="text-[10px] text-zinc-500 block uppercase font-bold">Age</span>
-                  <span className="text-sm font-black text-white">{wonderkid.age}</span>
-                </div>
-                <div className="bg-zinc-900/80 border border-zinc-800 p-2 rounded-xl">
-                  <span className="text-[10px] text-zinc-500 block uppercase font-bold">Height</span>
-                  <span className="text-sm font-black text-white">{wonderkid.height} cm</span>
-                </div>
-                <div className="bg-zinc-900/80 border border-zinc-800 p-2 rounded-xl">
-                  <span className="text-[10px] text-zinc-500 block uppercase font-bold">Foot</span>
-                  <span className="text-sm font-black text-white">{wonderkid.foot}</span>
-                </div>
-              </div>
-
-              {wonderkid.sourceUrl && (
-                <a
-                  href={wonderkid.sourceUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-[11px] text-zinc-400 hover:text-amber-400 transition-colors pt-1"
-                >
-                  <ExternalLink className="h-3 w-3" />
-                  <span>Verified on Sofascore Profile</span>
-                </a>
-              )}
             </div>
           </div>
 
-          {/* Right: Key Breakthrough Stats & Scouting Breakdown */}
-          <div className="lg:col-span-7 space-y-4">
-            <div className="bg-zinc-900/80 border border-zinc-800/80 rounded-2xl p-4 space-y-3">
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-black uppercase text-amber-400 tracking-wider flex items-center gap-1.5">
+          {/* Badges & External Link */}
+          <div className="flex flex-wrap md:flex-col items-start md:items-end gap-2 shrink-0">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="bg-amber-500/15 text-amber-300 border border-amber-500/30 text-[10px] font-black px-2.5 py-1 rounded-xl uppercase">
+                ⭐ Potential Call-Up (China Friendly)
+              </span>
+              <span className="bg-zinc-800/90 text-zinc-300 border border-zinc-700 text-[10px] font-bold px-2.5 py-1 rounded-xl uppercase">
+                Uncapped · No FIFA / AFF Caps
+              </span>
+            </div>
+
+            {wonderkid.sourceUrl && (
+              <a
+                href={wonderkid.sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs text-zinc-400 hover:text-amber-400 transition-colors font-semibold"
+              >
+                <ExternalLink className="h-3.5 w-3.5" />
+                <span>Verified on Sofascore Profile</span>
+              </a>
+            )}
+          </div>
+        </div>
+
+        {/* Middle 3-Column Balanced Layout */}
+        <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-4">
+          {/* Card 1: Vitals & Uncapped Status Notice */}
+          <div className="bg-zinc-900/80 border border-zinc-800/80 rounded-2xl p-4 flex flex-col justify-between space-y-3">
+            <div>
+              <span className="text-[10px] font-black uppercase text-zinc-400 tracking-wider block mb-2">
+                Player Vitals & Specifications
+              </span>
+              <div className="grid grid-cols-3 gap-2 text-center">
+                <div className="bg-zinc-950 p-2.5 rounded-xl border border-zinc-850">
+                  <span className="text-[9px] text-zinc-500 block uppercase font-bold">Age</span>
+                  <span className="text-sm font-black text-white">{wonderkid.age}</span>
+                </div>
+                <div className="bg-zinc-950 p-2.5 rounded-xl border border-zinc-850">
+                  <span className="text-[9px] text-zinc-500 block uppercase font-bold">Height</span>
+                  <span className="text-sm font-black text-white">{wonderkid.height} cm</span>
+                </div>
+                <div className="bg-zinc-950 p-2.5 rounded-xl border border-zinc-850">
+                  <span className="text-[9px] text-zinc-500 block uppercase font-bold">Foot</span>
+                  <span className="text-sm font-black text-white">{wonderkid.foot}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Explicit Notice: Did not attend tournaments */}
+            <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/25 space-y-1">
+              <span className="text-[10px] font-black uppercase text-amber-400 block tracking-wider flex items-center gap-1">
+                <Star className="h-3 w-3" />
+                Uncapped Potential Prospect
+              </span>
+              <p className="text-[11px] text-zinc-300 leading-relaxed font-medium">
+                Did <strong className="text-white">NOT attend</strong> the 2026 FIFA ASEAN Cup or AFF ASEAN Hyundai Cup. Earned potential call-up strictly through sensational domestic & Shopee Cup breakout form.
+              </p>
+            </div>
+          </div>
+
+          {/* Card 2: Senior Breakthrough Form */}
+          <div className="bg-zinc-900/80 border border-zinc-800/80 rounded-2xl p-4 flex flex-col justify-between space-y-3">
+            <div>
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-[10px] font-black uppercase text-amber-400 tracking-wider flex items-center gap-1">
                   <Zap className="h-3.5 w-3.5" />
-                  Senior Breakthrough Performance
+                  JDT Breakthrough Performance
                 </span>
-                <span className="text-[10px] text-zinc-500 font-bold">
-                  Shopee Cup & FA Cup 2026
+                <span className="text-[9px] text-zinc-500 font-bold uppercase">
+                  Shopee Cup & FA Cup
                 </span>
               </div>
-              <p className="text-xs sm:text-sm text-zinc-200 leading-relaxed font-medium">
+              <p className="text-xs text-zinc-300 leading-relaxed font-medium">
                 {wonderkid.highlightText}
               </p>
+            </div>
+
+            <div className="space-y-2">
               <div className="p-2.5 rounded-xl bg-red-500/10 border border-red-500/20 text-xs text-red-300 font-bold flex items-center gap-2">
                 <CheckCircle2 className="h-4 w-4 shrink-0 text-red-400" />
                 <span>{wonderkid.recentForm}</span>
               </div>
-            </div>
 
-            {/* Radar / Core Attributes Bars */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              <div className="bg-zinc-900/60 border border-zinc-800 p-2.5 rounded-xl">
-                <div className="flex justify-between text-xs mb-1">
-                  <span className="text-zinc-400 font-bold">Pace</span>
-                  <span className="text-amber-400 font-black">{wonderkid.pace}</span>
-                </div>
-                <div className="w-full bg-zinc-800 h-1.5 rounded-full overflow-hidden">
-                  <div className="bg-amber-400 h-full rounded-full" style={{ width: `${wonderkid.pace}%` }} />
-                </div>
+              <div className="flex items-center justify-between text-[11px] bg-zinc-950/80 px-3 py-1.5 rounded-xl border border-zinc-850 text-zinc-300">
+                <span className="text-zinc-400">Peak Sprint Speed:</span>
+                <span className="font-black text-amber-400">33.6 km/h</span>
               </div>
-
-              <div className="bg-zinc-900/60 border border-zinc-800 p-2.5 rounded-xl">
-                <div className="flex justify-between text-xs mb-1">
-                  <span className="text-zinc-400 font-bold">Dribbling</span>
-                  <span className="text-amber-400 font-black">{wonderkid.dribbling}</span>
-                </div>
-                <div className="w-full bg-zinc-800 h-1.5 rounded-full overflow-hidden">
-                  <div className="bg-amber-400 h-full rounded-full" style={{ width: `${wonderkid.dribbling}%` }} />
-                </div>
-              </div>
-
-              <div className="bg-zinc-900/60 border border-zinc-800 p-2.5 rounded-xl">
-                <div className="flex justify-between text-xs mb-1">
-                  <span className="text-zinc-400 font-bold">Shooting</span>
-                  <span className="text-emerald-400 font-black">{wonderkid.shooting}</span>
-                </div>
-                <div className="w-full bg-zinc-800 h-1.5 rounded-full overflow-hidden">
-                  <div className="bg-emerald-400 h-full rounded-full" style={{ width: `${wonderkid.shooting}%` }} />
-                </div>
-              </div>
-
-              <div className="bg-zinc-900/60 border border-zinc-800 p-2.5 rounded-xl">
-                <div className="flex justify-between text-xs mb-1">
-                  <span className="text-zinc-400 font-bold">Passing</span>
-                  <span className="text-zinc-200 font-black">{wonderkid.passing}</span>
-                </div>
-                <div className="w-full bg-zinc-800 h-1.5 rounded-full overflow-hidden">
-                  <div className="bg-blue-400 h-full rounded-full" style={{ width: `${wonderkid.passing}%` }} />
-                </div>
-              </div>
-
-              <div className="bg-zinc-900/60 border border-zinc-800 p-2.5 rounded-xl">
-                <div className="flex justify-between text-xs mb-1">
-                  <span className="text-zinc-400 font-bold">Physical</span>
-                  <span className="text-zinc-200 font-black">{wonderkid.physical}</span>
-                </div>
-                <div className="w-full bg-zinc-800 h-1.5 rounded-full overflow-hidden">
-                  <div className="bg-purple-400 h-full rounded-full" style={{ width: `${wonderkid.physical}%` }} />
-                </div>
-              </div>
-
-              <div className="bg-zinc-900/60 border border-zinc-800 p-2.5 rounded-xl">
-                <div className="flex justify-between text-xs mb-1">
-                  <span className="text-zinc-400 font-bold">Defending</span>
-                  <span className="text-zinc-400 font-black">{wonderkid.defending}</span>
-                </div>
-                <div className="w-full bg-zinc-800 h-1.5 rounded-full overflow-hidden">
-                  <div className="bg-zinc-500 h-full rounded-full" style={{ width: `${wonderkid.defending}%` }} />
-                </div>
-              </div>
-            </div>
-
-            {/* Tactical Strengths & Fit */}
-            <div className="flex flex-wrap gap-1.5 pt-1">
-              {wonderkid.strengths.map((str, idx) => (
-                <span key={idx} className="text-[11px] bg-zinc-900 border border-zinc-800 text-zinc-300 px-2.5 py-1 rounded-lg">
-                  ✓ {str}
-                </span>
-              ))}
             </div>
           </div>
+
+          {/* Card 3: Scouting Radar Attributes */}
+          <div className="bg-zinc-900/80 border border-zinc-800/80 rounded-2xl p-4 flex flex-col justify-between space-y-3">
+            <div>
+              <span className="text-[10px] font-black uppercase text-zinc-400 tracking-wider block mb-2 flex items-center gap-1">
+                <Target className="h-3.5 w-3.5 text-amber-400" />
+                Core Attributes & Ceiling
+              </span>
+
+              <div className="grid grid-cols-2 gap-2 text-xs">
+                <div className="bg-zinc-950/70 p-2 rounded-xl border border-zinc-850">
+                  <div className="flex justify-between mb-1">
+                    <span className="text-zinc-400 font-bold text-[10px]">Pace</span>
+                    <span className="text-amber-400 font-black">{wonderkid.pace}</span>
+                  </div>
+                  <div className="w-full bg-zinc-800 h-1 rounded-full overflow-hidden">
+                    <div className="bg-amber-400 h-full" style={{ width: `${wonderkid.pace}%` }} />
+                  </div>
+                </div>
+
+                <div className="bg-zinc-950/70 p-2 rounded-xl border border-zinc-850">
+                  <div className="flex justify-between mb-1">
+                    <span className="text-zinc-400 font-bold text-[10px]">Dribbling</span>
+                    <span className="text-amber-400 font-black">{wonderkid.dribbling}</span>
+                  </div>
+                  <div className="w-full bg-zinc-800 h-1 rounded-full overflow-hidden">
+                    <div className="bg-amber-400 h-full" style={{ width: `${wonderkid.dribbling}%` }} />
+                  </div>
+                </div>
+
+                <div className="bg-zinc-950/70 p-2 rounded-xl border border-zinc-850">
+                  <div className="flex justify-between mb-1">
+                    <span className="text-zinc-400 font-bold text-[10px]">Shooting</span>
+                    <span className="text-emerald-400 font-black">{wonderkid.shooting}</span>
+                  </div>
+                  <div className="w-full bg-zinc-800 h-1 rounded-full overflow-hidden">
+                    <div className="bg-emerald-400 h-full" style={{ width: `${wonderkid.shooting}%` }} />
+                  </div>
+                </div>
+
+                <div className="bg-zinc-950/70 p-2 rounded-xl border border-zinc-850">
+                  <div className="flex justify-between mb-1">
+                    <span className="text-zinc-400 font-bold text-[10px]">Passing</span>
+                    <span className="text-blue-400 font-black">{wonderkid.passing}</span>
+                  </div>
+                  <div className="w-full bg-zinc-800 h-1 rounded-full overflow-hidden">
+                    <div className="bg-blue-400 h-full" style={{ width: `${wonderkid.passing}%` }} />
+                  </div>
+                </div>
+
+                <div className="bg-zinc-950/70 p-2 rounded-xl border border-zinc-850">
+                  <div className="flex justify-between mb-1">
+                    <span className="text-zinc-400 font-bold text-[10px]">Physical</span>
+                    <span className="text-purple-400 font-black">{wonderkid.physical}</span>
+                  </div>
+                  <div className="w-full bg-zinc-800 h-1 rounded-full overflow-hidden">
+                    <div className="bg-purple-400 h-full" style={{ width: `${wonderkid.physical}%` }} />
+                  </div>
+                </div>
+
+                <div className="bg-zinc-950/70 p-2 rounded-xl border border-zinc-850">
+                  <div className="flex justify-between mb-1">
+                    <span className="text-zinc-400 font-bold text-[10px]">Defending</span>
+                    <span className="text-zinc-400 font-black">{wonderkid.defending}</span>
+                  </div>
+                  <div className="w-full bg-zinc-800 h-1 rounded-full overflow-hidden">
+                    <div className="bg-zinc-500 h-full" style={{ width: `${wonderkid.defending}%` }} />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <Link
+              href="/friendly"
+              className="w-full py-2 rounded-xl text-xs font-bold bg-amber-400 hover:bg-amber-300 text-zinc-950 transition-all flex items-center justify-center gap-1.5 shadow-sm text-center"
+            >
+              <span>Test in Friendly vs China PR</span>
+              <ChevronRight className="h-3.5 w-3.5" />
+            </Link>
+          </div>
+        </div>
+
+        {/* Bottom Tactical Strengths Pills */}
+        <div className="relative z-10 pt-3 border-t border-zinc-800/80 flex flex-wrap items-center gap-2">
+          <span className="text-[10px] font-bold uppercase text-zinc-500 tracking-wider shrink-0 mr-1">
+            Scouting Strengths:
+          </span>
+          {wonderkid.strengths.map((str, idx) => (
+            <span key={idx} className="text-[11px] bg-zinc-900 border border-zinc-800 text-zinc-300 px-2.5 py-1 rounded-lg font-medium">
+              ✓ {str}
+            </span>
+          ))}
         </div>
       </div>
 

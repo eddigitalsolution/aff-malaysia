@@ -6,7 +6,7 @@ import { getPlayers, Player } from '@/lib/api';
 import { 
   Swords, Calendar, MapPin, Trophy, Shield, Users, Star, 
   ArrowRight, Flame, Target, Activity, CheckCircle2, ChevronRight, UserCheck,
-  RotateCcw, ChevronDown, ArrowLeftRight, Layers, Eye, Compass
+  RotateCcw, ChevronDown, ArrowLeftRight, Layers, Eye, Compass, Sparkles
 } from 'lucide-react';
 
 /* ---------------------------------------------------------
@@ -189,7 +189,7 @@ const initialSquad = (playersData as unknown as Player[]).filter(p => p.isChinaC
 export default function FriendlyChinaPage() {
   const [players, setPlayers] = useState<Player[]>(initialSquad);
   const [activeTab, setActiveTab] = useState<'All' | 'Goalkeeper' | 'Defender' | 'Midfielder' | 'Forward'>('All');
-  const [tournamentFilter, setTournamentFilter] = useState<'All' | 'Both' | 'FIFA' | 'AFF'>('All');
+  const [tournamentFilter, setTournamentFilter] = useState<'All' | 'Both' | 'FIFA' | 'AFF' | 'Potential'>('All');
 
   // Tactical Planner State
   const [selectedFormationKey, setSelectedFormationKey] = useState<string>('3-4-3');
@@ -297,8 +297,9 @@ export default function FriendlyChinaPage() {
 
   // Provenance grouping lists
   const dualPlayers = useMemo(() => players.filter(p => p.tournamentProvenance?.includes('Both')), [players]);
-  const fifaPlayers = useMemo(() => players.filter(p => (p.tournamentProvenance?.includes('FIFA') || false) && !p.tournamentProvenance?.includes('Both')), [players]);
-  const affPlayers = useMemo(() => players.filter(p => (p.tournamentProvenance?.includes('Hyundai') || p.tournamentProvenance?.includes('AFF') || false) && !p.tournamentProvenance?.includes('Both')), [players]);
+  const fifaPlayers = useMemo(() => players.filter(p => (p.tournamentProvenance?.includes('FIFA') || false) && !p.tournamentProvenance?.includes('Both') && !p.tournamentProvenance?.includes('Potential')), [players]);
+  const affPlayers = useMemo(() => players.filter(p => (p.tournamentProvenance?.includes('Hyundai') || p.tournamentProvenance?.includes('AFF') || false) && !p.tournamentProvenance?.includes('Both') && !p.tournamentProvenance?.includes('Potential')), [players]);
+  const potentialPlayers = useMemo(() => players.filter(p => p.tournamentProvenance?.includes('Potential')), [players]);
 
   // Filtered 26-man squad list
   const filteredSquad = useMemo(() => {
@@ -308,9 +309,11 @@ export default function FriendlyChinaPage() {
       if (tournamentFilter === 'Both') {
         matchesTour = p.tournamentProvenance?.includes('Both') || false;
       } else if (tournamentFilter === 'FIFA') {
-        matchesTour = (p.tournamentProvenance?.includes('FIFA') || false) && !p.tournamentProvenance?.includes('Both');
+        matchesTour = (p.tournamentProvenance?.includes('FIFA') || false) && !p.tournamentProvenance?.includes('Both') && !p.tournamentProvenance?.includes('Potential');
       } else if (tournamentFilter === 'AFF') {
-        matchesTour = (p.tournamentProvenance?.includes('Hyundai') || p.tournamentProvenance?.includes('AFF') || false) && !p.tournamentProvenance?.includes('Both');
+        matchesTour = (p.tournamentProvenance?.includes('Hyundai') || p.tournamentProvenance?.includes('AFF') || false) && !p.tournamentProvenance?.includes('Both') && !p.tournamentProvenance?.includes('Potential');
+      } else if (tournamentFilter === 'Potential') {
+        matchesTour = p.tournamentProvenance?.includes('Potential') || false;
       }
       return matchesPos && matchesTour;
     });
@@ -1255,6 +1258,17 @@ export default function FriendlyChinaPage() {
                 <Shield className="h-3 w-3 text-emerald-400" />
                 <span>ASEAN Hyundai Cup ({affPlayers.length})</span>
               </button>
+              <button
+                onClick={() => setTournamentFilter('Potential')}
+                className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+                  tournamentFilter === 'Potential'
+                    ? 'bg-amber-400 text-zinc-950 font-black shadow-md'
+                    : 'bg-zinc-950 text-amber-300 hover:text-amber-200 border border-amber-500/40'
+                }`}
+              >
+                <Sparkles className="h-3 w-3 text-amber-400" />
+                <span>Potential Call-Up ({potentialPlayers.length})</span>
+              </button>
             </div>
           </div>
 
@@ -1331,7 +1345,11 @@ export default function FriendlyChinaPage() {
                     
                     {/* Tournament Provenance Badge */}
                     <div className="mt-1 flex items-center gap-1.5 flex-wrap">
-                      {player.tournamentProvenance?.includes('Both') ? (
+                      {player.tournamentProvenance?.includes('Potential') ? (
+                        <span className="text-[8.5px] font-black px-2 py-0.5 rounded uppercase tracking-wider flex items-center gap-1 bg-amber-500/20 border border-amber-500/40 text-amber-300">
+                          ⭐ Potential Call-Up (Domestic Form)
+                        </span>
+                      ) : player.tournamentProvenance?.includes('Both') ? (
                         <span className="text-[8.5px] font-black px-2 py-0.5 rounded uppercase tracking-wider flex items-center gap-1 bg-linear-to-r from-amber-500/20 to-emerald-500/20 border border-amber-400/50 text-amber-300">
                           Both Tournaments (FIFA & AFF)
                         </span>
@@ -1357,16 +1375,28 @@ export default function FriendlyChinaPage() {
                 {/* Tournament Stats Capsule */}
                 <div className="grid grid-cols-4 gap-2 mt-3 pt-3 border-t border-zinc-900 text-center text-xs">
                   <div>
-                    <span className="text-[9px] text-zinc-500 font-bold block">Apps</span>
-                    <span className="font-black text-zinc-200">{player.appearances}</span>
+                    <span className="text-[9px] text-zinc-500 font-bold block">
+                      {player.tournamentProvenance?.includes('Potential') ? 'Tourn Caps' : 'Apps'}
+                    </span>
+                    <span className="font-black text-zinc-200">
+                      {player.tournamentProvenance?.includes('Potential') ? '0 (Uncapped)' : player.appearances}
+                    </span>
                   </div>
                   <div>
-                    <span className="text-[9px] text-zinc-500 font-bold block">Goals</span>
-                    <span className="font-black text-primary">{player.goals}</span>
+                    <span className="text-[9px] text-zinc-500 font-bold block">
+                      {player.tournamentProvenance?.includes('Potential') ? 'Club Goals' : 'Goals'}
+                    </span>
+                    <span className="font-black text-primary">
+                      {player.tournamentProvenance?.includes('Potential') ? '4 (JDT)' : player.goals}
+                    </span>
                   </div>
                   <div>
-                    <span className="text-[9px] text-zinc-500 font-bold block">Assists</span>
-                    <span className="font-black text-accent">{player.assists}</span>
+                    <span className="text-[9px] text-zinc-500 font-bold block">
+                      {player.tournamentProvenance?.includes('Potential') ? 'Club Ast' : 'Assists'}
+                    </span>
+                    <span className="font-black text-accent">
+                      {player.tournamentProvenance?.includes('Potential') ? '1 (JDT)' : player.assists}
+                    </span>
                   </div>
                   <div>
                     <span className="text-[9px] text-zinc-500 font-bold block">Pass Acc</span>
@@ -1386,7 +1416,9 @@ export default function FriendlyChinaPage() {
               </div>
 
               <div className="mt-3 pt-2 border-t border-zinc-900/60 flex items-center justify-between text-[10px]">
-                <span className="text-zinc-500 font-semibold">{player.minutes} mins played</span>
+                <span className="text-zinc-500 font-semibold">
+                  {player.tournamentProvenance?.includes('Potential') ? 'Uncapped at FIFA/AFF level' : `${player.minutes} mins played`}
+                </span>
                 <span className="text-primary font-bold flex items-center gap-0.5 group-hover:translate-x-0.5 transition-transform">
                   View Profile <ChevronRight className="h-3 w-3" />
                 </span>
