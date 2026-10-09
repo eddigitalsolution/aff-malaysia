@@ -132,6 +132,7 @@ export default function SquadSelectionPage() {
     { id: 'dion-cools',        verdict: 'MUST CALL', reason: 'Captain & 8.9 MVP vs Indonesia, 94/99 passes completed in Jakarta', color: 'emerald' },
     { id: 'nooa-laine',        verdict: 'MUST CALL', reason: '95% pass accuracy vs IDN, assist vs BAN, age 23 midfield general', color: 'emerald' },
     { id: 'brad-tapp',         verdict: 'MUST CALL', reason: '3 clean sheets, 94% pass accuracy, dominant aerial CB', color: 'emerald' },
+    { id: 'daniesh-amirruddin', verdict: 'MUST CALL', reason: 'Sensational pace & clinical finishing, 4 goals in debut spells at JDT, age 20 future star', color: 'emerald' },
     // KEEP
     { id: 'syihan-hazmi',      verdict: 'KEEP', reason: '2 starts, 2 clean sheets (0 conceded), 100% passes in Jakarta', color: 'blue' },
     { id: 'stuart-wilkin',     verdict: 'KEEP', reason: '1G 1A, relentless box-to-box engine, age 28', color: 'blue' },

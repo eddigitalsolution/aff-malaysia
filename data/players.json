@@ -368,7 +368,7 @@
     },
     "injuryStatus": "Healthy",
     "tournamentId": "fifa-asean-cup-2026",
-    "isChinaCallUp": true,
+    "isChinaCallUp": false,
     "callUpRole": "Ball-Winning Pivot · 2 Assists, 82% Pass Acc",
     "tournamentProvenance": "FIFA ASEAN Cup 2026",
     "tournamentHighlight": "FIFA ASEAN Cup: 2 Appearances, 85 mins, 2 Assists, 82% Pass Acc · Deep ball-winning defensive pivot"
@@ -2657,5 +2657,58 @@
     "tournamentProvenance": "Both Tournaments (FIFA & AFF)",
     "callUpRole": "Dual-Tournament Prospect · 1G 2A in AFF + FIFA Cameo",
     "tournamentHighlight": "Both Tournaments: 6 Starts, 540 mins, 1 Goal, 2 Assists in AFF (Rating 7.50) + 2 Appearances in FIFA · 581 mins combined"
+  },
+  {
+    "id": "daniesh-amirruddin",
+    "name": "Daniesh Amirruddin",
+    "teamId": "malaysia",
+    "photo": "/players/daniesh-amirruddin.png",
+    "club": "Johor Darul Ta'zim",
+    "age": 20,
+    "height": 175,
+    "weight": 68,
+    "nationality": "Malaysia",
+    "position": "Forward",
+    "number": 40,
+    "appearances": 2,
+    "minutes": 115,
+    "goals": 4,
+    "assists": 1,
+    "shots": 8,
+    "expectedGoals": 2.85,
+    "expectedAssists": 0.95,
+    "passingAccuracy": 84,
+    "tackles": 3,
+    "interceptions": 2,
+    "recoveries": 6,
+    "averageRating": 7.95,
+    "sprintSpeed": 33.6,
+    "distanceCovered": 8.2,
+    "touches": 52,
+    "radar": {
+      "pace": 88,
+      "shooting": 82,
+      "passing": 76,
+      "dribbling": 85,
+      "defending": 48,
+      "physical": 74
+    },
+    "aiAnalysis": {
+      "strengths": [
+        "Explosive pace on the left flank & counter-attacks",
+        "Clinical finishing inside penalty box (brace on JDT debut & Shopee Cup)",
+        "Aggressive 1v1 take-ons & cut-ins"
+      ],
+      "weaknesses": [
+        "Defensive tracking discipline against overlapping full-backs"
+      ],
+      "playingStyle": "Dynamic Inverted Winger & Forward. Blistering acceleration, fearless 1v1 dribbling, and decisive finishing instinct in the final third."
+    },
+    "injuryStatus": "Healthy",
+    "tournamentId": "fifa-asean-cup-2026",
+    "isChinaCallUp": true,
+    "callUpRole": "Explosive Winger & Clinical Finisher · JDT Breakthrough Star",
+    "tournamentProvenance": "FIFA ASEAN Cup 2026",
+    "tournamentHighlight": "JDT Breakthrough 2026: 4 Goals in senior appearances including Shopee Cup double · Lethal young winger"
   }
 ]

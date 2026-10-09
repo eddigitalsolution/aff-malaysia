@@ -118,6 +118,7 @@ const PLAYER_PREFERRED_ROLES: Record<string, string[]> = {
   'faisal-halim':     ['LW', 'LM'],
   'daniel-ting':      ['LB'],
   'syahir-bashah':    ['CAM', 'CM'],
+  'daniesh-amirruddin': ['LW', 'ST', 'RW'],
   'hong-wan':         ['CDM', 'CM'],
   'haziq-nadzli':     ['GK'],
   'fergus-tierney':   ['ST', 'CAM'],

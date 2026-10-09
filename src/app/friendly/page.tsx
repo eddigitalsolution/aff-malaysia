@@ -109,14 +109,14 @@ const FORMATIONS: Record<string, FormationConfig> = {
   },
   '4-3-3': {
     label: '4-3-3 Balanced High-Press',
-    description: 'Midfield control shape with Hong Wan anchoring and Wan Kuzain distributing.',
+    description: 'Midfield control shape with Nooa Laine anchoring and Wan Kuzain distributing.',
     slots: [
       { slotId: 'gk',  x: 50, y: 90, role: 'GK',  defaultPlayerId: 'syihan-hazmi' },
       { slotId: 'lb',  x: 16, y: 70, role: 'LB',  defaultPlayerId: 'daniel-ting' },
       { slotId: 'lcb', x: 37, y: 72, role: 'CB',  defaultPlayerId: 'brad-tapp' },
       { slotId: 'rcb', x: 63, y: 72, role: 'RCB', defaultPlayerId: 'dion-cools' },
       { slotId: 'rb',  x: 84, y: 70, role: 'RB',  defaultPlayerId: 'quentin-cheng' },
-      { slotId: 'cdm', x: 50, y: 54, role: 'CDM', defaultPlayerId: 'hong-wan' },
+      { slotId: 'cdm', x: 50, y: 54, role: 'CDM', defaultPlayerId: 'nooa-laine' },
       { slotId: 'lcm', x: 30, y: 40, role: 'CM',  defaultPlayerId: 'stuart-wilkin' },
       { slotId: 'rcm', x: 70, y: 40, role: 'CM',  defaultPlayerId: 'wan-kuzain' },
       { slotId: 'lw',  x: 22, y: 22, role: 'LW',  defaultPlayerId: 'manuel-hidalgo' },
@@ -140,7 +140,7 @@ const FORMATIONS: Record<string, FormationConfig> = {
       { slotId: 'rcb', x: 72, y: 72, role: 'RCB', defaultPlayerId: 'dion-cools' },
       { slotId: 'rwb', x: 84, y: 48, role: 'RWB', defaultPlayerId: 'quentin-cheng' },
       { slotId: 'lcm', x: 30, y: 42, role: 'CM',  defaultPlayerId: 'wan-kuzain' },
-      { slotId: 'cdm', x: 50, y: 52, role: 'CDM', defaultPlayerId: 'hong-wan' },
+      { slotId: 'cdm', x: 50, y: 52, role: 'CDM', defaultPlayerId: 'nooa-laine' },
       { slotId: 'rcm', x: 70, y: 42, role: 'CM',  defaultPlayerId: 'sergio-aguero' },
       { slotId: 'ls',  x: 35, y: 18, role: 'ST',  defaultPlayerId: 'fergus-tierney' },
       { slotId: 'rs',  x: 65, y: 18, role: 'ST',  defaultPlayerId: 'paulo-josue-fifa' },
@@ -160,7 +160,7 @@ const FORMATIONS: Record<string, FormationConfig> = {
       { slotId: 'lcb', x: 37, y: 72, role: 'LCB', defaultPlayerId: 'daniel-ting' },
       { slotId: 'rcb', x: 63, y: 72, role: 'RCB', defaultPlayerId: 'dion-cools' },
       { slotId: 'rb',  x: 84, y: 70, role: 'RB',  defaultPlayerId: 'quentin-cheng' },
-      { slotId: 'ldm', x: 35, y: 54, role: 'CDM', defaultPlayerId: 'hong-wan' },
+      { slotId: 'ldm', x: 35, y: 54, role: 'CDM', defaultPlayerId: 'stuart-wilkin' },
       { slotId: 'rdm', x: 65, y: 54, role: 'CDM', defaultPlayerId: 'nooa-laine' },
       { slotId: 'lam', x: 22, y: 30, role: 'LW',  defaultPlayerId: 'manuel-hidalgo' },
       { slotId: 'cam', x: 50, y: 30, role: 'CAM', defaultPlayerId: 'paulo-josue-fifa' },
@@ -168,7 +168,7 @@ const FORMATIONS: Record<string, FormationConfig> = {
       { slotId: 'st',  x: 50, y: 14, role: 'ST',  defaultPlayerId: 'bergson' },
     ],
     tactics: {
-      inPossession: 'Paulo Josué operates freely in Zone 14 between China’s lines. Nooa Laine & Hong Wan maintain structural balance.',
+      inPossession: 'Paulo Josué operates freely in Zone 14 between China’s lines. Nooa Laine & Stuart Wilkin maintain structural balance.',
       outOfPossession: 'Daniel Ting (LCB) and Brad Tapp / Harith Haikal (CB) form an impenetrable central pairing with Dion Cools (RCB) covering the right channel.',
       keyMatchup: 'Paulo Josué creative delivery · Dion Cools (RCB) backline leadership'
     }
@@ -262,6 +262,7 @@ export default function FriendlyChinaPage() {
         if (benchPlayer.id === 'daniel-ting') return ['LCB', 'LB', 'LWB'].includes(s.role);
         if (benchPlayer.id === 'nooa-laine') return ['CDM', 'CM'].includes(s.role);
         if (benchPlayer.id === 'faris-danish') return ['LWB', 'LB'].includes(s.role);
+        if (benchPlayer.id === 'daniesh-amirruddin') return ['LW', 'ST', 'RW', 'LS', 'RS'].includes(s.role);
         if (benchPlayer.position === 'Goalkeeper') return s.role === 'GK';
         if (benchPlayer.position === 'Defender') return ['CB', 'RCB', 'LCB', 'LB', 'RB', 'LWB', 'RWB'].includes(s.role);
         if (benchPlayer.position === 'Midfielder') return ['CM', 'CDM', 'CAM', 'LM', 'RM'].includes(s.role);
