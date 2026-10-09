@@ -93,9 +93,9 @@ const FORMATIONS: Record<string, FormationConfig> = {
       { slotId: 'lcb', x: 26, y: 72, role: 'LCB', defaultPlayerId: 'daniel-ting' },
       { slotId: 'cb',  x: 50, y: 74, role: 'CB',  defaultPlayerId: 'brad-tapp' },
       { slotId: 'rcb', x: 74, y: 72, role: 'RCB', defaultPlayerId: 'dion-cools' },
-      { slotId: 'lwb', x: 16, y: 48, role: 'LWB', defaultPlayerId: 'corbin-ong' },
+      {slotId: 'lwb', x: 16, y: 48, role: 'LWB', defaultPlayerId: 'corbin-ong' },
       { slotId: 'lcm', x: 37, y: 48, role: 'CM',  defaultPlayerId: 'stuart-wilkin' },
-      { slotId: 'rcm', x: 63, y: 48, role: 'CM',  defaultPlayerId: 'nooa-laine' },
+      { slotId: 'rcm', x: 63, y: 48, role: 'CDM', defaultPlayerId: 'nooa-laine' },
       { slotId: 'rwb', x: 84, y: 48, role: 'RWB', defaultPlayerId: 'quentin-cheng' },
       { slotId: 'lw',  x: 22, y: 22, role: 'LW',  defaultPlayerId: 'manuel-hidalgo' },
       { slotId: 'st',  x: 50, y: 14, role: 'ST',  defaultPlayerId: 'bergson' },
@@ -134,7 +134,7 @@ const FORMATIONS: Record<string, FormationConfig> = {
     description: 'Combined dual-tournament rotation structure featuring Fergus Tierney & Paulo Josué.',
     slots: [
       { slotId: 'gk',  x: 50, y: 90, role: 'GK',  defaultPlayerId: 'azri-ghani' },
-      { slotId: 'lwb', x: 16, y: 48, role: 'LWB', defaultPlayerId: 'ruventhiran' },
+      { slotId: 'lwb', x: 16, y: 48, role: 'LWB', defaultPlayerId: 'faris-danish' },
       { slotId: 'lcb', x: 28, y: 72, role: 'LCB', defaultPlayerId: 'daniel-ting' },
       { slotId: 'cb',  x: 50, y: 74, role: 'CB',  defaultPlayerId: 'brad-tapp' },
       { slotId: 'rcb', x: 72, y: 72, role: 'RCB', defaultPlayerId: 'dion-cools' },
@@ -260,6 +260,8 @@ export default function FriendlyChinaPage() {
         if (benchPlayer.id === 'dion-cools') return ['RCB', 'RB'].includes(s.role) || (s.role === 'CB' && s.x > 50);
         if (benchPlayer.id === 'harith-haikal' || benchPlayer.id === 'brad-tapp' || benchPlayer.id === 'rodney-celvin') return s.role === 'CB' || ['CB', 'LCB', 'RCB'].includes(s.role);
         if (benchPlayer.id === 'daniel-ting') return ['LCB', 'LB', 'LWB'].includes(s.role);
+        if (benchPlayer.id === 'nooa-laine') return ['CDM', 'CM'].includes(s.role);
+        if (benchPlayer.id === 'faris-danish') return ['LWB', 'LB'].includes(s.role);
         if (benchPlayer.position === 'Goalkeeper') return s.role === 'GK';
         if (benchPlayer.position === 'Defender') return ['CB', 'RCB', 'LCB', 'LB', 'RB', 'LWB', 'RWB'].includes(s.role);
         if (benchPlayer.position === 'Midfielder') return ['CM', 'CDM', 'CAM', 'LM', 'RM'].includes(s.role);
@@ -811,7 +813,9 @@ export default function FriendlyChinaPage() {
                       {/* Player Surname */}
                       <div className="text-[8px] md:text-[9px] font-bold text-white bg-black/80 rounded px-1 leading-tight mt-0.5 max-w-15.5 truncate text-center">
                         {player 
-                          ? (player.name.includes('Ruventhiran') 
+                          ? (player.name.includes('Faris')
+                              ? 'Faris'
+                              : player.name.includes('Ruventhiran') 
                               ? 'Ruven' 
                               : player.name.includes('Faisal')
                               ? 'Faisal'
@@ -1189,15 +1193,15 @@ export default function FriendlyChinaPage() {
                   <span className="text-emerald-400 font-bold text-[10px] shrink-0">Rating 7.56 · 425 Mins</span>
                 </div>
                 <div className="flex items-center justify-between bg-zinc-950/80 px-3 py-2 rounded-xl border border-zinc-800/80">
-                  <span className="text-zinc-200 font-bold truncate">Ruventhiran V.</span>
-                  <span className="text-emerald-400 font-bold text-[10px] shrink-0">Rating 7.57 · Flank Pace</span>
+                  <span className="text-zinc-200 font-bold truncate">Faris Danish</span>
+                  <span className="text-emerald-400 font-bold text-[10px] shrink-0">Rating 7.12 · 315 Mins</span>
                 </div>
               </div>
             </div>
 
             <div className="pt-2.5 border-t border-zinc-800 flex items-center justify-between text-[10px] text-zinc-400 font-medium">
-              <span>Avg Rating: <strong className="text-emerald-400 font-bold">7.51</strong></span>
-              <span className="text-zinc-400 font-semibold">+ Endrick & Azri</span>
+              <span>Avg Rating: <strong className="text-emerald-400 font-bold">7.48</strong></span>
+              <span className="text-zinc-400 font-semibold">+ Endrick, Azri & Rodney</span>
             </div>
           </div>
         </div>

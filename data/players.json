@@ -1450,7 +1450,7 @@
     },
     "injuryStatus": "Healthy",
     "tournamentId": "aff-cup-2026",
-    "isChinaCallUp": true,
+    "isChinaCallUp": false,
     "tournamentProvenance": "ASEAN Hyundai Cup 2026",
     "callUpRole": "Left Flank Dynamo · 88% Pass Acc, Rating 7.57",
     "tournamentHighlight": "ASEAN Hyundai Cup: 3 Starts, 225 mins, 88% Pass Acc, 10 Recoveries, Rating 7.57 · Dynamic left wing-back"
@@ -1553,7 +1553,10 @@
     },
     "injuryStatus": "Healthy",
     "tournamentId": "aff-cup-2026",
-    "isChinaCallUp": false
+    "isChinaCallUp": true,
+    "callUpRole": "Left-Back Anchor · 315 Mins, 4 Starts, Age 20",
+    "tournamentProvenance": "ASEAN Hyundai Cup 2026",
+    "tournamentHighlight": "ASEAN Hyundai Cup: 4 Starts, 315 mins, 7 Tackles, 12 Recoveries · High-workrate young left-back"
   },
   {
     "id": "azri-ghani",
@@ -2063,12 +2066,12 @@
       "weaknesses": [
         "Long-range shooting volume"
       ],
-      "playingStyle": "Deep-Lying Midfield Controller. Dictates rhythm with metronomic pass precision and tactical positioning."
+      "playingStyle": "Defensive Midfielder (CDM) & Deep-Lying Controller. Anchors the midfield pivot with defensive discipline (25 recoveries, 8 tackles, 8 interceptions) and dictates transitions with 89% passing accuracy."
     },
     "injuryStatus": "Healthy",
     "tournamentId": "fifa-asean-cup-2026",
     "isChinaCallUp": true,
-    "callUpRole": "Midfield Conductor · 360 Mins (Ever-present), 89% Pass Acc",
+    "callUpRole": "Defensive Midfielder (CDM) · 360 Mins (Ever-present), 89% Pass Acc, 25 Recoveries",
     "tournamentProvenance": "FIFA ASEAN Cup 2026",
     "tournamentHighlight": "FIFA ASEAN Cup: 4 Starts, 360 mins (played every single minute), 89% Pass Acc · Unrivalled midfield control"
   },
