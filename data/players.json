@@ -315,7 +315,7 @@
     },
     "injuryStatus": "Healthy",
     "tournamentId": "fifa-asean-cup-2026",
-    "isChinaCallUp": false,
+    "isChinaCallUp": true,
     "callUpRole": "Attacking Spark · 1 Goal vs SGP, 40 Mins vs Vietnam",
     "tournamentProvenance": "FIFA ASEAN Cup 2026",
     "tournamentHighlight": "FIFA ASEAN Cup: 2 Appearances, 58 mins, 1 Goal vs Singapore (6–0), 40 mins vs Vietnam · High-tempo spark"
@@ -1345,7 +1345,10 @@
     },
     "injuryStatus": "Healthy",
     "tournamentId": "aff-cup-2026",
-    "isChinaCallUp": false
+    "isChinaCallUp": true,
+    "callUpRole": "Physical Center-Back Anchor · 93% Pass Acc, Aerial Dominance",
+    "tournamentProvenance": "ASEAN Hyundai Cup 2026",
+    "tournamentHighlight": "ASEAN Hyundai Cup: 5 Apps, 376 mins, 93% Pass Acc, 13 recoveries · Imposing physical leadership"
   },
   {
     "id": "aysar-hadi",
@@ -2278,7 +2281,7 @@
     },
     "injuryStatus": "Healthy",
     "tournamentId": "fifa-asean-cup-2026",
-    "isChinaCallUp": false,
+    "isChinaCallUp": true,
     "tournamentProvenance": "FIFA ASEAN Cup 2026",
     "callUpRole": "Dynamic Pressing Winger · 136 Mins, 80% Pass Acc",
     "tournamentHighlight": "FIFA ASEAN Cup: 2 Starts, 136 mins, 80% Pass Acc · Relentless pressing on left channel"

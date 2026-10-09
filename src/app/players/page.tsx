@@ -415,11 +415,11 @@ export default function PlayersPage() {
                   : 'bg-zinc-900 border-zinc-800 text-zinc-400 hover:text-zinc-200 hover:border-zinc-700'
               }`}
             >
-              <span>CN 23-Man China Call-Up Squad</span>
+              <span>China Friendly Call-Up Squad</span>
               <span className={`text-[9px] px-1.5 py-0.2 rounded font-black ${
                 showOnlyCallUp ? 'bg-zinc-950/20 text-zinc-950' : 'bg-zinc-800 text-amber-400'
               }`}>
-                23
+                {players.filter(p => p.isChinaCallUp).length}
               </span>
             </button>
           </div>

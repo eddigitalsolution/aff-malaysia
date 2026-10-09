@@ -258,7 +258,7 @@ export default function FriendlyChinaPage() {
       // Auto-select a matching slot on the pitch (Dion Cools strictly targets RCB or RB)
       const matchingSlot = currentFormation.slots.find(s => {
         if (benchPlayer.id === 'dion-cools') return ['RCB', 'RB'].includes(s.role) || (s.role === 'CB' && s.x > 50);
-        if (benchPlayer.id === 'harith-haikal' || benchPlayer.id === 'brad-tapp') return s.role === 'CB';
+        if (benchPlayer.id === 'harith-haikal' || benchPlayer.id === 'brad-tapp' || benchPlayer.id === 'rodney-celvin') return s.role === 'CB' || ['CB', 'LCB', 'RCB'].includes(s.role);
         if (benchPlayer.id === 'daniel-ting') return ['LCB', 'LB', 'LWB'].includes(s.role);
         if (benchPlayer.position === 'Goalkeeper') return s.role === 'GK';
         if (benchPlayer.position === 'Defender') return ['CB', 'RCB', 'LCB', 'LB', 'RB', 'LWB', 'RWB'].includes(s.role);
@@ -813,6 +813,12 @@ export default function FriendlyChinaPage() {
                         {player 
                           ? (player.name.includes('Ruventhiran') 
                               ? 'Ruven' 
+                              : player.name.includes('Faisal')
+                              ? 'Faisal'
+                              : player.name.includes('Rodney')
+                              ? 'Rodney'
+                              : player.name.includes('Bashah')
+                              ? 'Bashah'
                               : player.name.includes('Nazmi') 
                               ? 'Nazmi' 
                               : player.name.includes('Josu')
@@ -1018,7 +1024,7 @@ export default function FriendlyChinaPage() {
             <div className="flex items-center gap-2">
               <Users className="h-6 w-6 text-primary" />
               <h2 className="text-xl sm:text-2xl font-black text-zinc-100">
-                Official 23-Player Call-Up Squad
+                Official {players.length}-Player Call-Up Squad
               </h2>
             </div>
             <p className="text-xs text-zinc-400 mt-1">
@@ -1048,17 +1054,17 @@ export default function FriendlyChinaPage() {
           <div className="bg-zinc-900/70 p-3 rounded-xl border border-zinc-800">
             <span className="text-[10px] text-zinc-500 font-bold uppercase block">Defenders</span>
             <span className="text-lg font-black text-primary">{defenders.length} Players</span>
-            <span className="text-[10px] text-zinc-400 block mt-0.5">Cools, Tapp, Ting, Ubaidullah +4</span>
+            <span className="text-[10px] text-zinc-400 block mt-0.5">Cools, Tapp, Ting, Rodney, Haikal +4</span>
           </div>
           <div className="bg-zinc-900/70 p-3 rounded-xl border border-zinc-800">
             <span className="text-[10px] text-zinc-500 font-bold uppercase block">Midfielders</span>
             <span className="text-lg font-black text-primary">{midfielders.length} Players</span>
-            <span className="text-[10px] text-zinc-400 block mt-0.5">Hidalgo, Laine, Wilkin, Kuzain, Aguero +2</span>
+            <span className="text-[10px] text-zinc-400 block mt-0.5">Wilkin, Kuzain, Laine, Bashah, Aguero +3</span>
           </div>
           <div className="bg-zinc-900/70 p-3 rounded-xl border border-zinc-800">
             <span className="text-[10px] text-zinc-500 font-bold uppercase block">Forwards</span>
             <span className="text-lg font-black text-primary">{forwards.length} Players</span>
-            <span className="text-[10px] text-zinc-400 block mt-0.5">Bergson, Arif, Josué, Tierney, Pavithran</span>
+            <span className="text-[10px] text-zinc-400 block mt-0.5">Bergson, Arif, Faisal, Josué, Tierney, Pavithran</span>
           </div>
         </div>
 
