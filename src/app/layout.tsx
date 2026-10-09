@@ -57,13 +57,15 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const isDev = process.env.NODE_ENV === 'development';
+  const cspPolicy = isDev
+    ? "default-src 'self' https: data: blob: 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https: blob:; font-src 'self' https: data:; connect-src 'self' https: wss: ws:;"
+    : "default-src 'self' https: data: blob: 'unsafe-inline'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https: blob:; font-src 'self' https: data:; connect-src 'self' https: wss:;";
+
   return (
     <html lang="en" className="h-full antialiased dark">
       <head>
-        <meta
-          httpEquiv="Content-Security-Policy"
-          content="default-src 'self' https: data: blob: 'unsafe-inline'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https: blob:; font-src 'self' https: data:; connect-src 'self' https: wss:;"
-        />
+        <meta httpEquiv="Content-Security-Policy" content={cspPolicy} />
       </head>
       <body className="min-h-full flex flex-col bg-zinc-950 selection:bg-amber-400 selection:text-zinc-950">
         <Shell>{children}</Shell>
