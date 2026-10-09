@@ -483,7 +483,7 @@ export default function PotentialPlayersPage() {
 
             {/* Explicit Notice: Did not attend tournaments */}
             <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/25 space-y-1">
-              <span className="text-[10px] font-black uppercase text-amber-400 block tracking-wider flex items-center gap-1">
+              <span className="text-[10px] font-black uppercase text-amber-400 tracking-wider flex items-center gap-1">
                 <Star className="h-3 w-3" />
                 Uncapped Potential Prospect
               </span>
@@ -526,7 +526,7 @@ export default function PotentialPlayersPage() {
           {/* Card 3: Scouting Radar Attributes */}
           <div className="bg-zinc-900/80 border border-zinc-800/80 rounded-2xl p-4 flex flex-col justify-between space-y-3">
             <div>
-              <span className="text-[10px] font-black uppercase text-zinc-400 tracking-wider block mb-2 flex items-center gap-1">
+              <span className="text-[10px] font-black uppercase text-zinc-400 tracking-wider mb-2 flex items-center gap-1">
                 <Target className="h-3.5 w-3.5 text-amber-400" />
                 Core Attributes & Ceiling
               </span>
