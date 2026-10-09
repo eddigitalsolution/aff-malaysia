@@ -158,7 +158,7 @@ export default function PlayersPage() {
         ))}
       </div>
 
-      {/* China Friendly 23-Player Call-Up Announcement Banner */}
+      {/* China Friendly 26-Player Call-Up Announcement Banner */}
       <div className="bg-linear-to-r from-red-950/40 via-zinc-900 to-zinc-900 border border-red-500/30 rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-lg">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl bg-red-500/20 border border-red-500/30 flex items-center justify-center shrink-0">
@@ -171,7 +171,7 @@ export default function PlayersPage() {
               <span className="text-xs text-zinc-200 font-bold">China Tier 1 Friendly (14 & 17 Nov 2026, Guangzhou)</span>
             </div>
             <p className="text-xs text-zinc-400 mt-0.5">
-              23-player squad selected based on FIFA ASEAN Cup & AFF performance baseline.
+              26-player squad selected based on FIFA ASEAN Cup & AFF performance baseline.
             </p>
           </div>
         </div>
@@ -185,7 +185,7 @@ export default function PlayersPage() {
                 : 'bg-zinc-800 text-zinc-200 hover:bg-zinc-700'
             }`}
           >
-            <span>{showOnlyCallUp ? '✓ Showing 23 Call-Ups' : 'Filter 23 Call-Ups'}</span>
+            <span>{showOnlyCallUp ? '✓ Showing 26 Call-Ups' : 'Filter 26 Call-Ups'}</span>
           </button>
           <Link
             href="/friendly"
@@ -483,7 +483,7 @@ export default function PlayersPage() {
                           )}
                           {p.isChinaCallUp && (
                             <span className="bg-red-500/20 border border-red-500/40 text-red-300 text-[8px] font-black px-1.5 py-0.5 rounded uppercase shrink-0">
-                              CN 23 CALL-UP
+                              CN 26 CALL-UP
                             </span>
                           )}
                         </div>

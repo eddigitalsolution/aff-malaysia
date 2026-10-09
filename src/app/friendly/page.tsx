@@ -245,7 +245,7 @@ export default function FriendlyChinaPage() {
     }));
   }, [currentFormation, customSlotAssignments]);
 
-  // Bench players (the rest of the 23-man squad)
+  // Bench players (the rest of the 26-man squad)
   const benchPlayers = useMemo(() => {
     return players.filter(p => !activePitchPlayerIds.has(p.id));
   }, [players, activePitchPlayerIds]);
@@ -299,7 +299,7 @@ export default function FriendlyChinaPage() {
   const fifaPlayers = useMemo(() => players.filter(p => (p.tournamentProvenance?.includes('FIFA') || false) && !p.tournamentProvenance?.includes('Both')), [players]);
   const affPlayers = useMemo(() => players.filter(p => (p.tournamentProvenance?.includes('Hyundai') || p.tournamentProvenance?.includes('AFF') || false) && !p.tournamentProvenance?.includes('Both')), [players]);
 
-  // Filtered 23-man squad list
+  // Filtered 26-man squad list
   const filteredSquad = useMemo(() => {
     return players.filter(p => {
       const matchesPos = activeTab === 'All' || p.position === activeTab;
@@ -346,7 +346,7 @@ export default function FriendlyChinaPage() {
               </h1>
 
               <p className="text-sm sm:text-base text-zinc-300 leading-relaxed max-w-xl">
-                Harimau Malaya travel to Guangzhou for two high-stakes Tier 1 international fixtures against China PR on <strong className="text-amber-400 whitespace-nowrap">November 14 and 17, 2026</strong>. The official 23-player squad combines the premier performers across both the <strong className="text-amber-400">2026 FIFA ASEAN Cup</strong> and the <strong className="text-emerald-400">ASEAN Hyundai Cup</strong>, highlighted by top stars from each campaign alongside versatile players who featured in both tournaments.
+                Harimau Malaya travel to Guangzhou for two high-stakes Tier 1 international fixtures against China PR on <strong className="text-amber-400 whitespace-nowrap">November 14 and 17, 2026</strong>. The official 26-player squad combines the premier performers across both the <strong className="text-amber-400">2026 FIFA ASEAN Cup</strong> and the <strong className="text-emerald-400">ASEAN Hyundai Cup</strong>, highlighted by top stars from each campaign alongside versatile players who featured in both tournaments.
               </p>
             </div>
 
@@ -1020,7 +1020,7 @@ export default function FriendlyChinaPage() {
       </section>
 
       {/* =========================================================
-          23-MAN OFFICIAL CALL-UP SQUAD SECTION
+          26-MAN OFFICIAL CALL-UP SQUAD SECTION
       ========================================================= */}
       <div className="space-y-6 pt-4 border-t border-zinc-800">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-zinc-800 pb-4">
@@ -1283,7 +1283,7 @@ export default function FriendlyChinaPage() {
           </div>
         </div>
 
-        {/* 23-Man Player Grid */}
+        {/* 26-Man Player Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {filteredSquad.map((player) => (
             <Link
