@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { getFixtures, getTeams, getVenues, TOURNAMENTS, Fixture, Team, Venue } from '@/lib/api';
 import { useAppState } from '@/store';
-import { Calendar, MapPin, Compass, AlertCircle, Clock, CloudRain, Globe, Trophy, CheckCircle2, Award } from 'lucide-react';
+import { Calendar, MapPin, Compass, AlertCircle, Clock, CloudRain, Trophy, CheckCircle2, Award } from 'lucide-react';
 
 const MATCH_NOTES: Record<string, { scorers?: string; note?: string }> = {
   'match-fac-01': { scorers: '⚽ Arif Aiman (18\', 37\'), Bergson (52\')', note: 'Group Stage MD1 Victory in Bandung' },
@@ -108,70 +108,59 @@ export default function FixturesPage() {
       </div>
 
       {/* Page Title & Banner */}
-      <div className={`p-5 rounded-2xl border flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 relative overflow-hidden ${
+      <div className={`p-5 sm:p-6 rounded-2xl border flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 relative overflow-hidden ${
         isFifa 
           ? 'bg-linear-to-r from-amber-500/10 via-zinc-900/90 to-zinc-900/60 border-amber-500/30' 
           : 'bg-linear-to-r from-emerald-500/10 via-zinc-900/90 to-zinc-900/60 border-emerald-500/30'
       }`}>
-        <div className="flex items-center gap-3.5 z-10">
-          <div className={`p-3 rounded-xl border ${
-            isFifa 
-              ? 'bg-amber-400/10 border-amber-400/30 text-amber-400' 
-              : 'bg-emerald-400/10 border-emerald-400/30 text-emerald-400'
-          }`}>
-            <Globe className="h-6 w-6" />
+        <div className="z-10">
+          <div className="flex items-center gap-2 mb-1.5 flex-wrap">
+            <span className={`text-[10px] font-black uppercase px-2 py-0.5 rounded tracking-wider ${
+              isFifa ? 'bg-amber-400 text-zinc-950' : 'bg-emerald-400 text-zinc-950'
+            }`}>
+              {currentTournament.shortName}
+            </span>
+            <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-zinc-800 text-amber-400 border border-zinc-700/60">
+              🇲🇾 HARIMAU MALAYA FOCUS
+            </span>
+            <span className="text-[10px] text-zinc-400 font-bold uppercase tracking-wider">
+              {currentTournament.division}
+            </span>
           </div>
-          <div>
-            <div className="flex items-center gap-2 mb-1 flex-wrap">
-              <span className={`text-[10px] font-black uppercase px-2 py-0.5 rounded tracking-wider ${
-                isFifa ? 'bg-amber-400 text-zinc-950' : 'bg-emerald-400 text-zinc-950'
-              }`}>
-                {currentTournament.shortName}
-              </span>
-              <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-zinc-800 text-amber-400 border border-zinc-700/60">
-                🇲🇾 HARIMAU MALAYA FOCUS
-              </span>
-              <span className="text-[10px] text-zinc-400 font-bold uppercase tracking-wider">
-                {currentTournament.division}
-              </span>
-            </div>
-            <h1 className="text-xl font-extrabold text-white flex items-center gap-2">
-              <span>Malaysia</span>
-              <span className="text-zinc-500">•</span>
-              <span>{currentTournament.name} Fixtures & Results</span>
-            </h1>
-            <p className="text-xs text-zinc-400 mt-0.5">
-              Official match schedule, verified stadiums, opponents & campaign scores • Host: {currentTournament.host}
-            </p>
-          </div>
+          <h1 className="text-xl sm:text-2xl font-black text-white tracking-tight leading-tight">
+            {currentTournament.name} Fixtures & Results
+          </h1>
+          <p className="text-xs text-zinc-400 mt-1">
+            Official match schedule, verified stadiums, opponents & campaign scores • Host: {currentTournament.host}
+          </p>
         </div>
 
         {/* Campaign pill & Focus toggle */}
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 z-10">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 z-10 shrink-0">
           {/* Quick Malaysia Record Pill */}
           <div className="flex items-center gap-2 bg-zinc-950/80 border border-zinc-800 p-2 rounded-xl text-xs">
             <div className="text-center px-2.5 border-r border-zinc-800">
               <div className="font-black text-white">{malFixtures.length}</div>
-              <div className="text-[9px] text-zinc-500 uppercase">Matches</div>
+              <div className="text-[9px] text-zinc-500 uppercase tracking-wider">Matches</div>
             </div>
             <div className="text-center px-2.5 border-r border-zinc-800">
               <div className="font-black text-white">{malWins}W - {malDraws}D - {malLosses}L</div>
-              <div className="text-[9px] text-zinc-500 uppercase">Record</div>
+              <div className="text-[9px] text-zinc-500 uppercase tracking-wider">Record</div>
             </div>
             <div className="text-center px-2.5 border-r border-zinc-800">
               <div className="font-black text-primary">{malGoals} ({malConceded} con)</div>
-              <div className="text-[9px] text-zinc-500 uppercase">Goals (GD: {malGoals - malConceded > 0 ? `+${malGoals - malConceded}` : malGoals - malConceded})</div>
+              <div className="text-[9px] text-zinc-500 uppercase tracking-wider">Goals</div>
             </div>
             <div className="text-center px-2">
-              <div className="font-black text-accent">{isFifa ? 'Bronze 🥉' : 'SF Exit'}</div>
-              <div className="text-[9px] text-zinc-500 uppercase">Result</div>
+              <div className="font-black text-accent">{isFifa ? 'Bronze (3rd)' : 'SF Exit'}</div>
+              <div className="text-[9px] text-zinc-500 uppercase tracking-wider">Result</div>
             </div>
           </div>
 
           {/* Malaysia Only Toggle */}
           <button
             onClick={() => setFocusMalaysiaOnly(!focusMalaysiaOnly)}
-            className={`px-3 py-2 rounded-xl text-xs font-bold transition-all border flex items-center justify-center gap-1.5 ${
+            className={`px-3.5 py-2.5 rounded-xl text-xs font-bold transition-all border flex items-center justify-center gap-1.5 cursor-pointer whitespace-nowrap ${
               focusMalaysiaOnly
                 ? isFifa
                   ? 'bg-amber-400/20 text-amber-300 border-amber-400/40 shadow-sm'
@@ -179,7 +168,7 @@ export default function FixturesPage() {
                 : 'bg-zinc-900 text-zinc-400 border-zinc-800 hover:text-white'
             }`}
           >
-            <span>{focusMalaysiaOnly ? '🇲🇾 Malaysia Only' : '🌐 All Teams'}</span>
+            <span>{focusMalaysiaOnly ? '🇲🇾 Malaysia Only' : 'All Teams'}</span>
           </button>
         </div>
       </div>

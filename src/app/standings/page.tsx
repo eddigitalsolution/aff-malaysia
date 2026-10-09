@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { getStandings, getTeams, TOURNAMENTS, Team, TournamentStandings, StandingRow } from '@/lib/api';
 import { useAppState } from '@/store';
-import { CheckCircle, XCircle, MinusCircle, Globe, Trophy, ShieldCheck } from 'lucide-react';
+import { CheckCircle, XCircle, MinusCircle, Trophy, ShieldCheck } from 'lucide-react';
 
 export default function StandingsPage() {
   const { activeTournamentId, setActiveTournamentId } = useAppState();
@@ -83,35 +83,26 @@ export default function StandingsPage() {
       </div>
 
       {/* Tournament Details Banner */}
-      <div className={`p-5 rounded-2xl border flex flex-col md:flex-row items-start md:items-center justify-between gap-4 relative overflow-hidden ${
+      <div className={`p-5 sm:p-6 rounded-2xl border flex flex-col md:flex-row items-start md:items-center justify-between gap-4 relative overflow-hidden ${
         isFifa 
           ? 'bg-linear-to-r from-amber-500/10 via-zinc-900/90 to-zinc-900/60 border-amber-500/30' 
           : 'bg-linear-to-r from-emerald-500/10 via-zinc-900/90 to-zinc-900/60 border-emerald-500/30'
       }`}>
-        <div className="flex items-center gap-3.5 z-10">
-          <div className={`p-3 rounded-xl border ${
-            isFifa 
-              ? 'bg-amber-400/10 border-amber-400/30 text-amber-400' 
-              : 'bg-emerald-400/10 border-emerald-400/30 text-emerald-400'
-          }`}>
-            <Globe className="h-6 w-6" />
+        <div className="z-10">
+          <div className="flex items-center gap-2 mb-1.5">
+            <span className={`text-[10px] font-black uppercase px-2 py-0.5 rounded tracking-wider ${
+              isFifa ? 'bg-amber-400 text-zinc-950' : 'bg-emerald-400 text-zinc-950'
+            }`}>
+              {currentTournament.shortName}
+            </span>
+            <span className="text-[10px] text-zinc-400 font-bold uppercase tracking-wider">
+              {currentTournament.division}
+            </span>
           </div>
-          <div>
-            <div className="flex items-center gap-2 mb-1">
-              <span className={`text-[10px] font-black uppercase px-2 py-0.5 rounded tracking-wider ${
-                isFifa ? 'bg-amber-400 text-zinc-950' : 'bg-emerald-400 text-zinc-950'
-              }`}>
-                {currentTournament.shortName}
-              </span>
-              <span className="text-[10px] text-zinc-400 font-bold uppercase tracking-wider">
-                {currentTournament.division}
-              </span>
-            </div>
-            <h2 className="text-xl font-black text-white">{currentTournament.name} Standings</h2>
-            <p className="text-xs text-zinc-400 mt-0.5">
-              📍 {currentTournament.host} • 📅 {currentTournament.dates}
-            </p>
-          </div>
+          <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">{currentTournament.name} Standings</h2>
+          <p className="text-xs text-zinc-400 mt-1">
+            Host: {currentTournament.host} • Dates: {currentTournament.dates}
+          </p>
         </div>
 
         {/* Group Selector Tabs */}
