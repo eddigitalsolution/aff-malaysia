@@ -31,6 +31,7 @@ export default function SquadSelectionPage() {
     async function loadData() {
       const allPlayers = await getPlayers(undefined, activeTournamentId);
       const malPlayers = allPlayers.filter(p => p.teamId === 'malaysia');
+      const allMalEver = await getPlayers('malaysia');
       setPlayers(malPlayers);
 
       if (isFifa) {
@@ -50,7 +51,7 @@ export default function SquadSelectionPage() {
         ];
 
         const selection: PitchPlayer[] = fifaRoles.map(r => {
-          const found = malPlayers.find(p => p.id === r.id);
+          const found = malPlayers.find(p => p.id === r.id) || allMalEver.find(p => p.id === r.id);
           if (found) {
             return {
               id: found.id,
@@ -97,7 +98,7 @@ export default function SquadSelectionPage() {
       ];
 
       const affSelection: PitchPlayer[] = affRoles.map(r => {
-        const found = malPlayers.find(p => p.id === r.id);
+        const found = malPlayers.find(p => p.id === r.id) || allMalEver.find(p => p.id === r.id);
         if (found) {
           return {
             id: found.id,
