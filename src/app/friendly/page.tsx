@@ -537,7 +537,7 @@ export default function FriendlyChinaPage() {
                 vs China PR · Tier 1
               </span>
             </div>
-            <p className="text-xs text-zinc-400 mt-1 leading-normal break-words">
+            <p className="text-xs text-zinc-400 mt-1 leading-normal wrap-break-word">
               Select formations, test attacking/defensive tactical movement vectors, and tap pitch players to swap with the bench.
             </p>
           </div>
@@ -545,7 +545,7 @@ export default function FriendlyChinaPage() {
           {/* Formation Controls Bar */}
           <div className="flex items-center gap-2 flex-wrap w-full lg:w-auto">
             {/* Formation Dropdown */}
-            <div className="relative flex-1 sm:flex-initial min-w-[120px]">
+            <div className="relative flex-1 sm:flex-initial min-w-30">
               <select
                 id="friendly-formation-select"
                 name="formation"

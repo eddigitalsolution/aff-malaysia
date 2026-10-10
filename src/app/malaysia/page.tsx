@@ -581,13 +581,13 @@ export default function MalaysiaPage() {
                   {isFifa ? 'Tournament Completed: 3rd Place' : 'Semifinals Concluded'}
                 </span>
               </div>
-              <p className="text-[11px] text-zinc-500 mt-0.5 leading-normal break-words">
+              <p className="text-[11px] text-zinc-500 mt-0.5 leading-normal wrap-break-word">
                 Drag players to reposition · Click player then bench to swap · Change formation to rearrange
               </p>
             </div>
           </div>
           <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
-            <div className="relative flex-1 sm:flex-initial min-w-[110px]">
+            <div className="relative flex-1 sm:flex-initial min-w-27.5">
               <select
                 id="malaysia-formation-select"
                 name="formation"
@@ -635,7 +635,7 @@ export default function MalaysiaPage() {
             <div className={`text-xs font-black uppercase tracking-wider ${isFifa ? 'text-emerald-400' : 'text-red-500'}`}>
               {isFifa ? 'Tournament Complete: 3rd Place Bronze Medal (3W 1D 0L · 10 Goals Scored, 0 Conceded)' : 'Semifinals Concluded (Final Aggregate: 0 - 4)'}
             </div>
-            <p className="text-[11px] text-zinc-300 leading-relaxed max-w-2xl break-words">
+            <p className="text-[11px] text-zinc-300 leading-relaxed max-w-2xl wrap-break-word">
               {isFifa 
                 ? 'Malaysia completed an undefeated FIFA ASEAN Cup campaign (3 wins, 1 draw, 10 goals scored, 0 conceded across all 4 matches), capturing the Bronze Medal after beating Vietnam 1-0 at Gelora Bung Karno. Bergson (4 goals), Arif Aiman (2G 2A), Dion Cools (8.9 MVP), and Fergus Tierney (62\' winner) spearheaded Harimau Malaya.'
                 : "Malaysia was eliminated after a 2-0 defeat in Hanoi. Despite deploying tactical overloads and fresh squad rotations, Harimau Malaya could not breach Vietnam's defense, conceding twice to Nguyễn Xuân Son."}

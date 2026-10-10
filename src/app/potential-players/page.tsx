@@ -367,10 +367,10 @@ export default function PotentialPlayersPage() {
             <Sparkles className="h-3.5 w-3.5 shrink-0" />
             <span>National Scouting Pipeline · U23 Talent Pool</span>
           </div>
-          <h1 className="text-xl sm:text-3xl font-black text-white tracking-tight flex items-center gap-2.5 break-words">
+          <h1 className="text-xl sm:text-3xl font-black text-white tracking-tight flex items-center gap-2.5 wrap-break-word">
             <span>Potential Players & Rising Stars</span>
           </h1>
-          <p className="text-xs sm:text-sm text-zinc-400 mt-1 max-w-2xl leading-relaxed break-words">
+          <p className="text-xs sm:text-sm text-zinc-400 mt-1 max-w-2xl leading-relaxed wrap-break-word">
             In-depth scouting radar and development ceiling for Malaysia's finest youth sensations eligible for senior national team call-ups and future international tournaments.
           </p>
         </div>
@@ -423,11 +423,11 @@ export default function PotentialPlayersPage() {
                 </span>
               </div>
 
-              <h2 className="text-xl sm:text-3xl font-black text-white tracking-tight break-words">
+              <h2 className="text-xl sm:text-3xl font-black text-white tracking-tight wrap-break-word">
                 {wonderkid.name}
               </h2>
               
-              <p className="text-xs text-amber-300 font-bold mt-0.5 break-words">
+              <p className="text-xs text-amber-300 font-bold mt-0.5 wrap-break-word">
                 {wonderkid.club} • {wonderkid.subRole}
               </p>
             </div>
