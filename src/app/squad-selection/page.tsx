@@ -212,8 +212,8 @@ export default function SquadSelectionPage() {
   return (
     <div className="space-y-8 animate-in fade-in duration-300">
       {/* Tournament Selection Header Tabs */}
-      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 p-1.5 bg-zinc-900/90 border border-zinc-800 rounded-2xl">
-        <div className="flex items-center gap-1.5 p-1 bg-zinc-950 rounded-xl flex-1 sm:flex-initial">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 p-1.5 bg-zinc-900/90 border border-zinc-800 rounded-2xl w-full max-w-full">
+        <div className="flex items-center gap-1.5 p-1 bg-zinc-950 rounded-xl flex-1 sm:flex-initial overflow-x-auto scrollbar-none max-w-full">
           {TOURNAMENTS.map(t => {
             const active = t.id === activeTournamentId;
             const isFifaTournament = t.id === 'fifa-asean-cup-2026';
@@ -221,7 +221,7 @@ export default function SquadSelectionPage() {
               <button
                 key={t.id}
                 onClick={() => setActiveTournamentId(t.id)}
-                className={`flex-1 sm:flex-initial px-4 py-2.5 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-2 ${
+                className={`flex-1 sm:flex-initial px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg text-[11px] sm:text-xs font-bold transition-all flex items-center justify-center gap-1.5 sm:gap-2 whitespace-nowrap shrink-0 cursor-pointer ${
                   active
                     ? isFifaTournament
                       ? 'bg-amber-400 text-zinc-950 shadow-md font-black'
@@ -229,9 +229,10 @@ export default function SquadSelectionPage() {
                     : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900'
                 }`}
               >
-                <Trophy className="h-3.5 w-3.5" />
-                <span>{t.name}</span>
-                <span className={`text-[9px] px-1.5 py-0.2 rounded font-black uppercase ${
+                <Trophy className="h-3.5 w-3.5 shrink-0" />
+                <span className="hidden sm:inline">{t.name}</span>
+                <span className="sm:hidden">{t.shortName}</span>
+                <span className={`text-[9px] px-1.5 py-0.2 rounded font-black uppercase shrink-0 ${
                   active ? 'bg-zinc-950/20 text-zinc-950' : 'bg-zinc-800 text-zinc-400'
                 }`}>
                   {isFifaTournament ? 'FIFA' : 'AFF'}
@@ -241,7 +242,7 @@ export default function SquadSelectionPage() {
           })}
         </div>
 
-        <div className="px-3 py-1 text-xs text-zinc-400 font-medium">
+        <div className="px-3 py-1 text-xs text-zinc-400 font-medium hidden sm:block">
           {currentTournament.sanction}
         </div>
       </div>

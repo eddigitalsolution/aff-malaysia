@@ -526,18 +526,18 @@ export default function FriendlyChinaPage() {
       ========================================================= */}
       <section className="space-y-4">
         {/* Tactical Planner Header */}
-        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 bg-zinc-900/90 border border-zinc-800 p-5 rounded-3xl shadow-xl">
-          <div>
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 bg-zinc-900/90 border border-zinc-800 p-4 sm:p-5 rounded-2xl sm:rounded-3xl shadow-xl w-full max-w-full">
+          <div className="w-full lg:w-auto">
             <div className="flex items-center gap-2.5 flex-wrap">
-              <div className="p-2 rounded-xl bg-primary/10 border border-primary/20 text-primary">
+              <div className="p-2 rounded-xl bg-primary/10 border border-primary/20 text-primary shrink-0">
                 <Users className="h-5 w-5" />
               </div>
-              <h2 className="text-xl sm:text-2xl font-black text-white">TACTICAL PLANNER FORMATION</h2>
-              <span className="text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider bg-amber-400/15 border border-amber-400/30 text-amber-400">
+              <h2 className="text-lg sm:text-2xl font-black text-white">TACTICAL PLANNER FORMATION</h2>
+              <span className="text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider bg-amber-400/15 border border-amber-400/30 text-amber-400 shrink-0">
                 vs China PR · Tier 1
               </span>
             </div>
-            <p className="text-xs text-zinc-400 mt-1">
+            <p className="text-xs text-zinc-400 mt-1 leading-normal break-words">
               Select formations, test attacking/defensive tactical movement vectors, and tap pitch players to swap with the bench.
             </p>
           </div>
@@ -545,14 +545,14 @@ export default function FriendlyChinaPage() {
           {/* Formation Controls Bar */}
           <div className="flex items-center gap-2 flex-wrap w-full lg:w-auto">
             {/* Formation Dropdown */}
-            <div className="relative">
+            <div className="relative flex-1 sm:flex-initial min-w-[120px]">
               <select
                 id="friendly-formation-select"
                 name="formation"
                 aria-label="Select friendly match formation"
                 value={selectedFormationKey}
                 onChange={e => handleFormationSelect(e.target.value)}
-                className="appearance-none bg-zinc-950 border border-zinc-700 rounded-xl pl-3 pr-8 py-2 text-xs font-black text-zinc-200 focus:outline-none focus:border-primary cursor-pointer shadow"
+                className="w-full appearance-none bg-zinc-950 border border-zinc-700 rounded-xl pl-3 pr-8 py-2 text-xs font-black text-zinc-200 focus:outline-none focus:border-primary cursor-pointer shadow"
               >
                 {Object.keys(FORMATIONS).map(f => (
                   <option key={f} value={f}>{f} Formation</option>
@@ -562,10 +562,10 @@ export default function FriendlyChinaPage() {
             </div>
 
             {/* Tactical Movement Flow Buttons */}
-            <div className="flex bg-zinc-950 p-1 rounded-xl border border-zinc-800 shadow">
+            <div className="flex bg-zinc-950 p-1 rounded-xl border border-zinc-800 shadow shrink-0">
               <button
                 onClick={() => setFlowMode(prev => prev === 'attacking' ? 'none' : 'attacking')}
-                className={`px-3 py-1.5 text-[11px] font-black rounded-lg transition-all cursor-pointer ${
+                className={`px-2.5 sm:px-3 py-1.5 text-[10px] sm:text-[11px] font-black rounded-lg transition-all cursor-pointer ${
                   flowMode === 'attacking' ? 'bg-primary text-zinc-950 shadow' : 'text-zinc-400 hover:text-zinc-200'
                 }`}
               >
@@ -573,7 +573,7 @@ export default function FriendlyChinaPage() {
               </button>
               <button
                 onClick={() => setFlowMode(prev => prev === 'defensive' ? 'none' : 'defensive')}
-                className={`px-3 py-1.5 text-[11px] font-black rounded-lg transition-all cursor-pointer ${
+                className={`px-2.5 sm:px-3 py-1.5 text-[10px] sm:text-[11px] font-black rounded-lg transition-all cursor-pointer ${
                   flowMode === 'defensive' ? 'bg-red-500 text-white shadow' : 'text-zinc-400 hover:text-zinc-200'
                 }`}
               >
@@ -584,7 +584,7 @@ export default function FriendlyChinaPage() {
             {/* Reset Button */}
             <button
               onClick={handleResetLineup}
-              className="flex items-center gap-1.5 bg-zinc-950 border border-zinc-800 hover:border-zinc-600 rounded-xl px-3 py-2 text-xs font-bold text-zinc-300 hover:text-white transition-colors cursor-pointer shadow"
+              className="flex items-center gap-1.5 bg-zinc-950 border border-zinc-800 hover:border-zinc-600 rounded-xl px-2.5 sm:px-3 py-2 text-xs font-bold text-zinc-300 hover:text-white transition-colors cursor-pointer shadow shrink-0"
               title="Reset formation lineup"
             >
               <RotateCcw className="h-3.5 w-3.5" />
@@ -594,7 +594,7 @@ export default function FriendlyChinaPage() {
         </div>
 
         {/* Formation Description Alert */}
-        <div className="bg-zinc-900/60 border border-zinc-800/80 p-4 rounded-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-xs">
+        <div className="bg-zinc-900/60 border border-zinc-800/80 p-4 rounded-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-xs w-full max-w-full overflow-hidden">
           <div className="space-y-0.5">
             <div className="flex items-center gap-2">
               <span className="font-black text-amber-400 uppercase tracking-wide text-[11px]">

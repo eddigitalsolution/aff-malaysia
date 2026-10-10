@@ -323,19 +323,20 @@ export default function PotentialPlayersPage() {
   return (
     <div className="space-y-8 animate-in fade-in duration-300">
       {/* Tournament Selection Header Tabs with Potential Players ACTIVE */}
-      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 p-1.5 bg-zinc-900/90 border border-zinc-800 rounded-2xl">
-        <div className="flex flex-wrap items-center gap-1.5 p-1 bg-zinc-950 rounded-xl flex-1 sm:flex-initial">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 p-1.5 bg-zinc-900/90 border border-zinc-800 rounded-2xl w-full max-w-full">
+        <div className="flex items-center gap-1.5 p-1 bg-zinc-950 rounded-xl flex-1 sm:flex-initial overflow-x-auto scrollbar-none max-w-full">
           {TOURNAMENTS.map(t => {
             const isFifa = t.id === 'fifa-asean-cup-2026';
             return (
               <button
                 key={t.id}
                 onClick={() => handleTournamentClick(t.id)}
-                className="flex-1 sm:flex-initial px-4 py-2.5 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-2 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900 cursor-pointer"
+                className="shrink-0 flex-1 sm:flex-initial px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg text-[11px] sm:text-xs font-bold transition-all flex items-center justify-center gap-1.5 sm:gap-2 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900 cursor-pointer whitespace-nowrap"
               >
-                <Trophy className="h-3.5 w-3.5" />
-                <span>{t.name}</span>
-                <span className="text-[9px] px-1.5 py-0.2 rounded font-black uppercase bg-zinc-800 text-zinc-400">
+                <Trophy className="h-3.5 w-3.5 shrink-0" />
+                <span className="hidden sm:inline">{t.name}</span>
+                <span className="sm:hidden">{t.shortName}</span>
+                <span className="text-[9px] px-1.5 py-0.2 rounded font-black uppercase bg-zinc-800 text-zinc-400 shrink-0">
                   {isFifa ? 'FIFA' : 'AFF'}
                 </span>
               </button>
@@ -343,40 +344,41 @@ export default function PotentialPlayersPage() {
           })}
 
           {/* Active Potential Players Tab */}
-          <div className="flex-1 sm:flex-initial px-4 py-2.5 rounded-lg text-xs font-black transition-all flex items-center justify-center gap-2 bg-amber-400 text-zinc-950 shadow-md">
-            <Sparkles className="h-3.5 w-3.5 text-zinc-950" />
-            <span>Potential Players</span>
-            <span className="text-[9px] px-1.5 py-0.2 rounded font-black uppercase bg-zinc-950/20 text-zinc-950">
-              U23 SCOUTING
+          <div className="shrink-0 flex-1 sm:flex-initial px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg text-[11px] sm:text-xs font-black transition-all flex items-center justify-center gap-1.5 sm:gap-2 bg-amber-400 text-zinc-950 shadow-md whitespace-nowrap">
+            <Sparkles className="h-3.5 w-3.5 text-zinc-950 shrink-0" />
+            <span className="hidden sm:inline">Potential Players</span>
+            <span className="sm:hidden">Prospects</span>
+            <span className="text-[9px] px-1.5 py-0.2 rounded font-black uppercase bg-zinc-950/20 text-zinc-950 shrink-0">
+              U23
             </span>
           </div>
         </div>
 
-        <div className="px-3 py-1 text-xs text-amber-400 font-bold flex items-center gap-1.5">
+        <div className="px-3 py-1 text-xs text-amber-400 font-bold hidden sm:flex items-center gap-1.5">
           <Flame className="h-3.5 w-3.5" />
           <span>Next-Gen Harimau Malaya Prospect Tracker</span>
         </div>
       </div>
 
       {/* Page Title & Breadcrumb */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div>
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 w-full max-w-full">
+        <div className="min-w-0 flex-1">
           <div className="flex items-center gap-2 text-xs text-amber-400 font-black uppercase tracking-wider mb-1">
-            <Sparkles className="h-3.5 w-3.5" />
+            <Sparkles className="h-3.5 w-3.5 shrink-0" />
             <span>National Scouting Pipeline · U23 Talent Pool</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black text-white tracking-tight flex items-center gap-2.5">
+          <h1 className="text-xl sm:text-3xl font-black text-white tracking-tight flex items-center gap-2.5 break-words">
             <span>Potential Players & Rising Stars</span>
           </h1>
-          <p className="text-xs sm:text-sm text-zinc-400 mt-1 max-w-2xl">
+          <p className="text-xs sm:text-sm text-zinc-400 mt-1 max-w-2xl leading-relaxed break-words">
             In-depth scouting radar and development ceiling for Malaysia's finest youth sensations eligible for senior national team call-ups and future international tournaments.
           </p>
         </div>
 
-        <div className="flex items-center gap-2 self-start sm:self-auto">
+        <div className="flex items-center gap-2 self-start sm:self-auto shrink-0 w-full sm:w-auto">
           <Link
             href="/friendly"
-            className="px-3.5 py-2 rounded-xl text-xs font-bold bg-red-600 hover:bg-red-500 text-white shadow-md flex items-center gap-1.5 transition-all"
+            className="px-3.5 py-2 rounded-xl text-xs font-bold bg-red-600 hover:bg-red-500 text-white shadow-md flex items-center justify-center gap-1.5 transition-all w-full sm:w-auto"
           >
             <span>View 26-Man China Squad</span>
             <ArrowUpRight className="h-3.5 w-3.5" />
@@ -385,19 +387,18 @@ export default function PotentialPlayersPage() {
       </div>
 
       {/* =========================================================
-      {/* =========================================================
           FEATURED WONDERKID SPOTLIGHT: DANIESH AMIRRUDDIN
       ========================================================= */}
-      <div className="relative overflow-hidden rounded-3xl bg-linear-to-br from-red-950/40 via-zinc-900 to-zinc-950 border border-red-500/30 p-5 sm:p-7 shadow-2xl space-y-5">
+      <div className="relative overflow-hidden rounded-3xl bg-linear-to-br from-red-950/40 via-zinc-900 to-zinc-950 border border-red-500/30 p-4 sm:p-7 shadow-2xl space-y-5 w-full max-w-full">
         {/* Ambient Glow */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-red-500/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-0 w-72 sm:w-96 h-72 sm:h-96 bg-red-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-60 sm:w-80 h-60 sm:h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
 
         {/* Top Header Row: Headshot + Name + Status Badges */}
         <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-4 border-b border-zinc-800/80">
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 sm:gap-4 min-w-0 max-w-full">
             <div className="relative shrink-0">
-              <div className="w-20 h-20 sm:w-22 sm:h-22 rounded-2xl bg-linear-to-b from-red-500/20 to-zinc-900 border-2 border-red-500/40 overflow-hidden shadow-xl flex items-center justify-center">
+              <div className="w-16 h-16 sm:w-22 sm:h-22 rounded-2xl bg-linear-to-b from-red-500/20 to-zinc-900 border-2 border-red-500/40 overflow-hidden shadow-xl flex items-center justify-center">
                 <img
                   src={wonderkid.photo}
                   alt={wonderkid.name}
@@ -407,38 +408,38 @@ export default function PotentialPlayersPage() {
                   }}
                 />
               </div>
-              <span className="absolute -bottom-1 -right-1 bg-zinc-950 text-amber-400 text-[9px] font-black px-1.5 py-0.5 rounded border border-zinc-800 shadow">
+              <span className="absolute -bottom-1 -right-1 bg-zinc-950 text-amber-400 text-[8px] sm:text-[9px] font-black px-1.5 py-0.5 rounded border border-zinc-800 shadow">
                 #40 JDT
               </span>
             </div>
 
-            <div>
+            <div className="min-w-0 flex-1">
               <div className="flex flex-wrap items-center gap-1.5 mb-1">
-                <span className="bg-amber-400 text-zinc-950 text-[10px] font-black px-2 py-0.5 rounded-full uppercase">
+                <span className="bg-amber-400 text-zinc-950 text-[9px] sm:text-[10px] font-black px-2 py-0.5 rounded-full uppercase shrink-0">
                   ⭐ Potential 92/100
                 </span>
-                <span className="bg-red-500/20 text-red-300 border border-red-500/30 text-[10px] font-black px-2 py-0.5 rounded-full uppercase">
+                <span className="bg-red-500/20 text-red-300 border border-red-500/30 text-[9px] sm:text-[10px] font-black px-2 py-0.5 rounded-full uppercase shrink-0">
                   Breakout Star 2026
                 </span>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+              <h2 className="text-xl sm:text-3xl font-black text-white tracking-tight break-words">
                 {wonderkid.name}
               </h2>
               
-              <p className="text-xs text-amber-300 font-bold mt-0.5">
+              <p className="text-xs text-amber-300 font-bold mt-0.5 break-words">
                 {wonderkid.club} • {wonderkid.subRole}
               </p>
             </div>
           </div>
 
           {/* Badges & External Link */}
-          <div className="flex flex-wrap md:flex-col items-start md:items-end gap-2 shrink-0">
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="bg-amber-500/15 text-amber-300 border border-amber-500/30 text-[10px] font-black px-2.5 py-1 rounded-xl uppercase">
+          <div className="flex flex-wrap md:flex-col items-start md:items-end gap-2 shrink-0 w-full md:w-auto">
+            <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
+              <span className="bg-amber-500/15 text-amber-300 border border-amber-500/30 text-[9px] sm:text-[10px] font-black px-2 sm:px-2.5 py-1 rounded-xl uppercase">
                 ⭐ Potential Call-Up (China Friendly)
               </span>
-              <span className="bg-zinc-800/90 text-zinc-300 border border-zinc-700 text-[10px] font-bold px-2.5 py-1 rounded-xl uppercase">
+              <span className="bg-zinc-800/90 text-zinc-300 border border-zinc-700 text-[9px] sm:text-[10px] font-bold px-2 sm:px-2.5 py-1 rounded-xl uppercase">
                 Uncapped · No FIFA / AFF Caps
               </span>
             </div>
@@ -620,9 +621,9 @@ export default function PotentialPlayersPage() {
       {/* =========================================================
           FILTERS & SEARCH BAR
       ========================================================= */}
-      <div className="flex flex-col lg:flex-row gap-4 items-stretch lg:items-center justify-between bg-zinc-900/70 border border-zinc-800/80 p-4 rounded-2xl">
+      <div className="flex flex-col lg:flex-row gap-4 items-stretch lg:items-center justify-between bg-zinc-900/70 border border-zinc-800/80 p-4 rounded-2xl w-full max-w-full">
         {/* Search */}
-        <div className="relative flex-1 max-w-md">
+        <div className="relative flex-1 max-w-full lg:max-w-md w-full">
           <Search className="absolute left-3 top-2.5 h-4 w-4 text-zinc-500" />
           <input
             id="potential-player-search"
@@ -638,14 +639,14 @@ export default function PotentialPlayersPage() {
         </div>
 
         {/* Position & Category Tabs */}
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2 max-w-full overflow-x-auto scrollbar-none">
           {/* Age Filters */}
-          <div className="flex items-center gap-1 bg-zinc-950 p-1 rounded-xl border border-zinc-800 text-xs">
+          <div className="flex items-center gap-1 bg-zinc-950 p-1 rounded-xl border border-zinc-800 text-xs overflow-x-auto scrollbar-none max-w-full shrink-0">
             {(['All', 'U21', 'U23', 'SeniorCallUp'] as const).map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedAgeCategory(cat)}
-                className={`px-2.5 py-1.5 rounded-lg font-bold transition-all ${
+                className={`px-2.5 py-1.5 rounded-lg font-bold transition-all whitespace-nowrap shrink-0 ${
                   selectedAgeCategory === cat
                     ? 'bg-amber-400 text-zinc-950 shadow-sm'
                     : 'text-zinc-400 hover:text-zinc-200'
@@ -657,12 +658,12 @@ export default function PotentialPlayersPage() {
           </div>
 
           {/* Position Filters */}
-          <div className="flex items-center gap-1 bg-zinc-950 p-1 rounded-xl border border-zinc-800 text-xs">
+          <div className="flex items-center gap-1 bg-zinc-950 p-1 rounded-xl border border-zinc-800 text-xs overflow-x-auto scrollbar-none max-w-full shrink-0">
             {(['All', 'Forward', 'Midfielder', 'Defender'] as const).map((pos) => (
               <button
                 key={pos}
                 onClick={() => setSelectedPosition(pos)}
-                className={`px-2.5 py-1.5 rounded-lg font-bold transition-all ${
+                className={`px-2.5 py-1.5 rounded-lg font-bold transition-all whitespace-nowrap shrink-0 ${
                   selectedPosition === pos
                     ? 'bg-primary text-zinc-950 shadow-sm'
                     : 'text-zinc-400 hover:text-zinc-200'

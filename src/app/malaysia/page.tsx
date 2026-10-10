@@ -528,8 +528,8 @@ export default function MalaysiaPage() {
   return (
     <div className="space-y-4 animate-in fade-in duration-300">
       {/* Tournament Selection Header Tabs */}
-      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 p-1.5 bg-zinc-900/90 border border-zinc-800 rounded-2xl">
-        <div className="flex items-center gap-1.5 p-1 bg-zinc-950 rounded-xl flex-1 sm:flex-initial">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 p-1.5 bg-zinc-900/90 border border-zinc-800 rounded-2xl w-full max-w-full">
+        <div className="flex items-center gap-1.5 p-1 bg-zinc-950 rounded-xl flex-1 sm:flex-initial overflow-x-auto scrollbar-none max-w-full">
           {TOURNAMENTS.map(t => {
             const active = t.id === activeTournamentId;
             const isFifaTournament = t.id === 'fifa-asean-cup-2026';
@@ -537,7 +537,7 @@ export default function MalaysiaPage() {
               <button
                 key={t.id}
                 onClick={() => setActiveTournamentId(t.id)}
-                className={`flex-1 sm:flex-initial px-4 py-2.5 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-2 ${
+                className={`flex-1 sm:flex-initial px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg text-[11px] sm:text-xs font-bold transition-all flex items-center justify-center gap-1.5 sm:gap-2 whitespace-nowrap shrink-0 cursor-pointer ${
                   active
                     ? isFifaTournament
                       ? 'bg-amber-400 text-zinc-950 shadow-md font-black'
@@ -545,9 +545,10 @@ export default function MalaysiaPage() {
                     : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900'
                 }`}
               >
-                <Trophy className="h-3.5 w-3.5" />
-                <span>{t.name}</span>
-                <span className={`text-[9px] px-1.5 py-0.2 rounded font-black uppercase ${
+                <Trophy className="h-3.5 w-3.5 shrink-0" />
+                <span className="hidden sm:inline">{t.name}</span>
+                <span className="sm:hidden">{t.shortName}</span>
+                <span className={`text-[9px] px-1.5 py-0.2 rounded font-black uppercase shrink-0 ${
                   active ? 'bg-zinc-950/20 text-zinc-950' : 'bg-zinc-800 text-zinc-400'
                 }`}>
                   {isFifaTournament ? 'FIFA' : 'AFF'}
@@ -557,54 +558,59 @@ export default function MalaysiaPage() {
           })}
         </div>
 
-        <div className="px-3 py-1 text-xs text-zinc-400 font-medium">
+        <div className="px-3 py-1 text-xs text-zinc-400 font-medium hidden sm:block">
           {currentTournament.sanction}
         </div>
       </div>
 
       {/* TACTICAL PLANNER ONLY */}
-      <section className="space-y-3">
+      <section className="space-y-3 w-full max-w-full">
         <div className="flex items-center justify-between flex-wrap gap-3">
-          <div className="flex items-center gap-3.5">
-            <div>
+          <div className="flex items-center gap-3.5 w-full sm:w-auto">
+            <div className="w-full">
               <div className="flex items-center gap-2 flex-wrap">
-                <h2 className="text-xl font-black flex items-center gap-2"><Users className="h-5 w-5 text-primary" /> TACTICAL PLANNER</h2>
+                <h2 className="text-lg sm:text-xl font-black flex items-center gap-2">
+                  <Users className="h-5 w-5 text-primary shrink-0" />
+                  <span>TACTICAL PLANNER</span>
+                </h2>
                 <span className={`text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider shrink-0 ${
                   isFifa 
                     ? 'bg-emerald-500/10 border border-emerald-500/25 text-emerald-400'
                     : 'bg-red-500/10 border border-red-500/25 text-red-500'
                 }`}>
-                  {isFifa ? 'Tournament Completed: 3rd Place (3W 1D 0L · Undefeated)' : 'Semifinals Concluded (Eliminated vs Vietnam)'}
+                  {isFifa ? 'Tournament Completed: 3rd Place' : 'Semifinals Concluded'}
                 </span>
               </div>
-              <p className="text-[11px] text-zinc-500 mt-0.5">Drag players to reposition · Click player then bench to swap · Change formation to rearrange</p>
+              <p className="text-[11px] text-zinc-500 mt-0.5 leading-normal break-words">
+                Drag players to reposition · Click player then bench to swap · Change formation to rearrange
+              </p>
             </div>
           </div>
           <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
-            <div className="relative">
+            <div className="relative flex-1 sm:flex-initial min-w-[110px]">
               <select
                 id="malaysia-formation-select"
                 name="formation"
                 aria-label="Select tactical formation"
                 value={formation}
                 onChange={e => { const f = e.target.value; setFormation(f); applyFormation(f, players); setSelectedId(null); }}
-                className="appearance-none bg-zinc-900 border border-zinc-700 rounded-xl pl-3 pr-8 py-2 text-xs font-bold text-zinc-200 focus:outline-none focus:border-primary cursor-pointer"
+                className="w-full appearance-none bg-zinc-900 border border-zinc-700 rounded-xl pl-3 pr-8 py-2 text-xs font-bold text-zinc-200 focus:outline-none focus:border-primary cursor-pointer"
               >
                 {Object.keys(FORMATIONS).map(f => <option key={f} value={f}>{FORMATIONS[f].label}</option>)}
               </select>
-              <ChevronDown className="absolute right-2 top-2.5 h-3 w-3 text-zinc-500 pointer-events-none" />
+              <ChevronDown className="absolute right-2.5 top-2.5 h-3.5 w-3.5 text-zinc-500 pointer-events-none" />
             </div>
-            <div className="flex bg-zinc-900 p-1 rounded-xl border border-zinc-800">
+            <div className="flex bg-zinc-900 p-1 rounded-xl border border-zinc-800 shrink-0">
               <button
                 onClick={() => setFlowMode(prev => prev === 'attacking' ? 'none' : 'attacking')}
-                className={`px-3 py-1.5 text-[10px] font-black rounded-lg transition-colors ${flowMode === 'attacking' ? 'bg-primary text-zinc-950' : 'text-zinc-400 hover:text-zinc-200'
+                className={`px-2.5 sm:px-3 py-1.5 text-[10px] font-black rounded-lg transition-colors ${flowMode === 'attacking' ? 'bg-primary text-zinc-950' : 'text-zinc-400 hover:text-zinc-200'
                   }`}
               >
                 Attacking Flow
               </button>
               <button
                 onClick={() => setFlowMode(prev => prev === 'defensive' ? 'none' : 'defensive')}
-                className={`px-3 py-1.5 text-[10px] font-black rounded-lg transition-colors ${flowMode === 'defensive' ? 'bg-red-500 text-white' : 'text-zinc-400 hover:text-zinc-200'
+                className={`px-2.5 sm:px-3 py-1.5 text-[10px] font-black rounded-lg transition-colors ${flowMode === 'defensive' ? 'bg-red-500 text-white' : 'text-zinc-400 hover:text-zinc-200'
                   }`}
               >
                 Defensive Flow
@@ -612,7 +618,7 @@ export default function MalaysiaPage() {
             </div>
             <button
               onClick={() => { applyFormation(formation, players); setSelectedId(null); setFlowMode('none'); }}
-              className="flex items-center gap-1.5 bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-xs font-bold text-zinc-300 hover:border-zinc-500 transition-colors"
+              className="flex items-center gap-1.5 bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-xs font-bold text-zinc-300 hover:border-zinc-500 transition-colors shrink-0"
             >
               <RotateCcw className="h-3 w-3" /> Reset
             </button>
@@ -620,16 +626,16 @@ export default function MalaysiaPage() {
         </div>
         
         {/* Post-Match Analysis Alert */}
-        <div className={`rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border ${
+        <div className={`rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border w-full max-w-full overflow-hidden ${
           isFifa
             ? 'bg-emerald-500/10 border-emerald-500/25'
             : 'bg-red-500/10 border-red-500/25'
         }`}>
-          <div className="space-y-1">
+          <div className="space-y-1 min-w-0 flex-1">
             <div className={`text-xs font-black uppercase tracking-wider ${isFifa ? 'text-emerald-400' : 'text-red-500'}`}>
               {isFifa ? 'Tournament Complete: 3rd Place Bronze Medal (3W 1D 0L · 10 Goals Scored, 0 Conceded)' : 'Semifinals Concluded (Final Aggregate: 0 - 4)'}
             </div>
-            <p className="text-[11px] text-zinc-300 leading-normal max-w-2xl">
+            <p className="text-[11px] text-zinc-300 leading-relaxed max-w-2xl break-words">
               {isFifa 
                 ? 'Malaysia completed an undefeated FIFA ASEAN Cup campaign (3 wins, 1 draw, 10 goals scored, 0 conceded across all 4 matches), capturing the Bronze Medal after beating Vietnam 1-0 at Gelora Bung Karno. Bergson (4 goals), Arif Aiman (2G 2A), Dion Cools (8.9 MVP), and Fergus Tierney (62\' winner) spearheaded Harimau Malaya.'
                 : "Malaysia was eliminated after a 2-0 defeat in Hanoi. Despite deploying tactical overloads and fresh squad rotations, Harimau Malaya could not breach Vietnam's defense, conceding twice to Nguyễn Xuân Son."}

@@ -29,25 +29,25 @@ export function Shell({ children }: { children: React.ReactNode }) {
   const activeTournament = TOURNAMENTS.find(t => t.id === activeTournamentId) || TOURNAMENTS[0];
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-100 flex flex-col relative">
+    <div className="min-h-screen bg-zinc-950 text-zinc-100 flex flex-col relative w-full max-w-full overflow-x-clip">
       {/* Background ambient glows */}
-      <div className="absolute top-0 right-1/4 w-125 h-125 bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-100 h-100 bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-72 sm:w-125 h-72 sm:h-125 bg-primary/5 rounded-full blur-[120px] pointer-events-none max-w-full" />
+      <div className="absolute bottom-10 left-10 w-64 sm:w-100 h-64 sm:h-100 bg-accent/5 rounded-full blur-[100px] pointer-events-none max-w-full" />
 
       {/* Header */}
-      <header className="sticky top-0 z-40 w-full bg-zinc-950/98 backdrop-blur-xl border-b border-zinc-800/90 shadow-md px-4 lg:px-8 py-3 pt-[max(0.75rem,env(safe-area-inset-top))] flex items-center justify-between gap-3">
-        <div className="flex items-center gap-3">
+      <header className="sticky top-0 z-40 w-full max-w-full bg-zinc-950/98 backdrop-blur-xl border-b border-zinc-800/90 shadow-md px-3 sm:px-4 lg:px-8 py-3 pt-[max(0.75rem,env(safe-area-inset-top))] flex items-center justify-between gap-3">
+        <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
           <button 
             onClick={() => setMobileMenuOpen(true)}
             aria-label="Buka Menu"
-            className="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-zinc-900/90 border border-zinc-800 text-zinc-300 hover:text-white active:bg-zinc-800 active:scale-95 transition-all cursor-pointer"
+            className="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-zinc-900/90 border border-zinc-800 text-zinc-300 hover:text-white active:bg-zinc-800 active:scale-95 transition-all cursor-pointer shrink-0"
           >
             <Menu className="h-5 w-5" />
           </button>
-          <Link href="/" className="flex items-center gap-2.5">
-            <img src="/malaysia-logo.png" alt="Harimau Malaya Logo" className="w-8 h-8 object-contain shrink-0" />
-            <div className="flex flex-col">
-              <span className="bg-linear-to-r from-primary to-amber-500 bg-clip-text text-transparent font-extrabold text-xs sm:text-sm lg:text-base tracking-wider uppercase leading-none">
+          <Link href="/" className="flex items-center gap-2 sm:gap-2.5 min-w-0">
+            <img src="/malaysia-logo.png" alt="Harimau Malaya Logo" className="w-7 sm:w-8 h-7 sm:h-8 object-contain shrink-0" />
+            <div className="flex flex-col min-w-0">
+              <span className="bg-linear-to-r from-primary to-amber-500 bg-clip-text text-transparent font-extrabold text-xs sm:text-sm lg:text-base tracking-wider uppercase leading-none truncate">
                 Harimau Malaya
               </span>
               <span className="text-[8px] sm:text-[10px] text-zinc-500 font-bold uppercase tracking-widest mt-0.5 leading-none">
@@ -58,20 +58,20 @@ export function Shell({ children }: { children: React.ReactNode }) {
         </div>
 
         {/* Mobile Active Tournament Indicator */}
-        <div className="lg:hidden flex items-center gap-1.5">
+        <div className="lg:hidden flex items-center gap-1.5 shrink-0">
           <button
             onClick={() => setMobileMenuOpen(true)}
             className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-300 text-[10px] font-black uppercase tracking-wider"
           >
             <span className={`w-1.5 h-1.5 rounded-full ${activeTournamentId === 'fifa-asean-cup-2026' ? 'bg-amber-400' : 'bg-emerald-400'}`} />
-            <span>{activeTournament.shortName}</span>
-            <ChevronDown className="h-3 w-3 text-zinc-500" />
+            <span className="truncate max-w-28">{activeTournament.shortName}</span>
+            <ChevronDown className="h-3 w-3 text-zinc-500 shrink-0" />
           </button>
         </div>
       </header>
 
       {/* Main Content Area */}
-      <div className="flex flex-1 relative">
+      <div className="flex flex-1 relative w-full max-w-full min-w-0">
         {/* Desktop Sidebar */}
         <aside className="w-72 border-r border-zinc-900 bg-zinc-950 p-4 hidden lg:flex flex-col gap-4 sticky top-17.25 h-[calc(100vh-69px)] overflow-y-auto">
           {/* Tournament Selection Section */}
@@ -279,11 +279,11 @@ export function Shell({ children }: { children: React.ReactNode }) {
         )}
 
         {/* Content Panel */}
-        <main className="flex-1 p-3 sm:p-5 lg:p-8 pb-24 lg:pb-8 overflow-y-auto max-w-350 mx-auto w-full">
+        <main className="flex-1 min-w-0 p-3 sm:p-5 lg:p-8 pb-24 lg:pb-8 max-w-350 mx-auto w-full overflow-x-clip">
           {children}
 
           {/* Marketing/Development CTA Banner */}
-          <div className="mt-12 mb-4 p-5 sm:p-7 md:p-8 rounded-2xl bg-zinc-900/90 border border-zinc-800/80 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative overflow-hidden shadow-lg">
+          <div className="mt-12 mb-4 p-5 sm:p-7 md:p-8 rounded-2xl bg-zinc-900/90 border border-zinc-800/80 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative overflow-hidden shadow-lg max-w-full">
             <div className="absolute -right-20 -bottom-20 w-60 h-60 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
             
             <div className="space-y-2 max-w-3xl z-10">
@@ -314,7 +314,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
       {/* Mobile iOS / Android Bottom Tab Bar */}
       <nav 
         aria-label="Navigasi Mudah Alih"
-        className="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-zinc-950/95 backdrop-blur-xl border-t border-zinc-800/80 px-2 pt-1.5 pb-[max(0.5rem,env(safe-area-inset-bottom))] shadow-2xl flex items-center justify-around"
+        className="lg:hidden fixed bottom-0 inset-x-0 w-full max-w-full z-40 bg-zinc-950/95 backdrop-blur-xl border-t border-zinc-800/80 px-2 pt-1.5 pb-[max(0.5rem,env(safe-area-inset-bottom))] shadow-2xl flex items-center justify-around"
       >
         <Link
           href="/malaysia"

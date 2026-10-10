@@ -70,8 +70,8 @@ export default function PlayersPage() {
   return (
     <div className="space-y-6 animate-in fade-in duration-300">
       {/* Tournament Selection Header Tabs */}
-      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 p-1.5 bg-zinc-900/90 border border-zinc-800 rounded-2xl">
-        <div className="flex flex-wrap items-center gap-1.5 p-1 bg-zinc-950 rounded-xl flex-1 sm:flex-initial">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 p-1.5 bg-zinc-900/90 border border-zinc-800 rounded-2xl w-full max-w-full">
+        <div className="flex items-center gap-1.5 p-1 bg-zinc-950 rounded-xl flex-1 sm:flex-initial overflow-x-auto scrollbar-none max-w-full">
           {TOURNAMENTS.map(t => {
             const active = t.id === activeTournamentId;
             const isFifaTournament = t.id === 'fifa-asean-cup-2026';
@@ -79,7 +79,7 @@ export default function PlayersPage() {
               <button
                 key={t.id}
                 onClick={() => setActiveTournamentId(t.id)}
-                className={`flex-1 sm:flex-initial px-4 py-2.5 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-2 cursor-pointer ${
+                className={`shrink-0 flex-1 sm:flex-initial px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg text-[11px] sm:text-xs font-bold transition-all flex items-center justify-center gap-1.5 sm:gap-2 whitespace-nowrap cursor-pointer ${
                   active
                     ? isFifaTournament
                       ? 'bg-amber-400 text-zinc-950 shadow-md font-black'
@@ -87,9 +87,10 @@ export default function PlayersPage() {
                     : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900'
                 }`}
               >
-                <Trophy className="h-3.5 w-3.5" />
-                <span>{t.name}</span>
-                <span className={`text-[9px] px-1.5 py-0.2 rounded font-black uppercase ${
+                <Trophy className="h-3.5 w-3.5 shrink-0" />
+                <span className="hidden sm:inline">{t.name}</span>
+                <span className="sm:hidden">{t.shortName}</span>
+                <span className={`text-[9px] px-1.5 py-0.2 rounded font-black uppercase shrink-0 ${
                   active ? 'bg-zinc-950/20 text-zinc-950' : 'bg-zinc-800 text-zinc-400'
                 }`}>
                   {isFifaTournament ? 'FIFA' : 'AFF'}
@@ -100,24 +101,25 @@ export default function PlayersPage() {
 
           <Link
             href="/potential-players"
-            className="flex-1 sm:flex-initial px-4 py-2.5 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-2 text-zinc-400 hover:text-amber-400 hover:bg-zinc-900 border border-transparent hover:border-amber-400/30"
+            className="shrink-0 flex-1 sm:flex-initial px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg text-[11px] sm:text-xs font-bold transition-all flex items-center justify-center gap-1.5 sm:gap-2 text-zinc-400 hover:text-amber-400 hover:bg-zinc-900 border border-transparent hover:border-amber-400/30 whitespace-nowrap"
           >
-            <Sparkles className="h-3.5 w-3.5 text-amber-400" />
-            <span>Potential Players</span>
-            <span className="text-[9px] px-1.5 py-0.2 rounded font-black uppercase bg-amber-400/20 text-amber-400">
-              U23 SCOUTING
+            <Sparkles className="h-3.5 w-3.5 text-amber-400 shrink-0" />
+            <span className="hidden sm:inline">Potential Players</span>
+            <span className="sm:hidden">Prospects</span>
+            <span className="text-[9px] px-1.5 py-0.2 rounded font-black uppercase bg-amber-400/20 text-amber-400 shrink-0">
+              U23
             </span>
           </Link>
         </div>
 
-        <div className="px-3 py-1 text-xs text-zinc-400 font-medium">
+        <div className="px-3 py-1 text-xs text-zinc-400 font-medium hidden sm:block">
           {currentTournament.sanction}
         </div>
       </div>
 
       <div>
-        <h1 className="text-2xl font-black flex items-center gap-2">
-          <UserCheck className="h-6 w-6 text-primary" />
+        <h1 className="text-xl sm:text-2xl font-black flex items-center gap-2">
+          <UserCheck className="h-6 w-6 text-primary shrink-0" />
           <span>Malaysia Squad Players</span>
         </h1>
         <div className="flex items-center gap-3 mt-1 flex-wrap">
@@ -129,7 +131,7 @@ export default function PlayersPage() {
       </div>
 
       {/* Match context strip */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 text-[10px]">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 text-[10px] w-full max-w-full">
         {(isFifa ? [
           { match: 'BAN vs MYS', result: 'W 3–0', date: '25 Sep 2026', type: 'win' },
           { match: 'MYS vs IDN', result: 'D 0–0', date: '28 Sep 2026', type: 'draw' },
@@ -142,8 +144,10 @@ export default function PlayersPage() {
           { match: 'THA vs MYS', result: 'L 0–2', date: '01 Aug 2026', type: 'loss' },
           { match: 'MYS vs PHI', result: 'W 1–0', date: '08 Aug 2026', type: 'win' },
           { match: 'Semi-Final vs VIE', result: 'L 0–4 agg', date: '16 & 19 Aug 2026', type: 'loss' },
-        ]).map((m) => (
+        ]).map((m, idx) => (
           <div key={m.match} className={`glass-card rounded-xl border px-3 py-2 text-center transition-all ${
+            idx === 4 ? 'col-span-2 sm:col-span-1' : ''
+          } ${
             m.type === 'win' 
               ? 'border-emerald-500/30 bg-emerald-950/20' 
               : m.type === 'draw' 
@@ -170,7 +174,7 @@ export default function PlayersPage() {
       </div>
 
       {/* China Friendly 26-Player Call-Up Announcement Banner */}
-      <div className="bg-linear-to-r from-red-950/40 via-zinc-900 to-zinc-900 border border-red-500/30 rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-lg">
+      <div className="bg-linear-to-r from-red-950/40 via-zinc-900 to-zinc-900 border border-red-500/30 rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-lg w-full max-w-full">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl bg-red-500/20 border border-red-500/30 flex items-center justify-center shrink-0">
             <Swords className="h-5 w-5 text-red-400" />
@@ -209,10 +213,10 @@ export default function PlayersPage() {
       </div>
 
       {/* Filters Bar */}
-      <div className="flex flex-col lg:flex-row gap-4 items-stretch lg:items-center justify-between">
+      <div className="flex flex-col lg:flex-row gap-3 items-stretch lg:items-center justify-between w-full max-w-full">
         {/* Search & Compare Toggle */}
-        <div className="flex flex-1 items-center gap-3 max-w-xl">
-          <div className="relative flex-1">
+        <div className="flex flex-col sm:flex-row flex-1 items-stretch sm:items-center gap-2.5 max-w-xl w-full">
+          <div className="relative flex-1 w-full">
             <Search className="absolute left-3 top-2.5 h-4 w-4 text-zinc-500" />
             <input
               id="player-search"
@@ -228,7 +232,7 @@ export default function PlayersPage() {
           </div>
           <button
             onClick={() => setIsComparing(prev => !prev)}
-            className={`flex items-center gap-1.5 border px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap cursor-pointer ${
+            className={`flex items-center justify-center gap-1.5 border px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap cursor-pointer shrink-0 w-full sm:w-auto ${
               isComparing
                 ? 'bg-primary text-zinc-950 border-primary font-black'
                 : 'bg-zinc-900 border-zinc-800 text-zinc-300 hover:border-zinc-700'
@@ -409,13 +413,13 @@ export default function PlayersPage() {
         /* STANDARD PLAYERS LIST TAB */
         <>
           {/* Position Filter Tabs & Call-Up Toggle */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
-            <div className="flex bg-zinc-900/60 p-1 rounded-xl border border-zinc-800/80 overflow-x-auto self-start">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 w-full max-w-full">
+            <div className="flex bg-zinc-900/60 p-1 rounded-xl border border-zinc-800/80 overflow-x-auto scrollbar-none max-w-full">
               {(['All', 'Goalkeeper', 'Defender', 'Midfielder', 'Forward'] as const).map((pos) => (
                 <button
                   key={pos}
                   onClick={() => setActiveTab(pos)}
-                  className={`px-5 py-2 text-xs font-bold rounded-lg transition-colors whitespace-nowrap cursor-pointer ${
+                  className={`px-3.5 sm:px-5 py-2 text-xs font-bold rounded-lg transition-colors whitespace-nowrap shrink-0 cursor-pointer ${
                     activeTab === pos ? 'bg-primary text-zinc-950 font-black' : 'text-zinc-400 hover:text-zinc-200'
                   }`}
                 >
@@ -426,7 +430,7 @@ export default function PlayersPage() {
 
             <button
               onClick={() => setShowOnlyCallUp(prev => !prev)}
-              className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 border cursor-pointer ${
+              className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 border cursor-pointer shrink-0 w-full sm:w-auto ${
                 showOnlyCallUp
                   ? 'bg-amber-400 border-amber-400 text-zinc-950 font-black shadow-md'
                   : 'bg-zinc-900 border-zinc-800 text-zinc-400 hover:text-zinc-200 hover:border-zinc-700'
