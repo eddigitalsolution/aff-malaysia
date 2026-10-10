@@ -547,6 +547,9 @@ export default function FriendlyChinaPage() {
             {/* Formation Dropdown */}
             <div className="relative">
               <select
+                id="friendly-formation-select"
+                name="formation"
+                aria-label="Select friendly match formation"
                 value={selectedFormationKey}
                 onChange={e => handleFormationSelect(e.target.value)}
                 className="appearance-none bg-zinc-950 border border-zinc-700 rounded-xl pl-3 pr-8 py-2 text-xs font-black text-zinc-200 focus:outline-none focus:border-primary cursor-pointer shadow"

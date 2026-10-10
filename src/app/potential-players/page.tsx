@@ -625,7 +625,11 @@ export default function PotentialPlayersPage() {
         <div className="relative flex-1 max-w-md">
           <Search className="absolute left-3 top-2.5 h-4 w-4 text-zinc-500" />
           <input
-            type="text"
+            id="potential-player-search"
+            name="potentialPlayerSearch"
+            type="search"
+            autoComplete="off"
+            aria-label="Search prospective player, club, position"
             placeholder="Search prospective player, club, position..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}

@@ -583,6 +583,9 @@ export default function MalaysiaPage() {
           <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
             <div className="relative">
               <select
+                id="malaysia-formation-select"
+                name="formation"
+                aria-label="Select tactical formation"
                 value={formation}
                 onChange={e => { const f = e.target.value; setFormation(f); applyFormation(f, players); setSelectedId(null); }}
                 className="appearance-none bg-zinc-900 border border-zinc-700 rounded-xl pl-3 pr-8 py-2 text-xs font-bold text-zinc-200 focus:outline-none focus:border-primary cursor-pointer"

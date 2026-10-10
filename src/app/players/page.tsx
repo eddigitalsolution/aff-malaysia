@@ -250,6 +250,9 @@ export default function PlayersPage() {
               {/* Player 1 Select */}
               <div className="relative">
                 <select
+                  id="compare-player-1"
+                  name="comparePlayer1"
+                  aria-label="Select first player to compare"
                   value={compareId1}
                   onChange={(e) => setCompareId1(e.target.value)}
                   className="w-full appearance-none bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-2.5 text-sm font-bold text-zinc-200 focus:outline-none focus:border-primary cursor-pointer"
@@ -266,6 +269,9 @@ export default function PlayersPage() {
               {/* Player 2 Select */}
               <div className="relative">
                 <select
+                  id="compare-player-2"
+                  name="comparePlayer2"
+                  aria-label="Select second player to compare"
                   value={compareId2}
                   onChange={(e) => setCompareId2(e.target.value)}
                   className="w-full appearance-none bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-2.5 text-sm font-bold text-zinc-200 focus:outline-none focus:border-primary cursor-pointer"
