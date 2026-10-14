@@ -183,10 +183,10 @@ export default function PlayersPage() {
             <div className="flex items-center gap-2 flex-wrap">
               <span className="text-[10px] font-black uppercase tracking-wider text-red-400">Official Call-Up</span>
               <span className="text-zinc-500 text-xs hidden sm:inline">•</span>
-              <span className="text-xs text-zinc-200 font-bold">China Tier 1 Friendly (14 & 17 Nov 2026, Guangzhou)</span>
+              <span className="text-xs text-zinc-200 font-bold">Tier 1 Friendly Window (14 & 17 Nov 2026, Guangzhou · vs China & Yaman)</span>
             </div>
             <p className="text-xs text-zinc-400 mt-0.5">
-              26-player squad selected based on FIFA ASEAN Cup & AFF performance baseline.
+              26-player squad selected for double-header fixtures vs China PR (14 Nov) & Yaman (17 Nov).
             </p>
           </div>
         </div>

@@ -599,7 +599,7 @@ export default function PotentialPlayersPage() {
               href="/friendly"
               className="w-full py-2 rounded-xl text-xs font-bold bg-amber-400 hover:bg-amber-300 text-zinc-950 transition-all flex items-center justify-center gap-1.5 shadow-sm text-center"
             >
-              <span>Test in Friendly vs China PR</span>
+              <span>Test in November Friendly</span>
               <ChevronRight className="h-3.5 w-3.5" />
             </Link>
           </div>

@@ -12,7 +12,7 @@ import { TOURNAMENTS } from '@/lib/api';
 
 const NAV_ITEMS = [
   { href: '/malaysia', label: 'Tactical Planner', icon: Star, highlight: true },
-  { href: '/friendly', label: 'China Friendly (Tier 1)', icon: Swords, highlight: true, badge: 'NOV 14 & 17' },
+  { href: '/friendly', label: 'Tier 1 Friendly (Nov)', icon: Swords, highlight: true, badge: 'NOV 14 & 17' },
   { href: '/standings', label: 'Standings', icon: Trophy },
   { href: '/players', label: 'Players', icon: User },
   { href: '/potential-players', label: 'Potential Players', icon: Sparkles, badge: 'SCOUTING' },
@@ -333,7 +333,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
           }`}
         >
           <Swords className={`h-5 w-5 ${pathname === '/friendly' ? 'text-amber-400' : ''}`} />
-          <span>China (T1)</span>
+          <span>Friendly (T1)</span>
           <span className="absolute -top-1 right-1 w-2 h-2 rounded-full bg-red-500 animate-pulse" />
         </Link>
 

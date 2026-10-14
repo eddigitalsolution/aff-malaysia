@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { getFixtures, getTeams, getVenues, TOURNAMENTS, Fixture, Team, Venue } from '@/lib/api';
 import { useAppState } from '@/store';
-import { Calendar, MapPin, Compass, AlertCircle, Clock, CloudRain, Trophy, CheckCircle2, Award } from 'lucide-react';
+import { Calendar, MapPin, Compass, AlertCircle, Clock, CloudRain, Trophy, CheckCircle2, Award, Swords, ChevronRight } from 'lucide-react';
 
 const MATCH_NOTES: Record<string, { scorers?: string; note?: string }> = {
   'match-fac-01': { scorers: '⚽ Arif Aiman (18\', 37\'), Bergson (52\')', note: 'Group Stage MD1 Victory in Bandung' },
@@ -172,6 +172,35 @@ export default function FixturesPage() {
             <span>{focusMalaysiaOnly ? '🇲🇾 Malaysia Only' : 'All Teams'}</span>
           </button>
         </div>
+      </div>
+
+      {/* Tier 1 International Friendly Upcoming Banner */}
+      <div className="p-4 sm:p-5 rounded-2xl border border-amber-500/40 bg-linear-to-r from-amber-500/10 via-zinc-900/95 to-zinc-950 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-xl">
+        <div className="flex items-center gap-3.5">
+          <div className="p-2.5 rounded-xl bg-amber-400/15 border border-amber-400/30 text-amber-400 shrink-0">
+            <Swords className="h-5 w-5" />
+          </div>
+          <div>
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="text-[10px] font-black uppercase px-2 py-0.5 rounded bg-red-500/20 text-red-400 border border-red-500/30">
+                Next Fixtures · Nov 2026
+              </span>
+              <span className="text-xs font-bold text-zinc-200">
+                Tier 1 Friendly Window (Guangzhou, China)
+              </span>
+            </div>
+            <p className="text-xs text-zinc-400 mt-1">
+              14 Nov: <strong className="text-amber-400">China (96) vs Malaysia (133)</strong> · 17 Nov: <strong className="text-red-400">Yaman (144) vs Malaysia (133)</strong>
+            </p>
+          </div>
+        </div>
+        <Link
+          href="/friendly"
+          className="px-4 py-2 bg-amber-400 hover:bg-amber-300 text-zinc-950 font-black text-xs rounded-xl transition-all shadow shrink-0 flex items-center gap-1.5 cursor-pointer"
+        >
+          <span>Tactics & 26-Man Squad</span>
+          <ChevronRight className="h-3.5 w-3.5" />
+        </Link>
       </div>
 
       {/* Filter Tabs */}

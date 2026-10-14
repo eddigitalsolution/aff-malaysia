@@ -62,6 +62,23 @@ function FlagChina({ className = "w-8 h-5" }: { className?: string }) {
   );
 }
 
+function FlagYemen({ className = "w-8 h-5" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 900 600" className={className} xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <clipPath id="ye-flag-clip">
+          <rect width="900" height="600" rx="48" />
+        </clipPath>
+      </defs>
+      <g clipPath="url(#ye-flag-clip)">
+        <rect width="900" height="200" y="0" fill="#ce1126" />
+        <rect width="900" height="200" y="200" fill="#ffffff" />
+        <rect width="900" height="200" y="400" fill="#000000" />
+      </g>
+    </svg>
+  );
+}
+
 /* ---------------------------------------------------------
    TACTICAL FORMATIONS & ROLES CONFIGURATION
 --------------------------------------------------------- */
@@ -130,8 +147,8 @@ const FORMATIONS: Record<string, FormationConfig> = {
     }
   },
   '5-3-2': {
-    label: '5-3-2 Low-Block Counter (Match 2)',
-    description: 'Combined dual-tournament rotation structure featuring Fergus Tierney & Paulo Josué.',
+    label: '5-3-2 Low-Block Counter (Match 2 vs Yaman)',
+    description: 'Combined dual-tournament rotation structure featuring Fergus Tierney & Paulo Josué countering Yemen in Guangzhou.',
     slots: [
       { slotId: 'gk',  x: 50, y: 90, role: 'GK',  defaultPlayerId: 'azri-ghani' },
       { slotId: 'lwb', x: 16, y: 48, role: 'LWB', defaultPlayerId: 'faris-danish' },
@@ -146,9 +163,9 @@ const FORMATIONS: Record<string, FormationConfig> = {
       { slotId: 'rs',  x: 65, y: 18, role: 'ST',  defaultPlayerId: 'paulo-josue-fifa' },
     ],
     tactics: {
-      inPossession: 'Direct vertical releases into the channels for Fergus Tierney (Vietnam winner) and Paulo Josué (4 goals combined) to hold up play.',
-      outOfPossession: 'Daniel Ting (LCB) shifts wide to cover the left flank while Brad Tapp (CB) and Harith Haikal command the penalty box.',
-      keyMatchup: 'Dion Cools (RCB) defensive anticipation · Azri Ghani shot-stopping'
+      inPossession: 'Direct vertical releases into the channels for Fergus Tierney (Vietnam winner) and Paulo Josué to hold up play and exploit spaces against Yemen’s shape.',
+      outOfPossession: 'Daniel Ting (LCB) shifts wide to cover the left flank while Brad Tapp (CB) and Dion Cools command the penalty box against Yemen attacks.',
+      keyMatchup: 'Dion Cools (RCB) defensive anticipation · Azri Ghani shot-stopping vs Yaman'
     }
   },
   '4-2-3-1': {
@@ -346,11 +363,11 @@ export default function FriendlyChinaPage() {
               <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-white tracking-tight leading-tight flex flex-wrap items-baseline gap-x-2.5 gap-y-1">
                 <span className="text-white">Malaysia</span>
                 <span className="text-zinc-500 font-light text-xl sm:text-2xl lg:text-3xl">vs</span>
-                <span className="text-amber-400">China PR</span>
+                <span className="text-amber-400">{lineupPreset === 'match1' ? 'China PR' : 'Yaman (Yemen)'}</span>
               </h1>
 
               <p className="text-sm sm:text-base text-zinc-300 leading-relaxed max-w-xl">
-                Harimau Malaya travel to Guangzhou for two high-stakes Tier 1 international fixtures against China PR on <strong className="text-amber-400 whitespace-nowrap">November 14 and 17, 2026</strong>. The official 26-player squad combines the premier performers across both the <strong className="text-amber-400">2026 FIFA ASEAN Cup</strong> and the <strong className="text-emerald-400">ASEAN Hyundai Cup</strong>, highlighted by top stars from each campaign alongside versatile players who featured in both tournaments.
+                Harimau Malaya travel to Guangzhou for two high-stakes Tier 1 international fixtures: taking on <strong className="text-amber-400">China PR (FIFA #96)</strong> on <strong className="text-zinc-100 whitespace-nowrap">Saturday, 14 Nov 2026</strong>, and <strong className="text-red-400">Yaman (FIFA #144)</strong> on <strong className="text-zinc-100 whitespace-nowrap">Tuesday, 17 Nov 2026</strong>. The official 26-player squad combines the premier performers across both the <strong className="text-amber-400">2026 FIFA ASEAN Cup</strong> and the <strong className="text-emerald-400">ASEAN Hyundai Cup</strong>.
               </p>
             </div>
 
@@ -375,7 +392,30 @@ export default function FriendlyChinaPage() {
           <div className="lg:col-span-5 xl:col-span-4 w-full bg-zinc-900/95 border border-zinc-800/90 p-5 sm:p-6 rounded-3xl flex flex-col justify-between gap-5 text-center shadow-2xl backdrop-blur-md">
             <div className="w-full flex items-center justify-between pb-2 border-b border-zinc-800/80 text-[10px] font-black uppercase tracking-wider text-zinc-400">
               <span>Match Preview</span>
-              <span className="text-red-400">Guangzhou Double-Header</span>
+              <div className="flex items-center gap-1">
+                <button
+                  type="button"
+                  onClick={() => handlePresetChange('match1')}
+                  className={`px-2 py-0.5 rounded text-[9px] font-black transition-all cursor-pointer ${
+                    lineupPreset === 'match1'
+                      ? 'bg-amber-400 text-zinc-950 shadow'
+                      : 'bg-zinc-800 text-zinc-400 hover:text-white'
+                  }`}
+                >
+                  Match 1
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handlePresetChange('match2')}
+                  className={`px-2 py-0.5 rounded text-[9px] font-black transition-all cursor-pointer ${
+                    lineupPreset === 'match2'
+                      ? 'bg-red-400 text-zinc-950 shadow'
+                      : 'bg-zinc-800 text-zinc-400 hover:text-white'
+                  }`}
+                >
+                  Match 2
+                </button>
+              </div>
             </div>
 
             <div className="flex items-center justify-around w-full gap-4">
@@ -386,7 +426,7 @@ export default function FriendlyChinaPage() {
                 </div>
                 <div className="text-sm font-black text-zinc-100 tracking-wide">Malaysia</div>
                 <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-amber-400/10 border border-amber-400/20 text-[10px] text-amber-400 font-extrabold">
-                  FIFA #132
+                  FIFA #133
                 </div>
                 <span className="text-[10px] text-zinc-400 font-semibold">Harimau Malaya</span>
               </div>
@@ -396,26 +436,45 @@ export default function FriendlyChinaPage() {
                 <div className="text-zinc-400 font-black text-xs uppercase px-3 py-1.5 bg-zinc-950 rounded-xl border border-zinc-800 shadow-inner">
                   VS
                 </div>
-                <span className="text-[9px] font-black text-red-400 uppercase tracking-widest">TIER 1</span>
+                <span className="text-[9px] font-black text-red-400 uppercase tracking-widest">
+                  {lineupPreset === 'match1' ? '14 NOV' : '17 NOV'}
+                </span>
               </div>
 
-              {/* China PR Badge */}
-              <div className="flex flex-col items-center gap-1.5 group">
-                <div className="relative p-1 rounded-2xl bg-zinc-950 border border-red-500/40 shadow-lg shadow-red-500/10 transition-transform group-hover:scale-105">
-                  <FlagChina className="w-14 h-9 rounded-xl shadow-inner" />
+              {/* Opponent Badge (China or Yaman) */}
+              {lineupPreset === 'match1' ? (
+                <div className="flex flex-col items-center gap-1.5 group">
+                  <div className="relative p-1 rounded-2xl bg-zinc-950 border border-red-500/40 shadow-lg shadow-red-500/10 transition-transform group-hover:scale-105">
+                    <FlagChina className="w-14 h-9 rounded-xl shadow-inner" />
+                  </div>
+                  <div className="text-sm font-black text-zinc-100 tracking-wide">China PR</div>
+                  <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-red-400/10 border border-red-400/20 text-[10px] text-red-400 font-extrabold">
+                    FIFA #96
+                  </div>
+                  <span className="text-[10px] text-zinc-400 font-semibold">Team Dragon</span>
                 </div>
-                <div className="text-sm font-black text-zinc-100 tracking-wide">China PR</div>
-                <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-red-400/10 border border-red-400/20 text-[10px] text-red-400 font-extrabold">
-                  FIFA #88
+              ) : (
+                <div className="flex flex-col items-center gap-1.5 group">
+                  <div className="relative p-1 rounded-2xl bg-zinc-950 border border-red-500/40 shadow-lg shadow-red-500/10 transition-transform group-hover:scale-105">
+                    <FlagYemen className="w-14 h-9 rounded-xl shadow-inner" />
+                  </div>
+                  <div className="text-sm font-black text-zinc-100 tracking-wide">Yaman</div>
+                  <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-red-400/10 border border-red-400/20 text-[10px] text-red-400 font-extrabold">
+                    FIFA #144
+                  </div>
+                  <span className="text-[10px] text-zinc-400 font-semibold">West Asia</span>
                 </div>
-                <span className="text-[10px] text-zinc-400 font-semibold">Team Dragon</span>
-              </div>
+              )}
             </div>
 
             <div className="w-full bg-zinc-950/70 border border-zinc-800/70 rounded-2xl p-3 text-left">
-              <div className="text-[10px] font-black uppercase text-amber-400 tracking-wider">Historical Context</div>
+              <div className="text-[10px] font-black uppercase text-amber-400 tracking-wider">
+                {lineupPreset === 'match1' ? 'Match 1 Context · 14 Nov' : 'Match 2 Context · 17 Nov'}
+              </div>
               <p className="text-xs text-zinc-400 mt-1 leading-relaxed">
-                1–1 Draw in Chengdu (Sep 2023). Harimau Malaya seeking first win on Chinese soil in modern era.
+                {lineupPreset === 'match1'
+                  ? 'China (96) vs Malaysia (133) in Guangzhou. 1–1 Draw in Chengdu (Sep 2023). Harimau Malaya seeking first win on Chinese soil in modern era.'
+                  : 'Yaman (144) vs Malaysia (133) in Guangzhou. Vital FIFA ranking duel testing team depth and tactical rotation.'}
               </p>
             </div>
           </div>
@@ -423,8 +482,128 @@ export default function FriendlyChinaPage() {
       </div>
 
       {/* =========================================================
-          MATCH SCHEDULE DOUBLE-HEADER CARDS
+          MATCH SCHEDULE DOUBLE-HEADER CARDS & OFFICIAL FIXTURE TABLE
       ========================================================= */}
+      {/* Official Match Schedule Table (Matching FAM Announcement) */}
+      <div className="glass-card rounded-2xl sm:rounded-3xl border border-zinc-800 overflow-hidden shadow-2xl">
+        <div className="px-5 py-4 border-b border-zinc-800/80 bg-zinc-900/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+          <div className="flex items-center gap-2.5">
+            <div className="p-1.5 rounded-lg bg-amber-400/10 border border-amber-400/20 text-amber-400">
+              <Calendar className="h-4 w-4" />
+            </div>
+            <div>
+              <h2 className="text-sm sm:text-base font-black text-white uppercase tracking-wider">
+                Jadual Perlawanan Persahabatan (November 2026)
+              </h2>
+              <p className="text-[11px] text-zinc-400">
+                Tier 1 International Friendly Window · Guangzhou, China
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-[10px] font-black uppercase px-2.5 py-1 rounded-full bg-red-500/15 border border-red-500/30 text-red-400">
+              Tier 1 FIFA Sanctioned
+            </span>
+          </div>
+        </div>
+
+        <div className="overflow-x-auto">
+          <table className="w-full text-left border-collapse text-xs sm:text-sm">
+            <thead>
+              <tr className="border-b border-zinc-800 bg-zinc-950 text-[11px] font-black text-zinc-400 uppercase tracking-wider">
+                <th className="py-3.5 px-4 sm:px-6">Tarikh</th>
+                <th className="py-3.5 px-4 sm:px-6">Lawan</th>
+                <th className="py-3.5 px-4 sm:px-6">Lokasi</th>
+                <th className="py-3.5 px-4 sm:px-6">Kedudukan Ranking FIFA</th>
+                <th className="py-3.5 px-4 sm:px-6 text-right">Taktikal</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-zinc-800/60 font-medium">
+              {/* Match 1 Row */}
+              <tr className={`transition-colors ${lineupPreset === 'match1' ? 'bg-amber-500/10' : 'hover:bg-zinc-900/40'}`}>
+                <td className="py-4 px-4 sm:px-6 font-bold text-zinc-100 whitespace-nowrap">
+                  14 November 2026 (Sabtu)
+                </td>
+                <td className="py-4 px-4 sm:px-6">
+                  <div className="flex items-center gap-2 font-black text-white">
+                    <FlagChina className="w-6 h-4 rounded-xs shrink-0 shadow-xs" />
+                    <span>China</span>
+                  </div>
+                </td>
+                <td className="py-4 px-4 sm:px-6 text-zinc-300 whitespace-nowrap">
+                  Guangzhou, China
+                </td>
+                <td className="py-4 px-4 sm:px-6 font-semibold">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="inline-flex items-center gap-1 text-red-400 font-bold">
+                      <FlagChina className="w-4 h-2.5 rounded-xs" /> China (96)
+                    </span>
+                    <span className="text-zinc-500 font-normal">vs</span>
+                    <span className="inline-flex items-center gap-1 text-amber-400 font-bold">
+                      <FlagMalaysia className="w-4 h-2.5 rounded-xs" /> Malaysia (133)
+                    </span>
+                  </div>
+                </td>
+                <td className="py-4 px-4 sm:px-6 text-right whitespace-nowrap">
+                  <button
+                    type="button"
+                    onClick={() => handlePresetChange('match1')}
+                    className={`text-[11px] font-black px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
+                      lineupPreset === 'match1'
+                        ? 'bg-amber-400 text-zinc-950 shadow'
+                        : 'bg-zinc-800 text-zinc-300 hover:text-white hover:bg-zinc-700'
+                    }`}
+                  >
+                    {lineupPreset === 'match1' ? 'Sedang Dipilih' : 'Pilih Perlawanan 1'}
+                  </button>
+                </td>
+              </tr>
+
+              {/* Match 2 Row */}
+              <tr className={`transition-colors ${lineupPreset === 'match2' ? 'bg-red-500/10' : 'hover:bg-zinc-900/40'}`}>
+                <td className="py-4 px-4 sm:px-6 font-bold text-zinc-100 whitespace-nowrap">
+                  17 November 2026 (Selasa)
+                </td>
+                <td className="py-4 px-4 sm:px-6">
+                  <div className="flex items-center gap-2 font-black text-white">
+                    <FlagYemen className="w-6 h-4 rounded-xs shrink-0 shadow-xs" />
+                    <span>Yaman</span>
+                  </div>
+                </td>
+                <td className="py-4 px-4 sm:px-6 text-zinc-300 whitespace-nowrap">
+                  Guangzhou, China
+                </td>
+                <td className="py-4 px-4 sm:px-6 font-semibold">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="inline-flex items-center gap-1 text-red-400 font-bold">
+                      <FlagYemen className="w-4 h-2.5 rounded-xs" /> Yaman (144)
+                    </span>
+                    <span className="text-zinc-500 font-normal">vs</span>
+                    <span className="inline-flex items-center gap-1 text-amber-400 font-bold">
+                      <FlagMalaysia className="w-4 h-2.5 rounded-xs" /> Malaysia (133)
+                    </span>
+                  </div>
+                </td>
+                <td className="py-4 px-4 sm:px-6 text-right whitespace-nowrap">
+                  <button
+                    type="button"
+                    onClick={() => handlePresetChange('match2')}
+                    className={`text-[11px] font-black px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
+                      lineupPreset === 'match2'
+                        ? 'bg-red-400 text-zinc-950 shadow'
+                        : 'bg-zinc-800 text-zinc-300 hover:text-white hover:bg-zinc-700'
+                    }`}
+                  >
+                    {lineupPreset === 'match2' ? 'Sedang Dipilih' : 'Pilih Perlawanan 2'}
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* Match Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Match 1 */}
         <div className={`glass-card rounded-2xl p-6 border transition-all ${
@@ -445,15 +624,19 @@ export default function FriendlyChinaPage() {
           </h3>
           <div className="mt-3 space-y-1.5 text-xs text-zinc-400">
             <p className="flex items-center gap-2">
-              <Calendar className="h-3.5 w-3.5 text-amber-400" />
-              <strong className="text-zinc-200">Saturday, 14 November 2026</strong>
+              <Calendar className="h-3.5 w-3.5 text-amber-400 shrink-0" />
+              <strong className="text-zinc-200">Saturday, 14 November 2026 (Sabtu)</strong>
             </p>
             <p className="flex items-center gap-2">
-              <MapPin className="h-3.5 w-3.5 text-zinc-500" />
+              <MapPin className="h-3.5 w-3.5 text-zinc-500 shrink-0" />
               <span>Tianhe Stadium, Guangzhou (Capacity: 54,856)</span>
             </p>
             <p className="flex items-center gap-2">
-              <Shield className="h-3.5 w-3.5 text-zinc-500" />
+              <Trophy className="h-3.5 w-3.5 text-amber-400 shrink-0" />
+              <span>Ranking: China (FIFA #96) vs Malaysia (FIFA #133)</span>
+            </p>
+            <p className="flex items-center gap-2">
+              <Shield className="h-3.5 w-3.5 text-zinc-500 shrink-0" />
               <span>Focus: Full-strength 3-4-3 testing Bergson & Arif Aiman counter-threat</span>
             </p>
           </div>
@@ -486,21 +669,25 @@ export default function FriendlyChinaPage() {
             <span className="text-xs text-zinc-400 font-bold">19:35 (MYT / Local)</span>
           </div>
           <h3 className="text-lg font-black text-zinc-100 flex items-center gap-2">
-            <span className="inline-flex items-center gap-1.5"><FlagChina className="w-5 h-3.5 inline rounded-xs" /> China PR</span>
+            <span className="inline-flex items-center gap-1.5"><FlagYemen className="w-5 h-3.5 inline rounded-xs" /> Yaman (Yemen)</span>
             <span className="text-zinc-500 text-sm">vs</span>
             <span className="inline-flex items-center gap-1.5"><FlagMalaysia className="w-5 h-3.5 inline rounded-xs" /> Malaysia</span>
           </h3>
           <div className="mt-3 space-y-1.5 text-xs text-zinc-400">
             <p className="flex items-center gap-2">
-              <Calendar className="h-3.5 w-3.5 text-red-400" />
-              <strong className="text-zinc-200">Tuesday, 17 November 2026</strong>
+              <Calendar className="h-3.5 w-3.5 text-red-400 shrink-0" />
+              <strong className="text-zinc-200">Tuesday, 17 November 2026 (Selasa)</strong>
             </p>
             <p className="flex items-center gap-2">
-              <MapPin className="h-3.5 w-3.5 text-zinc-500" />
-              <span>Tianhe Stadium / Yuexiushan, Guangzhou</span>
+              <MapPin className="h-3.5 w-3.5 text-zinc-500 shrink-0" />
+              <span>Tianhe Stadium / Guangzhou, China</span>
             </p>
             <p className="flex items-center gap-2">
-              <Shield className="h-3.5 w-3.5 text-zinc-500" />
+              <Trophy className="h-3.5 w-3.5 text-red-400 shrink-0" />
+              <span>Ranking: Yaman (FIFA #144) vs Malaysia (FIFA #133)</span>
+            </p>
+            <p className="flex items-center gap-2">
+              <Shield className="h-3.5 w-3.5 text-zinc-500 shrink-0" />
               <span>Focus: Tactical rotation, starting minutes for Tierney, Kuzain & Azri</span>
             </p>
           </div>
@@ -534,7 +721,7 @@ export default function FriendlyChinaPage() {
               </div>
               <h2 className="text-lg sm:text-2xl font-black text-white">TACTICAL PLANNER FORMATION</h2>
               <span className="text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider bg-amber-400/15 border border-amber-400/30 text-amber-400 shrink-0">
-                vs China PR · Tier 1
+                {lineupPreset === 'match1' ? 'vs China PR (FIFA #96)' : 'vs Yaman (FIFA #144)'} · Tier 1
               </span>
             </div>
             <p className="text-xs text-zinc-400 mt-1 leading-normal wrap-break-word">

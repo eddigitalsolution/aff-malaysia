@@ -527,12 +527,12 @@
     "weather": "21°C, Clear"
   },
   {
-    "id": "friendly-chn-mys-02",
+    "id": "friendly-yem-mys-02",
     "tournamentId": "tier1-friendly-2026",
     "stage": "Tier 1 International Friendly · Match 2",
     "matchday": 2,
     "group": null,
-    "homeTeamId": "china",
+    "homeTeamId": "yemen",
     "awayTeamId": "malaysia",
     "homeScore": 0,
     "awayScore": 0,

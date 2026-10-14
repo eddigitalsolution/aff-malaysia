@@ -7,7 +7,7 @@
     "flag": "🇲🇾",
     "coach": "Tan Cheng Hoe",
     "captain": "Dion Cools",
-    "fifaRanking": 132,
+    "fifaRanking": 133,
     "ratings": {
       "attack": 85,
       "midfield": 82,
@@ -299,7 +299,7 @@
     "flag": "🇨🇳",
     "coach": "Branko Ivanković",
     "captain": "Wu Xi",
-    "fifaRanking": 88,
+    "fifaRanking": 96,
     "ratings": {
       "attack": 74,
       "midfield": 73,
@@ -314,6 +314,31 @@
       "L",
       "W",
       "D"
+    ]
+  },
+  {
+    "id": "yemen",
+    "name": "Yaman",
+    "code": "YEM",
+    "group": "Friendly",
+    "flag": "🇾🇪",
+    "coach": "Noureddine Ould Ali",
+    "captain": "Mudir Al-Radaei",
+    "fifaRanking": 144,
+    "ratings": {
+      "attack": 68,
+      "midfield": 69,
+      "defense": 70
+    },
+    "averageAge": 25.4,
+    "squadValue": "€1.85M",
+    "formation": "4-4-2",
+    "recentForm": [
+      "D",
+      "L",
+      "W",
+      "D",
+      "L"
     ]
   }
 ]

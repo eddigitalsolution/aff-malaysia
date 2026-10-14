@@ -251,7 +251,8 @@ export async function getTeams(tournamentId?: string): Promise<Team[]> {
 
 export async function getTeam(id: string, tournamentId?: string): Promise<Team | null> {
   const teams = await getTeams(tournamentId);
-  return teams.find(t => t.id === id) || (teamsData as Team[]).find(t => t.id === id) || null;
+  const normalizedId = id.toLowerCase() === 'yaman' ? 'yemen' : id;
+  return teams.find(t => t.id === normalizedId || t.id === id) || (teamsData as Team[]).find(t => t.id === normalizedId || t.id === id) || null;
 }
 
 export async function getPlayers(teamId?: string, tournamentId?: string): Promise<Player[]> {
